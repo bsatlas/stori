@@ -1,3 +1,5 @@
+local paths = import 'paths.libsonnet';
+
 {
   'openapi.json': {
     openapi: '3.0.0',
@@ -18,6 +20,6 @@
     },
 
     servers: [{ url: 'http://localhost' }],
-    paths: {},
+    paths: paths,
   },
 }

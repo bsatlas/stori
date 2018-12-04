@@ -15,7 +15,142 @@
       "version": "v0.1.0"
    },
    "openapi": "3.0.0",
-   "paths": { },
+   "paths": {
+      "/images": {
+         "description": "",
+         "head": { },
+         "summary": ""
+      },
+      "/images/namespaces": {
+         "delete": { },
+         "description": "",
+         "get": { },
+         "parameters": [ ],
+         "summary": ""
+      },
+      "/images/namespaces/{namespace}": {
+         "delete": "",
+         "description": "",
+         "get": "",
+         "parameters": [ ],
+         "put": "",
+         "summary": ""
+      },
+      "/images/namespaces/{namespace}/repositories": {
+         "delete": { },
+         "description": "",
+         "get": { },
+         "parameters": [ ],
+         "summary": ""
+      },
+      "/images/namespaces/{namespace}/repositories/{repository}": {
+         "delete": { },
+         "description": "",
+         "get": { },
+         "head": { },
+         "parameters": [ ],
+         "put": { },
+         "summary": ""
+      },
+      "/images/namespaces/{namespace}/repositories/{repository}/blobs": {
+         "description": "",
+         "get": { },
+         "parameters": [ ],
+         "summary": ""
+      },
+      "/images/namespaces/{namespace}/repositories/{repository}/blobs/{digest}": {
+         "delete": { },
+         "description": "",
+         "get": { },
+         "head": { },
+         "parameters": [ ],
+         "put": { },
+         "summary": ""
+      },
+      "/images/namespaces/{namespace}/repositories/{repository}/manifests": {
+         "description": "",
+         "get": { },
+         "parameters": [ ],
+         "summary": ""
+      },
+      "/images/namespaces/{namespace}/repositories/{repository}/manifests/{digest}": {
+         "delete": { },
+         "description": "",
+         "get": { },
+         "parameters": [ ],
+         "put": { },
+         "summary": ""
+      },
+      "/images/namespaces/{namespace}/repositories/{repository}/manifests/{digest}/config": {
+         "description": "",
+         "get": { },
+         "parameters": [ ],
+         "summary": ""
+      },
+      "/images/namespaces/{namespace}/repositories/{repository}/tags": {
+         "delete": { },
+         "description": "",
+         "get": { },
+         "parameters": [ ],
+         "summary": ""
+      },
+      "/images/namespaces/{namespace}/repositories/{repository}/tags/{tag}": {
+         "delete": { },
+         "description": "",
+         "get": { },
+         "parameters": [ ],
+         "put": { },
+         "summary": ""
+      },
+      "/v2": {
+         "description": "",
+         "get": { },
+         "parameters": [ ],
+         "summary": ""
+      },
+      "/v2/_catalog": {
+         "description": "",
+         "get": { },
+         "parameters": [ ],
+         "summary": ""
+      },
+      "/v2/{namespace}/{repository}/blobs/uploads": {
+         "description": "",
+         "parameters": [ ],
+         "post": { },
+         "summary": ""
+      },
+      "/v2/{namespace}/{repository}/blobs/uploads/{uuid}": {
+         "delete": { },
+         "description": "",
+         "get": { },
+         "parameters": [ ],
+         "patch": { },
+         "put": { },
+         "summary": ""
+      },
+      "/v2/{namespace}/{repository}/blobs/{digest}": {
+         "delete": { },
+         "description": "",
+         "get": { },
+         "parameters": [ ],
+         "summary": ""
+      },
+      "/v2/{namespace}/{repository}/manifests/{reference}": {
+         "delete": { },
+         "description": "",
+         "get": { },
+         "parameters": [ ],
+         "put": { },
+         "summary": ""
+      },
+      "/v2/{namespace}/{repository}/tags/list": {
+         "description": "",
+         "get": { },
+         "parameters": [ ],
+         "summary": ""
+      }
+   },
    "servers": [
       {
          "url": "http://localhost"
