@@ -1,8 +1,21 @@
-.PHONY: schemas
+.PHONY: schemas spec generate-openapi validate-openapi
 
-SPECDIR = spec
-SCHEMADIR = $(SPECDIR)/schemas
+SPEC_DIR = spec
+SCHEMA_DIR = $(SPEC_DIR)/schemas
+OPENAPI_DIR = $(SPEC_DIR)/openapi
+OPENAPI_FILE = $(OPENAPI_DIR)/openapi.json
 
-# Generate json-schemas
+# Generate json-schemas.
 schemas:
-	jsonnet -m $(SCHEMADIR) $(SPECDIR)/oci/oci-schemas.jsonnet
+	jsonnet -m $(SCHEMA_DIR) $(SPEC_DIR)/oci/oci-schemas.jsonnet
+
+# Generate and validate OpenAPI specification file.
+spec: generate-openapi validate-openapi
+
+# Generate OpenAPI Specification.
+generate-openapi:
+	jsonnet -m $(OPENAPI_DIR) $(OPENAPI_DIR)/openapi.jsonnet
+
+# Validate generated OpenAPI specification file.
+validate-openapi:
+	swagger-cli validate $(OPENAPI_FILE)
