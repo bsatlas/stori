@@ -17,138 +17,421 @@
    "openapi": "3.0.0",
    "paths": {
       "/images": {
-         "description": "",
-         "head": { },
-         "summary": ""
+         "head": {
+            "operationId": "images-base",
+            "responses": { },
+            "summary": "Check that the endpoint implements distribution API.",
+            "tags": [
+               "images"
+            ]
+         }
       },
       "/images/namespaces": {
-         "delete": { },
-         "description": "",
-         "get": { },
-         "parameters": [ ],
-         "summary": ""
+         "delete": {
+            "description": "This operation deletes all namespaces and repositories hosted on the registry. Use with caution as it is very destructive.",
+            "operationId": "get-namespaces",
+            "responses": { },
+            "summary": "Delete all namespaces in the registry.",
+            "tags": [
+               "images",
+               "namespaces"
+            ]
+         },
+         "get": {
+            "operationId": "get-namespaces",
+            "responses": { },
+            "summary": "Get all namespaces the client has access to.",
+            "tags": [
+               "images",
+               "namespaces"
+            ]
+         },
+         "parameters": [ ]
       },
       "/images/namespaces/{namespace}": {
-         "delete": "",
-         "description": "",
-         "get": "",
-         "parameters": [ ],
-         "put": "",
-         "summary": ""
+         "delete": {
+            "description": "This operation deletes a namespace from the registry as well as all repositories it contains.",
+            "operationId": "create-namespace",
+            "responses": { },
+            "summary": "Delete a namespace.",
+            "tags": [
+               "images",
+               "namespaces"
+            ]
+         },
+         "get": {
+            "operationId": "get-namespaces",
+            "responses": { },
+            "summary": "Get info about a specific namespace.",
+            "tags": [
+               "images",
+               "namespaces"
+            ]
+         },
+         "parameters": [
+            "namespace"
+         ],
+         "put": {
+            "description": "This operation creates an new namespace for storing image repositories.",
+            "operationId": "create-namespace",
+            "responses": { },
+            "summary": "Create a new namespace",
+            "tags": [
+               "images",
+               "namespaces"
+            ]
+         }
       },
       "/images/namespaces/{namespace}/repositories": {
          "delete": { },
-         "description": "",
          "get": { },
-         "parameters": [ ],
-         "summary": ""
+         "parameters": [
+            "namespace"
+         ]
       },
       "/images/namespaces/{namespace}/repositories/{repository}": {
          "delete": { },
-         "description": "",
          "get": { },
          "head": { },
-         "parameters": [ ],
-         "put": { },
-         "summary": ""
+         "parameters": [
+            "namespace",
+            "repository"
+         ],
+         "put": { }
       },
       "/images/namespaces/{namespace}/repositories/{repository}/blobs": {
-         "description": "",
          "get": { },
-         "parameters": [ ],
-         "summary": ""
+         "parameters": [
+            "namespace",
+            "repository"
+         ]
       },
       "/images/namespaces/{namespace}/repositories/{repository}/blobs/{digest}": {
          "delete": { },
-         "description": "",
          "get": { },
          "head": { },
-         "parameters": [ ],
-         "put": { },
-         "summary": ""
+         "parameters": [
+            "namespace",
+            "repository",
+            "blob"
+         ],
+         "put": { }
       },
       "/images/namespaces/{namespace}/repositories/{repository}/manifests": {
-         "description": "",
          "get": { },
-         "parameters": [ ],
-         "summary": ""
+         "parameters": [
+            "namespace",
+            "repository"
+         ]
       },
       "/images/namespaces/{namespace}/repositories/{repository}/manifests/{digest}": {
          "delete": { },
-         "description": "",
          "get": { },
-         "parameters": [ ],
-         "put": { },
-         "summary": ""
+         "parameters": [
+            "namespace",
+            "repository",
+            "digest"
+         ],
+         "put": { }
       },
       "/images/namespaces/{namespace}/repositories/{repository}/manifests/{digest}/config": {
-         "description": "",
          "get": { },
-         "parameters": [ ],
-         "summary": ""
+         "parameters": [
+            "namespace",
+            "repository",
+            "digest"
+         ]
       },
       "/images/namespaces/{namespace}/repositories/{repository}/tags": {
          "delete": { },
-         "description": "",
          "get": { },
-         "parameters": [ ],
-         "summary": ""
+         "parameters": [
+            "namespace",
+            "repository"
+         ]
       },
       "/images/namespaces/{namespace}/repositories/{repository}/tags/{tag}": {
          "delete": { },
-         "description": "",
          "get": { },
-         "parameters": [ ],
-         "put": { },
-         "summary": ""
+         "parameters": [
+            "namespace",
+            "repository",
+            "tag"
+         ],
+         "put": { }
       },
       "/v2": {
-         "description": "",
-         "get": { },
-         "parameters": [ ],
-         "summary": ""
+         "get": {
+            "description": "This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.",
+            "operationId": "oci-base",
+            "responses": { },
+            "summary": "Check that the endpoint implements distribution API.",
+            "tags": [
+               "OCI"
+            ]
+         }
       },
       "/v2/_catalog": {
-         "description": "",
-         "get": { },
-         "parameters": [ ],
-         "summary": ""
+         "get": {
+            "description": "List a set of available repositories in the local registry cluster. Does not provide any indication of what may be available upstream. Applications can only determine if a repository is available but not if it is not available.",
+            "operationId": "oci-catalog",
+            "responses": { },
+            "summary": "List a set of available repositories in the local registry cluster.",
+            "tags": [
+               "OCI"
+            ]
+         }
       },
       "/v2/{namespace}/{repository}/blobs/uploads": {
-         "description": "",
-         "parameters": [ ],
-         "post": { },
-         "summary": ""
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
+         ],
+         "post": {
+            "operationId": "oci-init-blob-upload",
+            "responses": { },
+            "summary": "Initiate a blob upload.",
+            "tags": [
+               "OCI"
+            ]
+         }
       },
-      "/v2/{namespace}/{repository}/blobs/uploads/{uuid}": {
-         "delete": { },
-         "description": "",
-         "get": { },
-         "parameters": [ ],
-         "patch": { },
-         "put": { },
-         "summary": ""
+      "/v2/{namespace}/{repository}/blobs/uploads/{id}": {
+         "delete": {
+            "operationId": "oci-delete-blob",
+            "responses": { },
+            "summary": "Delete a blob by digest.",
+            "tags": [
+               "OCI"
+            ]
+         },
+         "get": {
+            "operationId": "oci-status-blob-upload",
+            "responses": { },
+            "summary": "Check a blob's upload status.",
+            "tags": [
+               "OCI"
+            ]
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A unique id.",
+               "in": "path",
+               "name": "id",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
+         ],
+         "patch": {
+            "operationId": "oci-upload-blob-chunk",
+            "responses": { },
+            "summary": "Upload a blob chunk to the registry.",
+            "tags": [
+               "OCI"
+            ]
+         },
+         "put": {
+            "operationId": "oci-upload-blob-complete",
+            "responses": { },
+            "summary": "Notify registry that the chunked blob upload is complete.",
+            "tags": [
+               "OCI"
+            ]
+         }
       },
       "/v2/{namespace}/{repository}/blobs/{digest}": {
-         "delete": { },
-         "description": "",
-         "get": { },
-         "parameters": [ ],
-         "summary": ""
+         "delete": {
+            "operationId": "oci-delete-blob",
+            "responses": { },
+            "summary": "Delete a blob by digest.",
+            "tags": [
+               "OCI"
+            ]
+         },
+         "get": {
+            "operationId": "oci-get-blob",
+            "responses": { },
+            "summary": "Download a blob by digest.",
+            "tags": [
+               "OCI"
+            ]
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A content addressable identifier.",
+               "in": "path",
+               "name": "digest",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
+         ]
       },
       "/v2/{namespace}/{repository}/manifests/{reference}": {
-         "delete": { },
-         "description": "",
-         "get": { },
-         "parameters": [ ],
-         "put": { },
-         "summary": ""
+         "delete": {
+            "operationId": "oci-delete-manifest",
+            "responses": { },
+            "summary": "Delete a manifest from the repository.",
+            "tags": [
+               "OCI"
+            ]
+         },
+         "get": {
+            "operationId": "oci-get-manifest",
+            "responses": { },
+            "summary": "Get a manifest by name and reference.",
+            "tags": [
+               "OCI"
+            ]
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "Can either be a tag name or digest.",
+               "in": "path",
+               "name": "reference",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
+         ],
+         "put": {
+            "operationId": "oci-put-manifest",
+            "responses": { },
+            "summary": "Add a manifest to a repository.",
+            "tags": [
+               "OCI"
+            ]
+         }
       },
       "/v2/{namespace}/{repository}/tags/list": {
-         "description": "",
-         "get": { },
-         "parameters": [ ],
-         "summary": ""
+         "get": {
+            "operationId": "oci-tags-list",
+            "responses": { },
+            "summary": "Get all tags in a repository.",
+            "tags": [
+               "OCI"
+            ]
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
+         ]
       }
    },
    "servers": [

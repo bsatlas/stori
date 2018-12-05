@@ -22,43 +22,86 @@ local oci = {
   manifest:: '/v2/{namespace}/{repository}/manifests/{reference}',
   blob:: '/v2/{namespace}/{repository}/blobs/{digest}',
   upload:: '/v2/{namespace}/{repository}/blobs/uploads',
-  uploadId:: '/v2/{namespace}/{repository}/blobs/uploads/{uuid}',
+  uploadId:: '/v2/{namespace}/{repository}/blobs/uploads/{id}',
 };
+
+local params = {
+  namespace:: {
+    name: 'namespace',
+    'in': 'path',
+    description: 'A logical grouping of repositories.',
+    required: true,
+    deprecated: false,
+    allowEmptyValue: false,
+    schema: { type: 'string' },
+  },
+
+  repository:: {
+    name: 'repository',
+    'in': 'path',
+    description: 'A place to store an image.',
+    required: true,
+    deprecated: false,
+    allowEmptyValue: false,
+    schema: { type: 'string' },
+  },
+
+  reference:: {
+    name: 'reference',
+    'in': 'path',
+    description: 'Can either be a tag name or digest.',
+    required: true,
+    deprecated: false,
+    allowEmptyValue: false,
+    schema: { type: 'string' },
+  },
+
+  digest:: {
+    name: 'digest',
+    'in': 'path',
+    description: 'A content addressable identifier.',
+    required: true,
+    deprecated: false,
+    allowEmptyValue: false,
+    schema: { type: 'string' },
+  },
+
+  id:: {
+    name: 'id',
+    'in': 'path',
+    description: 'A unique id.',
+    required: true,
+    deprecated: false,
+    allowEmptyValue: false,
+    schema: { type: 'string' },
+  },
+};
+
 {
   [stori.base]: {
-    summary: "Stori's base path for images",
-    description: 'This minimal endpoint is used to get information about Stori.',
-    head: {},
+    head: ops.stori.base,
   },
 
   [stori.namespaces]: {
-    summary: '',
-    description: '',
-    get: {},
-    delete: {},
+    get: ops.stori.getNamespaces,
+    delete: ops.stori.deleteNamespaces,
     parameters: [],
   },
 
   [stori.namespace]: {
-    summary: '',
-    description: '',
-    get: '',
-    put: '',
-    delete: '',
+    get: ops.stori.getNamespace,
+    put: ops.stori.createNamespace,
+    delete: ops.stori.deleteNamespace,
     parameters: ['namespace'],
   },
 
   [stori.repositories]: {
-    summary: '',
-    description: '',
     get: {},
     delete: {},
     parameters: ['namespace'],
   },
 
   [stori.repository]: {
-    summary: '',
-    description: '',
     get: {},
     delete: {},
     put: {},
@@ -67,15 +110,11 @@ local oci = {
   },
 
   [stori.manifests]: {
-    summary: '',
-    description: '',
     get: {},
     parameters: ['namespace', 'repository'],
   },
 
   [stori.manifest]: {
-    summary: '',
-    description: '',
     get: {},
     delete: {},
     put: {},
@@ -83,23 +122,17 @@ local oci = {
   },
 
   [stori.config]: {
-    summary: '',
-    description: '',
     get: {},
     parameters: ['namespace', 'repository', 'digest'],
   },
 
   [stori.tags]: {
-    summary: '',
-    description: '',
     get: {},
     delete: {},
     parameters: ['namespace', 'repository'],
   },
 
   [stori.tag]: {
-    summary: '',
-    description: '',
     get: {},
     delete: {},
     put: {},
@@ -107,15 +140,11 @@ local oci = {
   },
 
   [stori.blobs]: {
-    summary: '',
-    description: '',
     get: {},
     parameters: ['namespace', 'repository'],
   },
 
   [stori.blob]: {
-    summary: '',
-    description: '',
     get: {},
     put: {},
     delete: {},
@@ -125,54 +154,59 @@ local oci = {
 
   // OCI paths.
   [oci.base]: {
-    summary: 'OCI distribution check.',
-    description: 'This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.',
     get: ops.oci.base,
   },
 
   [oci.tags]: {
-    summary: 'Retrieve information about tags.',
     get: ops.oci.tags,
-    parameters: ['namespace', 'repository'],
+    parameters: [
+      params.namespace,
+      params.repository,
+    ],
   },
 
   [oci.catalog]: {
-    summary: 'List all repositories.',
-    description: 'List a set of available repositories in the local registry cluster. Does not provide any indication of what may be available upstream. Applications can only determine if a repository is available but not if it is not available.',
     get: ops.oci.catalog,
   },
 
   [oci.manifest]: {
-    summary: '',
-    description: '',
     get: ops.oci.getManifest,
     put: ops.oci.putManifest,
     delete: ops.oci.deleteManifest,
-    parameters: ['namespace', 'repository', 'reference'],
+    parameters: [
+      params.namespace,
+      params.repository,
+      params.reference,
+    ],
   },
 
   [oci.blob]: {
-    summary: '',
-    description: '',
     get: ops.oci.getBlob,
     delete: ops.oci.deleteBlob,
-    parameters: ['namespace', 'repository', 'digest'],
+    parameters: [
+      params.namespace,
+      params.repository,
+      params.digest,
+    ],
   },
 
   [oci.upload]: {
-    summary: '',
-    description: '',
     post: ops.oci.initBlobUploadOrMount,
-    parameters: ['namespace', 'repository'],
+    parameters: [
+      params.namespace,
+      params.repository,
+    ],
   },
 
   [oci.uploadId]: {
-    summary: '',
-    description: '',
     get: ops.oci.statusBlobUpload,
     patch: ops.oci.uploadBlobChunk,
     put: ops.oci.uploadBlobComplete,
     delete: ops.oci.deleteBlob,
-    parameters: ['namespace', 'repository', 'uuid'],
+    parameters: [
+      params.namespace,
+      params.repository,
+      params.id,
+    ],
   },
 }
