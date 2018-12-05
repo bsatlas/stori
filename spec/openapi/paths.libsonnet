@@ -1,3 +1,5 @@
+local ops = import 'operations.libsonnet';
+
 local stori = {
   base:: '/images',
   namespaces:: '/images/namespaces',
@@ -24,8 +26,8 @@ local oci = {
 };
 {
   [stori.base]: {
-    summary: '',
-    description: '',
+    summary: "Stori's base path for images",
+    description: 'This minimal endpoint is used to get information about Stori.',
     head: {},
   },
 
@@ -43,7 +45,7 @@ local oci = {
     get: '',
     put: '',
     delete: '',
-    parameters: [],
+    parameters: ['namespace'],
   },
 
   [stori.repositories]: {
@@ -51,7 +53,7 @@ local oci = {
     description: '',
     get: {},
     delete: {},
-    parameters: [],
+    parameters: ['namespace'],
   },
 
   [stori.repository]: {
@@ -61,14 +63,14 @@ local oci = {
     delete: {},
     put: {},
     head: {},
-    parameters: [],
+    parameters: ['namespace', 'repository'],
   },
 
   [stori.manifests]: {
     summary: '',
     description: '',
     get: {},
-    parameters: [],
+    parameters: ['namespace', 'repository'],
   },
 
   [stori.manifest]: {
@@ -77,14 +79,14 @@ local oci = {
     get: {},
     delete: {},
     put: {},
-    parameters: [],
+    parameters: ['namespace', 'repository', 'digest'],
   },
 
   [stori.config]: {
     summary: '',
     description: '',
     get: {},
-    parameters: [],
+    parameters: ['namespace', 'repository', 'digest'],
   },
 
   [stori.tags]: {
@@ -92,7 +94,7 @@ local oci = {
     description: '',
     get: {},
     delete: {},
-    parameters: [],
+    parameters: ['namespace', 'repository'],
   },
 
   [stori.tag]: {
@@ -101,14 +103,14 @@ local oci = {
     get: {},
     delete: {},
     put: {},
-    parameters: [],
+    parameters: ['namespace', 'repository', 'tag'],
   },
 
   [stori.blobs]: {
     summary: '',
     description: '',
     get: {},
-    parameters: [],
+    parameters: ['namespace', 'repository'],
   },
 
   [stori.blob]: {
@@ -118,62 +120,59 @@ local oci = {
     put: {},
     delete: {},
     head: {},
-    parameters: [],
+    parameters: ['namespace', 'repository', 'blob'],
   },
 
   // OCI paths.
   [oci.base]: {
-    summary: '',
-    description: '',
-    get: {},
-    parameters: [],
+    summary: 'OCI distribution check.',
+    description: 'This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.',
+    get: ops.oci.base,
   },
 
   [oci.tags]: {
-    summary: '',
-    description: '',
-    get: {},
-    parameters: [],
+    summary: 'Retrieve information about tags.',
+    get: ops.oci.tags,
+    parameters: ['namespace', 'repository'],
   },
 
   [oci.catalog]: {
-    summary: '',
-    description: '',
-    get: {},
-    parameters: [],
+    summary: 'List all repositories.',
+    description: 'List a set of available repositories in the local registry cluster. Does not provide any indication of what may be available upstream. Applications can only determine if a repository is available but not if it is not available.',
+    get: ops.oci.catalog,
   },
 
   [oci.manifest]: {
     summary: '',
     description: '',
-    get: {},
-    put: {},
-    delete: {},
-    parameters: [],
+    get: ops.oci.getManifest,
+    put: ops.oci.putManifest,
+    delete: ops.oci.deleteManifest,
+    parameters: ['namespace', 'repository', 'reference'],
   },
 
   [oci.blob]: {
     summary: '',
     description: '',
-    get: {},
-    delete: {},
-    parameters: [],
+    get: ops.oci.getBlob,
+    delete: ops.oci.deleteBlob,
+    parameters: ['namespace', 'repository', 'digest'],
   },
 
   [oci.upload]: {
     summary: '',
     description: '',
-    post: {},
-    parameters: [],
+    post: ops.oci.initBlobUploadOrMount,
+    parameters: ['namespace', 'repository'],
   },
 
   [oci.uploadId]: {
     summary: '',
     description: '',
-    get: {},
-    patch: {},
-    put: {},
-    delete: {},
-    parameters: [],
+    get: ops.oci.statusBlobUpload,
+    patch: ops.oci.uploadBlobChunk,
+    put: ops.oci.uploadBlobComplete,
+    delete: ops.oci.deleteBlob,
+    parameters: ['namespace', 'repository', 'uuid'],
   },
 }
