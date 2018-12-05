@@ -45,6 +45,13 @@
       responses: {},
     },
 
+    getRepositories:: {
+      tags: ['images', 'repositories'],
+      summary: 'Get info about a specific repository.',
+      operationId: 'get-repositories',
+      responses: {},
+    },
+
 
   },
 

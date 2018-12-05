@@ -84,7 +84,15 @@
       },
       "/images/namespaces/{namespace}/repositories": {
          "delete": { },
-         "get": { },
+         "get": {
+            "operationId": "get-repositories",
+            "responses": { },
+            "summary": "Get info about a specific repository.",
+            "tags": [
+               "images",
+               "repositories"
+            ]
+         },
          "parameters": [
             "namespace"
          ]

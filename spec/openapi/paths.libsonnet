@@ -96,7 +96,7 @@ local params = {
   },
 
   [stori.repositories]: {
-    get: {},
+    get: ops.stori.getRepositories,
     delete: {},
     parameters: ['namespace'],
   },
