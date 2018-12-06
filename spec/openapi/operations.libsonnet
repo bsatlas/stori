@@ -2,7 +2,7 @@
   stori:: {
     base:: {
       tags: ['images'],
-      summary: 'Check that the endpoint implements distribution API.',
+      summary: 'Verify that the endpoint implements the Stori API Specification.',
       operationId: 'images-base',
       responses: {},
     },
