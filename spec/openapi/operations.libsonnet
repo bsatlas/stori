@@ -52,6 +52,12 @@
       responses: {},
     },
 
+    deleteRepositories:: {
+      tags: ['images', 'repositories'],
+      summary: 'Delete all repositories in a namespace.',
+      operationId: 'delete-repositories',
+      responses: {},
+    },
 
   },
 

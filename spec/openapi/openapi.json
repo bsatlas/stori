@@ -83,7 +83,15 @@
          }
       },
       "/images/namespaces/{namespace}/repositories": {
-         "delete": { },
+         "delete": {
+            "operationId": "delete-repositories",
+            "responses": { },
+            "summary": "Delete all repositories in a namespace.",
+            "tags": [
+               "images",
+               "repositories"
+            ]
+         },
          "get": {
             "operationId": "get-repositories",
             "responses": { },
