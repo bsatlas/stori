@@ -1,5 +1,11 @@
 local errors = {
 
+  local unauthorized = {
+    '401': {
+      description: 'Unauthorized',
+    },
+  },
+
   local requestedRangeNotSatisfiable = {
     '416': {
       description: 'Requested Range Not Satisfiable',
@@ -17,6 +23,9 @@ local errors = {
       description: 'Created',
     },
   },
+
+  requestedRangeNotSatisfiable: requestRangeNotSatisfiable,
+  unauthorized: unauthorized,
 
 };
 
