@@ -99,6 +99,14 @@
       summary: 'Get an image manifest',
       operationId: 'get-manifest',
       responses: {},
+    },
+
+    deleteManifest:: {
+      tags: ['images', 'manifests'],
+      summary: 'Delete an image manifest.',
+      operationId: 'delete-manifest',
+      responses: {},
+    },
   },
 
   oci:: {
