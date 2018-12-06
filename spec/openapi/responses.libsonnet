@@ -6,6 +6,12 @@ local errors = {
     },
   },
 
+  local forbidden = {
+    '403': {
+      description: 'Forbidden',
+    },
+  },
+
   local notFound = {
     '404': {
       description: 'Not Found',
@@ -37,9 +43,11 @@ local errors = {
   },
 
   unauthorized: unauthorized,
+  forbidden: forbidden,
   notFound: notFound,
   requestedRangeNotSatisfiable: requestRangeNotSatisfiable,
   tooManyRequests: tooManyRequests,
+
 
 };
 
