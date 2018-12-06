@@ -160,7 +160,7 @@
     getBlob:: {
       tags: ['images', 'blobs'],
       summary: 'Download a blob from a repository.',
-      operationId: 'create-tag',
+      operationId: 'get-blob',
       responses: {},
     },
 
