@@ -66,8 +66,22 @@ local common = {
     },
   },
 
+  local noContent = {
+    '204': {
+      description: 'No Content',
+    },
+  },
+
+  local temporaryRedirect = {
+    '307': {
+      description: 'Temporary Redirect',
+    },
+  },
+
   accepted: accepted,
   created: created,
+  noContent: noContent,
+  temporaryRedirect: temporaryRedirect,
 };
 
 {
