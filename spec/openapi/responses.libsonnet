@@ -1,3 +1,5 @@
+local mediaTypes = import 'media-types.libsonnet';
+
 local errorSchema = {
   type: 'object',
   properties: {
@@ -20,24 +22,44 @@ local errors = {
   local badRequest = {
     '400': {
       description: 'Bad Request',
+      content: {
+        [mediaTypes.json]: {
+          schema: errorSchema,
+        },
+      },
     },
   },
 
   local unauthorized = {
     '401': {
       description: 'Unauthorized',
+      content: {
+        [mediaTypes.json]: {
+          schema: errorSchema,
+        },
+      },
     },
   },
 
   local methodNotAllowed = {
     '405': {
       descrption: 'Method Not Allowed',
+      content: {
+        [mediaTypes.json]: {
+          schema: errorSchema,
+        },
+      },
     },
   },
 
   local forbidden = {
     '403': {
       description: 'Forbidden',
+      content: {
+        [mediaTypes.json]: {
+          schema: errorSchema,
+        },
+      },
     },
   },
 
@@ -45,18 +67,33 @@ local errors = {
   local notFound = {
     '404': {
       description: 'Not Found',
+      content: {
+        [mediaTypes.json]: {
+          schema: errorSchema,
+        },
+      },
     },
   },
 
   local requestedRangeNotSatisfiable = {
     '416': {
       description: 'Requested Range Not Satisfiable',
+      content: {
+        [mediaTypes.json]: {
+          schema: errorSchema,
+        },
+      },
     },
   },
 
   local tooManyRequests = {
     '429': {
       description: 'Too Many Requests',
+      content: {
+        [mediaTypes.json]: {
+          schema: errorSchema,
+        },
+      },
     },
   },
 
