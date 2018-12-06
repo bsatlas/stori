@@ -128,6 +128,14 @@
       operationId: 'get-tags',
       responses: {},
     },
+
+    deleteTags:: {
+      tags: ['images', 'manifests'],
+      summary: 'Delete all tags in a repository',
+      operationId: 'delete-tags',
+      responses: {},
+    },
+
   },
 
   oci:: {
