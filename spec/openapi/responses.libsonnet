@@ -18,6 +18,12 @@ local errors = {
     },
   },
 
+  local tooManyRequests = {
+    '429': {
+      description: 'Too Many Requests',
+    },
+  },
+
   local accepted = {
     '202': {
       description: 'Accepted',
@@ -33,6 +39,7 @@ local errors = {
   unauthorized: unauthorized,
   notFound: notFound,
   requestedRangeNotSatisfiable: requestRangeNotSatisfiable,
+  tooManyRequests: tooManyRequests,
 
 };
 
