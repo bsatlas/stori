@@ -171,6 +171,13 @@
       responses: {},
     },
 
+    uploadBlob:: {
+      tags: ['images', 'blobs'],
+      summary: 'Upload a blob to a repository.',
+      operationId: 'upload-blob',
+      responses: {},
+    },
+
   },
 
   oci:: {
