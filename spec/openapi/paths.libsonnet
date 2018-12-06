@@ -127,8 +127,8 @@ local params = {
   },
 
   [stori.tags]: {
-    get: {},
     delete: {},
+    get: ops.stori.getTags,
     parameters: ['namespace', 'repository'],
   },
 

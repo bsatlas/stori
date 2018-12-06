@@ -122,6 +122,12 @@
       responses: {},
     },
 
+    getTags:: {
+      tags: ['images', 'manifests'],
+      summary: 'Get all tags in a repository',
+      operationId: 'get-tags',
+      responses: {},
+    },
   },
 
   oci:: {
