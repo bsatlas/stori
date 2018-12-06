@@ -148,7 +148,7 @@ local params = {
     get: ops.stori.getBlob,
     put: ops.stori.uploadBlob,
     delete: ops.stori.deleteBlob,
-    head: {},
+    head: ops.stori.verifyBlob,
     parameters: ['namespace', 'repository', 'blob'],
   },
 

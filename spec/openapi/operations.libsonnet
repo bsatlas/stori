@@ -185,6 +185,13 @@
       responses: {},
     },
 
+    verifyBlob:: {
+      tags: ['images', 'blobs'],
+      summary: 'Verify that a blob exists in a repository.',
+      operationId: 'verify-blob',
+      responses: {},
+    },
+
   },
 
   oci:: {
