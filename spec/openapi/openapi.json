@@ -45,8 +45,7 @@
                "images",
                "namespaces"
             ]
-         },
-         "parameters": [ ]
+         }
       },
       "/images/namespaces/{namespace}": {
          "delete": {
