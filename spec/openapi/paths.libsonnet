@@ -122,7 +122,7 @@ local params = {
   },
 
   [stori.config]: {
-    get: {},
+    get: ops.stori.getManifestConfig,
     parameters: ['namespace', 'repository', 'digest'],
   },
 

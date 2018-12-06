@@ -115,6 +115,13 @@
       responses: {},
     },
 
+    getManifestConfig:: {
+      tags: ['images', 'manifests'],
+      summary: "Get an image manifest's config info.",
+      operationId: 'get-manifest-config',
+      responses: {},
+    },
+
   },
 
   oci:: {
