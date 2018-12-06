@@ -1,10 +1,13 @@
+local resp = import 'responses.libsonnet';
 {
   stori:: {
     base:: {
       tags: ['Images'],
       summary: 'Verify that the endpoint implements the Stori API Specification.',
       operationId: 'images-base',
-      responses: {},
+      responses:
+        resp.errors.unauthorized
+        + resp.errors.notFound,
     },
 
     getNamespaces:: {
