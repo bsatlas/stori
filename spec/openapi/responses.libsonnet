@@ -1,5 +1,11 @@
 local errors = {
 
+  local badRequest = {
+    '400': {
+      description: 'Bad Request',
+    },
+  },
+
   local unauthorized = {
     '401': {
       description: 'Unauthorized',
@@ -42,6 +48,7 @@ local errors = {
     },
   },
 
+  badRequest: badRequest,
   unauthorized: unauthorized,
   forbidden: forbidden,
   notFound: notFound,
