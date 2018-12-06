@@ -94,6 +94,11 @@
       responses: {},
     },
 
+    getManifest:: {
+      tags: ['images', 'manifests'],
+      summary: 'Get an image manifest',
+      operationId: 'get-manifest',
+      responses: {},
   },
 
   oci:: {

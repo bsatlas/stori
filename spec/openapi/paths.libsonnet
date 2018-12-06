@@ -115,7 +115,7 @@ local params = {
   },
 
   [stori.manifest]: {
-    get: {},
+    get: ops.stori.getManifest,
     delete: {},
     put: {},
     parameters: ['namespace', 'repository', 'digest'],
