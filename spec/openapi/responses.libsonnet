@@ -6,6 +6,12 @@ local errors = {
     },
   },
 
+  local notFound = {
+    '404': {
+      description: 'Not Found',
+    },
+  },
+
   local requestedRangeNotSatisfiable = {
     '416': {
       description: 'Requested Range Not Satisfiable',
@@ -24,8 +30,9 @@ local errors = {
     },
   },
 
-  requestedRangeNotSatisfiable: requestRangeNotSatisfiable,
   unauthorized: unauthorized,
+  notFound: notFound,
+  requestedRangeNotSatisfiable: requestRangeNotSatisfiable,
 
 };
 
