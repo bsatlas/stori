@@ -178,6 +178,13 @@
       responses: {},
     },
 
+    deleteBlob:: {
+      tags: ['images', 'blobs'],
+      summary: 'Delete a blob from a repository.',
+      operationId: 'delete-blob',
+      responses: {},
+    },
+
   },
 
   oci:: {
