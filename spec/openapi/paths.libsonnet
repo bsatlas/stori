@@ -95,20 +95,23 @@ local params = {
   [stori.namespaces]: {
     get: ops.stori.getNamespaces,
     delete: ops.stori.deleteNamespaces,
-    parameters: [],
   },
 
   [stori.namespace]: {
     get: ops.stori.getNamespace,
     put: ops.stori.createNamespace,
     delete: ops.stori.deleteNamespace,
-    parameters: ['namespace'],
+    parameters: [
+      params.namespace,
+    ],
   },
 
   [stori.repositories]: {
     get: ops.stori.getRepositories,
     delete: ops.stori.deleteRepositories,
-    parameters: ['namespace'],
+    parameters: [
+      params.namespace,
+    ],
   },
 
   [stori.repository]: {
@@ -116,42 +119,66 @@ local params = {
     delete: ops.stori.deleteRepository,
     put: ops.stori.createRepository,
     head: ops.stori.verifyRepository,
-    parameters: ['namespace', 'repository'],
+    parameters: [
+      params.namespace,
+      params.repository,
+    ],
   },
 
   [stori.manifests]: {
     get: ops.stori.getManifests,
-    parameters: ['namespace', 'repository'],
+    parameters: [
+      params.namespace,
+      params.repository,
+    ],
   },
 
   [stori.manifest]: {
     get: ops.stori.getManifest,
     delete: ops.stori.deleteManifest,
     put: ops.stori.setManifest,
-    parameters: ['namespace', 'repository', 'digest'],
+    parameters: [
+      params.namespace,
+      params.repository,
+      params.digest,
+    ],
   },
 
   [stori.config]: {
     get: ops.stori.getManifestConfig,
-    parameters: ['namespace', 'repository', 'digest'],
+    parameters: [
+      params.namespace,
+      params.repository,
+      params.digest,
+    ],
   },
 
   [stori.tags]: {
     get: ops.stori.getTags,
     delete: ops.stori.deleteTags,
-    parameters: ['namespace', 'repository'],
+    parameters: [
+      params.namespace,
+      params.repository,
+    ],
   },
 
   [stori.tag]: {
     get: ops.stori.getTag,
     delete: ops.stori.deleteTag,
     put: ops.stori.createTag,
-    parameters: ['namespace', 'repository', 'tag'],
+    parameters: [
+      params.namespace,
+      params.repository,
+      params.tag,
+    ],
   },
 
   [stori.blobs]: {
     get: ops.stori.getBlobs,
-    parameters: ['namespace', 'repository'],
+    parameters: [
+      params.namespace,
+      params.repository,
+    ],
   },
 
   [stori.blob]: {
@@ -159,7 +186,11 @@ local params = {
     put: ops.stori.uploadBlob,
     delete: ops.stori.deleteBlob,
     head: ops.stori.verifyBlob,
-    parameters: ['namespace', 'repository', 'blob'],
+    parameters: [
+      params.namespace,
+      params.repository,
+      params.digest,
+    ],
   },
 
   // OCI paths.
