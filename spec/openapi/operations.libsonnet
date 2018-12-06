@@ -136,6 +136,13 @@
       responses: {},
     },
 
+    getTag:: {
+      tags: ['images', 'manifests'],
+      summary: 'Get a repository tag.',
+      operationId: 'get-tag',
+      responses: {},
+    },
+
   },
 
   oci:: {
