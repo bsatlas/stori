@@ -54,6 +54,7 @@ local errors = {
 };
 
 local common = {
+
   local accepted = {
     '202': {
       description: 'Accepted',
@@ -72,6 +73,12 @@ local common = {
     },
   },
 
+  local partialContent = {
+    '206': {
+      description: 'Partial Content',
+    },
+  },
+
   local temporaryRedirect = {
     '307': {
       description: 'Temporary Redirect',
@@ -81,6 +88,7 @@ local common = {
   accepted: accepted,
   created: created,
   noContent: noContent,
+  partialContent: partialContent,
   temporaryRedirect: temporaryRedirect,
 };
 
