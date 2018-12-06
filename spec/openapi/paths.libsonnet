@@ -110,7 +110,7 @@ local params = {
   },
 
   [stori.manifests]: {
-    get: ops.stori.getManifests
+    get: ops.stori.getManifests,
     parameters: ['namespace', 'repository'],
   },
 
