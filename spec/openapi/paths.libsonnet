@@ -140,7 +140,7 @@ local params = {
   },
 
   [stori.blobs]: {
-    get: {},
+    get: ops.stori.getBlobs,
     parameters: ['namespace', 'repository'],
   },
 

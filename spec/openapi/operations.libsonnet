@@ -157,6 +157,13 @@
       responses: {},
     },
 
+    getBlobs:: {
+      tags: ['images', 'blobs'],
+      summary: 'Get a list of all blobs in a repository.',
+      operationId: 'get-blobs',
+      responses: {},
+    },
+
     getBlob:: {
       tags: ['images', 'blobs'],
       summary: 'Download a blob from a repository.',
