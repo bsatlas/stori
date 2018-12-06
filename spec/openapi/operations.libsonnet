@@ -107,6 +107,14 @@
       operationId: 'delete-manifest',
       responses: {},
     },
+
+    setManifest:: {
+      tags: ['images', 'manifests'],
+      summary: 'Mark an uploaded blob as an image manifest.',
+      operationId: 'set-manifest',
+      responses: {},
+    },
+
   },
 
   oci:: {
