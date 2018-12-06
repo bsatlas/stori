@@ -143,6 +143,13 @@
       responses: {},
     },
 
+    deleteTag:: {
+      tags: ['images', 'manifests'],
+      summary: 'Delete a repository tag.',
+      operationId: 'delete-tag',
+      responses: {},
+    },
+
   },
 
   oci:: {
