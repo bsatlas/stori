@@ -105,7 +105,7 @@ local params = {
     get: ops.stori.getRepository,
     delete: ops.stori.deleteRepository,
     put: ops.stori.createRepository,
-    head: ops.stori.headRepository,
+    head: ops.stori.verifyRepository,
     parameters: ['namespace', 'repository'],
   },
 

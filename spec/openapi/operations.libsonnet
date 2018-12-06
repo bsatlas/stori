@@ -80,10 +80,10 @@
       responses: {},
     },
 
-    headRepository:: {
+    verifyRepository:: {
       tags: ['images', 'repositories'],
       summary: 'Check if a specific repository exists.',
-      operationId: 'head-repository',
+      operationId: 'verify-repository',
       responses: {},
     },
 
