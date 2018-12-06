@@ -20,7 +20,7 @@
          "head": {
             "operationId": "images-base",
             "responses": { },
-            "summary": "Check that the endpoint implements distribution API.",
+            "summary": "Verify that the endpoint implements the Stori API Specification.",
             "tags": [
                "images"
             ]
