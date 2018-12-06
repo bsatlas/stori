@@ -1,21 +1,23 @@
-local errorCodes = {
-  requestedRangeNotSatisfiable: {
+local errors = {
+
+  local requestedRangeNotSatisfiable = {
     '416': {
       description: 'Requested Range Not Satisfiable',
     },
   },
 
-  accepted: {
+  local accepted = {
     '202': {
       description: 'Accepted',
     },
   },
-};
 
-local created = {
-  '201': {
-    description: 'Created',
+  local created = {
+    '201': {
+      description: 'Created',
+    },
   },
+
 };
 
 {
