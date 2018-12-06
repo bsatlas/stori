@@ -1,3 +1,20 @@
+local errorSchema = {
+  type: 'object',
+  properties: {
+    errors: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          code: { type: 'string' },
+          message: { type: 'string' },
+          detail: { type: 'string' },
+        },
+      },
+    },
+  },
+};
+
 local errors = {
 
   local badRequest = {
@@ -49,7 +66,7 @@ local errors = {
   forbidden: forbidden,
   methodNotAllowed: methodNotAllowed,
   notFound: notFound,
-  requestedRangeNotSatisfiable: requestRangeNotSatisfiable,
+  requestedRangeNotSatisfiable: requestedRangeNotSatisfiable,
   tooManyRequests: tooManyRequests,
 };
 
@@ -93,5 +110,6 @@ local common = {
 };
 
 {
-  errorCodes: errorCodes,
+  errors: errors,
+  common: common,
 }
