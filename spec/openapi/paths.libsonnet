@@ -66,6 +66,16 @@ local params = {
     schema: { type: 'string' },
   },
 
+  tag:: {
+    name: 'tag',
+    'in': 'path',
+    description: 'An image tag.',
+    required: true,
+    deprecated: false,
+    allowEmptyValue: false,
+    schema: { type: 'string' },
+  },
+
   id:: {
     name: 'id',
     'in': 'path',
