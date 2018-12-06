@@ -12,17 +12,18 @@ local errors = {
     },
   },
 
+  local methodNotAllowed = {
+    '405': {
+      descrption: 'Method Not Allowed',
+    },
+  },
+
   local forbidden = {
     '403': {
       description: 'Forbidden',
     },
   },
 
-  local methodNotAllowed = {
-    '405': {
-      descrption: 'Method Not Allowed',
-    },
-  },
 
   local notFound = {
     '404': {
@@ -42,6 +43,17 @@ local errors = {
     },
   },
 
+
+  badRequest: badRequest,
+  unauthorized: unauthorized,
+  forbidden: forbidden,
+  methodNotAllowed: methodNotAllowed,
+  notFound: notFound,
+  requestedRangeNotSatisfiable: requestRangeNotSatisfiable,
+  tooManyRequests: tooManyRequests,
+};
+
+local common = {
   local accepted = {
     '202': {
       description: 'Accepted',
@@ -54,15 +66,8 @@ local errors = {
     },
   },
 
-  badRequest: badRequest,
-  unauthorized: unauthorized,
-  forbidden: forbidden,
-  methodNotAllowed: methodNotAllowed,
-  notFound: notFound,
-  requestedRangeNotSatisfiable: requestRangeNotSatisfiable,
-  tooManyRequests: tooManyRequests,
-
-
+  accepted: accepted,
+  created: created,
 };
 
 {
