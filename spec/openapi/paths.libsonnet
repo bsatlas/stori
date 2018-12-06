@@ -145,7 +145,7 @@ local params = {
   },
 
   [stori.blob]: {
-    get: {},
+    get: ops.stori.getBlob,
     put: {},
     delete: {},
     head: {},

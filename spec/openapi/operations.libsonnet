@@ -157,6 +157,13 @@
       responses: {},
     },
 
+    getBlob:: {
+      tags: ['images', 'blobs'],
+      summary: 'Download a blob from a repository.',
+      operationId: 'create-tag',
+      responses: {},
+    },
+
   },
 
   oci:: {
