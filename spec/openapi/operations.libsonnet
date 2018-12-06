@@ -150,6 +150,13 @@
       responses: {},
     },
 
+    createTag:: {
+      tags: ['images', 'manifests'],
+      summary: 'Create a new repository tag.',
+      operationId: 'create-tag',
+      responses: {},
+    },
+
   },
 
   oci:: {
