@@ -1,21 +1,21 @@
 {
   stori:: {
     base:: {
-      tags: ['images'],
+      tags: ['Images'],
       summary: 'Verify that the endpoint implements the Stori API Specification.',
       operationId: 'images-base',
       responses: {},
     },
 
     getNamespaces:: {
-      tags: ['images', 'namespaces'],
+      tags: ['Images', 'Namespaces'],
       summary: 'Get all namespaces the client has access to.',
       operationId: 'get-namespaces',
       responses: {},
     },
 
     deleteNamespaces:: {
-      tags: ['images', 'namespaces'],
+      tags: ['Images', 'Namespaces'],
       summary: 'Delete all namespaces in the registry.',
       description: 'This operation deletes all namespaces and repositories hosted on the registry. Use with caution as it is very destructive.',
       operationId: 'get-namespaces',
@@ -23,14 +23,14 @@
     },
 
     getNamespace:: {
-      tags: ['images', 'namespaces'],
+      tags: ['Images', 'Namespaces'],
       summary: 'Get info about a specific namespace.',
       operationId: 'get-namespaces',
       responses: {},
     },
 
     createNamespace:: {
-      tags: ['images', 'namespaces'],
+      tags: ['Images', 'Namespaces'],
       summary: 'Create a new namespace',
       description: 'This operation creates an new namespace for storing image repositories.',
       operationId: 'create-namespace',
@@ -38,7 +38,7 @@
     },
 
     deleteNamespace:: {
-      tags: ['images', 'namespaces'],
+      tags: ['Images', 'Namespaces'],
       summary: 'Delete a namespace.',
       description: 'This operation deletes a namespace from the registry as well as all repositories it contains.',
       operationId: 'create-namespace',
@@ -46,147 +46,147 @@
     },
 
     getRepositories:: {
-      tags: ['images', 'repositories'],
+      tags: ['Images', 'Repositories'],
       summary: 'Get info about a specific repository.',
       operationId: 'get-repositories',
       responses: {},
     },
 
     deleteRepositories:: {
-      tags: ['images', 'repositories'],
+      tags: ['Images', 'Repositories'],
       summary: 'Delete all repositories in a namespace.',
       operationId: 'delete-repositories',
       responses: {},
     },
 
     getRepository:: {
-      tags: ['images', 'repositories'],
+      tags: ['Images', 'Repositories'],
       summary: 'Get info about a specific repository.',
       operationId: 'get-repository',
       responses: {},
     },
 
     deleteRepository:: {
-      tags: ['images', 'repositories'],
+      tags: ['Images', 'Repositories'],
       summary: 'Delete a repository from a namespace.',
       operationId: 'delete-repository',
       responses: {},
     },
 
     createRepository:: {
-      tags: ['images', 'repositories'],
+      tags: ['Images', 'Repositories'],
       summary: 'Create a new repository.',
       operationId: 'create-repository',
       responses: {},
     },
 
     verifyRepository:: {
-      tags: ['images', 'repositories'],
+      tags: ['Images', 'Repositories'],
       summary: 'Check if a specific repository exists.',
       operationId: 'verify-repository',
       responses: {},
     },
 
     getManifests:: {
-      tags: ['images', 'manifests'],
+      tags: ['Images', 'Manifests'],
       summary: 'Get all manifests in a repository.',
       operationId: 'get-manifests',
       responses: {},
     },
 
     getManifest:: {
-      tags: ['images', 'manifests'],
+      tags: ['Images', 'Manifests'],
       summary: 'Get an image manifest.',
       operationId: 'get-manifest',
       responses: {},
     },
 
     deleteManifest:: {
-      tags: ['images', 'manifests'],
+      tags: ['Images', 'Manifests'],
       summary: 'Delete an image manifest.',
       operationId: 'delete-manifest',
       responses: {},
     },
 
     setManifest:: {
-      tags: ['images', 'manifests'],
+      tags: ['Images', 'Manifests'],
       summary: 'Mark an uploaded blob as an image manifest.',
       operationId: 'set-manifest',
       responses: {},
     },
 
     getManifestConfig:: {
-      tags: ['images', 'manifests'],
+      tags: ['Images', 'Manifests'],
       summary: "Get an image manifest's config info.",
       operationId: 'get-manifest-config',
       responses: {},
     },
 
     getTags:: {
-      tags: ['images', 'manifests'],
+      tags: ['Images', 'Manifests'],
       summary: 'Get all tags in a repository',
       operationId: 'get-tags',
       responses: {},
     },
 
     deleteTags:: {
-      tags: ['images', 'manifests'],
+      tags: ['Images', 'Manifests'],
       summary: 'Delete all tags in a repository',
       operationId: 'delete-tags',
       responses: {},
     },
 
     getTag:: {
-      tags: ['images', 'manifests'],
+      tags: ['Images', 'Manifests'],
       summary: 'Get a repository tag.',
       operationId: 'get-tag',
       responses: {},
     },
 
     deleteTag:: {
-      tags: ['images', 'manifests'],
+      tags: ['Images', 'Manifests'],
       summary: 'Delete a repository tag.',
       operationId: 'delete-tag',
       responses: {},
     },
 
     createTag:: {
-      tags: ['images', 'manifests'],
+      tags: ['Images', 'Manifests'],
       summary: 'Create a new repository tag.',
       operationId: 'create-tag',
       responses: {},
     },
 
     getBlobs:: {
-      tags: ['images', 'blobs'],
-      summary: 'Get a list of all blobs in a repository.',
-      operationId: 'get-blobs',
+      tags: ['Images', 'Blobs'],
+      summary: 'Get a list of all Blobs in a repository.',
+      operationId: 'get-Blobs',
       responses: {},
     },
 
     getBlob:: {
-      tags: ['images', 'blobs'],
+      tags: ['Images', 'Blobs'],
       summary: 'Download a blob from a repository.',
       operationId: 'get-blob',
       responses: {},
     },
 
     uploadBlob:: {
-      tags: ['images', 'blobs'],
+      tags: ['Images', 'Blobs'],
       summary: 'Upload a blob to a repository.',
       operationId: 'upload-blob',
       responses: {},
     },
 
     deleteBlob:: {
-      tags: ['images', 'blobs'],
+      tags: ['Images', 'Blobs'],
       summary: 'Delete a blob from a repository.',
       operationId: 'delete-blob',
       responses: {},
     },
 
     verifyBlob:: {
-      tags: ['images', 'blobs'],
+      tags: ['Images', 'Blobs'],
       summary: 'Verify that a blob exists in a repository.',
       operationId: 'verify-blob',
       responses: {},
