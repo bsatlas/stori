@@ -59,6 +59,20 @@
       responses: {},
     },
 
+    getRepository:: {
+      tags: ['images', 'repositories'],
+      summary: 'Get info about a specific repository.',
+      operationId: 'get-repository',
+      responses: {},
+    },
+
+    deleteRepository:: {
+      tags: ['images', 'repositories'],
+      summary: 'Delete a repository from a namespace.',
+      operationId: 'delete-repository',
+      responses: {},
+    },
+
   },
 
   oci:: {
