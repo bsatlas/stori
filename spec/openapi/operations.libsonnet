@@ -80,6 +80,14 @@
       responses: {},
     },
 
+    headRepository:: {
+      tags: ['images', 'repositories'],
+      summary: 'Check if a specific repository exists.',
+      operationId: 'head-repository',
+      responses: {},
+
+    },
+
   },
 
   oci:: {
