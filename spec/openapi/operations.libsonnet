@@ -73,6 +73,13 @@
       responses: {},
     },
 
+    createRepository:: {
+      tags: ['images', 'repositories'],
+      summary: 'Create a new repository.',
+      operationId: 'create-repository',
+      responses: {},
+    },
+
   },
 
   oci:: {
