@@ -10,11 +10,11 @@ local errorCodes = {
       description: 'Accepted',
     },
   },
+};
 
-  created: {
-    '201': {
-      description: 'Created',
-    },
+local created = {
+  '201': {
+    description: 'Created',
   },
 };
 
