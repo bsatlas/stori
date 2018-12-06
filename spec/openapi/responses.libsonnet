@@ -18,6 +18,12 @@ local errors = {
     },
   },
 
+  local methodNotAllowed = {
+    '405': {
+      descrption: 'Method Not Allowed',
+    },
+  },
+
   local notFound = {
     '404': {
       description: 'Not Found',
@@ -51,6 +57,7 @@ local errors = {
   badRequest: badRequest,
   unauthorized: unauthorized,
   forbidden: forbidden,
+  methodNotAllowed: methodNotAllowed,
   notFound: notFound,
   requestedRangeNotSatisfiable: requestRangeNotSatisfiable,
   tooManyRequests: tooManyRequests,
