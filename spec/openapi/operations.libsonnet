@@ -85,7 +85,13 @@
       summary: 'Check if a specific repository exists.',
       operationId: 'head-repository',
       responses: {},
+    },
 
+    getManifests:: {
+      tags: ['images', 'manifests'],
+      summary: 'Get all manifests in a repository.',
+      operationId: 'get-manifests',
+      responses: {},
     },
 
   },
