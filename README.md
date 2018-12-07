@@ -14,6 +14,7 @@ Stori is an OCI-compliant image registry that aims to be the successor to the Do
 ## Philosophy
 The Stori project is meant to be a reference implementation of, and serve as a testbed for improvements to, the OCI Distribution Specification.
 Stori also solves another problem in the current state of container affairs, the need for an extendable, lightweight, and enterprise-level image registry.
+
 The standard open-source Docker registry provides a core API that only supports the distribution of images with minimal support for maintenance or administration.
 The Docker registry also lacks "enterprise" features like auditing, LDAP, and fine-grained access control policies.
 The Harbor project is a popular image registry hosted by the CNCF that is built on top of the Docker registry but has many limitations.
