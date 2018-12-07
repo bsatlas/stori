@@ -224,6 +224,7 @@ local params = {
 
   [oci.blob]: {
     get: ops.oci.getBlob,
+    head: ops.oci.checkBlob,
     delete: ops.oci.deleteBlob,
     parameters: [
       params.namespace,

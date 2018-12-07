@@ -263,6 +263,13 @@ local resp = import 'responses.libsonnet';
       responses: {},
     },
 
+    checkBlob:: {
+      tags: ['OCI'],
+      summary: 'Check for the existence of a blob by digest.',
+      operationId: 'oci-get-blob',
+      responses: {},
+    },
+
     deleteBlob:: {
       tags: ['OCI'],
       summary: 'Delete a blob by digest.',
