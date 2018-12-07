@@ -229,6 +229,14 @@ local resp = import 'responses.libsonnet';
       summary: 'Get a manifest by name and reference.',
       operationId: 'oci-get-manifest',
       responses: {},
+
+    checkManifest:: {
+      tags: ['OCI'],
+      summary: 'Check for the existence of a manifest by name and reference.',
+      operationId: 'oci-get-manifest',
+      responses:
+        resp.errors.notFound
+        + resp.errors.unauthorized,
     },
 
     putManifest:: {

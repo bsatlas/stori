@@ -212,6 +212,7 @@ local params = {
 
   [oci.manifest]: {
     get: ops.oci.getManifest,
+    head: ops.oci.checkManifest,
     put: ops.oci.putManifest,
     delete: ops.oci.deleteManifest,
     parameters: [
