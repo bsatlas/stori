@@ -204,7 +204,9 @@ local resp = import 'responses.libsonnet';
       summary: 'Check that the endpoint implements distribution API.',
       description: 'This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.',
       operationId: 'oci-base',
-      responses: {},
+      responses:
+        resp.errors.unauthorized
+        + resp.errors.notFound,
     },
 
     catalog:: {
