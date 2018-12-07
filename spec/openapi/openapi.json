@@ -19,10 +19,69 @@
       "/images": {
          "head": {
             "operationId": "images-base",
-            "responses": { },
+            "responses": {
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               }
+            },
             "summary": "Verify that the endpoint implements the Stori API Specification.",
             "tags": [
-               "images"
+               "Images"
             ]
          }
       },
@@ -33,8 +92,8 @@
             "responses": { },
             "summary": "Delete all namespaces in the registry.",
             "tags": [
-               "images",
-               "namespaces"
+               "Images",
+               "Namespaces"
             ]
          },
          "get": {
@@ -42,8 +101,8 @@
             "responses": { },
             "summary": "Get all namespaces the client has access to.",
             "tags": [
-               "images",
-               "namespaces"
+               "Images",
+               "Namespaces"
             ]
          }
       },
@@ -54,8 +113,8 @@
             "responses": { },
             "summary": "Delete a namespace.",
             "tags": [
-               "images",
-               "namespaces"
+               "Images",
+               "Namespaces"
             ]
          },
          "get": {
@@ -63,12 +122,22 @@
             "responses": { },
             "summary": "Get info about a specific namespace.",
             "tags": [
-               "images",
-               "namespaces"
+               "Images",
+               "Namespaces"
             ]
          },
          "parameters": [
-            "namespace"
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
          ],
          "put": {
             "description": "This operation creates an new namespace for storing image repositories.",
@@ -76,8 +145,8 @@
             "responses": { },
             "summary": "Create a new namespace",
             "tags": [
-               "images",
-               "namespaces"
+               "Images",
+               "Namespaces"
             ]
          }
       },
@@ -87,8 +156,8 @@
             "responses": { },
             "summary": "Delete all repositories in a namespace.",
             "tags": [
-               "images",
-               "repositories"
+               "Images",
+               "Repositories"
             ]
          },
          "get": {
@@ -96,90 +165,511 @@
             "responses": { },
             "summary": "Get info about a specific repository.",
             "tags": [
-               "images",
-               "repositories"
+               "Images",
+               "Repositories"
             ]
          },
          "parameters": [
-            "namespace"
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
          ]
       },
       "/images/namespaces/{namespace}/repositories/{repository}": {
-         "delete": { },
-         "get": { },
-         "head": { },
+         "delete": {
+            "operationId": "delete-repository",
+            "responses": { },
+            "summary": "Delete a repository from a namespace.",
+            "tags": [
+               "Images",
+               "Repositories"
+            ]
+         },
+         "get": {
+            "operationId": "get-repository",
+            "responses": { },
+            "summary": "Get info about a specific repository.",
+            "tags": [
+               "Images",
+               "Repositories"
+            ]
+         },
+         "head": {
+            "operationId": "verify-repository",
+            "responses": { },
+            "summary": "Check if a specific repository exists.",
+            "tags": [
+               "Images",
+               "Repositories"
+            ]
+         },
          "parameters": [
-            "namespace",
-            "repository"
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
          ],
-         "put": { }
+         "put": {
+            "operationId": "create-repository",
+            "responses": { },
+            "summary": "Create a new repository.",
+            "tags": [
+               "Images",
+               "Repositories"
+            ]
+         }
       },
       "/images/namespaces/{namespace}/repositories/{repository}/blobs": {
-         "get": { },
+         "get": {
+            "operationId": "get-Blobs",
+            "responses": { },
+            "summary": "Get a list of all Blobs in a repository.",
+            "tags": [
+               "Images",
+               "Blobs"
+            ]
+         },
          "parameters": [
-            "namespace",
-            "repository"
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
          ]
       },
       "/images/namespaces/{namespace}/repositories/{repository}/blobs/{digest}": {
-         "delete": { },
-         "get": { },
-         "head": { },
+         "delete": {
+            "operationId": "delete-blob",
+            "responses": { },
+            "summary": "Delete a blob from a repository.",
+            "tags": [
+               "Images",
+               "Blobs"
+            ]
+         },
+         "get": {
+            "operationId": "get-blob",
+            "responses": { },
+            "summary": "Download a blob from a repository.",
+            "tags": [
+               "Images",
+               "Blobs"
+            ]
+         },
+         "head": {
+            "operationId": "verify-blob",
+            "responses": { },
+            "summary": "Verify that a blob exists in a repository.",
+            "tags": [
+               "Images",
+               "Blobs"
+            ]
+         },
          "parameters": [
-            "namespace",
-            "repository",
-            "blob"
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A content addressable identifier.",
+               "in": "path",
+               "name": "digest",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
          ],
-         "put": { }
+         "put": {
+            "operationId": "upload-blob",
+            "responses": { },
+            "summary": "Upload a blob to a repository.",
+            "tags": [
+               "Images",
+               "Blobs"
+            ]
+         }
       },
       "/images/namespaces/{namespace}/repositories/{repository}/manifests": {
-         "get": { },
+         "get": {
+            "operationId": "get-manifests",
+            "responses": { },
+            "summary": "Get all manifests in a repository.",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         },
          "parameters": [
-            "namespace",
-            "repository"
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
          ]
       },
       "/images/namespaces/{namespace}/repositories/{repository}/manifests/{digest}": {
-         "delete": { },
-         "get": { },
+         "delete": {
+            "operationId": "delete-manifest",
+            "responses": { },
+            "summary": "Delete an image manifest.",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         },
+         "get": {
+            "operationId": "get-manifest",
+            "responses": { },
+            "summary": "Get an image manifest.",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         },
          "parameters": [
-            "namespace",
-            "repository",
-            "digest"
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A content addressable identifier.",
+               "in": "path",
+               "name": "digest",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
          ],
-         "put": { }
+         "put": {
+            "operationId": "set-manifest",
+            "responses": { },
+            "summary": "Mark an uploaded blob as an image manifest.",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         }
       },
       "/images/namespaces/{namespace}/repositories/{repository}/manifests/{digest}/config": {
-         "get": { },
+         "get": {
+            "operationId": "get-manifest-config",
+            "responses": { },
+            "summary": "Get an image manifest's config info.",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         },
          "parameters": [
-            "namespace",
-            "repository",
-            "digest"
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A content addressable identifier.",
+               "in": "path",
+               "name": "digest",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
          ]
       },
       "/images/namespaces/{namespace}/repositories/{repository}/tags": {
-         "delete": { },
-         "get": { },
+         "delete": {
+            "operationId": "delete-tags",
+            "responses": { },
+            "summary": "Delete all tags in a repository",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         },
+         "get": {
+            "operationId": "get-tags",
+            "responses": { },
+            "summary": "Get all tags in a repository",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         },
          "parameters": [
-            "namespace",
-            "repository"
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
          ]
       },
       "/images/namespaces/{namespace}/repositories/{repository}/tags/{tag}": {
-         "delete": { },
-         "get": { },
+         "delete": {
+            "operationId": "delete-tag",
+            "responses": { },
+            "summary": "Delete a repository tag.",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         },
+         "get": {
+            "operationId": "get-tag",
+            "responses": { },
+            "summary": "Get a repository tag.",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         },
          "parameters": [
-            "namespace",
-            "repository",
-            "tag"
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "deprecated": false,
+               "description": "An image tag.",
+               "in": "path",
+               "name": "tag",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
          ],
-         "put": { }
+         "put": {
+            "operationId": "create-tag",
+            "responses": { },
+            "summary": "Create a new repository tag.",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         }
       },
       "/v2": {
          "get": {
             "description": "This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.",
             "operationId": "oci-base",
-            "responses": { },
+            "responses": {
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               }
+            },
             "summary": "Check that the endpoint implements distribution API.",
             "tags": [
                "OCI"
@@ -190,7 +680,37 @@
          "get": {
             "description": "List a set of available repositories in the local registry cluster. Does not provide any indication of what may be available upstream. Applications can only determine if a repository is available but not if it is not available.",
             "operationId": "oci-catalog",
-            "responses": { },
+            "responses": {
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               }
+            },
             "summary": "List a set of available repositories in the local registry cluster.",
             "tags": [
                "OCI"
@@ -224,7 +744,40 @@
          ],
          "post": {
             "operationId": "oci-init-blob-upload",
-            "responses": { },
+            "responses": {
+               "202": {
+                  "description": "Accepted"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               }
+            },
             "summary": "Initiate a blob upload.",
             "tags": [
                "OCI"
@@ -234,7 +787,69 @@
       "/v2/{namespace}/{repository}/blobs/uploads/{id}": {
          "delete": {
             "operationId": "oci-delete-blob",
-            "responses": { },
+            "responses": {
+               "202": {
+                  "description": "Accepted"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               }
+            },
             "summary": "Delete a blob by digest.",
             "tags": [
                "OCI"
@@ -242,7 +857,40 @@
          },
          "get": {
             "operationId": "oci-status-blob-upload",
-            "responses": { },
+            "responses": {
+               "204": {
+                  "description": "No Content"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               }
+            },
             "summary": "Check a blob's upload status.",
             "tags": [
                "OCI"
@@ -285,7 +933,69 @@
          ],
          "patch": {
             "operationId": "oci-upload-blob-chunk",
-            "responses": { },
+            "responses": {
+               "202": {
+                  "description": "Accepted"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "416": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Requested Range Not Satisfiable"
+               }
+            },
             "summary": "Upload a blob chunk to the registry.",
             "tags": [
                "OCI"
@@ -293,7 +1003,40 @@
          },
          "put": {
             "operationId": "oci-upload-blob-complete",
-            "responses": { },
+            "responses": {
+               "201": {
+                  "description": "Created"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               }
+            },
             "summary": "Notify registry that the chunked blob upload is complete.",
             "tags": [
                "OCI"
@@ -303,7 +1046,69 @@
       "/v2/{namespace}/{repository}/blobs/{digest}": {
          "delete": {
             "operationId": "oci-delete-blob",
-            "responses": { },
+            "responses": {
+               "202": {
+                  "description": "Accepted"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               }
+            },
             "summary": "Delete a blob by digest.",
             "tags": [
                "OCI"
@@ -311,8 +1116,137 @@
          },
          "get": {
             "operationId": "oci-get-blob",
-            "responses": { },
+            "responses": {
+               "307": {
+                  "description": "Temporary Redirect"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               }
+            },
             "summary": "Download a blob by digest.",
+            "tags": [
+               "OCI"
+            ]
+         },
+         "head": {
+            "operationId": "oci-get-blob",
+            "responses": {
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               }
+            },
+            "summary": "Check for the existence of a blob by digest.",
             "tags": [
                "OCI"
             ]
@@ -356,7 +1290,66 @@
       "/v2/{namespace}/{repository}/manifests/{reference}": {
          "delete": {
             "operationId": "oci-delete-manifest",
-            "responses": { },
+            "responses": {
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               }
+            },
             "summary": "Delete a manifest from the repository.",
             "tags": [
                "OCI"
@@ -364,8 +1357,134 @@
          },
          "get": {
             "operationId": "oci-get-manifest",
-            "responses": { },
+            "responses": {
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               }
+            },
             "summary": "Get a manifest by name and reference.",
+            "tags": [
+               "OCI"
+            ]
+         },
+         "head": {
+            "operationId": "oci-get-manifest",
+            "responses": {
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               }
+            },
+            "summary": "Check for the existence of a manifest by name and reference.",
             "tags": [
                "OCI"
             ]
@@ -407,7 +1526,37 @@
          ],
          "put": {
             "operationId": "oci-put-manifest",
-            "responses": { },
+            "responses": {
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               }
+            },
             "summary": "Add a manifest to a repository.",
             "tags": [
                "OCI"
@@ -417,7 +1566,37 @@
       "/v2/{namespace}/{repository}/tags/list": {
          "get": {
             "operationId": "oci-tags-list",
-            "responses": { },
+            "responses": {
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               }
+            },
             "summary": "Get all tags in a repository.",
             "tags": [
                "OCI"
