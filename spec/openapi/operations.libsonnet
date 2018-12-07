@@ -214,14 +214,16 @@ local resp = import 'responses.libsonnet';
       summary: 'List a set of available repositories in the local registry cluster.',
       description: 'List a set of available repositories in the local registry cluster. Does not provide any indication of what may be available upstream. Applications can only determine if a repository is available but not if it is not available.',
       operationId: 'oci-catalog',
-      responses: {},
+      responses:
+        resp.errors.unauthorized,
     },
 
     tags:: {
       tags: ['OCI'],
       summary: 'Get all tags in a repository.',
       operationId: 'oci-tags-list',
-      responses: {},
+      responses:
+        resp.errors.unauthorized,
     },
 
     getManifest:: {
@@ -246,77 +248,100 @@ local resp = import 'responses.libsonnet';
       tags: ['OCI'],
       summary: 'Add a manifest to a repository.',
       operationId: 'oci-put-manifest',
-      responses: {},
+      responses:
+        resp.errors.unauthorized,
     },
 
     deleteManifest:: {
       tags: ['OCI'],
       summary: 'Delete a manifest from the repository.',
       operationId: 'oci-delete-manifest',
-      responses: {},
+      responses:
+        resp.errors.unauthorized
+        + resp.errors.notFound,
     },
 
     getBlob:: {
       tags: ['OCI'],
       summary: 'Download a blob by digest.',
       operationId: 'oci-get-blob',
-      responses: {},
+      responses:
+        resp.common.temporaryRedirect
+        + resp.errors.unauthorized
+        + resp.errors.notFound,
     },
 
     checkBlob:: {
       tags: ['OCI'],
       summary: 'Check for the existence of a blob by digest.',
       operationId: 'oci-get-blob',
-      responses: {},
+      responses:
+        resp.errors.unauthorized
+        + resp.errors.notFound,
     },
 
     deleteBlob:: {
       tags: ['OCI'],
       summary: 'Delete a blob by digest.',
       operationId: 'oci-delete-blob',
-      responses: {},
+      responses:
+        resp.common.accepted
+        + resp.errors.unauthorized
+        + resp.errors.notFound,
     },
 
     initBlobUploadOrMount:: {
       tags: ['OCI'],
       summary: 'Initiate a blob upload.',
       operationId: 'oci-init-blob-upload',
-      responses: {},
+      responses:
+        resp.common.accepted
+        + resp.errors.unauthorized,
     },
 
     statusBlobUpload:: {
       tags: ['OCI'],
       summary: "Check a blob's upload status.",
       operationId: 'oci-status-blob-upload',
-      responses: {},
+      responses:
+        resp.common.noContent
+        + resp.errors.unauthorized,
     },
 
     uploadBlobChunk:: {
       tags: ['OCI'],
       summary: 'Upload a blob chunk to the registry.',
       operationId: 'oci-upload-blob-chunk',
-      responses: {},
+      responses:
+        resp.errors.requestedRangeNotSatisfiable
+        + resp.errors.unauthorized
+        + resp.common.accepted,
     },
 
     uploadBlobComplete:: {
       tags: ['OCI'],
       summary: 'Notify registry that the chunked blob upload is complete.',
       operationId: 'oci-upload-blob-complete',
-      responses: {},
+      responses:
+        resp.common.created
+        + resp.errors.unauthorized,
     },
 
     cancelBlobUpload:: {
       tags: ['OCI'],
       summary: 'Cancel a blob upload.',
       operationId: 'oci-cancel-blob-upload',
-      responses: {},
+      responses: resp.errors.unauthorized,
     },
 
     mountBlob:: {
       tags: ['OCI'],
       summary: 'Mount a blob from another repository.',
       operationId: 'oci-mount-blob',
-      responses: {},
+      responses:
+        resp.common.created
+        + resp.errors.unauthorized
+        + resp.common.accepted,
     },
   },
 }
