@@ -48,7 +48,7 @@ Include documentation changes in the same commit so that a revert would remove a
 
 Commits that fix or close an issue should include a reference like `Closes #XXX` or `Fixes #XXX`, which will automatically close the issue when merged.
 
-### Sign your work
+## Signing Your Work
 
 The sign-off is a simple line at the end of the explanation for the patch, which certifies that you wrote it or otherwise have the right to pass it on as an open-source patch.
 The rules are pretty simple: if you can certify the below (from [developercertificate.org][]):
