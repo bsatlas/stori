@@ -20,6 +20,6 @@ The Docker registry also lacks "enterprise" features like auditing, LDAP, and fi
 The [Harbor project](https://github.com/goharbor/harbor) is a popular image registry hosted by the [CNCF](https://www.cncf.io) that is built on top of the Docker registry but has many limitations.
 Since Harbor uses the Docker registry under the covers, its administrative API is limited to the functionality that the Docker registry API provides.
 Also, Harbor is non-trivial to set up.
-The only reliable way of installing Harbor on a local machine is to use a custom offline installer that depends on docker-compose and consumes 5GB+ of diskspace when fully installed.
+The only reliable way of installing Harbor on a local machine is to use a custom offline installer that depends on `docker` and `docker-compose` and consumes 5GB+ of diskspace when fully installed.
 When running Harbor on a small VM like an AWS `t3.micro`, an EBS volume needs to be provisioned for the image storage directory or else there will be no space left on the filesystem.
 The Stori project attempts to let registry administrators "have their cake and eat it too" when it comes to having an easily deployable and maintainable enterprise-level image registry with a small footprint.
