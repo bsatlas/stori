@@ -318,8 +318,8 @@ local errors = {
 
 
 {
-  'oci-config-schema.json': config,
-  'oci-image-manifest-schema.json': imageManifest,
-  'oci-image-index-schema.json': imageIndex,
-  'oci-error-schema.json': errors,
+  config: config,
+  imageManifest: imageManifest,
+  imageIndex: imageIndex,
+  errors: errors,
 }
