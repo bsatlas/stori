@@ -328,9 +328,27 @@ local imageIndex = {
   ],
 };
 
+local errors = {
+  type: 'object',
+  properties: {
+    errors: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          code: string,
+          message: string,
+          detail: string,
+        },
+      },
+    },
+  },
+};
+
 
 {
   'oci-config-schema.json': config,
   'oci-image-manifest-schema.json': imageManifest,
-  'oci-image-index.json': imageIndex,
+  'oci-image-index-schema.json': imageIndex,
+  'oci-error-schema.json': errors,
 }
