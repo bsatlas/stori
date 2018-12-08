@@ -7,7 +7,7 @@ OPENAPI_FILE = $(OPENAPI_DIR)/openapi.json
 
 # Generate json-schemas.
 schemas:
-	jsonnet -m $(SCHEMA_DIR) $(SCHEMA_DIR)/oci-schemas.jsonnet
+	jsonnet -m $(SCHEMA_DIR) $(SCHEMA_DIR)/generate.jsonnet
 
 # Generate and validate OpenAPI specification file.
 spec: generate-openapi validate-openapi
