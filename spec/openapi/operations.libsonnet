@@ -206,7 +206,9 @@ local resp = import 'responses.libsonnet';
       operationId: 'oci-base',
       responses:
         resp.errors.unauthorized
-        + resp.errors.notFound,
+        + resp.errors.forbidden
+        + resp.errors.notFound
+        + resp.errors.tooManyRequests,
     },
 
     catalog:: {
@@ -215,7 +217,9 @@ local resp = import 'responses.libsonnet';
       description: 'List a set of available repositories in the local registry cluster. Does not provide any indication of what may be available upstream. Applications can only determine if a repository is available but not if it is not available.',
       operationId: 'oci-catalog',
       responses:
-        resp.errors.unauthorized,
+        resp.errors.unauthorized
+        + resp.errors.forbidden
+        + resp.errors.tooManyRequests,
     },
 
     tags:: {
@@ -223,7 +227,9 @@ local resp = import 'responses.libsonnet';
       summary: 'Get all tags in a repository.',
       operationId: 'oci-tags-list',
       responses:
-        resp.errors.unauthorized,
+        resp.errors.unauthorized
+        + resp.errors.forbidden
+        + resp.errors.tooManyRequests,
     },
 
     getManifest:: {
@@ -232,7 +238,9 @@ local resp = import 'responses.libsonnet';
       operationId: 'oci-get-manifest',
       responses:
         resp.errors.notFound
-        + resp.errors.unauthorized,
+        + resp.errors.unauthorized
+        + resp.errors.forbidden
+        + resp.errors.tooManyRequests,
     },
 
     checkManifest:: {
@@ -241,7 +249,9 @@ local resp = import 'responses.libsonnet';
       operationId: 'oci-get-manifest',
       responses:
         resp.errors.notFound
-        + resp.errors.unauthorized,
+        + resp.errors.unauthorized
+        + resp.errors.forbidden
+        + resp.errors.tooManyRequests,
     },
 
     putManifest:: {
@@ -249,7 +259,9 @@ local resp = import 'responses.libsonnet';
       summary: 'Add a manifest to a repository.',
       operationId: 'oci-put-manifest',
       responses:
-        resp.errors.unauthorized,
+        resp.errors.unauthorized
+        + resp.errors.forbidden
+        + resp.errors.tooManyRequests,
     },
 
     deleteManifest:: {
@@ -258,7 +270,9 @@ local resp = import 'responses.libsonnet';
       operationId: 'oci-delete-manifest',
       responses:
         resp.errors.unauthorized
-        + resp.errors.notFound,
+        + resp.errors.forbidden
+        + resp.errors.notFound
+        + resp.errors.tooManyRequests,
     },
 
     getBlob:: {
@@ -268,7 +282,9 @@ local resp = import 'responses.libsonnet';
       responses:
         resp.common.temporaryRedirect
         + resp.errors.unauthorized
-        + resp.errors.notFound,
+        + resp.errors.forbidden
+        + resp.errors.notFound
+        + resp.errors.tooManyRequests,
     },
 
     checkBlob:: {
@@ -277,7 +293,9 @@ local resp = import 'responses.libsonnet';
       operationId: 'oci-get-blob',
       responses:
         resp.errors.unauthorized
-        + resp.errors.notFound,
+        + resp.errors.forbidden
+        + resp.errors.notFound
+        + resp.errors.tooManyRequests,
     },
 
     deleteBlob:: {
@@ -287,7 +305,9 @@ local resp = import 'responses.libsonnet';
       responses:
         resp.common.accepted
         + resp.errors.unauthorized
-        + resp.errors.notFound,
+        + resp.errors.forbidden
+        + resp.errors.notFound
+        + resp.errors.tooManyRequests,
     },
 
     initBlobUploadOrMount:: {
@@ -296,7 +316,9 @@ local resp = import 'responses.libsonnet';
       operationId: 'oci-init-blob-upload',
       responses:
         resp.common.accepted
-        + resp.errors.unauthorized,
+        + resp.errors.unauthorized
+        + resp.errors.forbidden
+        + resp.errors.tooManyRequests,
     },
 
     statusBlobUpload:: {
@@ -305,7 +327,9 @@ local resp = import 'responses.libsonnet';
       operationId: 'oci-status-blob-upload',
       responses:
         resp.common.noContent
-        + resp.errors.unauthorized,
+        + resp.errors.unauthorized
+        + resp.errors.forbidden
+        + resp.errors.tooManyRequests,
     },
 
     uploadBlobChunk:: {
@@ -315,7 +339,9 @@ local resp = import 'responses.libsonnet';
       responses:
         resp.errors.requestedRangeNotSatisfiable
         + resp.errors.unauthorized
-        + resp.common.accepted,
+        + resp.errors.forbidden
+        + resp.common.accepted
+        + resp.errors.tooManyRequests,
     },
 
     uploadBlobComplete:: {
@@ -324,14 +350,19 @@ local resp = import 'responses.libsonnet';
       operationId: 'oci-upload-blob-complete',
       responses:
         resp.common.created
-        + resp.errors.unauthorized,
+        + resp.errors.unauthorized
+        + resp.errors.forbidden
+        + resp.errors.tooManyRequests,
     },
 
     cancelBlobUpload:: {
       tags: ['OCI'],
       summary: 'Cancel a blob upload.',
       operationId: 'oci-cancel-blob-upload',
-      responses: resp.errors.unauthorized,
+      responses:
+        resp.errors.unauthorized
+        + resp.errors.forbidden
+        + resp.errors.tooManyRequests,
     },
 
     mountBlob:: {
@@ -340,8 +371,10 @@ local resp = import 'responses.libsonnet';
       operationId: 'oci-mount-blob',
       responses:
         resp.common.created
+        + resp.common.accepted
         + resp.errors.unauthorized
-        + resp.common.accepted,
+        + resp.errors.forbidden
+        + resp.errors.tooManyRequests,
     },
   },
 }
