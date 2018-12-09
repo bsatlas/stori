@@ -300,7 +300,8 @@ local resp = import 'responses.libsonnet';
       summary: 'Check for the existence of a blob by digest.',
       operationId: 'oci-get-blob',
       responses:
-        resp.errors.unauthorized
+        resp.oci.checkBlob
+        + resp.errors.unauthorized
         + resp.errors.forbidden
         + resp.errors.notFound
         + resp.errors.tooManyRequests,
@@ -311,7 +312,8 @@ local resp = import 'responses.libsonnet';
       summary: 'Delete a blob by digest.',
       operationId: 'oci-delete-blob',
       responses:
-        resp.common.accepted
+        resp.oci.deleteBlob
+        + resp.common.accepted
         + resp.errors.unauthorized
         + resp.errors.forbidden
         + resp.errors.notFound
@@ -323,7 +325,8 @@ local resp = import 'responses.libsonnet';
       summary: 'Initiate a blob upload.',
       operationId: 'oci-init-blob-upload',
       responses:
-        resp.common.accepted
+        resp.oci.initBlobUploadOrMount
+        + resp.common.accepted
         + resp.errors.unauthorized
         + resp.errors.forbidden
         + resp.errors.tooManyRequests,
@@ -334,7 +337,8 @@ local resp = import 'responses.libsonnet';
       summary: "Check a blob's upload status.",
       operationId: 'oci-status-blob-upload',
       responses:
-        resp.common.noContent
+        resp.oci.statusBlobUpload
+        + resp.common.noContent
         + resp.errors.unauthorized
         + resp.errors.forbidden
         + resp.errors.tooManyRequests,
@@ -345,7 +349,8 @@ local resp = import 'responses.libsonnet';
       summary: 'Upload a blob chunk to the registry.',
       operationId: 'oci-upload-blob-chunk',
       responses:
-        resp.errors.RangeNotSatisfiable
+        resp.oci.uploadBlobChunk
+        + resp.errors.RangeNotSatisfiable
         + resp.errors.unauthorized
         + resp.errors.forbidden
         + resp.common.accepted
@@ -357,7 +362,8 @@ local resp = import 'responses.libsonnet';
       summary: 'Notify registry that the chunked blob upload is complete.',
       operationId: 'oci-upload-blob-complete',
       responses:
-        resp.common.created
+        resp.oci.uploadBlobComplete
+        + resp.common.created
         + resp.errors.unauthorized
         + resp.errors.forbidden
         + resp.errors.tooManyRequests,
@@ -368,7 +374,8 @@ local resp = import 'responses.libsonnet';
       summary: 'Cancel a blob upload.',
       operationId: 'oci-cancel-blob-upload',
       responses:
-        resp.errors.unauthorized
+        resp.oci.cancelBlobUpload
+        + resp.errors.unauthorized
         + resp.errors.forbidden
         + resp.errors.tooManyRequests,
     },
@@ -378,7 +385,8 @@ local resp = import 'responses.libsonnet';
       summary: 'Mount a blob from another repository.',
       operationId: 'oci-mount-blob',
       responses:
-        resp.common.created
+        resp.oci.mountBlob
+        + resp.common.created
         + resp.common.accepted
         + resp.errors.unauthorized
         + resp.errors.forbidden

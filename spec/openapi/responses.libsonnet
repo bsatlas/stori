@@ -68,7 +68,7 @@ local common = {
 
 // Initalize 200 response.
 // @param content An object mapping of media types to their schemas.
-local okResponse(content) = {
+local okResponse(content={}) = {
   '200': {
     description: 'OK',
     content: content,
@@ -87,6 +87,7 @@ local newContent(mediaType, schema) = {
 local oci = {
 
   local content = {
+
     emptyResponse:
       newContent(
         mediaTypes.json, schemas.types.emptyObject
@@ -116,14 +117,22 @@ local oci = {
 
   },
 
-  base:: okResponse(content.emptyResponse),
+  base:: okResponse(),
   catalog:: okResponse(content.catalog),
   tags:: okResponse(content.tags),
   getManifest:: okResponse(content.manifest),
-  checkManifest:: okResponse(content.emptyResponse),
+  checkManifest:: okResponse(),
   putManifest:: okResponse(content.emptyResponse),
   deleteManifest:: okResponse(content.emptyResponse),
   getBlob:: okResponse(content.binaryData),
+  checkBlob:: okResponse(),
+  deleteBlob:: okResponse(),
+  initBlobUploadOrMount:: okResponse(),
+  statusBlobUpload:: {},
+  uploadBlobChunk:: okResponse(),
+  uploadBlobComplete:: okResponse(),
+  cancelBlobUpload:: okResponse(),
+  mountBlob:: okResponse(),
 
 };
 

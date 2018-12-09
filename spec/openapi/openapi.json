@@ -594,15 +594,7 @@
             "operationId": "oci-base",
             "responses": {
                "200": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "additionalProperties": false,
-                           "properties": { },
-                           "type": "object"
-                        }
-                     }
-                  },
+                  "content": { },
                   "description": "OK"
                },
                "401": {
@@ -887,6 +879,10 @@
          "post": {
             "operationId": "oci-init-blob-upload",
             "responses": {
+               "200": {
+                  "content": { },
+                  "description": "OK"
+               },
                "202": {
                   "description": "Accepted"
                },
@@ -994,6 +990,10 @@
          "delete": {
             "operationId": "oci-delete-blob",
             "responses": {
+               "200": {
+                  "content": { },
+                  "description": "OK"
+               },
                "202": {
                   "description": "Accepted"
                },
@@ -1267,6 +1267,10 @@
          "patch": {
             "operationId": "oci-upload-blob-chunk",
             "responses": {
+               "200": {
+                  "content": { },
+                  "description": "OK"
+               },
                "202": {
                   "description": "Accepted"
                },
@@ -1403,6 +1407,10 @@
          "put": {
             "operationId": "oci-upload-blob-complete",
             "responses": {
+               "200": {
+                  "content": { },
+                  "description": "OK"
+               },
                "201": {
                   "description": "Created"
                },
@@ -1510,6 +1518,10 @@
          "delete": {
             "operationId": "oci-delete-blob",
             "responses": {
+               "200": {
+                  "content": { },
+                  "description": "OK"
+               },
                "202": {
                   "description": "Accepted"
                },
@@ -1793,6 +1805,10 @@
          "head": {
             "operationId": "oci-get-blob",
             "responses": {
+               "200": {
+                  "content": { },
+                  "description": "OK"
+               },
                "401": {
                   "content": {
                      "application/json": {
@@ -2365,15 +2381,7 @@
             "operationId": "oci-get-manifest",
             "responses": {
                "200": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "additionalProperties": false,
-                           "properties": { },
-                           "type": "object"
-                        }
-                     }
-                  },
+                  "content": { },
                   "description": "OK"
                },
                "401": {
