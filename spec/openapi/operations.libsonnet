@@ -218,7 +218,8 @@ local resp = import 'responses.libsonnet';
       description: 'List a set of available repositories in the local registry cluster. Does not provide any indication of what may be available upstream. Applications can only determine if a repository is available but not if it is not available.',
       operationId: 'oci-catalog',
       responses:
-        resp.errors.unauthorized
+        resp.oci.catalog
+        + resp.errors.unauthorized
         + resp.errors.forbidden
         + resp.errors.tooManyRequests,
     },

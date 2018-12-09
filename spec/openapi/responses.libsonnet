@@ -77,6 +77,18 @@ local oci = {
       },
     },
   },
+
+  catalog:: {
+    '200': {
+      description: 'OK',
+      content: {
+        [mediaTypes.json]: {
+          schema: schemas.oci.catalog,
+        },
+      },
+    },
+  },
+
 };
 
 {

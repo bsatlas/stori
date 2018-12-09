@@ -741,6 +741,26 @@
             "description": "List a set of available repositories in the local registry cluster. Does not provide any indication of what may be available upstream. Applications can only determine if a repository is available but not if it is not available.",
             "operationId": "oci-catalog",
             "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$schema": "http://json-schema.org/draft-04/schema#",
+                           "description": "This property contains a list of repositories hosted on the registry.",
+                           "properties": {
+                              "repositories": {
+                                 "items": {
+                                    "type": "string"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "OK"
+               },
                "401": {
                   "content": {
                      "application/json": {
