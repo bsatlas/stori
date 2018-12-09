@@ -1,5 +1,8 @@
 local string = { type: 'string' };
+
 {
+  jsonSchemaV4: 'http://json-schema.org/draft-04/schema#',
+
   string: string,
 
   date: string { format: 'date-time' },
