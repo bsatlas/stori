@@ -22,6 +22,7 @@ Since Harbor uses the Docker registry under the covers, its administrative API i
 Also, Harbor is non-trivial to set up.
 The only reliable way of installing Harbor on a local machine is to use a custom offline installer that depends on `docker` and `docker-compose` and consumes 5GB+ of diskspace when fully installed.
 When running Harbor on a small VM like an AWS `t3.micro`, an EBS volume needs to be provisioned for the image storage directory or else there will be no space left on the filesystem.
+
 The Stori project attempts to let registry administrators "have their cake and eat it too" when it comes to having an easily deployable and maintainable enterprise-level image registry with a small footprint.
 
 [distribution-spec]: https://github.com/opencontainers/distribution-spec
