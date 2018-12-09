@@ -5,4 +5,5 @@ local oci = import 'oci.libsonnet';
   'oci-image-manifest-schema.json': oci.imageManifest,
   'oci-image-index-schema.json': oci.imageIndex,
   'oci-error-schema.json': oci.errors,
+  'oci-catalog-schema.json': oci.catalog,
 }

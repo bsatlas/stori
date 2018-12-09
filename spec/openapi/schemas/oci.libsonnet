@@ -318,10 +318,22 @@ local errors = {
   },
 };
 
+local catalog = {
+  '$schema': types.jsonSchemaV4,
+  description: 'This property contains a list of repositories hosted on the registry.',
+  type: 'object',
+  properties: {
+    repositories: {
+      type: 'array',
+      items: types.string,
+    },
+  },
+};
 
 {
   config: config,
   imageManifest: imageManifest,
   imageIndex: imageIndex,
   errors: errors,
+  catalog: catalog,
 }
