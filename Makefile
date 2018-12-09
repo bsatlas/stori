@@ -1,13 +1,13 @@
 .PHONY: schemas spec generate-openapi validate-openapi
 
 SPEC_DIR = spec
-SCHEMA_DIR = $(SPEC_DIR)/schemas
 OPENAPI_DIR = $(SPEC_DIR)/openapi
+SCHEMA_DIR = $(SPEC_DIR)/json-schemas
 OPENAPI_FILE = $(OPENAPI_DIR)/openapi.json
 
 # Generate json-schemas.
 schemas:
-	jsonnet -m $(SCHEMA_DIR) $(SCHEMA_DIR)/generate.jsonnet
+	jsonnet -m $(SCHEMA_DIR) $(OPENAPI_DIR)/schemas/gen-jsonschemas.jsonnet
 
 # Generate and validate OpenAPI specification file.
 spec: generate-openapi validate-openapi
