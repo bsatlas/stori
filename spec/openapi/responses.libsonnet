@@ -1,21 +1,5 @@
 local mediaTypes = import 'media-types.libsonnet';
-
-local errorSchema = {
-  type: 'object',
-  properties: {
-    errors: {
-      type: 'array',
-      items: {
-        type: 'object',
-        properties: {
-          code: { type: 'string' },
-          message: { type: 'string' },
-          detail: { type: 'string' },
-        },
-      },
-    },
-  },
-};
+local schemas = import 'schemas/schemas.libsonnet';
 
 local errors = {
 
@@ -24,7 +8,7 @@ local errors = {
       description: 'Bad Request',
       content: {
         [mediaTypes.json]: {
-          schema: errorSchema,
+          schema: schemas.oci.errors,
         },
       },
     },
@@ -35,7 +19,7 @@ local errors = {
       description: 'Unauthorized',
       content: {
         [mediaTypes.json]: {
-          schema: errorSchema,
+          schema: schemas.oci.errors,
         },
       },
     },
@@ -46,7 +30,7 @@ local errors = {
       descrption: 'Method Not Allowed',
       content: {
         [mediaTypes.json]: {
-          schema: errorSchema,
+          schema: schemas.oci.errors,
         },
       },
     },
@@ -57,7 +41,7 @@ local errors = {
       description: 'Forbidden',
       content: {
         [mediaTypes.json]: {
-          schema: errorSchema,
+          schema: schemas.oci.errors,
         },
       },
     },
@@ -69,7 +53,7 @@ local errors = {
       description: 'Not Found',
       content: {
         [mediaTypes.json]: {
-          schema: errorSchema,
+          schema: schemas.oci.errors,
         },
       },
     },
@@ -80,7 +64,7 @@ local errors = {
       description: 'Requested Range Not Satisfiable',
       content: {
         [mediaTypes.json]: {
-          schema: errorSchema,
+          schema: schemas.oci.errors,
         },
       },
     },
@@ -91,7 +75,7 @@ local errors = {
       description: 'Too Many Requests',
       content: {
         [mediaTypes.json]: {
-          schema: errorSchema,
+          schema: schemas.oci.errors,
         },
       },
     },
