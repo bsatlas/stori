@@ -240,7 +240,8 @@ local resp = import 'responses.libsonnet';
       summary: 'Get a manifest by name and reference.',
       operationId: 'oci-get-manifest',
       responses:
-        resp.errors.notFound
+        resp.oci.getManifest
+        + resp.errors.notFound
         + resp.errors.unauthorized
         + resp.errors.forbidden
         + resp.errors.tooManyRequests,

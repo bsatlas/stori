@@ -100,6 +100,17 @@ local oci = {
     },
   },
 
+  getManifest:: {
+    '200': {
+      description: 'OK',
+      content: {
+        [mediaTypes.oci.v1.imageManifest]: {
+          schema: schemas.oci.imageManifest,
+        },
+      },
+    },
+  },
+
 };
 
 {
