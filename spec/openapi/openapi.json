@@ -133,7 +133,6 @@
          "parameters": [
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A logical grouping of repositories.",
                "in": "path",
                "name": "namespace",
@@ -176,7 +175,6 @@
          "parameters": [
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A logical grouping of repositories.",
                "in": "path",
                "name": "namespace",
@@ -218,7 +216,6 @@
          "parameters": [
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A logical grouping of repositories.",
                "in": "path",
                "name": "namespace",
@@ -229,7 +226,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A place to store an image.",
                "in": "path",
                "name": "repository",
@@ -262,7 +258,6 @@
          "parameters": [
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A logical grouping of repositories.",
                "in": "path",
                "name": "namespace",
@@ -273,7 +268,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A place to store an image.",
                "in": "path",
                "name": "repository",
@@ -315,7 +309,6 @@
          "parameters": [
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A logical grouping of repositories.",
                "in": "path",
                "name": "namespace",
@@ -326,7 +319,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A place to store an image.",
                "in": "path",
                "name": "repository",
@@ -337,7 +329,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A content addressable identifier.",
                "in": "path",
                "name": "digest",
@@ -370,7 +361,6 @@
          "parameters": [
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A logical grouping of repositories.",
                "in": "path",
                "name": "namespace",
@@ -381,7 +371,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A place to store an image.",
                "in": "path",
                "name": "repository",
@@ -414,7 +403,6 @@
          "parameters": [
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A logical grouping of repositories.",
                "in": "path",
                "name": "namespace",
@@ -425,7 +413,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A place to store an image.",
                "in": "path",
                "name": "repository",
@@ -436,7 +423,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A content addressable identifier.",
                "in": "path",
                "name": "digest",
@@ -469,7 +455,6 @@
          "parameters": [
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A logical grouping of repositories.",
                "in": "path",
                "name": "namespace",
@@ -480,7 +465,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A place to store an image.",
                "in": "path",
                "name": "repository",
@@ -491,7 +475,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A content addressable identifier.",
                "in": "path",
                "name": "digest",
@@ -524,7 +507,6 @@
          "parameters": [
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A logical grouping of repositories.",
                "in": "path",
                "name": "namespace",
@@ -535,7 +517,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A place to store an image.",
                "in": "path",
                "name": "repository",
@@ -568,7 +549,6 @@
          "parameters": [
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A logical grouping of repositories.",
                "in": "path",
                "name": "namespace",
@@ -579,7 +559,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A place to store an image.",
                "in": "path",
                "name": "repository",
@@ -590,7 +569,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "An image tag.",
                "in": "path",
                "name": "tag",
@@ -855,7 +833,6 @@
          "parameters": [
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A logical grouping of repositories.",
                "in": "path",
                "name": "namespace",
@@ -866,7 +843,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A place to store an image.",
                "in": "path",
                "name": "repository",
@@ -1227,7 +1203,6 @@
          "parameters": [
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A logical grouping of repositories.",
                "in": "path",
                "name": "namespace",
@@ -1238,7 +1213,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A place to store an image.",
                "in": "path",
                "name": "repository",
@@ -1249,7 +1223,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A unique id.",
                "in": "path",
                "name": "id",
@@ -1910,7 +1883,6 @@
          "parameters": [
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A logical grouping of repositories.",
                "in": "path",
                "name": "namespace",
@@ -1921,7 +1893,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A place to store an image.",
                "in": "path",
                "name": "repository",
@@ -1932,7 +1903,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A content addressable identifier.",
                "in": "path",
                "name": "digest",
@@ -2346,7 +2316,6 @@
          "parameters": [
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A logical grouping of repositories.",
                "in": "path",
                "name": "namespace",
@@ -2357,7 +2326,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A place to store an image.",
                "in": "path",
                "name": "repository",
@@ -2368,7 +2336,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "Can either be a tag name or digest.",
                "in": "path",
                "name": "reference",
@@ -2587,7 +2554,6 @@
          "parameters": [
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A logical grouping of repositories.",
                "in": "path",
                "name": "namespace",
@@ -2598,7 +2564,6 @@
             },
             {
                "allowEmptyValue": false,
-               "deprecated": false,
                "description": "A place to store an image.",
                "in": "path",
                "name": "repository",
