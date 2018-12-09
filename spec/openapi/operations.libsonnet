@@ -229,7 +229,8 @@ local resp = import 'responses.libsonnet';
       summary: 'Get all tags in a repository.',
       operationId: 'oci-tags-list',
       responses:
-        resp.errors.unauthorized
+        resp.oci.tags
+        + resp.errors.unauthorized
         + resp.errors.forbidden
         + resp.errors.tooManyRequests,
     },

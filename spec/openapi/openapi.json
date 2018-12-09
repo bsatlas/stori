@@ -2484,6 +2484,29 @@
          "get": {
             "operationId": "oci-tags-list",
             "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$schema": "http://json-schema.org/draft-04/schema#",
+                           "description": "This property contains a list of all tags in a repository.",
+                           "properties": {
+                              "name": {
+                                 "type": "string"
+                              },
+                              "tags": {
+                                 "items": {
+                                    "type": "string"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "OK"
+               },
                "401": {
                   "content": {
                      "application/json": {

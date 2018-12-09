@@ -330,10 +330,21 @@ local catalog = {
   },
 };
 
+local tagList = {
+  '$schema': types.jsonSchemaV4,
+  description: 'This property contains a list of all tags in a repository.',
+  type: 'object',
+  properties: {
+    name: types.string,
+    tags: types.arrayOfStrings,
+  },
+};
+
 {
   config: config,
   imageManifest: imageManifest,
   imageIndex: imageIndex,
   errors: errors,
   catalog: catalog,
+  tagList: tagList,
 }

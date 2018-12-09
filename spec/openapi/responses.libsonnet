@@ -89,6 +89,17 @@ local oci = {
     },
   },
 
+  tags:: {
+    '200': {
+      description: 'OK',
+      content: {
+        [mediaTypes.json]: {
+          schema: schemas.oci.tagList,
+        },
+      },
+    },
+  },
+
 };
 
 {
