@@ -109,7 +109,6 @@ local config = {
   },
 
   description: 'OCI Config Specification',
-  '$schema': 'http://json-schema.org/draft-04/schema#',
   type: 'object',
   properties: {
 
@@ -155,11 +154,11 @@ local config = {
   ],
 };
 
-local mediaType = {
-  description: '',
-  type: 'string',
-  pattern: '^[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}/[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}$',
-};
+local mediaType =
+  types.string {
+    description: '',
+    pattern: '^[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}/[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}$',
+  };
 
 local annotations =
   types.mapStringString {
@@ -173,17 +172,16 @@ local contentDescriptor = {
       description: 'This REQUIRED property specifies the size, in bytes, of the raw content. This property exists so that a client will have an expected size for the content before processing. If the length of the retrieved content does not match the specified length, the content SHOULD NOT be trusted.',
     },
 
-  local digest = {
-    description: 'the cryptographic checksum digest of the object, in the pattern `<algorithm>:<encoded>`',
-    type: 'string',
-    pattern: '^[a-z0-9]+(?:[+._-][a-z0-9]+)*:[a-zA-Z0-9=_-]+$',
-  },
+  local digest =
+    types.string {
+      description: 'the cryptographic checksum digest of the object, in the pattern `<algorithm>:<encoded>`',
+      pattern: '^[a-z0-9]+(?:[+._-][a-z0-9]+)*:[a-zA-Z0-9=_-]+$',
+    },
 
   local urls = {
     description: 'A list of URLs from which the content may be downloaded.',
     type: 'array',
-    items: {
-      type: 'string',
+    items: types.string {
       format: 'uri',
     },
   },
@@ -279,7 +277,6 @@ local imageIndex = {
   },
 
   description: 'OCI Image Index Specification',
-  '$schema': 'http://json-schema.org/draft-04/schema#',
   type: 'object',
   properties: {
     schemaVersion: schemaVersion,
@@ -300,6 +297,7 @@ local imageIndex = {
 };
 
 local errors = {
+  description: 'This property contains a list of errors messages returned from the server due to an invalid request.',
   type: 'object',
   properties: {
     errors: {

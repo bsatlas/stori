@@ -1,7 +1,8 @@
+local string = { type: 'string' };
 {
-  date: { type: 'string', format: 'date-time' },
+  string: string,
 
-  string: { type: 'string' },
+  date: string { format: 'date-time' },
 
   bool: { type: 'boolean' },
 
@@ -27,6 +28,6 @@
 
   arrayOfStrings: {
     type: 'array',
-    items: { type: 'string' },
+    items: string,
   },
 }

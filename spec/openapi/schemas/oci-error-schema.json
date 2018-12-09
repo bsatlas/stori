@@ -1,4 +1,6 @@
 {
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
    "properties": {
       "errors": {
          "items": {
