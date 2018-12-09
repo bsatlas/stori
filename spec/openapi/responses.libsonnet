@@ -67,47 +67,52 @@ local common = {
 };
 
 // Initalize 200 response.
-// @param content a mapping of media types to their schemas.
-local ok(content) = {
+// @param content An object mapping of media types to their schemas.
+local okResponse(content) = {
   '200': {
     description: 'OK',
     content: content,
   },
 };
 
+// Initialize a content object
+// @param mediaType The media type of the response.
+// @param schema The schema of the media type.
+local newContent(mediaType, schema) = {
+  [mediaType]: {
+    schema: schema,
+  },
+};
+
 local oci = {
 
-  base:: ok(
-    {
-      [mediaTypes.json]: {
-        schema: schemas.types.emptyObject,
-      },
-    },
-  ),
+  local content = {
+    base:
+      newContent(
+        mediaTypes.json, schemas.types.emptyObject
+      ),
 
-  catalog:: ok(
-    {
-      [mediaTypes.json]: {
-        schema: schemas.oci.catalog,
-      },
-    },
-  ),
+    catalog:
+      newContent(
+        mediaTypes.json, schemas.oci.catalog
+      ),
 
-  tags:: ok(
-    {
-      [mediaTypes.json]: {
-        schema: schemas.oci.tagList,
-      },
-    },
-  ),
+    tags:
+      newContent(
+        mediaTypes.json, schemas.oci.tagList
+      ),
 
-  getManifest:: ok(
-    {
-      [mediaTypes.oci.v1.imageManifest]: {
-        schema: schemas.oci.imageManifest,
-      },
-    },
-  ),
+    manifest:
+      newContent(
+        mediaTypes.oci.v1.imageManifest,
+        schemas.oci.imageManifest
+      ),
+  },
+
+  base:: okResponse(content.base),
+  catalog:: okResponse(content.catalog),
+  tags:: okResponse(content.tags),
+  getManifest:: okResponse(content.manifest),
 
 };
 
