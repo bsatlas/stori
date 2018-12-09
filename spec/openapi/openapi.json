@@ -640,6 +640,35 @@
                   },
                   "description": "Unauthorized"
                },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
                "404": {
                   "content": {
                      "application/json": {
@@ -668,6 +697,35 @@
                      }
                   },
                   "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
                }
             },
             "summary": "Check that the endpoint implements distribution API.",
@@ -709,6 +767,64 @@
                      }
                   },
                   "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
                }
             },
             "summary": "List a set of available repositories in the local registry cluster.",
@@ -776,6 +892,64 @@
                      }
                   },
                   "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
                }
             },
             "summary": "Initiate a blob upload.",
@@ -820,6 +994,35 @@
                   },
                   "description": "Unauthorized"
                },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
                "404": {
                   "content": {
                      "application/json": {
@@ -848,6 +1051,35 @@
                      }
                   },
                   "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
                }
             },
             "summary": "Delete a blob by digest.",
@@ -889,6 +1121,64 @@
                      }
                   },
                   "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
                }
             },
             "summary": "Check a blob's upload status.",
@@ -966,6 +1256,35 @@
                   },
                   "description": "Unauthorized"
                },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
                "416": {
                   "content": {
                      "application/json": {
@@ -994,6 +1313,35 @@
                      }
                   },
                   "description": "Requested Range Not Satisfiable"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
                }
             },
             "summary": "Upload a blob chunk to the registry.",
@@ -1035,6 +1383,64 @@
                      }
                   },
                   "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
                }
             },
             "summary": "Notify registry that the chunked blob upload is complete.",
@@ -1079,6 +1485,35 @@
                   },
                   "description": "Unauthorized"
                },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
                "404": {
                   "content": {
                      "application/json": {
@@ -1107,6 +1542,35 @@
                      }
                   },
                   "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
                }
             },
             "summary": "Delete a blob by digest.",
@@ -1149,6 +1613,35 @@
                   },
                   "description": "Unauthorized"
                },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
                "404": {
                   "content": {
                      "application/json": {
@@ -1177,6 +1670,35 @@
                      }
                   },
                   "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
                }
             },
             "summary": "Download a blob by digest.",
@@ -1216,6 +1738,35 @@
                   },
                   "description": "Unauthorized"
                },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
                "404": {
                   "content": {
                      "application/json": {
@@ -1244,6 +1795,35 @@
                      }
                   },
                   "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
                }
             },
             "summary": "Check for the existence of a blob by digest.",
@@ -1320,6 +1900,35 @@
                   },
                   "description": "Unauthorized"
                },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
                "404": {
                   "content": {
                      "application/json": {
@@ -1348,6 +1957,35 @@
                      }
                   },
                   "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
                }
             },
             "summary": "Delete a manifest from the repository.",
@@ -1387,6 +2025,35 @@
                   },
                   "description": "Unauthorized"
                },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
                "404": {
                   "content": {
                      "application/json": {
@@ -1415,6 +2082,35 @@
                      }
                   },
                   "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
                }
             },
             "summary": "Get a manifest by name and reference.",
@@ -1454,6 +2150,35 @@
                   },
                   "description": "Unauthorized"
                },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
                "404": {
                   "content": {
                      "application/json": {
@@ -1482,6 +2207,35 @@
                      }
                   },
                   "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
                }
             },
             "summary": "Check for the existence of a manifest by name and reference.",
@@ -1555,6 +2309,64 @@
                      }
                   },
                   "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
                }
             },
             "summary": "Add a manifest to a repository.",
@@ -1595,6 +2407,64 @@
                      }
                   },
                   "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
                }
             },
             "summary": "Get all tags in a repository.",
