@@ -593,6 +593,18 @@
             "description": "This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.",
             "operationId": "oci-base",
             "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "additionalProperties": false,
+                           "properties": { },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "OK"
+               },
                "401": {
                   "content": {
                      "application/json": {

@@ -205,7 +205,8 @@ local resp = import 'responses.libsonnet';
       description: 'This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.',
       operationId: 'oci-base',
       responses:
-        resp.errors.unauthorized
+        resp.oci.base
+        + resp.errors.unauthorized
         + resp.errors.forbidden
         + resp.errors.notFound
         + resp.errors.tooManyRequests,

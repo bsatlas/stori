@@ -33,4 +33,10 @@ local string = { type: 'string' };
     type: 'array',
     items: string,
   },
+
+  emptyObject: {
+    type: 'object',
+    properties: {},
+    additionalProperties: false,
+  },
 }

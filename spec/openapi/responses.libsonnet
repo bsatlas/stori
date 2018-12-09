@@ -66,7 +66,21 @@ local common = {
   temporaryRedirect: temporaryRedirect,
 };
 
+local oci = {
+  base:: {
+    '200': {
+      description: 'OK',
+      content: {
+        [mediaTypes.json]: {
+          schema: schemas.types.emptyObject,
+        },
+      },
+    },
+  },
+};
+
 {
   errors: errors,
   common: common,
+  oci:: oci,
 }
