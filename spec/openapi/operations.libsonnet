@@ -252,7 +252,8 @@ local resp = import 'responses.libsonnet';
       summary: 'Check for the existence of a manifest by name and reference.',
       operationId: 'oci-get-manifest',
       responses:
-        resp.errors.notFound
+        resp.oci.checkManifest
+        + resp.errors.notFound
         + resp.errors.unauthorized
         + resp.errors.forbidden
         + resp.errors.tooManyRequests,
@@ -263,7 +264,8 @@ local resp = import 'responses.libsonnet';
       summary: 'Add a manifest to a repository.',
       operationId: 'oci-put-manifest',
       responses:
-        resp.errors.unauthorized
+        resp.oci.getBlob
+        + resp.errors.unauthorized
         + resp.errors.forbidden
         + resp.errors.tooManyRequests,
     },
@@ -273,7 +275,8 @@ local resp = import 'responses.libsonnet';
       summary: 'Delete a manifest from the repository.',
       operationId: 'oci-delete-manifest',
       responses:
-        resp.errors.unauthorized
+        resp.oci.deleteManifest
+        + resp.errors.unauthorized
         + resp.errors.forbidden
         + resp.errors.notFound
         + resp.errors.tooManyRequests,
@@ -284,7 +287,8 @@ local resp = import 'responses.libsonnet';
       summary: 'Download a blob by digest.',
       operationId: 'oci-get-blob',
       responses:
-        resp.common.temporaryRedirect
+        resp.oci.getBlob
+        + resp.common.temporaryRedirect
         + resp.errors.unauthorized
         + resp.errors.forbidden
         + resp.errors.notFound

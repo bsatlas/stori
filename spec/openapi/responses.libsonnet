@@ -87,7 +87,7 @@ local newContent(mediaType, schema) = {
 local oci = {
 
   local content = {
-    base:
+    emptyResponse:
       newContent(
         mediaTypes.json, schemas.types.emptyObject
       ),
@@ -107,12 +107,23 @@ local oci = {
         mediaTypes.oci.v1.imageManifest,
         schemas.oci.imageManifest
       ),
+
+    binaryData:
+      newContent(
+        mediaTypes.octetStream,
+        schemas.types.binary,
+      ),
+
   },
 
-  base:: okResponse(content.base),
+  base:: okResponse(content.emptyResponse),
   catalog:: okResponse(content.catalog),
   tags:: okResponse(content.tags),
   getManifest:: okResponse(content.manifest),
+  checkManifest:: okResponse(content.emptyResponse),
+  putManifest:: okResponse(content.emptyResponse),
+  deleteManifest:: okResponse(content.emptyResponse),
+  getBlob:: okResponse(content.binaryData),
 
 };
 

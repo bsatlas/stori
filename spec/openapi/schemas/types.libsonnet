@@ -5,6 +5,8 @@ local string = { type: 'string' };
 
   string: string,
 
+  binary: string { format: 'binary' },
+
   date: string { format: 'date-time' },
 
   bool: { type: 'boolean' },
