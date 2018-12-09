@@ -3,9 +3,9 @@ local schemas = import 'schemas/schemas.libsonnet';
 
 local errors = {
 
-  local badRequest = {
-    '400': {
-      description: 'Bad Request',
+  local jsonError(errorCode, description) = {
+    [errorCode]: {
+      description: description,
       content: {
         [mediaTypes.json]: {
           schema: schemas.oci.errors,
@@ -14,81 +14,13 @@ local errors = {
     },
   },
 
-  local unauthorized = {
-    '401': {
-      description: 'Unauthorized',
-      content: {
-        [mediaTypes.json]: {
-          schema: schemas.oci.errors,
-        },
-      },
-    },
-  },
-
-  local methodNotAllowed = {
-    '405': {
-      descrption: 'Method Not Allowed',
-      content: {
-        [mediaTypes.json]: {
-          schema: schemas.oci.errors,
-        },
-      },
-    },
-  },
-
-  local forbidden = {
-    '403': {
-      description: 'Forbidden',
-      content: {
-        [mediaTypes.json]: {
-          schema: schemas.oci.errors,
-        },
-      },
-    },
-  },
-
-
-  local notFound = {
-    '404': {
-      description: 'Not Found',
-      content: {
-        [mediaTypes.json]: {
-          schema: schemas.oci.errors,
-        },
-      },
-    },
-  },
-
-  local requestedRangeNotSatisfiable = {
-    '416': {
-      description: 'Requested Range Not Satisfiable',
-      content: {
-        [mediaTypes.json]: {
-          schema: schemas.oci.errors,
-        },
-      },
-    },
-  },
-
-  local tooManyRequests = {
-    '429': {
-      description: 'Too Many Requests',
-      content: {
-        [mediaTypes.json]: {
-          schema: schemas.oci.errors,
-        },
-      },
-    },
-  },
-
-
-  badRequest: badRequest,
-  unauthorized: unauthorized,
-  forbidden: forbidden,
-  methodNotAllowed: methodNotAllowed,
-  notFound: notFound,
-  requestedRangeNotSatisfiable: requestedRangeNotSatisfiable,
-  tooManyRequests: tooManyRequests,
+  badRequest: jsonError('400', 'Bad Request'),
+  unauthorized: jsonError('401', 'Unauthorized'),
+  methodNotAllowed: jsonError('405', 'Method Not Allowed'),
+  notFound: jsonError('404', 'Not Found'),
+  forbidden: jsonError('403', 'Forbidden'),
+  requestedRangeNotSatisfiable: jsonError('416', 'Requested Range Not Satisfiable'),
+  tooManyRequests: jsonError('429', 'Too Many Requests'),
 };
 
 local common = {
