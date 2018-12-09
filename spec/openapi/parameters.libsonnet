@@ -1,3 +1,6 @@
+local schemas = import 'schemas/schemas.libsonnet';
+local string = schemas.types.string,
+
 {
   namespace:: {
     name: 'namespace',
@@ -6,7 +9,7 @@
     required: true,
     deprecated: false,
     allowEmptyValue: false,
-    schema: { type: 'string' },
+    schema: string,
   },
 
   repository:: {
@@ -16,7 +19,7 @@
     required: true,
     deprecated: false,
     allowEmptyValue: false,
-    schema: { type: 'string' },
+    schema: string,
   },
 
   reference:: {
@@ -26,7 +29,7 @@
     required: true,
     deprecated: false,
     allowEmptyValue: false,
-    schema: { type: 'string' },
+    schema: string,
   },
 
   digest:: {
@@ -36,7 +39,7 @@
     required: true,
     deprecated: false,
     allowEmptyValue: false,
-    schema: { type: 'string' },
+    schema: string,
   },
 
   tag:: {
@@ -46,7 +49,7 @@
     required: true,
     deprecated: false,
     allowEmptyValue: false,
-    schema: { type: 'string' },
+    schema: string,
   },
 
   id:: {
@@ -56,6 +59,6 @@
     required: true,
     deprecated: false,
     allowEmptyValue: false,
-    schema: { type: 'string' },
+    schema: string,
   },
 }
