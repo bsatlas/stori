@@ -1,4 +1,5 @@
-local string = { type: 'string' };
+local schemas = import 'schemas/schemas.libsonnet';
+local string = schemas.types.string,
 
 {
   wwwAuth:: {
