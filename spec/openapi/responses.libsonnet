@@ -3,7 +3,10 @@ local schemas = import 'schemas/schemas.libsonnet';
 
 local errors = {
 
-  local jsonError(errorCode, description) = {
+  // Create OCI-style error responses.
+  // @param errorCode The HTTP error code of the response.
+  // @param description Description of the error code.
+  local errorResponse(errorCode, description) = {
     [errorCode]: {
       description: description,
       content: {
@@ -14,16 +17,17 @@ local errors = {
     },
   },
 
-  badRequest: jsonError('400', 'Bad Request'),
-  unauthorized: jsonError('401', 'Unauthorized'),
-  methodNotAllowed: jsonError('405', 'Method Not Allowed'),
-  notFound: jsonError('404', 'Not Found'),
-  forbidden: jsonError('403', 'Forbidden'),
-  requestedRangeNotSatisfiable: jsonError('416', 'Requested Range Not Satisfiable'),
-  tooManyRequests: jsonError('429', 'Too Many Requests'),
+  badRequest: errorResponse('400', 'Bad Request'),
+  unauthorized: errorResponse('401', 'Unauthorized'),
+  methodNotAllowed: errorResponse('405', 'Method Not Allowed'),
+  notFound: errorResponse('404', 'Not Found'),
+  forbidden: errorResponse('403', 'Forbidden'),
+  requestedRangeNotSatisfiable: errorResponse('416', 'Requested Range Not Satisfiable'),
+  tooManyRequests: errorResponse('429', 'Too Many Requests'),
 };
 
 local common = {
+
 
   local accepted = {
     '202': {
