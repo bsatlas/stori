@@ -22,7 +22,7 @@ local errors = {
   methodNotAllowed: errorResponse('405', 'Method Not Allowed'),
   notFound: errorResponse('404', 'Not Found'),
   forbidden: errorResponse('403', 'Forbidden'),
-  requestedRangeNotSatisfiable: errorResponse('416', 'Requested Range Not Satisfiable'),
+  RangeNotSatisfiable: errorResponse('416', 'Requested Range Not Satisfiable'),
   tooManyRequests: errorResponse('429', 'Too Many Requests'),
 };
 
