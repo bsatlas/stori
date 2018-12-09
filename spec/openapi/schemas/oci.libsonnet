@@ -1,4 +1,7 @@
 local types = import 'types.libsonnet';
+
+local jsonSchemaV4 = 'http://json-schema.org/draft-04/schema#';
+
 // application/vnd.oci.image.config.v1+json
 local config = {
 
@@ -108,6 +111,7 @@ local config = {
     },
   },
 
+  '$schema': jsonSchemaV4,
   description: 'OCI Config Specification',
   type: 'object',
   properties: {
@@ -276,6 +280,7 @@ local imageIndex = {
     items: contentDescriptor {},
   },
 
+  '$schema': jsonSchemaV4,
   description: 'OCI Image Index Specification',
   type: 'object',
   properties: {
@@ -297,6 +302,7 @@ local imageIndex = {
 };
 
 local errors = {
+  '$schema': jsonSchemaV4,
   description: 'This property contains a list of errors messages returned from the server due to an invalid request.',
   type: 'object',
   properties: {
