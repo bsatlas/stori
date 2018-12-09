@@ -31,8 +31,36 @@ local string = { type: 'string' };
 
   contentLength:: {
     'Content-Length': {
-      description: 'Byte length of the returned content.',
-      schema: { type: 'string' },
+      description: 'The byte length of the data returned .',
+      schema: string,
+    },
+  },
+
+  contentType:: {
+    'Content-Type': {
+      description: 'The MIME type of the data.',
+      schema: string,
+    },
+  },
+
+  contentTypeOptions:: {
+    'X-Content-Type-Options': {
+      description: 'Content type options.',
+      schema: string,
+    },
+  },
+
+  contentRange:: {
+    'Content-Range': {
+      description: 'The byte range of the data returned.',
+      schema: string,
+    },
+  },
+
+  date:: {
+    Date: {
+      description: 'The date and time the message was originated.',
+      schema: string,
     },
   },
 
