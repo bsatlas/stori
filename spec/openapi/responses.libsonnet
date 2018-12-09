@@ -66,50 +66,48 @@ local common = {
   temporaryRedirect: temporaryRedirect,
 };
 
+// Initalize 200 response.
+// @param content a mapping of media types to their schemas.
+local ok(content) = {
+  '200': {
+    description: 'OK',
+    content: content,
+  },
+};
+
 local oci = {
-  base:: {
-    '200': {
-      description: 'OK',
-      content: {
-        [mediaTypes.json]: {
-          schema: schemas.types.emptyObject,
-        },
-      },
-    },
-  },
 
-  catalog:: {
-    '200': {
-      description: 'OK',
-      content: {
-        [mediaTypes.json]: {
-          schema: schemas.oci.catalog,
-        },
+  base:: ok(
+    {
+      [mediaTypes.json]: {
+        schema: schemas.types.emptyObject,
       },
     },
-  },
+  ),
 
-  tags:: {
-    '200': {
-      description: 'OK',
-      content: {
-        [mediaTypes.json]: {
-          schema: schemas.oci.tagList,
-        },
+  catalog:: ok(
+    {
+      [mediaTypes.json]: {
+        schema: schemas.oci.catalog,
       },
     },
-  },
+  ),
 
-  getManifest:: {
-    '200': {
-      description: 'OK',
-      content: {
-        [mediaTypes.oci.v1.imageManifest]: {
-          schema: schemas.oci.imageManifest,
-        },
+  tags:: ok(
+    {
+      [mediaTypes.json]: {
+        schema: schemas.oci.tagList,
       },
     },
-  },
+  ),
+
+  getManifest:: ok(
+    {
+      [mediaTypes.oci.v1.imageManifest]: {
+        schema: schemas.oci.imageManifest,
+      },
+    },
+  ),
 
 };
 
