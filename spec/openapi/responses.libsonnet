@@ -94,17 +94,20 @@ local oci = {
 
     emptyResponse:
       newContent(
-        mediaTypes.json, schemas.types.emptyObject
+        mediaTypes.json,
+        schemas.types.emptyObject
       ),
 
     catalog:
       newContent(
-        mediaTypes.json, schemas.oci.catalog
+        mediaTypes.json,
+        schemas.oci.catalog
       ),
 
     tags:
       newContent(
-        mediaTypes.json, schemas.oci.tagList
+        mediaTypes.json,
+        schemas.oci.tagList
       ),
 
     manifest:
