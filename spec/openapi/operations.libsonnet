@@ -240,11 +240,7 @@ local resp = import 'responses.libsonnet';
       tags: ['OCI'],
       summary: 'Add a manifest to a repository.',
       operationId: 'oci-put-manifest',
-      responses:
-        resp.oci.getBlob
-        + resp.errors.unauthorized
-        + resp.errors.forbidden
-        + resp.errors.tooManyRequests,
+      responses: resp.oci.putManifest,
     },
 
     deleteManifest:: {

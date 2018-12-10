@@ -1979,10 +1979,11 @@
             "responses": {
                "200": {
                   "content": {
-                     "application/octet-stream": {
+                     "application/json": {
                         "schema": {
-                           "format": "binary",
-                           "type": "string"
+                           "additionalProperties": false,
+                           "properties": { },
+                           "type": "object"
                         }
                      }
                   },
