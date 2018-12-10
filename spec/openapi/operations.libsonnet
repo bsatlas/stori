@@ -289,13 +289,7 @@ local resp = import 'responses.libsonnet';
       tags: ['OCI'],
       summary: 'Upload a blob chunk to the registry.',
       operationId: 'oci-upload-blob-chunk',
-      responses:
-        resp.oci.uploadBlobChunk
-        + resp.errors.RangeNotSatisfiable
-        + resp.errors.unauthorized
-        + resp.errors.forbidden
-        + resp.common.accepted
-        + resp.errors.tooManyRequests,
+      responses: resp.oci.uploadBlobChunk,
     },
 
     uploadBlobComplete:: {

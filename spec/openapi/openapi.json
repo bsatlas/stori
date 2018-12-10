@@ -657,12 +657,39 @@
          "patch": {
             "operationId": "oci-upload-blob-chunk",
             "responses": {
-               "200": {
-                  "content": { },
-                  "description": "OK"
+               "204": {
+                  "description": "No Content"
                },
-               "202": {
-                  "description": "Accepted"
+               "400": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$schema": "http://json-schema.org/draft-04/schema#",
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Bad Request"
                },
                "401": {
                   "content": {
@@ -726,7 +753,7 @@
                   },
                   "description": "Forbidden"
                },
-               "416": {
+               "404": {
                   "content": {
                      "application/json": {
                         "schema": {
@@ -755,7 +782,7 @@
                         }
                      }
                   },
-                  "description": "Requested Range Not Satisfiable"
+                  "description": "Not Found"
                },
                "429": {
                   "content": {
