@@ -17,17 +17,21 @@ local string = { type: 'string' };
     maximum: 9223372036854776000,
   },
 
-  mapStringObject: {
+  mapStringObject(output):: {
     type: 'object',
-    patternProperties: {
-      '.{1,}': { type: 'object' },
+    [if output == 'jsonschema' then 'patternProperties' else 'x-patternProperties']: {
+      '.{1,}': {
+        type: 'object',
+      },
     },
   },
 
-  mapStringString: {
+  mapStringString(output):: {
     type: 'object',
-    patternProperties: {
-      '.{1,}': { type: 'string' },
+    [if output == 'jsonschema' then 'patternProperties' else 'x-patternProperties']: {
+      '.{1,}': {
+        type: 'string',
+      },
     },
   },
 

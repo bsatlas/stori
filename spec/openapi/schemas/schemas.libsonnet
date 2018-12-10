@@ -1,6 +1,6 @@
 local oci = import 'oci.libsonnet';
 
 {
-  types:: import 'types.libsonnet',
+  common:: import 'common.libsonnet',
   oci:: import 'oci.libsonnet',
 }
