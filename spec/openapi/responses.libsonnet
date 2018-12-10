@@ -155,7 +155,7 @@ local oci = {
     + errors.tooManyRequests,
 
   putManifest::
-    okResponse(content.emptyResponse)
+    okResponse()
     + errors.unauthorized
     + errors.forbidden
     + errors.tooManyRequests,
