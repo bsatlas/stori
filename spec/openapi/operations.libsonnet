@@ -306,17 +306,5 @@ local resp = import 'responses.libsonnet';
       responses: resp.oci.cancelBlobUpload,
     },
 
-    mountBlob:: {
-      tags: ['OCI'],
-      summary: 'Mount a blob from another repository.',
-      operationId: 'oci-mount-blob',
-      responses:
-        resp.oci.mountBlob
-        + resp.common.created
-        + resp.common.accepted
-        + resp.errors.unauthorized
-        + resp.errors.forbidden
-        + resp.errors.tooManyRequests,
-    },
   },
 }
