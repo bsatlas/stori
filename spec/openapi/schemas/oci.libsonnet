@@ -109,7 +109,6 @@ local config = {
     },
   },
 
-  '$schema': types.jsonSchemaV4,
   description: 'OCI Config Specification',
   type: 'object',
   properties: {
@@ -278,7 +277,6 @@ local imageIndex = {
     items: contentDescriptor {},
   },
 
-  '$schema': types.jsonSchemaV4,
   description: 'OCI Image Index Specification',
   type: 'object',
   properties: {
@@ -300,7 +298,6 @@ local imageIndex = {
 };
 
 local errors = {
-  '$schema': types.jsonSchemaV4,
   description: 'This property contains a list of errors messages returned from the server due to an invalid request.',
   type: 'object',
   properties: {
@@ -319,7 +316,6 @@ local errors = {
 };
 
 local catalog = {
-  '$schema': types.jsonSchemaV4,
   description: 'This property contains a list of repositories hosted on the registry.',
   type: 'object',
   properties: {
@@ -331,7 +327,6 @@ local catalog = {
 };
 
 local tagList = {
-  '$schema': types.jsonSchemaV4,
   description: 'This property contains a list of all tags in a repository.',
   type: 'object',
   properties: {

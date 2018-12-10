@@ -29,7 +29,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -60,7 +59,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -91,7 +89,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -122,7 +119,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -165,7 +161,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of repositories hosted on the registry.",
                            "properties": {
                               "repositories": {
@@ -185,7 +180,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -216,7 +210,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -247,7 +240,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -314,7 +306,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -345,7 +336,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -376,7 +366,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -421,7 +410,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -452,7 +440,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -483,7 +470,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -514,7 +500,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -545,7 +530,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -588,7 +572,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -619,7 +602,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -650,7 +632,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -725,7 +706,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -756,7 +736,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -787,7 +766,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -818,7 +796,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -849,7 +826,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -892,7 +868,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -923,7 +898,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -954,7 +928,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -985,7 +958,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1016,7 +988,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1061,7 +1032,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1092,7 +1062,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1123,7 +1092,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1154,7 +1122,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1208,7 +1175,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1239,7 +1205,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1270,7 +1235,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1301,7 +1265,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1345,7 +1308,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1376,7 +1338,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1407,7 +1368,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1438,7 +1398,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1516,7 +1475,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1547,7 +1505,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1578,7 +1535,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1609,7 +1565,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1775,7 +1730,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1806,7 +1760,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1837,7 +1790,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1868,7 +1820,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1912,7 +1863,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1943,7 +1893,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -1974,7 +1923,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -2005,7 +1953,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -2081,7 +2028,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -2112,7 +2058,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -2143,7 +2088,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -2185,7 +2129,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of all tags in a repository.",
                            "properties": {
                               "name": {
@@ -2208,7 +2151,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -2239,7 +2181,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
@@ -2270,7 +2211,6 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
                            "properties": {
                               "errors": {
