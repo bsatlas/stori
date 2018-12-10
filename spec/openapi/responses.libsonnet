@@ -140,7 +140,12 @@ local oci = {
     + errors.forbidden
     + errors.tooManyRequests,
 
-  getManifest:: okResponse(content.manifest),
+  getManifest::
+    okResponse(content.manifest)
+    + errors.notFound
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.tooManyRequests,
 
   checkManifest:: okResponse(),
   putManifest:: okResponse(content.emptyResponse),
