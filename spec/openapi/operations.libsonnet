@@ -261,12 +261,7 @@ local resp = import 'responses.libsonnet';
       tags: ['OCI'],
       summary: 'Check for the existence of a blob by digest.',
       operationId: 'oci-get-blob',
-      responses:
-        resp.oci.checkBlob
-        + resp.errors.unauthorized
-        + resp.errors.forbidden
-        + resp.errors.notFound
-        + resp.errors.tooManyRequests,
+      responses: resp.oci.checkBlob,
     },
 
     deleteBlob:: {

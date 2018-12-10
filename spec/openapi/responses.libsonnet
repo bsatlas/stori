@@ -175,7 +175,13 @@ local oci = {
     + errors.notFound
     + errors.tooManyRequests,
 
-  checkBlob:: okResponse(),
+  checkBlob::
+    okResponse()
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.notFound
+    + errors.tooManyRequests,
+
   deleteBlob:: okResponse(),
   initBlobUploadOrMount:: okResponse(),
   statusBlobUpload:: {},
