@@ -160,7 +160,13 @@ local oci = {
     + errors.forbidden
     + errors.tooManyRequests,
 
-  deleteManifest:: okResponse(content.emptyResponse),
+  deleteManifest::
+    okResponse()
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.notFound
+    + errors.tooManyRequests,
+
   getBlob:: okResponse(content.binaryData),
   checkBlob:: okResponse(),
   deleteBlob:: okResponse(),

@@ -1405,15 +1405,7 @@
             "operationId": "oci-delete-manifest",
             "responses": {
                "200": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "additionalProperties": false,
-                           "properties": { },
-                           "type": "object"
-                        }
-                     }
-                  },
+                  "content": { },
                   "description": "OK"
                },
                "401": {

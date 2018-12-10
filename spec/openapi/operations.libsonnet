@@ -247,12 +247,7 @@ local resp = import 'responses.libsonnet';
       tags: ['OCI'],
       summary: 'Delete a manifest from the repository.',
       operationId: 'oci-delete-manifest',
-      responses:
-        resp.oci.deleteManifest
-        + resp.errors.unauthorized
-        + resp.errors.forbidden
-        + resp.errors.notFound
-        + resp.errors.tooManyRequests,
+      responses: resp.oci.deleteManifest,
     },
 
     getBlob:: {
