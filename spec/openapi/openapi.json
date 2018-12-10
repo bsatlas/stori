@@ -307,10 +307,6 @@
          "post": {
             "operationId": "oci-init-blob-upload",
             "responses": {
-               "200": {
-                  "content": { },
-                  "description": "OK"
-               },
                "202": {
                   "description": "Accepted"
                },
@@ -416,14 +412,11 @@
       },
       "/v2/{namespace}/{repository}/blobs/uploads/{id}": {
          "delete": {
-            "operationId": "oci-delete-blob",
+            "operationId": "oci-cancel-blob-upload",
             "responses": {
                "200": {
                   "content": { },
                   "description": "OK"
-               },
-               "202": {
-                  "description": "Accepted"
                },
                "401": {
                   "content": {
@@ -487,37 +480,6 @@
                   },
                   "description": "Forbidden"
                },
-               "404": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
-                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
-                           "properties": {
-                              "errors": {
-                                 "items": {
-                                    "properties": {
-                                       "code": {
-                                          "type": "string"
-                                       },
-                                       "detail": {
-                                          "type": "string"
-                                       },
-                                       "message": {
-                                          "type": "string"
-                                       }
-                                    },
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "Not Found"
-               },
                "429": {
                   "content": {
                      "application/json": {
@@ -550,7 +512,7 @@
                   "description": "Too Many Requests"
                }
             },
-            "summary": "Delete a blob by digest.",
+            "summary": "Cancel a blob upload.",
             "tags": [
                "OCI"
             ]
@@ -946,10 +908,6 @@
          "delete": {
             "operationId": "oci-delete-blob",
             "responses": {
-               "200": {
-                  "content": { },
-                  "description": "OK"
-               },
                "202": {
                   "description": "Accepted"
                },

@@ -275,12 +275,7 @@ local resp = import 'responses.libsonnet';
       tags: ['OCI'],
       summary: 'Initiate a blob upload.',
       operationId: 'oci-init-blob-upload',
-      responses:
-        resp.oci.initBlobUploadOrMount
-        + resp.common.accepted
-        + resp.errors.unauthorized
-        + resp.errors.forbidden
-        + resp.errors.tooManyRequests,
+      responses: resp.oci.initBlobUploadOrMount,
     },
 
     statusBlobUpload:: {

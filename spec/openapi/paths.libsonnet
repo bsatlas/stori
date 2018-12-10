@@ -184,7 +184,7 @@ local oci = {
     get: ops.oci.statusBlobUpload,
     patch: ops.oci.uploadBlobChunk,
     put: ops.oci.uploadBlobComplete,
-    delete: ops.oci.deleteBlob,
+    delete: ops.oci.cancelBlobUpload,
     parameters: [
       params.namespace,
       params.repository,
