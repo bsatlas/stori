@@ -268,13 +268,7 @@ local resp = import 'responses.libsonnet';
       tags: ['OCI'],
       summary: 'Delete a blob by digest.',
       operationId: 'oci-delete-blob',
-      responses:
-        resp.oci.deleteBlob
-        + resp.common.accepted
-        + resp.errors.unauthorized
-        + resp.errors.forbidden
-        + resp.errors.notFound
-        + resp.errors.tooManyRequests,
+      responses: resp.oci.deleteBlob,
     },
 
     initBlobUploadOrMount:: {

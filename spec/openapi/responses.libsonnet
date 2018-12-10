@@ -182,7 +182,13 @@ local oci = {
     + errors.notFound
     + errors.tooManyRequests,
 
-  deleteBlob:: okResponse(),
+  deleteBlob::
+    resp.common.accepted
+    + resp.errors.unauthorized
+    + resp.errors.forbidden
+    + resp.errors.notFound
+    + resp.errors.tooManyRequests,
+
   initBlobUploadOrMount:: okResponse(),
   statusBlobUpload:: {},
   uploadBlobChunk:: okResponse(),
