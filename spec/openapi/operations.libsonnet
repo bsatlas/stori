@@ -282,12 +282,7 @@ local resp = import 'responses.libsonnet';
       tags: ['OCI'],
       summary: "Check a blob's upload status.",
       operationId: 'oci-status-blob-upload',
-      responses:
-        resp.oci.statusBlobUpload
-        + resp.common.noContent
-        + resp.errors.unauthorized
-        + resp.errors.forbidden
-        + resp.errors.tooManyRequests,
+      responses: resp.oci.statusBlobUpload,
     },
 
     uploadBlobChunk:: {

@@ -195,7 +195,12 @@ local oci = {
     + errors.forbidden
     + errors.tooManyRequests,
 
-  statusBlobUpload:: {},
+  statusBlobUpload::
+    common.noContent
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.tooManyRequests,
+
   uploadBlobChunk:: okResponse(),
   uploadBlobComplete:: okResponse(),
   cancelBlobUpload:: okResponse(),
