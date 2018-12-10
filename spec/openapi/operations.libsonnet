@@ -204,12 +204,7 @@ local resp = import 'responses.libsonnet';
       summary: 'Check that the endpoint implements distribution API.',
       description: 'This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.',
       operationId: 'oci-base',
-      responses:
-        resp.oci.base
-        + resp.errors.unauthorized
-        + resp.errors.forbidden
-        + resp.errors.notFound
-        + resp.errors.tooManyRequests,
+      responses: resp.oci.base,
     },
 
     catalog:: {
@@ -217,11 +212,7 @@ local resp = import 'responses.libsonnet';
       summary: 'List a set of available repositories in the local registry cluster.',
       description: 'List a set of available repositories in the local registry cluster. Does not provide any indication of what may be available upstream. Applications can only determine if a repository is available but not if it is not available.',
       operationId: 'oci-catalog',
-      responses:
-        resp.oci.catalog
-        + resp.errors.unauthorized
-        + resp.errors.forbidden
-        + resp.errors.tooManyRequests,
+      responses: resp.oci.catalog,
     },
 
     tags:: {

@@ -84,6 +84,10 @@ local newContent(mediaType, schema) = {
   },
 };
 
+// Combine an array of responses into one object.
+// @param responses An array of response objects.
+local combineResponses(responses) = {};
+
 local oci = {
 
   local content = {
@@ -117,9 +121,21 @@ local oci = {
 
   },
 
-  base:: okResponse(),
-  catalog:: okResponse(content.catalog),
+  base::
+    okResponse()
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.notFound
+    + errors.tooManyRequests,
+
+  catalog::
+    okResponse(content.catalog)
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.tooManyRequests,
+
   tags:: okResponse(content.tags),
+
   getManifest:: okResponse(content.manifest),
   checkManifest:: okResponse(),
   putManifest:: okResponse(content.emptyResponse),
