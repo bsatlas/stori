@@ -303,11 +303,7 @@ local resp = import 'responses.libsonnet';
       tags: ['OCI'],
       summary: 'Cancel a blob upload.',
       operationId: 'oci-cancel-blob-upload',
-      responses:
-        resp.oci.cancelBlobUpload
-        + resp.errors.unauthorized
-        + resp.errors.forbidden
-        + resp.errors.tooManyRequests,
+      responses: resp.oci.cancelBlobUpload,
     },
 
     mountBlob:: {
