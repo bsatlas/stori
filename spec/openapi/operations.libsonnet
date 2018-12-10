@@ -254,13 +254,7 @@ local resp = import 'responses.libsonnet';
       tags: ['OCI'],
       summary: 'Download a blob by digest.',
       operationId: 'oci-get-blob',
-      responses:
-        resp.oci.getBlob
-        + resp.common.temporaryRedirect
-        + resp.errors.unauthorized
-        + resp.errors.forbidden
-        + resp.errors.notFound
-        + resp.errors.tooManyRequests,
+      responses: resp.oci.getBlob,
     },
 
     checkBlob:: {
