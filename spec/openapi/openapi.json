@@ -1604,29 +1604,28 @@
                   "content": {
                      "application/vnd.oci.image.manifest.v1+json": {
                         "schema": {
-                           "$schema": "http://json-schema.org/draft-04/schema#",
                            "description": "OCI Image Manifest Specification",
                            "properties": {
                               "annotations": {
                                  "description": "This OPTIONAL property contains arbitrary metadata for the image manifest and MUST use the annotation rules.",
-                                 "patternProperties": {
+                                 "type": "object",
+                                 "x-patternProperties": {
                                     ".{1,}": {
                                        "type": "string"
                                     }
-                                 },
-                                 "type": "object"
+                                 }
                               },
                               "config": {
                                  "description": "A descriptor for referencing a blob.",
                                  "properties": {
                                     "annotations": {
                                        "description": "This OPTIONAL property contains arbitrary metadata for the descriptor and MUST use the annotation rules.",
-                                       "patternProperties": {
+                                       "type": "object",
+                                       "x-patternProperties": {
                                           ".{1,}": {
                                              "type": "string"
                                           }
-                                       },
-                                       "type": "object"
+                                       }
                                     },
                                     "digest": {
                                        "description": "the cryptographic checksum digest of the object, in the pattern `<algorithm>:<encoded>`",
@@ -1667,12 +1666,12 @@
                                     "properties": {
                                        "annotations": {
                                           "description": "This OPTIONAL property contains arbitrary metadata for the descriptor and MUST use the annotation rules.",
-                                          "patternProperties": {
+                                          "type": "object",
+                                          "x-patternProperties": {
                                              ".{1,}": {
                                                 "type": "string"
                                              }
-                                          },
-                                          "type": "object"
+                                          }
                                        },
                                        "digest": {
                                           "description": "the cryptographic checksum digest of the object, in the pattern `<algorithm>:<encoded>`",

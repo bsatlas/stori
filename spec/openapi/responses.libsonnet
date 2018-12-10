@@ -77,26 +77,16 @@ local okResponse(content={}) = {
 
 // Initialize a content object
 // @param mediaType The media type of the response.
-// @param schema The schema of the media type.
-local newContent(mediaType, schema) = {
+// @param s The schema of the media type.
+local newContent(mediaType, mtSchema) = {
   [mediaType]: {
-    schema: schema,
+    schema: mtSchema,
   },
 };
-
-// Combine an array of responses into one object.
-// @param responses An array of response objects.
-local combineResponses(responses) = {};
 
 local oci = {
 
   local content = {
-
-    emptyResponse:
-      newContent(
-        mediaTypes.json,
-        schemas.types.emptyObject
-      ),
 
     catalog:
       newContent(
@@ -107,19 +97,19 @@ local oci = {
     tags:
       newContent(
         mediaTypes.json,
-        schemas.oci.tagList
+        schemas.oci.tagList('openapi')
       ),
 
     manifest:
       newContent(
         mediaTypes.oci.v1.imageManifest,
-        schemas.oci.imageManifest
+        schemas.oci.imageManifest('openapi')
       ),
 
     binaryData:
       newContent(
         mediaTypes.octetStream,
-        schemas.types.binary,
+        schemas.common.binary,
       ),
 
   },

@@ -1,5 +1,5 @@
 local schemas = import 'schemas/schemas.libsonnet';
-local string = schemas.types.string;
+local string = schemas.common.string;
 
 {
   namespace:: {

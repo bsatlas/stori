@@ -40,9 +40,4 @@ local string = { type: 'string' };
     items: string,
   },
 
-  emptyObject: {
-    type: 'object',
-    properties: {},
-    additionalProperties: false,
-  },
 }
