@@ -296,12 +296,7 @@ local resp = import 'responses.libsonnet';
       tags: ['OCI'],
       summary: 'Notify registry that the chunked blob upload is complete.',
       operationId: 'oci-upload-blob-complete',
-      responses:
-        resp.oci.uploadBlobComplete
-        + resp.common.created
-        + resp.errors.unauthorized
-        + resp.errors.forbidden
-        + resp.errors.tooManyRequests,
+      responses: resp.oci.uploadBlobComplete,
     },
 
     cancelBlobUpload:: {

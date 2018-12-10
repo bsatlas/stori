@@ -209,7 +209,14 @@ local oci = {
     + errors.forbidden
     + errors.tooManyRequests,
 
-  uploadBlobComplete:: okResponse(),
+  uploadBlobComplete::
+    common.noContent
+    + errors.badRequest
+    + errors.notFound
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.tooManyRequests,
+
   cancelBlobUpload:: okResponse(),
   mountBlob:: okResponse(),
 
