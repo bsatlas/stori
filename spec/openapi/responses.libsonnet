@@ -134,9 +134,14 @@ local oci = {
     + errors.forbidden
     + errors.tooManyRequests,
 
-  tags:: okResponse(content.tags),
+  tags::
+    okResponse(content.tags)
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.tooManyRequests,
 
   getManifest:: okResponse(content.manifest),
+
   checkManifest:: okResponse(),
   putManifest:: okResponse(content.emptyResponse),
   deleteManifest:: okResponse(content.emptyResponse),

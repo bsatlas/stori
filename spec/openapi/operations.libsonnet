@@ -219,11 +219,7 @@ local resp = import 'responses.libsonnet';
       tags: ['OCI'],
       summary: 'Get all tags in a repository.',
       operationId: 'oci-tags-list',
-      responses:
-        resp.oci.tags
-        + resp.errors.unauthorized
-        + resp.errors.forbidden
-        + resp.errors.tooManyRequests,
+      responses: resp.oci.tags,
     },
 
     getManifest:: {
