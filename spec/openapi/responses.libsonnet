@@ -1,6 +1,18 @@
 local mediaTypes = import 'media-types.libsonnet';
 local schemas = import 'schemas/schemas.libsonnet';
 
+local response(
+  description,
+  headers,
+  content,
+  links={}
+      ) = {
+  description: description,
+  headers: headers,
+  content: content,
+  links: links,
+};
+
 local errors = {
 
   // Create OCI-style error responses.

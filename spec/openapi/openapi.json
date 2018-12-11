@@ -3,7 +3,7 @@
       "contact": {
          "email": "atlaskerr@gmail.com",
          "name": "Atlas Kerr",
-         "url": "https://localhost"
+         "url": "http://localhost"
       },
       "description": "A secure implementation of the OCI Distribution Specification.",
       "license": {
@@ -12,7 +12,7 @@
       },
       "termsOfService": "TBD",
       "title": "Stori Registry",
-      "version": "v0.1.0"
+      "version": "v1.0.0"
    },
    "openapi": "3.0.0",
    "paths": {
@@ -2265,10 +2265,5 @@
             }
          ]
       }
-   },
-   "servers": [
-      {
-         "url": "http://localhost"
-      }
-   ]
+   }
 }

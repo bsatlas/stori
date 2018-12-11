@@ -1,0 +1,14 @@
+{
+    "dependencies": [
+        {
+            "name": "openapi-jsonnet",
+            "source": {
+                "git": {
+                    "remote": "https://github.com/atlaskerr/openapi-jsonnet",
+                    "subdir": ""
+                }
+            },
+            "version": "423d6ce0041f4d41eccaeb8b8577d2f7853fd5cc"
+        }
+    ]
+}
