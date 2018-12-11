@@ -14,7 +14,7 @@ spec: generate-openapi validate-openapi
 
 # Generate OpenAPI Specification.
 generate-openapi:
-	jsonnet -m $(OPENAPI_DIR) $(OPENAPI_DIR)/openapi.jsonnet
+	jsonnet -J $(OPENAPI_DIR)/vendor -m $(OPENAPI_DIR) $(OPENAPI_DIR)/openapi.jsonnet
 
 # Validate generated OpenAPI specification file.
 validate-openapi:
