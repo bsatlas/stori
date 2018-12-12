@@ -28,7 +28,7 @@
     },
 
     addParameter(parameter):: self {
-      parameters+: parameter,
+      parameters+: [parameter],
     },
   },
 }

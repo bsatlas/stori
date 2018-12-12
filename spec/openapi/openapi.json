@@ -39,6 +39,36 @@
          }
       },
       "/v2/{namespace}/{repository}/blobs/uploads": {
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "explode": false,
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "simple"
+            },
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "explode": false,
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "simple"
+            }
+         ],
          "post": {
             "deprecated": false,
             "operationId": "oci-blob-init",
@@ -48,7 +78,7 @@
             ]
          }
       },
-      "/v2/{namespace}/{repository}/blobs/uploads/{id}": {
+      "/v2/{namespace}/{repository}/blobs/uploads/{uuid}": {
          "delete": {
             "deprecated": false,
             "operationId": "oci-blob-upload-cancel",
@@ -65,6 +95,50 @@
                "OCI"
             ]
          },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "explode": false,
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "simple"
+            },
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "explode": false,
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "simple"
+            },
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "A universally unique identifier.",
+               "explode": false,
+               "in": "path",
+               "name": "uuid",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "simple"
+            }
+         ],
          "patch": {
             "deprecated": false,
             "operationId": "oci-blob-upload-chunk",
@@ -103,7 +177,51 @@
             "deprecated": false,
             "operationId": "oci-blob-exists",
             "summary": "Check for the existence of a manifest by name and reference."
-         }
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "explode": false,
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "simple"
+            },
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "explode": false,
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "simple"
+            },
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "A content addressable identifier.",
+               "explode": false,
+               "in": "path",
+               "name": "digest",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "simple"
+            }
+         ]
       },
       "/v2/{namespace}/{repository}/manifests/{reference}": {
          "delete": {
@@ -130,6 +248,50 @@
                "OCI"
             ]
          },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "explode": false,
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "simple"
+            },
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "explode": false,
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "simple"
+            },
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "Can either be a tag name or digest",
+               "explode": false,
+               "in": "path",
+               "name": "reference",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "simple"
+            }
+         ],
          "put": {
             "deprecated": false,
             "operationId": "oci-manifest-create",
@@ -147,7 +309,37 @@
             "tags": [
                "OCI"
             ]
-         }
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "explode": false,
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "simple"
+            },
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "explode": false,
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "simple"
+            }
+         ]
       }
    }
 }

@@ -9,6 +9,7 @@
   responses: import 'responses.libsonnet',
   response: import 'response.libsonnet',
   operation: import 'operation.libsonnet',
+  parameter: import 'parameter.libsonnet',
 
   // Initalize new OpenAPI spec.
   new(

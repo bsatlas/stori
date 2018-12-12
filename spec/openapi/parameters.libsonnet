@@ -1,58 +1,47 @@
+local oapi = import 'openapi-jsonnet/v3.0.0/openapi.libsonnet';
+local param = oapi.parameter;
 local schemas = import 'schemas/schemas.libsonnet';
-local string = schemas.common.string;
+
+
+local namespace = param.new(
+  name='namespace',
+  paramIn='path',
+  description='A logical grouping of repositories.',
+  schema=schemas.common.string,
+);
+
+local repository = param.new(
+  name='repository',
+  paramIn='path',
+  description='A place to store an image.',
+  schema=schemas.common.string,
+);
+
+local reference = param.new(
+  name='reference',
+  paramIn='path',
+  description='Can either be a tag name or digest',
+  schema=schemas.common.string,
+);
+
+local digest = param.new(
+  name='digest',
+  paramIn='path',
+  description='A content addressable identifier.',
+  schema=schemas.common.string,
+);
+
+local uuid = param.new(
+  name='uuid',
+  paramIn='path',
+  description='A universally unique identifier.',
+  schema=schemas.common.string,
+);
 
 {
-  namespace:: {
-    name: 'namespace',
-    'in': 'path',
-    description: 'A logical grouping of repositories.',
-    required: true,
-    allowEmptyValue: false,
-    schema: string,
-  },
-
-  repository:: {
-    name: 'repository',
-    'in': 'path',
-    description: 'A place to store an image.',
-    required: true,
-    allowEmptyValue: false,
-    schema: string,
-  },
-
-  reference:: {
-    name: 'reference',
-    'in': 'path',
-    description: 'Can either be a tag name or digest.',
-    required: true,
-    allowEmptyValue: false,
-    schema: string,
-  },
-
-  digest:: {
-    name: 'digest',
-    'in': 'path',
-    description: 'A content addressable identifier.',
-    required: true,
-    allowEmptyValue: false,
-    schema: string,
-  },
-
-  tag:: {
-    name: 'tag',
-    'in': 'path',
-    description: 'An image tag.',
-    required: true,
-    allowEmptyValue: false,
-    schema: string,
-  },
-
-  id:: {
-    name: 'id',
-    'in': 'path',
-    description: 'A unique id.',
-    required: true,
-    allowEmptyValue: false,
-    schema: string,
-  },
+  namespace: namespace,
+  repository: repository,
+  reference: reference,
+  digest: digest,
+  uuid: uuid,
 }
