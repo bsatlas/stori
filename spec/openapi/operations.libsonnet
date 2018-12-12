@@ -1,5 +1,5 @@
 local oapi = import 'openapi-jsonnet/v3.0.0/openapi.libsonnet';
-
+local resp = import 'responses.libsonnet';
 local op = oapi.operation;
 
 // OCI Operations.
@@ -7,96 +7,184 @@ local oci = {
 
   local tags = ['OCI'],
 
-  local verify = op.new(
-    operationId='oci-verify',
-    tags=tags,
-    summary='Check that the endpoint implements distribution API.',
-    description='This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.',
-  ),
+  local verify =
+    op.new(
+      operationId='oci-verify',
+      tags=tags,
+      summary='Check that the endpoint implements distribution API.',
+      description='This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.',
+    )
+    .addResponse(resp.err.unauthorized)
+    .addResponse(resp.err.forbidden)
+    .addResponse(resp.err.notFound)
+    .addResponse(resp.err.tooManyRequests)
+  ,
 
-  local catalogList = op.new(
-    operationId='oci-catalog-list',
-    tags=tags,
-    summary='List a set of available repositories in the local registry cluster.',
-    description='List a set of available repositories in the local registry cluster. Does not provide any indication of what may be available upstream. Applications can only determine if a repository is available but not if it is not available.',
-  ),
+  local catalogList =
+    op.new(
+      operationId='oci-catalog-list',
+      tags=tags,
+      summary='List a set of available repositories in the local registry cluster.',
+      description='List a set of available repositories in the local registry cluster. Does not provide any indication of what may be available upstream. Applications can only determine if a repository is available but not if it is not available.',
+    )
+    .addResponse(resp.err.unauthorized)
+    .addResponse(resp.err.forbidden)
+    .addResponse(resp.err.tooManyRequests)
+  ,
 
-  local tagsList = op.new(
-    operationId='oci-tags-list',
-    tags=tags,
-    summary='Get all tags in a repository.',
-  ),
+  local tagsList =
+    op.new(
+      operationId='oci-tags-list',
+      tags=tags,
+      summary='Get all tags in a repository.',
+    )
+    .addResponse(resp.err.unauthorized)
+    .addResponse(resp.err.forbidden)
+    .addResponse(resp.err.tooManyRequests)
+  ,
 
-  local manifestGet = op.new(
-    operationId='oci-manifest-get',
-    summary='Get a manifest by name and reference.',
-    tags=tags,
-  ),
+  local manifestGet =
+    op.new(
+      operationId='oci-manifest-get',
+      summary='Get a manifest by name and reference.',
+      tags=tags,
+    )
+    .addResponse(resp.err.unauthorized)
+    .addResponse(resp.err.forbidden)
+    .addResponse(resp.err.notFound)
+    .addResponse(resp.err.tooManyRequests)
+  ,
 
-  local manifestExists = op.new(
-    operationId='oci-manifest-exists',
-    summary='Check for the existence of a manifest by name and reference.',
-    tags=tags,
-  ),
+  local manifestExists =
+    op.new(
+      operationId='oci-manifest-exists',
+      summary='Check for the existence of a manifest by name and reference.',
+      tags=tags,
+    )
+    .addResponse(resp.err.unauthorized)
+    .addResponse(resp.err.forbidden)
+    .addResponse(resp.err.notFound)
+    .addResponse(resp.err.tooManyRequests)
+  ,
 
-  local manifestCreate = op.new(
-    operationId='oci-manifest-create',
-    summary='Add a manifest to a repository.',
-    tags=tags,
-  ),
+  local manifestCreate =
+    op.new(
+      operationId='oci-manifest-create',
+      summary='Add a manifest to a repository.',
+      tags=tags,
+    )
+    .addResponse(resp.err.unauthorized)
+    .addResponse(resp.err.forbidden)
+    .addResponse(resp.err.tooManyRequests)
+  ,
 
-  local manifestDelete = op.new(
-    operationId='oci-manifest-delete',
-    summary='Delete a manifest from the repository.',
-    tags=tags,
-  ),
+  local manifestDelete =
+    op.new(
+      operationId='oci-manifest-delete',
+      summary='Delete a manifest from the repository.',
+      tags=tags,
+    )
+    .addResponse(resp.err.unauthorized)
+    .addResponse(resp.err.forbidden)
+    .addResponse(resp.err.notFound)
+    .addResponse(resp.err.tooManyRequests)
+  ,
 
-  local blobDownload = op.new(
-    operationId='oci-blob-download',
-    summary='Download a blob by digest.',
-    tags=tags,
-  ),
+  local blobDownload =
+    op.new(
+      operationId='oci-blob-download',
+      summary='Download a blob by digest.',
+      tags=tags,
+    )
+    .addResponse(resp.err.unauthorized)
+    .addResponse(resp.err.forbidden)
+    .addResponse(resp.err.notFound)
+    .addResponse(resp.err.tooManyRequests)
+  ,
 
-  local blobExists = op.new(
-    operationId='oci-blob-exists',
-    summary='Check for the existence of a manifest by name and reference.',
-  ),
+  local blobExists =
+    op.new(
+      operationId='oci-blob-exists',
+      summary='Check for the existence of a manifest by name and reference.',
+    )
+    .addResponse(resp.err.unauthorized)
+    .addResponse(resp.err.forbidden)
+    .addResponse(resp.err.notFound)
+    .addResponse(resp.err.tooManyRequests)
+  ,
 
-  local blobDelete = op.new(
-    operationId='oci-blob-delete',
-    tags=tags,
-    summary='Delete a blob by digest.',
-  ),
+  local blobDelete =
+    op.new(
+      operationId='oci-blob-delete',
+      tags=tags,
+      summary='Delete a blob by digest.',
+    )
+    .addResponse(resp.err.unauthorized)
+    .addResponse(resp.err.forbidden)
+    .addResponse(resp.err.notFound)
+    .addResponse(resp.err.tooManyRequests)
+  ,
 
-  local blobUploadInit = op.new(
-    operationId='oci-blob-upload-init',
-    tags=tags,
-    summary='Initiate a blob upload.',
-  ),
+  local blobUploadInit =
+    op.new(
+      operationId='oci-blob-upload-init',
+      tags=tags,
+      summary='Initiate a blob upload.',
+    )
+    .addResponse(resp.err.unauthorized)
+    .addResponse(resp.err.forbidden)
+    .addResponse(resp.err.tooManyRequests)
+  ,
 
-  local blobUploadStatus = op.new(
-    operationId='oci-blob-upload-status',
-    tags=tags,
-    summary="Check a blob's upload status.",
-  ),
+  local blobUploadStatus =
+    op.new(
+      operationId='oci-blob-upload-status',
+      tags=tags,
+      summary="Check a blob's upload status.",
+    )
+    .addResponse(resp.err.unauthorized)
+    .addResponse(resp.err.forbidden)
+    .addResponse(resp.err.tooManyRequests)
+  ,
 
-  local blobUploadChunk = op.new(
-    operationId='oci-blob-upload-chunk',
-    tags=tags,
-    summary='Upload a blob chunk to the repository.',
-  ),
+  local blobUploadChunk =
+    op.new(
+      operationId='oci-blob-upload-chunk',
+      tags=tags,
+      summary='Upload a blob chunk to the repository.',
+    )
+    .addResponse(resp.err.badRequest)
+    .addResponse(resp.err.unauthorized)
+    .addResponse(resp.err.forbidden)
+    .addResponse(resp.err.notFound)
+    .addResponse(resp.err.tooManyRequests)
+  ,
 
-  local blobUploadComplete = op.new(
-    operationId='oci-blob-upload-complete',
-    tags=tags,
-    summary='Notify registry that the chunked blob upload is complete.',
-  ),
+  local blobUploadComplete =
+    op.new(
+      operationId='oci-blob-upload-complete',
+      tags=tags,
+      summary='Notify registry that the chunked blob upload is complete.',
+    )
+    .addResponse(resp.err.badRequest)
+    .addResponse(resp.err.unauthorized)
+    .addResponse(resp.err.forbidden)
+    .addResponse(resp.err.notFound)
+    .addResponse(resp.err.tooManyRequests)
+  ,
 
-  local blobUploadCancel = op.new(
-    operationId='oci-blob-upload-cancel',
-    tags=tags,
-    summary='Cancel the chunked blob upload.',
-  ),
+  local blobUploadCancel =
+    op.new(
+      operationId='oci-blob-upload-cancel',
+      tags=tags,
+      summary='Cancel the chunked blob upload.',
+    )
+    .addResponse(resp.err.badRequest)
+    .addResponse(resp.err.unauthorized)
+    .addResponse(resp.err.forbidden)
+    .addResponse(resp.err.notFound)
+    .addResponse(resp.err.tooManyRequests)
+  ,
 
   verify:: verify,
   catalogList:: catalogList,
