@@ -21,6 +21,7 @@ local info = oapi.info.new(
   license=license,
 );
 
+
 {
   'openapi.json': oapi.new(info=info, paths=paths),
 }

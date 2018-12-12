@@ -1,310 +1,121 @@
-local resp = import 'responses.libsonnet';
+local oapi = import 'openapi-jsonnet/v3.0.0/openapi.libsonnet';
+
+local op = oapi.operation;
+
+// OCI Operations.
+local oci = {
+
+  local tags = ['OCI'],
+
+  local verify = op.new(
+    operationId='oci-base',
+    tags=tags,
+    summary='Check that the endpoint implements distribution API.',
+    description='This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.',
+  ),
+
+  local catalogList = op.new(
+    operationId='oci-catalog',
+    tags=tags,
+    summary='List a set of available repositories in the local registry cluster.',
+    description='List a set of available repositories in the local registry cluster. Does not provide any indication of what may be available upstream. Applications can only determine if a repository is available but not if it is not available.',
+  ),
+
+  local tagsList = op.new(
+    operationId='oci-tags-list',
+    tags=tags,
+    summary='Get all tags in a repository.',
+  ),
+
+  local manifestGet = op.new(
+    operationId='oci-manifest-get',
+    summary='Get a manifest by name and reference.',
+    tags=tags,
+  ),
+
+  local manifestExists = op.new(
+    operationId='oci-manifest-exists',
+    summary='Check for the existence of a manifest by name and reference.',
+    tags=tags,
+  ),
+
+  local manifestCreate = op.new(
+    operationId='oci-manifest-create',
+    summary='Add a manifest to a repository.',
+    tags=tags,
+  ),
+
+  local manifestDelete = op.new(
+    operationId='oci-manifest-delete',
+    summary='Delete a manifest from the repository.',
+    tags=tags,
+  ),
+
+  local blobDownload = op.new(
+    operationId='oci-blob-download',
+    summary='Download a blob by digest.',
+    tags=tags,
+  ),
+
+  local blobExists = op.new(
+    operationId='oci-blob-exists',
+    summary='Check for the existence of a manifest by name and reference.',
+  ),
+
+  local blobDelete = op.new(
+    operationId='oci-blob-delete',
+    tags=tags,
+    summary='Delete a blob by digest.',
+  ),
+
+  local blobUploadInit = op.new(
+    operationId='oci-blob-init',
+    tags=tags,
+    summary='Initiate a blob upload.',
+  ),
+
+  local blobUploadStatus = op.new(
+    operationId='oci-blob-upload-status',
+    tags=tags,
+    summary="Check a blob's upload status.",
+  ),
+
+  local blobUploadChunk = op.new(
+    operationId='oci-blob-upload-chunk',
+    tags=tags,
+    summary='Upload a blob chunk to the repository.',
+  ),
+
+  local blobUploadComplete = op.new(
+    operationId='oci-blob-upload-complete',
+    tags=tags,
+    summary='Notify registry that the chunked blob upload is complete.',
+  ),
+
+  local blobUploadCancel = op.new(
+    operationId='oci-blob-upload-cancel',
+    tags=tags,
+    summary='Cancel the chunked blob upload.',
+  ),
+
+  verify:: verify,
+  catalogList:: catalogList,
+  tagsList:: tagsList,
+  manifestGet:: manifestGet,
+  manifestExists:: manifestExists,
+  manifestCreate:: manifestCreate,
+  manifestDelete:: manifestDelete,
+  blobDownload:: blobDownload,
+  blobExists:: blobExists,
+  blobDelete:: blobDelete,
+  blobUploadInit:: blobUploadInit,
+  blobUploadStatus:: blobUploadStatus,
+  blobUploadChunk:: blobUploadChunk,
+  blobUploadComplete:: blobUploadComplete,
+  blobUploadCancel:: blobUploadCancel,
+};
+
+
 {
-  stori:: {
-    base:: {
-      tags: ['Images'],
-      summary: 'Verify that the endpoint implements the Stori API Specification.',
-      operationId: 'images-base',
-      responses:
-        resp.errors.unauthorized
-        + resp.errors.notFound,
-    },
-
-    getNamespaces:: {
-      tags: ['Images', 'Namespaces'],
-      summary: 'Get all namespaces the client has access to.',
-      operationId: 'get-namespaces',
-      responses: {},
-    },
-
-    deleteNamespaces:: {
-      tags: ['Images', 'Namespaces'],
-      summary: 'Delete all namespaces in the registry.',
-      description: 'This operation deletes all namespaces and repositories hosted on the registry. Use with caution as it is very destructive.',
-      operationId: 'get-namespaces',
-      responses: {},
-    },
-
-    getNamespace:: {
-      tags: ['Images', 'Namespaces'],
-      summary: 'Get info about a specific namespace.',
-      operationId: 'get-namespaces',
-      responses: {},
-    },
-
-    createNamespace:: {
-      tags: ['Images', 'Namespaces'],
-      summary: 'Create a new namespace',
-      description: 'This operation creates an new namespace for storing image repositories.',
-      operationId: 'create-namespace',
-      responses: {},
-    },
-
-    deleteNamespace:: {
-      tags: ['Images', 'Namespaces'],
-      summary: 'Delete a namespace.',
-      description: 'This operation deletes a namespace from the registry as well as all repositories it contains.',
-      operationId: 'create-namespace',
-      responses: {},
-    },
-
-    getRepositories:: {
-      tags: ['Images', 'Repositories'],
-      summary: 'Get info about a specific repository.',
-      operationId: 'get-repositories',
-      responses: {},
-    },
-
-    deleteRepositories:: {
-      tags: ['Images', 'Repositories'],
-      summary: 'Delete all repositories in a namespace.',
-      operationId: 'delete-repositories',
-      responses: {},
-    },
-
-    getRepository:: {
-      tags: ['Images', 'Repositories'],
-      summary: 'Get info about a specific repository.',
-      operationId: 'get-repository',
-      responses: {},
-    },
-
-    deleteRepository:: {
-      tags: ['Images', 'Repositories'],
-      summary: 'Delete a repository from a namespace.',
-      operationId: 'delete-repository',
-      responses: {},
-    },
-
-    createRepository:: {
-      tags: ['Images', 'Repositories'],
-      summary: 'Create a new repository.',
-      operationId: 'create-repository',
-      responses: {},
-    },
-
-    verifyRepository:: {
-      tags: ['Images', 'Repositories'],
-      summary: 'Check if a specific repository exists.',
-      operationId: 'verify-repository',
-      responses: {},
-    },
-
-    getManifests:: {
-      tags: ['Images', 'Manifests'],
-      summary: 'Get all manifests in a repository.',
-      operationId: 'get-manifests',
-      responses: {},
-    },
-
-    getManifest:: {
-      tags: ['Images', 'Manifests'],
-      summary: 'Get an image manifest.',
-      operationId: 'get-manifest',
-      responses: {},
-    },
-
-    deleteManifest:: {
-      tags: ['Images', 'Manifests'],
-      summary: 'Delete an image manifest.',
-      operationId: 'delete-manifest',
-      responses: {},
-    },
-
-    setManifest:: {
-      tags: ['Images', 'Manifests'],
-      summary: 'Mark an uploaded blob as an image manifest.',
-      operationId: 'set-manifest',
-      responses: {},
-    },
-
-    getManifestConfig:: {
-      tags: ['Images', 'Manifests'],
-      summary: "Get an image manifest's config info.",
-      operationId: 'get-manifest-config',
-      responses: {},
-    },
-
-    getTags:: {
-      tags: ['Images', 'Manifests'],
-      summary: 'Get all tags in a repository',
-      operationId: 'get-tags',
-      responses: {},
-    },
-
-    deleteTags:: {
-      tags: ['Images', 'Manifests'],
-      summary: 'Delete all tags in a repository',
-      operationId: 'delete-tags',
-      responses: {},
-    },
-
-    getTag:: {
-      tags: ['Images', 'Manifests'],
-      summary: 'Get a repository tag.',
-      operationId: 'get-tag',
-      responses: {},
-    },
-
-    deleteTag:: {
-      tags: ['Images', 'Manifests'],
-      summary: 'Delete a repository tag.',
-      operationId: 'delete-tag',
-      responses: {},
-    },
-
-    createTag:: {
-      tags: ['Images', 'Manifests'],
-      summary: 'Create a new repository tag.',
-      operationId: 'create-tag',
-      responses: {},
-    },
-
-    getBlobs:: {
-      tags: ['Images', 'Blobs'],
-      summary: 'Get a list of all Blobs in a repository.',
-      operationId: 'get-Blobs',
-      responses: {},
-    },
-
-    getBlob:: {
-      tags: ['Images', 'Blobs'],
-      summary: 'Download a blob from a repository.',
-      operationId: 'get-blob',
-      responses: {},
-    },
-
-    uploadBlob:: {
-      tags: ['Images', 'Blobs'],
-      summary: 'Upload a blob to a repository.',
-      operationId: 'upload-blob',
-      responses: {},
-    },
-
-    deleteBlob:: {
-      tags: ['Images', 'Blobs'],
-      summary: 'Delete a blob from a repository.',
-      operationId: 'delete-blob',
-      responses: {},
-    },
-
-    verifyBlob:: {
-      tags: ['Images', 'Blobs'],
-      summary: 'Verify that a blob exists in a repository.',
-      operationId: 'verify-blob',
-      responses: {},
-    },
-
-  },
-
-  oci:: {
-
-    base:: {
-      tags: ['OCI'],
-      summary: 'Check that the endpoint implements distribution API.',
-      description: 'This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.',
-      operationId: 'oci-base',
-      responses: resp.oci.base,
-    },
-
-    catalog:: {
-      tags: ['OCI'],
-      summary: 'List a set of available repositories in the local registry cluster.',
-      description: 'List a set of available repositories in the local registry cluster. Does not provide any indication of what may be available upstream. Applications can only determine if a repository is available but not if it is not available.',
-      operationId: 'oci-catalog',
-      responses: resp.oci.catalog,
-    },
-
-    tags:: {
-      tags: ['OCI'],
-      summary: 'Get all tags in a repository.',
-      operationId: 'oci-tags-list',
-      responses: resp.oci.tags,
-    },
-
-    getManifest:: {
-      tags: ['OCI'],
-      summary: 'Get a manifest by name and reference.',
-      operationId: 'oci-get-manifest',
-      responses: resp.oci.getManifest,
-    },
-
-    checkManifest:: {
-      tags: ['OCI'],
-      summary: 'Check for the existence of a manifest by name and reference.',
-      operationId: 'oci-get-manifest',
-      responses: resp.oci.checkManifest,
-    },
-
-    putManifest:: {
-      tags: ['OCI'],
-      summary: 'Add a manifest to a repository.',
-      operationId: 'oci-put-manifest',
-      responses: resp.oci.putManifest,
-    },
-
-    deleteManifest:: {
-      tags: ['OCI'],
-      summary: 'Delete a manifest from the repository.',
-      operationId: 'oci-delete-manifest',
-      responses: resp.oci.deleteManifest,
-    },
-
-    getBlob:: {
-      tags: ['OCI'],
-      summary: 'Download a blob by digest.',
-      operationId: 'oci-get-blob',
-      responses: resp.oci.getBlob,
-    },
-
-    checkBlob:: {
-      tags: ['OCI'],
-      summary: 'Check for the existence of a blob by digest.',
-      operationId: 'oci-get-blob',
-      responses: resp.oci.checkBlob,
-    },
-
-    deleteBlob:: {
-      tags: ['OCI'],
-      summary: 'Delete a blob by digest.',
-      operationId: 'oci-delete-blob',
-      responses: resp.oci.deleteBlob,
-    },
-
-    initBlobUploadOrMount:: {
-      tags: ['OCI'],
-      summary: 'Initiate a blob upload.',
-      operationId: 'oci-init-blob-upload',
-      responses: resp.oci.initBlobUploadOrMount,
-    },
-
-    statusBlobUpload:: {
-      tags: ['OCI'],
-      summary: "Check a blob's upload status.",
-      operationId: 'oci-status-blob-upload',
-      responses: resp.oci.statusBlobUpload,
-    },
-
-    uploadBlobChunk:: {
-      tags: ['OCI'],
-      summary: 'Upload a blob chunk to the registry.',
-      operationId: 'oci-upload-blob-chunk',
-      responses: resp.oci.uploadBlobChunk,
-    },
-
-    uploadBlobComplete:: {
-      tags: ['OCI'],
-      summary: 'Notify registry that the chunked blob upload is complete.',
-      operationId: 'oci-upload-blob-complete',
-      responses: resp.oci.uploadBlobComplete,
-    },
-
-    cancelBlobUpload:: {
-      tags: ['OCI'],
-      summary: 'Cancel a blob upload.',
-      operationId: 'oci-cancel-blob-upload',
-      responses: resp.oci.cancelBlobUpload,
-    },
-
-  },
+  oci: oci,
 }
