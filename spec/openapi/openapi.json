@@ -21,6 +21,131 @@
             "deprecated": false,
             "description": "This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.",
             "operationId": "oci-verify",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
             "summary": "Check that the endpoint implements distribution API.",
             "tags": [
                "OCI"
@@ -32,6 +157,101 @@
             "deprecated": false,
             "description": "List a set of available repositories in the local registry cluster. Does not provide any indication of what may be available upstream. Applications can only determine if a repository is available but not if it is not available.",
             "operationId": "oci-catalog-list",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
             "summary": "List a set of available repositories in the local registry cluster.",
             "tags": [
                "OCI"
@@ -72,6 +292,101 @@
          "post": {
             "deprecated": false,
             "operationId": "oci-blob-upload-init",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
             "summary": "Initiate a blob upload.",
             "tags": [
                "OCI"
@@ -82,6 +397,161 @@
          "delete": {
             "deprecated": false,
             "operationId": "oci-blob-upload-cancel",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "400": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Accepted"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
             "summary": "Cancel the chunked blob upload.",
             "tags": [
                "OCI"
@@ -90,6 +560,101 @@
          "get": {
             "deprecated": false,
             "operationId": "oci-blob-upload-status",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
             "summary": "Check a blob's upload status.",
             "tags": [
                "OCI"
@@ -142,6 +707,161 @@
          "patch": {
             "deprecated": false,
             "operationId": "oci-blob-upload-chunk",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "400": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Accepted"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
             "summary": "Upload a blob chunk to the repository.",
             "tags": [
                "OCI"
@@ -150,6 +870,161 @@
          "put": {
             "deprecated": false,
             "operationId": "oci-blob-upload-complete",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "400": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Accepted"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
             "summary": "Notify registry that the chunked blob upload is complete.",
             "tags": [
                "OCI"
@@ -160,6 +1035,131 @@
          "delete": {
             "deprecated": false,
             "operationId": "oci-blob-delete",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
             "summary": "Delete a blob by digest.",
             "tags": [
                "OCI"
@@ -168,6 +1168,131 @@
          "get": {
             "deprecated": false,
             "operationId": "oci-blob-download",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
             "summary": "Download a blob by digest.",
             "tags": [
                "OCI"
@@ -176,7 +1301,135 @@
          "head": {
             "deprecated": false,
             "operationId": "oci-blob-exists",
-            "summary": "Check for the existence of a manifest by name and reference."
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
+            "summary": "Check for the existence of a manifest by name and reference.",
+            "tags": [
+               "OCI"
+            ]
          },
          "parameters": [
             {
@@ -227,6 +1480,131 @@
          "delete": {
             "deprecated": false,
             "operationId": "oci-manifest-delete",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
             "summary": "Delete a manifest from the repository.",
             "tags": [
                "OCI"
@@ -235,6 +1613,131 @@
          "get": {
             "deprecated": false,
             "operationId": "oci-manifest-get",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
             "summary": "Get a manifest by name and reference.",
             "tags": [
                "OCI"
@@ -243,6 +1746,131 @@
          "head": {
             "deprecated": false,
             "operationId": "oci-manifest-exists",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
             "summary": "Check for the existence of a manifest by name and reference.",
             "tags": [
                "OCI"
@@ -295,6 +1923,101 @@
          "put": {
             "deprecated": false,
             "operationId": "oci-manifest-create",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
             "summary": "Add a manifest to a repository.",
             "tags": [
                "OCI"
@@ -305,6 +2028,101 @@
          "get": {
             "deprecated": false,
             "operationId": "oci-tags-list",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
             "summary": "Get all tags in a repository.",
             "tags": [
                "OCI"

@@ -1,0 +1,238 @@
+local mediaTypes = import 'media-types.libsonnet';
+local schemas = import 'schemas/schemas.libsonnet';
+
+local response(
+  description,
+  headers,
+  content,
+  links={}
+      ) = {
+  description: description,
+  headers: headers,
+  content: content,
+  links: links,
+};
+
+local errors = {
+
+  // Create OCI-style error responses.
+  // @param errorCode The HTTP error code of the response.
+  // @param description Description of the error code.
+  local errorResponse(errorCode, description) = {
+    [errorCode]: {
+      description: description,
+      content: {
+        [mediaTypes.json]: {
+          schema: schemas.oci.errors,
+        },
+      },
+    },
+  },
+
+  badRequest: errorResponse('400', 'Bad Request'),
+  unauthorized: errorResponse('401', 'Unauthorized'),
+  methodNotAllowed: errorResponse('405', 'Method Not Allowed'),
+  notFound: errorResponse('404', 'Not Found'),
+  forbidden: errorResponse('403', 'Forbidden'),
+  RangeNotSatisfiable: errorResponse('416', 'Requested Range Not Satisfiable'),
+  tooManyRequests: errorResponse('429', 'Too Many Requests'),
+};
+
+local common = {
+
+
+  local accepted = {
+    '202': {
+      description: 'Accepted',
+    },
+  },
+
+  local created = {
+    '201': {
+      description: 'Created',
+    },
+  },
+
+  local noContent = {
+    '204': {
+      description: 'No Content',
+    },
+  },
+
+  local partialContent = {
+    '206': {
+      description: 'Partial Content',
+    },
+  },
+
+  local temporaryRedirect = {
+    '307': {
+      description: 'Temporary Redirect',
+    },
+  },
+
+  accepted: accepted,
+  created: created,
+  noContent: noContent,
+  partialContent: partialContent,
+  temporaryRedirect: temporaryRedirect,
+};
+
+// Initalize 200 response.
+// @param content An object mapping of media types to their schemas.
+local okResponse(content={}) = {
+  '200': {
+    description: 'OK',
+    content: content,
+  },
+};
+
+// Initialize a content object
+// @param mediaType The media type of the response.
+// @param s The schema of the media type.
+local newContent(mediaType, mtSchema) = {
+  [mediaType]: {
+    schema: mtSchema,
+  },
+};
+
+local oci = {
+
+  local content = {
+
+    catalog:
+      newContent(
+        mediaTypes.json,
+        schemas.oci.catalog
+      ),
+
+    tags:
+      newContent(
+        mediaTypes.json,
+        schemas.oci.tagList('openapi')
+      ),
+
+    manifest:
+      newContent(
+        mediaTypes.oci.v1.imageManifest,
+        schemas.oci.imageManifest('openapi')
+      ),
+
+    binaryData:
+      newContent(
+        mediaTypes.octetStream,
+        schemas.common.binary,
+      ),
+
+  },
+
+  base::
+    okResponse()
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.notFound
+    + errors.tooManyRequests,
+
+  catalog::
+    okResponse(content.catalog)
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.tooManyRequests,
+
+  tags::
+    okResponse(content.tags)
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.tooManyRequests,
+
+  getManifest::
+    okResponse(content.manifest)
+    + errors.notFound
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.tooManyRequests,
+
+  checkManifest::
+    okResponse()
+    + errors.notFound
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.tooManyRequests,
+
+  putManifest::
+    okResponse()
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.tooManyRequests,
+
+  deleteManifest::
+    okResponse()
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.notFound
+    + errors.tooManyRequests,
+
+  getBlob::
+    okResponse(content.binaryData)
+    + common.temporaryRedirect
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.notFound
+    + errors.tooManyRequests,
+
+  checkBlob::
+    okResponse()
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.notFound
+    + errors.tooManyRequests,
+
+  deleteBlob::
+    common.accepted
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.notFound
+    + errors.tooManyRequests,
+
+  initBlobUploadOrMount::
+    common.accepted
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.tooManyRequests,
+
+  statusBlobUpload::
+    common.noContent
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.tooManyRequests,
+
+  uploadBlobChunk::
+    common.noContent
+    + errors.badRequest
+    + errors.notFound
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.tooManyRequests,
+
+  uploadBlobComplete::
+    common.noContent
+    + errors.badRequest
+    + errors.notFound
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.tooManyRequests,
+
+  cancelBlobUpload::
+    common.noContent
+    + errors.badRequest
+    + errors.notFound
+    + errors.unauthorized
+    + errors.forbidden
+    + errors.tooManyRequests,
+};
+
+{
+  errors: errors,
+  common: common,
+  oci:: oci,
+}

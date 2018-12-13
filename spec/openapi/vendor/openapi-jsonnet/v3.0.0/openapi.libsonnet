@@ -6,10 +6,10 @@
   serverVariable: import 'server-variable.libsonnet',
   paths: import 'paths.libsonnet',
   pathItem: import 'path-item.libsonnet',
-  responses: import 'responses.libsonnet',
   response: import 'response.libsonnet',
   operation: import 'operation.libsonnet',
   parameter: import 'parameter.libsonnet',
+  mediaType: import 'media-type.libsonnet',
 
   // Initalize new OpenAPI spec.
   new(
