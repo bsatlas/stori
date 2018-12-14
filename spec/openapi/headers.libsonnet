@@ -27,7 +27,7 @@ local common = {
 
   local contentTypeOptions =
     header(
-      name='Content-Type-Options',
+      name='X-Content-Type-Options',
       schema=string,
       description='Content type options.',
     ),

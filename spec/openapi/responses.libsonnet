@@ -2,6 +2,7 @@ local oapi = import 'openapi-jsonnet/v3.0.0/openapi.libsonnet';
 local resp = oapi.response;
 local mt = import 'media-types.libsonnet';
 local schemas = import 'schemas/schemas.libsonnet';
+local headers = import 'headers.libsonnet';
 
 local err = {
 
@@ -33,22 +34,52 @@ local err = {
 local common = {
 
   local ok =
-    resp.new('200', 'OK'),
+    resp.new('200', 'OK')
+    .addHeader(header.common.contentLength)
+    .addHeader(header.common.date)
+    .addHeader(header.common.contentType)
+    .addHeader(header.common.contentTypeOptions)
+  ,
 
   local accepted =
     resp.new('202', 'Accepted'),
+    .addHeader(header.common.contentLength)
+    .addHeader(header.common.date)
+    .addHeader(header.common.contentType)
+    .addHeader(header.common.contentTypeOptions)
+  ,
 
   local created =
     resp.new('201', 'Created'),
+    .addHeader(header.common.contentLength)
+    .addHeader(header.common.date)
+    .addHeader(header.common.contentType)
+    .addHeader(header.common.contentTypeOptions)
+  ,
 
   local noContent =
     resp.new('204', 'No Content'),
+    .addHeader(header.common.contentLength)
+    .addHeader(header.common.date)
+    .addHeader(header.common.contentType)
+    .addHeader(header.common.contentTypeOptions)
+  ,
 
   local partialContent =
     resp.new('206', 'Partial Content'),
+    .addHeader(header.common.contentLength)
+    .addHeader(header.common.date)
+    .addHeader(header.common.contentType)
+    .addHeader(header.common.contentTypeOptions)
+  ,
 
   local temporaryRedirect =
     resp.new('307', 'Temporary Redirect'),
+    .addHeader(header.common.contentLength)
+    .addHeader(header.common.date)
+    .addHeader(header.common.contentType)
+    .addHeader(header.common.contentTypeOptions)
+  ,
 
   ok: ok,
   accepted: accepted,
