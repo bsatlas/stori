@@ -1,9 +1,51 @@
 local oapi = import 'openapi-jsonnet/v3.0.0/openapi.libsonnet';
-local header = oapi.header;
+local header = oapi.header.new;
 local schemas = import 'schemas/schemas.libsonnet';
 local string = schemas.common.string;
 
 local common = {
+  local wwwAuth =
+    header(
+      name='WWW-Authenticate',
+      schema=string,
+      description='Defines the authentication method that should be used to gain access to a resource.',
+    ),
+
+  local contentLength =
+    header(
+      name='Content-Length',
+      schema=string,
+      description='The byte length of the data returned .',
+    ),
+
+  local contentType =
+    header(
+      name='Content-Type',
+      schema=string,
+      description='The MIME type of the data.',
+    ),
+
+  local contentTypeOptions =
+    header(
+      name='Content-Type-Options',
+      schema=string,
+      description='Content type options.',
+    ),
+
+  local contentRange =
+    header(
+      name='Content-Range',
+      schema=string,
+      description='The byte range of the data returned.',
+    ),
+
+  local date =
+    header(
+      name='Date',
+      schema=string,
+      description='The date and time the message was originated.',
+    ),
+
   wwwAuth:: wwwAuth,
   contentLength:: contentLength,
   contentType:: contentType,
@@ -15,21 +57,21 @@ local common = {
 local docker = {
 
   local version =
-    header.new(
+    header(
       name='Docker-Distribution-API-Version',
       schema=string,
       description='Used by clients to determine if the registry implements the distribution specification.',
     ),
 
   local contentDigest =
-    header.new(
+    header(
       name='Docker-Content-Digest',
       description='Includes the digest of the target entity returned in the response. Clients can use this header to verify the integrity of downloaded content',
       schema=string,
     ),
 
   local uploadUUID =
-    header.new(
+    header(
       name='Docker-Upload-UUID',
       description='A unique identifier used to correlate local state with remote state. Clients use this to implement resumable uploads.',
       schema=string,
