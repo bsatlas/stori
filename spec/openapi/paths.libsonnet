@@ -27,110 +27,110 @@ local oci = {
 };
 
 {
-  //  [stori.base]: {
-  //    head: ops.stori.base,
-  //  },
-  //
-  //  [stori.namespaces]: {
-  //    get: ops.stori.getNamespaces,
-  //    delete: ops.stori.deleteNamespaces,
-  //  },
-  //
-  //  [stori.namespace]: {
-  //    get: ops.stori.getNamespace,
-  //    put: ops.stori.createNamespace,
-  //    delete: ops.stori.deleteNamespace,
-  //    parameters: [
-  //      params.namespace,
-  //    ],
-  //  },
-  //
-  //  [stori.repositories]: {
-  //    get: ops.stori.getRepositories,
-  //    delete: ops.stori.deleteRepositories,
-  //    parameters: [
-  //      params.namespace,
-  //    ],
-  //  },
-  //
-  //  [stori.repository]: {
-  //    get: ops.stori.getRepository,
-  //    delete: ops.stori.deleteRepository,
-  //    put: ops.stori.createRepository,
-  //    head: ops.stori.verifyRepository,
-  //    parameters: [
-  //      params.namespace,
-  //      params.repository,
-  //    ],
-  //  },
-  //
-  //  [stori.manifests]: {
-  //    get: ops.stori.getManifests,
-  //    parameters: [
-  //      params.namespace,
-  //      params.repository,
-  //    ],
-  //  },
-  //
-  //  [stori.manifest]: {
-  //    get: ops.stori.getManifest,
-  //    delete: ops.stori.deleteManifest,
-  //    put: ops.stori.setManifest,
-  //    parameters: [
-  //      params.namespace,
-  //      params.repository,
-  //      params.digest,
-  //    ],
-  //  },
-  //
-  //  [stori.config]: {
-  //    get: ops.stori.getManifestConfig,
-  //    parameters: [
-  //      params.namespace,
-  //      params.repository,
-  //      params.digest,
-  //    ],
-  //  },
-  //
-  //  [stori.tags]: {
-  //    get: ops.stori.getTags,
-  //    delete: ops.stori.deleteTags,
-  //    parameters: [
-  //      params.namespace,
-  //      params.repository,
-  //    ],
-  //  },
-  //
-  //  [stori.tag]: {
-  //    get: ops.stori.getTag,
-  //    delete: ops.stori.deleteTag,
-  //    put: ops.stori.createTag,
-  //    parameters: [
-  //      params.namespace,
-  //      params.repository,
-  //      params.tag,
-  //    ],
-  //  },
-  //
-  //  [stori.blobs]: {
-  //    get: ops.stori.getBlobs,
-  //    parameters: [
-  //      params.namespace,
-  //      params.repository,
-  //    ],
-  //  },
-  //
-  //  [stori.blob]: {
-  //    get: ops.stori.getBlob,
-  //    put: ops.stori.uploadBlob,
-  //    delete: ops.stori.deleteBlob,
-  //    head: ops.stori.verifyBlob,
-  //    parameters: [
-  //      params.namespace,
-  //      params.repository,
-  //      params.digest,
-  //    ],
-  //  },
+  [stori.base]: {
+    head: ops.stori.base,
+  },
+
+  [stori.namespaces]: {
+    get: ops.stori.getNamespaces,
+    delete: ops.stori.deleteNamespaces,
+  },
+
+  [stori.namespace]: {
+    get: ops.stori.getNamespace,
+    put: ops.stori.createNamespace,
+    delete: ops.stori.deleteNamespace,
+    parameters: [
+      params.namespace,
+    ],
+  },
+
+  [stori.repositories]: {
+    get: ops.stori.getRepositories,
+    delete: ops.stori.deleteRepositories,
+    parameters: [
+      params.namespace,
+    ],
+  },
+
+  [stori.repository]: {
+    get: ops.stori.getRepository,
+    delete: ops.stori.deleteRepository,
+    put: ops.stori.createRepository,
+    head: ops.stori.verifyRepository,
+    parameters: [
+      params.namespace,
+      params.repository,
+    ],
+  },
+
+  [stori.manifests]: {
+    get: ops.stori.getManifests,
+    parameters: [
+      params.namespace,
+      params.repository,
+    ],
+  },
+
+  [stori.manifest]: {
+    get: ops.stori.getManifest,
+    delete: ops.stori.deleteManifest,
+    put: ops.stori.setManifest,
+    parameters: [
+      params.namespace,
+      params.repository,
+      params.digest,
+    ],
+  },
+
+  [stori.config]: {
+    get: ops.stori.getManifestConfig,
+    parameters: [
+      params.namespace,
+      params.repository,
+      params.digest,
+    ],
+  },
+
+  [stori.tags]: {
+    get: ops.stori.getTags,
+    delete: ops.stori.deleteTags,
+    parameters: [
+      params.namespace,
+      params.repository,
+    ],
+  },
+
+  [stori.tag]: {
+    get: ops.stori.getTag,
+    delete: ops.stori.deleteTag,
+    put: ops.stori.createTag,
+    parameters: [
+      params.namespace,
+      params.repository,
+      params.tag,
+    ],
+  },
+
+  [stori.blobs]: {
+    get: ops.stori.getBlobs,
+    parameters: [
+      params.namespace,
+      params.repository,
+    ],
+  },
+
+  [stori.blob]: {
+    get: ops.stori.getBlob,
+    put: ops.stori.uploadBlob,
+    delete: ops.stori.deleteBlob,
+    head: ops.stori.verifyBlob,
+    parameters: [
+      params.namespace,
+      params.repository,
+      params.digest,
+    ],
+  },
 
   // OCI paths.
   [oci.base]: {

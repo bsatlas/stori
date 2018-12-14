@@ -16,6 +16,576 @@
    },
    "openapi": "3.0.0",
    "paths": {
+      "/images": {
+         "head": {
+            "operationId": "images-base",
+            "responses": {
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               }
+            },
+            "summary": "Verify that the endpoint implements the Stori API Specification.",
+            "tags": [
+               "Images"
+            ]
+         }
+      },
+      "/images/namespaces": {
+         "delete": {
+            "description": "This operation deletes all namespaces and repositories hosted on the registry. Use with caution as it is very destructive.",
+            "operationId": "get-namespaces",
+            "responses": { },
+            "summary": "Delete all namespaces in the registry.",
+            "tags": [
+               "Images",
+               "Namespaces"
+            ]
+         },
+         "get": {
+            "operationId": "get-namespaces",
+            "responses": { },
+            "summary": "Get all namespaces the client has access to.",
+            "tags": [
+               "Images",
+               "Namespaces"
+            ]
+         }
+      },
+      "/images/namespaces/{namespace}": {
+         "delete": {
+            "description": "This operation deletes a namespace from the registry as well as all repositories it contains.",
+            "operationId": "create-namespace",
+            "responses": { },
+            "summary": "Delete a namespace.",
+            "tags": [
+               "Images",
+               "Namespaces"
+            ]
+         },
+         "get": {
+            "operationId": "get-namespaces",
+            "responses": { },
+            "summary": "Get info about a specific namespace.",
+            "tags": [
+               "Images",
+               "Namespaces"
+            ]
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
+         ],
+         "put": {
+            "description": "This operation creates an new namespace for storing image repositories.",
+            "operationId": "create-namespace",
+            "responses": { },
+            "summary": "Create a new namespace",
+            "tags": [
+               "Images",
+               "Namespaces"
+            ]
+         }
+      },
+      "/images/namespaces/{namespace}/repositories": {
+         "delete": {
+            "operationId": "delete-repositories",
+            "responses": { },
+            "summary": "Delete all repositories in a namespace.",
+            "tags": [
+               "Images",
+               "Repositories"
+            ]
+         },
+         "get": {
+            "operationId": "get-repositories",
+            "responses": { },
+            "summary": "Get info about a specific repository.",
+            "tags": [
+               "Images",
+               "Repositories"
+            ]
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
+         ]
+      },
+      "/images/namespaces/{namespace}/repositories/{repository}": {
+         "delete": {
+            "operationId": "delete-repository",
+            "responses": { },
+            "summary": "Delete a repository from a namespace.",
+            "tags": [
+               "Images",
+               "Repositories"
+            ]
+         },
+         "get": {
+            "operationId": "get-repository",
+            "responses": { },
+            "summary": "Get info about a specific repository.",
+            "tags": [
+               "Images",
+               "Repositories"
+            ]
+         },
+         "head": {
+            "operationId": "verify-repository",
+            "responses": { },
+            "summary": "Check if a specific repository exists.",
+            "tags": [
+               "Images",
+               "Repositories"
+            ]
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
+         ],
+         "put": {
+            "operationId": "create-repository",
+            "responses": { },
+            "summary": "Create a new repository.",
+            "tags": [
+               "Images",
+               "Repositories"
+            ]
+         }
+      },
+      "/images/namespaces/{namespace}/repositories/{repository}/blobs": {
+         "get": {
+            "operationId": "get-Blobs",
+            "responses": { },
+            "summary": "Get a list of all Blobs in a repository.",
+            "tags": [
+               "Images",
+               "Blobs"
+            ]
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
+         ]
+      },
+      "/images/namespaces/{namespace}/repositories/{repository}/blobs/{digest}": {
+         "delete": {
+            "operationId": "delete-blob",
+            "responses": { },
+            "summary": "Delete a blob from a repository.",
+            "tags": [
+               "Images",
+               "Blobs"
+            ]
+         },
+         "get": {
+            "operationId": "get-blob",
+            "responses": { },
+            "summary": "Download a blob from a repository.",
+            "tags": [
+               "Images",
+               "Blobs"
+            ]
+         },
+         "head": {
+            "operationId": "verify-blob",
+            "responses": { },
+            "summary": "Verify that a blob exists in a repository.",
+            "tags": [
+               "Images",
+               "Blobs"
+            ]
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "description": "A content addressable identifier.",
+               "in": "path",
+               "name": "digest",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
+         ],
+         "put": {
+            "operationId": "upload-blob",
+            "responses": { },
+            "summary": "Upload a blob to a repository.",
+            "tags": [
+               "Images",
+               "Blobs"
+            ]
+         }
+      },
+      "/images/namespaces/{namespace}/repositories/{repository}/manifests": {
+         "get": {
+            "operationId": "get-manifests",
+            "responses": { },
+            "summary": "Get all manifests in a repository.",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
+         ]
+      },
+      "/images/namespaces/{namespace}/repositories/{repository}/manifests/{digest}": {
+         "delete": {
+            "operationId": "delete-manifest",
+            "responses": { },
+            "summary": "Delete an image manifest.",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         },
+         "get": {
+            "operationId": "get-manifest",
+            "responses": { },
+            "summary": "Get an image manifest.",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "description": "A content addressable identifier.",
+               "in": "path",
+               "name": "digest",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
+         ],
+         "put": {
+            "operationId": "set-manifest",
+            "responses": { },
+            "summary": "Mark an uploaded blob as an image manifest.",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         }
+      },
+      "/images/namespaces/{namespace}/repositories/{repository}/manifests/{digest}/config": {
+         "get": {
+            "operationId": "get-manifest-config",
+            "responses": { },
+            "summary": "Get an image manifest's config info.",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "description": "A content addressable identifier.",
+               "in": "path",
+               "name": "digest",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
+         ]
+      },
+      "/images/namespaces/{namespace}/repositories/{repository}/tags": {
+         "delete": {
+            "operationId": "delete-tags",
+            "responses": { },
+            "summary": "Delete all tags in a repository",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         },
+         "get": {
+            "operationId": "get-tags",
+            "responses": { },
+            "summary": "Get all tags in a repository",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
+         ]
+      },
+      "/images/namespaces/{namespace}/repositories/{repository}/tags/{tag}": {
+         "delete": {
+            "operationId": "delete-tag",
+            "responses": { },
+            "summary": "Delete a repository tag.",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         },
+         "get": {
+            "operationId": "get-tag",
+            "responses": { },
+            "summary": "Get a repository tag.",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "description": "A logical grouping of repositories.",
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "description": "A place to store an image.",
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            },
+            {
+               "allowEmptyValue": false,
+               "description": "An image tag.",
+               "in": "path",
+               "name": "tag",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               }
+            }
+         ],
+         "put": {
+            "operationId": "create-tag",
+            "responses": { },
+            "summary": "Create a new repository tag.",
+            "tags": [
+               "Images",
+               "Manifests"
+            ]
+         }
+      },
       "/v2": {
          "get": {
             "description": "This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.",
