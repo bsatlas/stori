@@ -12,7 +12,7 @@
     deprecated=false,
   ):: {
     [if tags != null then 'tags']: tags,
-    [if summary != null the 'summary']: summary,
+    [if summary != null then 'summary']: summary,
     [if description != null then 'description']: description,
     [if externalDocs != null then 'externalDocs']: externalDocs,
     [if operationId != null then 'operationId']: operationId,

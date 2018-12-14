@@ -287,7 +287,7 @@ local common = import 'common.libsonnet';
     ],
   },
 
-  errors:: {
+  err:: {
     description: 'This property contains a list of errors messages returned from the server due to an invalid request.',
     type: 'object',
     properties: {

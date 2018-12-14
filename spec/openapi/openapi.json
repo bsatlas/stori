@@ -16,583 +16,13 @@
    },
    "openapi": "3.0.0",
    "paths": {
-      "/images": {
-         "head": {
-            "operationId": "images-base",
-            "responses": {
-               "401": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
-                           "properties": {
-                              "errors": {
-                                 "items": {
-                                    "properties": {
-                                       "code": {
-                                          "type": "string"
-                                       },
-                                       "detail": {
-                                          "type": "string"
-                                       },
-                                       "message": {
-                                          "type": "string"
-                                       }
-                                    },
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "Unauthorized"
-               },
-               "404": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
-                           "properties": {
-                              "errors": {
-                                 "items": {
-                                    "properties": {
-                                       "code": {
-                                          "type": "string"
-                                       },
-                                       "detail": {
-                                          "type": "string"
-                                       },
-                                       "message": {
-                                          "type": "string"
-                                       }
-                                    },
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "Not Found"
-               }
-            },
-            "summary": "Verify that the endpoint implements the Stori API Specification.",
-            "tags": [
-               "Images"
-            ]
-         }
-      },
-      "/images/namespaces": {
-         "delete": {
-            "description": "This operation deletes all namespaces and repositories hosted on the registry. Use with caution as it is very destructive.",
-            "operationId": "get-namespaces",
-            "responses": { },
-            "summary": "Delete all namespaces in the registry.",
-            "tags": [
-               "Images",
-               "Namespaces"
-            ]
-         },
-         "get": {
-            "operationId": "get-namespaces",
-            "responses": { },
-            "summary": "Get all namespaces the client has access to.",
-            "tags": [
-               "Images",
-               "Namespaces"
-            ]
-         }
-      },
-      "/images/namespaces/{namespace}": {
-         "delete": {
-            "description": "This operation deletes a namespace from the registry as well as all repositories it contains.",
-            "operationId": "create-namespace",
-            "responses": { },
-            "summary": "Delete a namespace.",
-            "tags": [
-               "Images",
-               "Namespaces"
-            ]
-         },
-         "get": {
-            "operationId": "get-namespaces",
-            "responses": { },
-            "summary": "Get info about a specific namespace.",
-            "tags": [
-               "Images",
-               "Namespaces"
-            ]
-         },
-         "parameters": [
-            {
-               "allowEmptyValue": false,
-               "description": "A logical grouping of repositories.",
-               "in": "path",
-               "name": "namespace",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            }
-         ],
-         "put": {
-            "description": "This operation creates an new namespace for storing image repositories.",
-            "operationId": "create-namespace",
-            "responses": { },
-            "summary": "Create a new namespace",
-            "tags": [
-               "Images",
-               "Namespaces"
-            ]
-         }
-      },
-      "/images/namespaces/{namespace}/repositories": {
-         "delete": {
-            "operationId": "delete-repositories",
-            "responses": { },
-            "summary": "Delete all repositories in a namespace.",
-            "tags": [
-               "Images",
-               "Repositories"
-            ]
-         },
-         "get": {
-            "operationId": "get-repositories",
-            "responses": { },
-            "summary": "Get info about a specific repository.",
-            "tags": [
-               "Images",
-               "Repositories"
-            ]
-         },
-         "parameters": [
-            {
-               "allowEmptyValue": false,
-               "description": "A logical grouping of repositories.",
-               "in": "path",
-               "name": "namespace",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            }
-         ]
-      },
-      "/images/namespaces/{namespace}/repositories/{repository}": {
-         "delete": {
-            "operationId": "delete-repository",
-            "responses": { },
-            "summary": "Delete a repository from a namespace.",
-            "tags": [
-               "Images",
-               "Repositories"
-            ]
-         },
-         "get": {
-            "operationId": "get-repository",
-            "responses": { },
-            "summary": "Get info about a specific repository.",
-            "tags": [
-               "Images",
-               "Repositories"
-            ]
-         },
-         "head": {
-            "operationId": "verify-repository",
-            "responses": { },
-            "summary": "Check if a specific repository exists.",
-            "tags": [
-               "Images",
-               "Repositories"
-            ]
-         },
-         "parameters": [
-            {
-               "allowEmptyValue": false,
-               "description": "A logical grouping of repositories.",
-               "in": "path",
-               "name": "namespace",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            },
-            {
-               "allowEmptyValue": false,
-               "description": "A place to store an image.",
-               "in": "path",
-               "name": "repository",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            }
-         ],
-         "put": {
-            "operationId": "create-repository",
-            "responses": { },
-            "summary": "Create a new repository.",
-            "tags": [
-               "Images",
-               "Repositories"
-            ]
-         }
-      },
-      "/images/namespaces/{namespace}/repositories/{repository}/blobs": {
-         "get": {
-            "operationId": "get-Blobs",
-            "responses": { },
-            "summary": "Get a list of all Blobs in a repository.",
-            "tags": [
-               "Images",
-               "Blobs"
-            ]
-         },
-         "parameters": [
-            {
-               "allowEmptyValue": false,
-               "description": "A logical grouping of repositories.",
-               "in": "path",
-               "name": "namespace",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            },
-            {
-               "allowEmptyValue": false,
-               "description": "A place to store an image.",
-               "in": "path",
-               "name": "repository",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            }
-         ]
-      },
-      "/images/namespaces/{namespace}/repositories/{repository}/blobs/{digest}": {
-         "delete": {
-            "operationId": "delete-blob",
-            "responses": { },
-            "summary": "Delete a blob from a repository.",
-            "tags": [
-               "Images",
-               "Blobs"
-            ]
-         },
-         "get": {
-            "operationId": "get-blob",
-            "responses": { },
-            "summary": "Download a blob from a repository.",
-            "tags": [
-               "Images",
-               "Blobs"
-            ]
-         },
-         "head": {
-            "operationId": "verify-blob",
-            "responses": { },
-            "summary": "Verify that a blob exists in a repository.",
-            "tags": [
-               "Images",
-               "Blobs"
-            ]
-         },
-         "parameters": [
-            {
-               "allowEmptyValue": false,
-               "description": "A logical grouping of repositories.",
-               "in": "path",
-               "name": "namespace",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            },
-            {
-               "allowEmptyValue": false,
-               "description": "A place to store an image.",
-               "in": "path",
-               "name": "repository",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            },
-            {
-               "allowEmptyValue": false,
-               "description": "A content addressable identifier.",
-               "in": "path",
-               "name": "digest",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            }
-         ],
-         "put": {
-            "operationId": "upload-blob",
-            "responses": { },
-            "summary": "Upload a blob to a repository.",
-            "tags": [
-               "Images",
-               "Blobs"
-            ]
-         }
-      },
-      "/images/namespaces/{namespace}/repositories/{repository}/manifests": {
-         "get": {
-            "operationId": "get-manifests",
-            "responses": { },
-            "summary": "Get all manifests in a repository.",
-            "tags": [
-               "Images",
-               "Manifests"
-            ]
-         },
-         "parameters": [
-            {
-               "allowEmptyValue": false,
-               "description": "A logical grouping of repositories.",
-               "in": "path",
-               "name": "namespace",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            },
-            {
-               "allowEmptyValue": false,
-               "description": "A place to store an image.",
-               "in": "path",
-               "name": "repository",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            }
-         ]
-      },
-      "/images/namespaces/{namespace}/repositories/{repository}/manifests/{digest}": {
-         "delete": {
-            "operationId": "delete-manifest",
-            "responses": { },
-            "summary": "Delete an image manifest.",
-            "tags": [
-               "Images",
-               "Manifests"
-            ]
-         },
-         "get": {
-            "operationId": "get-manifest",
-            "responses": { },
-            "summary": "Get an image manifest.",
-            "tags": [
-               "Images",
-               "Manifests"
-            ]
-         },
-         "parameters": [
-            {
-               "allowEmptyValue": false,
-               "description": "A logical grouping of repositories.",
-               "in": "path",
-               "name": "namespace",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            },
-            {
-               "allowEmptyValue": false,
-               "description": "A place to store an image.",
-               "in": "path",
-               "name": "repository",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            },
-            {
-               "allowEmptyValue": false,
-               "description": "A content addressable identifier.",
-               "in": "path",
-               "name": "digest",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            }
-         ],
-         "put": {
-            "operationId": "set-manifest",
-            "responses": { },
-            "summary": "Mark an uploaded blob as an image manifest.",
-            "tags": [
-               "Images",
-               "Manifests"
-            ]
-         }
-      },
-      "/images/namespaces/{namespace}/repositories/{repository}/manifests/{digest}/config": {
-         "get": {
-            "operationId": "get-manifest-config",
-            "responses": { },
-            "summary": "Get an image manifest's config info.",
-            "tags": [
-               "Images",
-               "Manifests"
-            ]
-         },
-         "parameters": [
-            {
-               "allowEmptyValue": false,
-               "description": "A logical grouping of repositories.",
-               "in": "path",
-               "name": "namespace",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            },
-            {
-               "allowEmptyValue": false,
-               "description": "A place to store an image.",
-               "in": "path",
-               "name": "repository",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            },
-            {
-               "allowEmptyValue": false,
-               "description": "A content addressable identifier.",
-               "in": "path",
-               "name": "digest",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            }
-         ]
-      },
-      "/images/namespaces/{namespace}/repositories/{repository}/tags": {
-         "delete": {
-            "operationId": "delete-tags",
-            "responses": { },
-            "summary": "Delete all tags in a repository",
-            "tags": [
-               "Images",
-               "Manifests"
-            ]
-         },
-         "get": {
-            "operationId": "get-tags",
-            "responses": { },
-            "summary": "Get all tags in a repository",
-            "tags": [
-               "Images",
-               "Manifests"
-            ]
-         },
-         "parameters": [
-            {
-               "allowEmptyValue": false,
-               "description": "A logical grouping of repositories.",
-               "in": "path",
-               "name": "namespace",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            },
-            {
-               "allowEmptyValue": false,
-               "description": "A place to store an image.",
-               "in": "path",
-               "name": "repository",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            }
-         ]
-      },
-      "/images/namespaces/{namespace}/repositories/{repository}/tags/{tag}": {
-         "delete": {
-            "operationId": "delete-tag",
-            "responses": { },
-            "summary": "Delete a repository tag.",
-            "tags": [
-               "Images",
-               "Manifests"
-            ]
-         },
-         "get": {
-            "operationId": "get-tag",
-            "responses": { },
-            "summary": "Get a repository tag.",
-            "tags": [
-               "Images",
-               "Manifests"
-            ]
-         },
-         "parameters": [
-            {
-               "allowEmptyValue": false,
-               "description": "A logical grouping of repositories.",
-               "in": "path",
-               "name": "namespace",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            },
-            {
-               "allowEmptyValue": false,
-               "description": "A place to store an image.",
-               "in": "path",
-               "name": "repository",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            },
-            {
-               "allowEmptyValue": false,
-               "description": "An image tag.",
-               "in": "path",
-               "name": "tag",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            }
-         ],
-         "put": {
-            "operationId": "create-tag",
-            "responses": { },
-            "summary": "Create a new repository tag.",
-            "tags": [
-               "Images",
-               "Manifests"
-            ]
-         }
-      },
       "/v2": {
          "get": {
+            "deprecated": false,
             "description": "This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.",
-            "operationId": "oci-base",
+            "operationId": "oci-verify",
             "responses": {
                "200": {
-                  "content": { },
                   "description": "OK"
                },
                "401": {
@@ -724,26 +154,11 @@
       },
       "/v2/_catalog": {
          "get": {
+            "deprecated": false,
             "description": "List a set of available repositories in the local registry cluster. Does not provide any indication of what may be available upstream. Applications can only determine if a repository is available but not if it is not available.",
-            "operationId": "oci-catalog",
+            "operationId": "oci-catalog-list",
             "responses": {
                "200": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "description": "This property contains a list of repositories hosted on the registry.",
-                           "properties": {
-                              "repositories": {
-                                 "items": {
-                                    "type": "string"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
                   "description": "OK"
                },
                "401": {
@@ -847,27 +262,36 @@
          "parameters": [
             {
                "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
                "description": "A logical grouping of repositories.",
+               "explode": false,
                "in": "path",
                "name": "namespace",
                "required": true,
                "schema": {
                   "type": "string"
-               }
+               },
+               "style": "simple"
             },
             {
                "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
                "description": "A place to store an image.",
+               "explode": false,
                "in": "path",
                "name": "repository",
                "required": true,
                "schema": {
                   "type": "string"
-               }
+               },
+               "style": "simple"
             }
          ],
          "post": {
-            "operationId": "oci-init-blob-upload",
+            "deprecated": false,
+            "operationId": "oci-blob-upload-init",
             "responses": {
                "202": {
                   "description": "Accepted"
@@ -969,9 +393,10 @@
             ]
          }
       },
-      "/v2/{namespace}/{repository}/blobs/uploads/{id}": {
+      "/v2/{namespace}/{repository}/blobs/uploads/{uuid}": {
          "delete": {
-            "operationId": "oci-cancel-blob-upload",
+            "deprecated": false,
+            "operationId": "oci-blob-upload-cancel",
             "responses": {
                "204": {
                   "description": "No Content"
@@ -1004,7 +429,7 @@
                         }
                      }
                   },
-                  "description": "Bad Request"
+                  "description": "Accepted"
                },
                "401": {
                   "content": {
@@ -1127,13 +552,14 @@
                   "description": "Too Many Requests"
                }
             },
-            "summary": "Cancel a blob upload.",
+            "summary": "Cancel the chunked blob upload.",
             "tags": [
                "OCI"
             ]
          },
          "get": {
-            "operationId": "oci-status-blob-upload",
+            "deprecated": false,
+            "operationId": "oci-blob-upload-status",
             "responses": {
                "204": {
                   "description": "No Content"
@@ -1237,37 +663,50 @@
          "parameters": [
             {
                "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
                "description": "A logical grouping of repositories.",
+               "explode": false,
                "in": "path",
                "name": "namespace",
                "required": true,
                "schema": {
                   "type": "string"
-               }
+               },
+               "style": "simple"
             },
             {
                "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
                "description": "A place to store an image.",
+               "explode": false,
                "in": "path",
                "name": "repository",
                "required": true,
                "schema": {
                   "type": "string"
-               }
+               },
+               "style": "simple"
             },
             {
                "allowEmptyValue": false,
-               "description": "A unique id.",
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "A universally unique identifier.",
+               "explode": false,
                "in": "path",
-               "name": "id",
+               "name": "uuid",
                "required": true,
                "schema": {
                   "type": "string"
-               }
+               },
+               "style": "simple"
             }
          ],
          "patch": {
-            "operationId": "oci-upload-blob-chunk",
+            "deprecated": false,
+            "operationId": "oci-blob-upload-chunk",
             "responses": {
                "204": {
                   "description": "No Content"
@@ -1300,7 +739,7 @@
                         }
                      }
                   },
-                  "description": "Bad Request"
+                  "description": "Accepted"
                },
                "401": {
                   "content": {
@@ -1423,13 +862,14 @@
                   "description": "Too Many Requests"
                }
             },
-            "summary": "Upload a blob chunk to the registry.",
+            "summary": "Upload a blob chunk to the repository.",
             "tags": [
                "OCI"
             ]
          },
          "put": {
-            "operationId": "oci-upload-blob-complete",
+            "deprecated": false,
+            "operationId": "oci-blob-upload-complete",
             "responses": {
                "204": {
                   "description": "No Content"
@@ -1462,7 +902,7 @@
                         }
                      }
                   },
-                  "description": "Bad Request"
+                  "description": "Accepted"
                },
                "401": {
                   "content": {
@@ -1593,7 +1033,8 @@
       },
       "/v2/{namespace}/{repository}/blobs/{digest}": {
          "delete": {
-            "operationId": "oci-delete-blob",
+            "deprecated": false,
+            "operationId": "oci-blob-delete",
             "responses": {
                "202": {
                   "description": "Accepted"
@@ -1725,21 +1166,11 @@
             ]
          },
          "get": {
-            "operationId": "oci-get-blob",
+            "deprecated": false,
+            "operationId": "oci-blob-download",
             "responses": {
                "200": {
-                  "content": {
-                     "application/octet-stream": {
-                        "schema": {
-                           "format": "binary",
-                           "type": "string"
-                        }
-                     }
-                  },
                   "description": "OK"
-               },
-               "307": {
-                  "description": "Temporary Redirect"
                },
                "401": {
                   "content": {
@@ -1868,564 +1299,10 @@
             ]
          },
          "head": {
-            "operationId": "oci-get-blob",
+            "deprecated": false,
+            "operationId": "oci-blob-exists",
             "responses": {
                "200": {
-                  "content": { },
-                  "description": "OK"
-               },
-               "401": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
-                           "properties": {
-                              "errors": {
-                                 "items": {
-                                    "properties": {
-                                       "code": {
-                                          "type": "string"
-                                       },
-                                       "detail": {
-                                          "type": "string"
-                                       },
-                                       "message": {
-                                          "type": "string"
-                                       }
-                                    },
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "Unauthorized"
-               },
-               "403": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
-                           "properties": {
-                              "errors": {
-                                 "items": {
-                                    "properties": {
-                                       "code": {
-                                          "type": "string"
-                                       },
-                                       "detail": {
-                                          "type": "string"
-                                       },
-                                       "message": {
-                                          "type": "string"
-                                       }
-                                    },
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "Forbidden"
-               },
-               "404": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
-                           "properties": {
-                              "errors": {
-                                 "items": {
-                                    "properties": {
-                                       "code": {
-                                          "type": "string"
-                                       },
-                                       "detail": {
-                                          "type": "string"
-                                       },
-                                       "message": {
-                                          "type": "string"
-                                       }
-                                    },
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "Not Found"
-               },
-               "429": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
-                           "properties": {
-                              "errors": {
-                                 "items": {
-                                    "properties": {
-                                       "code": {
-                                          "type": "string"
-                                       },
-                                       "detail": {
-                                          "type": "string"
-                                       },
-                                       "message": {
-                                          "type": "string"
-                                       }
-                                    },
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "Too Many Requests"
-               }
-            },
-            "summary": "Check for the existence of a blob by digest.",
-            "tags": [
-               "OCI"
-            ]
-         },
-         "parameters": [
-            {
-               "allowEmptyValue": false,
-               "description": "A logical grouping of repositories.",
-               "in": "path",
-               "name": "namespace",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            },
-            {
-               "allowEmptyValue": false,
-               "description": "A place to store an image.",
-               "in": "path",
-               "name": "repository",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            },
-            {
-               "allowEmptyValue": false,
-               "description": "A content addressable identifier.",
-               "in": "path",
-               "name": "digest",
-               "required": true,
-               "schema": {
-                  "type": "string"
-               }
-            }
-         ]
-      },
-      "/v2/{namespace}/{repository}/manifests/{reference}": {
-         "delete": {
-            "operationId": "oci-delete-manifest",
-            "responses": {
-               "200": {
-                  "content": { },
-                  "description": "OK"
-               },
-               "401": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
-                           "properties": {
-                              "errors": {
-                                 "items": {
-                                    "properties": {
-                                       "code": {
-                                          "type": "string"
-                                       },
-                                       "detail": {
-                                          "type": "string"
-                                       },
-                                       "message": {
-                                          "type": "string"
-                                       }
-                                    },
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "Unauthorized"
-               },
-               "403": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
-                           "properties": {
-                              "errors": {
-                                 "items": {
-                                    "properties": {
-                                       "code": {
-                                          "type": "string"
-                                       },
-                                       "detail": {
-                                          "type": "string"
-                                       },
-                                       "message": {
-                                          "type": "string"
-                                       }
-                                    },
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "Forbidden"
-               },
-               "404": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
-                           "properties": {
-                              "errors": {
-                                 "items": {
-                                    "properties": {
-                                       "code": {
-                                          "type": "string"
-                                       },
-                                       "detail": {
-                                          "type": "string"
-                                       },
-                                       "message": {
-                                          "type": "string"
-                                       }
-                                    },
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "Not Found"
-               },
-               "429": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
-                           "properties": {
-                              "errors": {
-                                 "items": {
-                                    "properties": {
-                                       "code": {
-                                          "type": "string"
-                                       },
-                                       "detail": {
-                                          "type": "string"
-                                       },
-                                       "message": {
-                                          "type": "string"
-                                       }
-                                    },
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "Too Many Requests"
-               }
-            },
-            "summary": "Delete a manifest from the repository.",
-            "tags": [
-               "OCI"
-            ]
-         },
-         "get": {
-            "operationId": "oci-get-manifest",
-            "responses": {
-               "200": {
-                  "content": {
-                     "application/vnd.oci.image.manifest.v1+json": {
-                        "schema": {
-                           "description": "OCI Image Manifest Specification",
-                           "properties": {
-                              "annotations": {
-                                 "description": "This OPTIONAL property contains arbitrary metadata for the image manifest and MUST use the annotation rules.",
-                                 "type": "object",
-                                 "x-patternProperties": {
-                                    ".{1,}": {
-                                       "type": "string"
-                                    }
-                                 }
-                              },
-                              "config": {
-                                 "description": "A descriptor for referencing a blob.",
-                                 "properties": {
-                                    "annotations": {
-                                       "description": "This OPTIONAL property contains arbitrary metadata for the descriptor and MUST use the annotation rules.",
-                                       "type": "object",
-                                       "x-patternProperties": {
-                                          ".{1,}": {
-                                             "type": "string"
-                                          }
-                                       }
-                                    },
-                                    "digest": {
-                                       "description": "the cryptographic checksum digest of the object, in the pattern `<algorithm>:<encoded>`",
-                                       "pattern": "^[a-z0-9]+(?:[+._-][a-z0-9]+)*:[a-zA-Z0-9=_-]+$",
-                                       "type": "string"
-                                    },
-                                    "mediaType": {
-                                       "description": "",
-                                       "pattern": "^[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}/[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}$",
-                                       "type": "string"
-                                    },
-                                    "size": {
-                                       "description": "This REQUIRED property specifies the size, in bytes, of the raw content. This property exists so that a client will have an expected size for the content before processing. If the length of the retrieved content does not match the specified length, the content SHOULD NOT be trusted.",
-                                       "maximum": 9223372036854775808,
-                                       "minimum": -9223372036854775808,
-                                       "type": "integer"
-                                    },
-                                    "urls": {
-                                       "description": "A list of URLs from which the content may be downloaded.",
-                                       "items": {
-                                          "format": "uri",
-                                          "type": "string"
-                                       },
-                                       "type": "array"
-                                    }
-                                 },
-                                 "required": [
-                                    "size",
-                                    "mediaType",
-                                    "digest"
-                                 ],
-                                 "type": "object"
-                              },
-                              "layers": {
-                                 "description": "Each item in the array MUST be a descriptor. The array MUST have the base layer at index 0. Subsequent layers MUST then follow in stack order (i.e. from layers[0] to layers[len(layers)-1]). The final filesystem layout MUST match the result of applying the layers to an empty directory. The ownership, mode, and other attributes of the initial empty directory are unspecified.",
-                                 "items": {
-                                    "description": "A descriptor for referencing a blob.",
-                                    "properties": {
-                                       "annotations": {
-                                          "description": "This OPTIONAL property contains arbitrary metadata for the descriptor and MUST use the annotation rules.",
-                                          "type": "object",
-                                          "x-patternProperties": {
-                                             ".{1,}": {
-                                                "type": "string"
-                                             }
-                                          }
-                                       },
-                                       "digest": {
-                                          "description": "the cryptographic checksum digest of the object, in the pattern `<algorithm>:<encoded>`",
-                                          "pattern": "^[a-z0-9]+(?:[+._-][a-z0-9]+)*:[a-zA-Z0-9=_-]+$",
-                                          "type": "string"
-                                       },
-                                       "mediaType": {
-                                          "description": "",
-                                          "pattern": "^[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}/[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}$",
-                                          "type": "string"
-                                       },
-                                       "size": {
-                                          "description": "This REQUIRED property specifies the size, in bytes, of the raw content. This property exists so that a client will have an expected size for the content before processing. If the length of the retrieved content does not match the specified length, the content SHOULD NOT be trusted.",
-                                          "maximum": 9223372036854775808,
-                                          "minimum": -9223372036854775808,
-                                          "type": "integer"
-                                       },
-                                       "urls": {
-                                          "description": "A list of URLs from which the content may be downloaded.",
-                                          "items": {
-                                             "format": "uri",
-                                             "type": "string"
-                                          },
-                                          "type": "array"
-                                       }
-                                    },
-                                    "required": [
-                                       "size",
-                                       "mediaType",
-                                       "digest"
-                                    ],
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              },
-                              "schemaVersion": {
-                                 "description": "This REQUIRED property specifies the schema version. For this version ofthe specification, this MUST be `2` to ensure backward compatibility with older versions of Docker. The value of this field will not change.",
-                                 "maximum": 2,
-                                 "minimum": 2,
-                                 "type": "integer"
-                              }
-                           },
-                           "required": [
-                              "schemaVersion",
-                              "config",
-                              "layers"
-                           ],
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "OK"
-               },
-               "401": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
-                           "properties": {
-                              "errors": {
-                                 "items": {
-                                    "properties": {
-                                       "code": {
-                                          "type": "string"
-                                       },
-                                       "detail": {
-                                          "type": "string"
-                                       },
-                                       "message": {
-                                          "type": "string"
-                                       }
-                                    },
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "Unauthorized"
-               },
-               "403": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
-                           "properties": {
-                              "errors": {
-                                 "items": {
-                                    "properties": {
-                                       "code": {
-                                          "type": "string"
-                                       },
-                                       "detail": {
-                                          "type": "string"
-                                       },
-                                       "message": {
-                                          "type": "string"
-                                       }
-                                    },
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "Forbidden"
-               },
-               "404": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
-                           "properties": {
-                              "errors": {
-                                 "items": {
-                                    "properties": {
-                                       "code": {
-                                          "type": "string"
-                                       },
-                                       "detail": {
-                                          "type": "string"
-                                       },
-                                       "message": {
-                                          "type": "string"
-                                       }
-                                    },
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "Not Found"
-               },
-               "429": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
-                           "properties": {
-                              "errors": {
-                                 "items": {
-                                    "properties": {
-                                       "code": {
-                                          "type": "string"
-                                       },
-                                       "detail": {
-                                          "type": "string"
-                                       },
-                                       "message": {
-                                          "type": "string"
-                                       }
-                                    },
-                                    "type": "object"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
-                  "description": "Too Many Requests"
-               }
-            },
-            "summary": "Get a manifest by name and reference.",
-            "tags": [
-               "OCI"
-            ]
-         },
-         "head": {
-            "operationId": "oci-get-manifest",
-            "responses": {
-               "200": {
-                  "content": { },
                   "description": "OK"
                },
                "401": {
@@ -2557,40 +1434,497 @@
          "parameters": [
             {
                "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
                "description": "A logical grouping of repositories.",
+               "explode": false,
                "in": "path",
                "name": "namespace",
                "required": true,
                "schema": {
                   "type": "string"
-               }
+               },
+               "style": "simple"
             },
             {
                "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
                "description": "A place to store an image.",
+               "explode": false,
                "in": "path",
                "name": "repository",
                "required": true,
                "schema": {
                   "type": "string"
-               }
+               },
+               "style": "simple"
             },
             {
                "allowEmptyValue": false,
-               "description": "Can either be a tag name or digest.",
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "A content addressable identifier.",
+               "explode": false,
+               "in": "path",
+               "name": "digest",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "simple"
+            }
+         ]
+      },
+      "/v2/{namespace}/{repository}/manifests/{reference}": {
+         "delete": {
+            "deprecated": false,
+            "operationId": "oci-manifest-delete",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
+            "summary": "Delete a manifest from the repository.",
+            "tags": [
+               "OCI"
+            ]
+         },
+         "get": {
+            "deprecated": false,
+            "operationId": "oci-manifest-get",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
+            "summary": "Get a manifest by name and reference.",
+            "tags": [
+               "OCI"
+            ]
+         },
+         "head": {
+            "deprecated": false,
+            "operationId": "oci-manifest-exists",
+            "responses": {
+               "200": {
+                  "description": "OK"
+               },
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found"
+               },
+               "429": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Too Many Requests"
+               }
+            },
+            "summary": "Check for the existence of a manifest by name and reference.",
+            "tags": [
+               "OCI"
+            ]
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "A logical grouping of repositories.",
+               "explode": false,
+               "in": "path",
+               "name": "namespace",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "simple"
+            },
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "A place to store an image.",
+               "explode": false,
+               "in": "path",
+               "name": "repository",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "simple"
+            },
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "Can either be a tag name or digest",
+               "explode": false,
                "in": "path",
                "name": "reference",
                "required": true,
                "schema": {
                   "type": "string"
-               }
+               },
+               "style": "simple"
             }
          ],
          "put": {
-            "operationId": "oci-put-manifest",
+            "deprecated": false,
+            "operationId": "oci-manifest-create",
             "responses": {
                "200": {
-                  "content": { },
                   "description": "OK"
                },
                "401": {
@@ -2692,28 +2026,10 @@
       },
       "/v2/{namespace}/{repository}/tags/list": {
          "get": {
+            "deprecated": false,
             "operationId": "oci-tags-list",
             "responses": {
                "200": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "description": "This property contains a list of all tags in a repository.",
-                           "properties": {
-                              "name": {
-                                 "type": "string"
-                              },
-                              "tags": {
-                                 "items": {
-                                    "type": "string"
-                                 },
-                                 "type": "array"
-                              }
-                           },
-                           "type": "object"
-                        }
-                     }
-                  },
                   "description": "OK"
                },
                "401": {
@@ -2815,23 +2131,31 @@
          "parameters": [
             {
                "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
                "description": "A logical grouping of repositories.",
+               "explode": false,
                "in": "path",
                "name": "namespace",
                "required": true,
                "schema": {
                   "type": "string"
-               }
+               },
+               "style": "simple"
             },
             {
                "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
                "description": "A place to store an image.",
+               "explode": false,
                "in": "path",
                "name": "repository",
                "required": true,
                "schema": {
                   "type": "string"
-               }
+               },
+               "style": "simple"
             }
          ]
       }
