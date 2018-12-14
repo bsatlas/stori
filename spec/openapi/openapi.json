@@ -23,7 +23,54 @@
             "operationId": "oci-verify",
             "responses": {
                "200": {
-                  "description": "OK"
+                  "description": "OK",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Docker-Distribution-API-Version": {
+                        "deprecated": false,
+                        "description": "Used by clients to determine if the registry implements the distribution specification.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "401": {
                   "content": {
@@ -53,7 +100,45 @@
                         }
                      }
                   },
-                  "description": "Unauthorized"
+                  "description": "Unauthorized",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "403": {
                   "content": {
@@ -83,7 +168,45 @@
                         }
                      }
                   },
-                  "description": "Forbidden"
+                  "description": "Forbidden",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "404": {
                   "content": {
@@ -113,7 +236,45 @@
                         }
                      }
                   },
-                  "description": "Not Found"
+                  "description": "Not Found",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "429": {
                   "content": {
@@ -143,7 +304,45 @@
                         }
                      }
                   },
-                  "description": "Too Many Requests"
+                  "description": "Too Many Requests",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                }
             },
             "summary": "Check that the endpoint implements distribution API.",
@@ -159,7 +358,45 @@
             "operationId": "oci-catalog-list",
             "responses": {
                "200": {
-                  "description": "OK"
+                  "description": "OK",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "401": {
                   "content": {
@@ -189,7 +426,45 @@
                         }
                      }
                   },
-                  "description": "Unauthorized"
+                  "description": "Unauthorized",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "403": {
                   "content": {
@@ -219,7 +494,45 @@
                         }
                      }
                   },
-                  "description": "Forbidden"
+                  "description": "Forbidden",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "429": {
                   "content": {
@@ -249,7 +562,45 @@
                         }
                      }
                   },
-                  "description": "Too Many Requests"
+                  "description": "Too Many Requests",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                }
             },
             "summary": "List a set of available repositories in the local registry cluster.",
@@ -294,7 +645,45 @@
             "operationId": "oci-blob-upload-init",
             "responses": {
                "202": {
-                  "description": "Accepted"
+                  "description": "Accepted",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "401": {
                   "content": {
@@ -324,7 +713,45 @@
                         }
                      }
                   },
-                  "description": "Unauthorized"
+                  "description": "Unauthorized",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "403": {
                   "content": {
@@ -354,7 +781,45 @@
                         }
                      }
                   },
-                  "description": "Forbidden"
+                  "description": "Forbidden",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "429": {
                   "content": {
@@ -384,7 +849,45 @@
                         }
                      }
                   },
-                  "description": "Too Many Requests"
+                  "description": "Too Many Requests",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                }
             },
             "summary": "Initiate a blob upload.",
@@ -399,7 +902,45 @@
             "operationId": "oci-blob-upload-cancel",
             "responses": {
                "204": {
-                  "description": "No Content"
+                  "description": "No Content",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "400": {
                   "content": {
@@ -429,7 +970,45 @@
                         }
                      }
                   },
-                  "description": "Accepted"
+                  "description": "Accepted",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "401": {
                   "content": {
@@ -459,7 +1038,45 @@
                         }
                      }
                   },
-                  "description": "Unauthorized"
+                  "description": "Unauthorized",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "403": {
                   "content": {
@@ -489,7 +1106,45 @@
                         }
                      }
                   },
-                  "description": "Forbidden"
+                  "description": "Forbidden",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "404": {
                   "content": {
@@ -519,7 +1174,45 @@
                         }
                      }
                   },
-                  "description": "Not Found"
+                  "description": "Not Found",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "429": {
                   "content": {
@@ -549,7 +1242,45 @@
                         }
                      }
                   },
-                  "description": "Too Many Requests"
+                  "description": "Too Many Requests",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                }
             },
             "summary": "Cancel the chunked blob upload.",
@@ -562,7 +1293,45 @@
             "operationId": "oci-blob-upload-status",
             "responses": {
                "204": {
-                  "description": "No Content"
+                  "description": "No Content",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "401": {
                   "content": {
@@ -592,7 +1361,45 @@
                         }
                      }
                   },
-                  "description": "Unauthorized"
+                  "description": "Unauthorized",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "403": {
                   "content": {
@@ -622,7 +1429,45 @@
                         }
                      }
                   },
-                  "description": "Forbidden"
+                  "description": "Forbidden",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "429": {
                   "content": {
@@ -652,7 +1497,45 @@
                         }
                      }
                   },
-                  "description": "Too Many Requests"
+                  "description": "Too Many Requests",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                }
             },
             "summary": "Check a blob's upload status.",
@@ -709,7 +1592,45 @@
             "operationId": "oci-blob-upload-chunk",
             "responses": {
                "204": {
-                  "description": "No Content"
+                  "description": "No Content",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "400": {
                   "content": {
@@ -739,7 +1660,45 @@
                         }
                      }
                   },
-                  "description": "Accepted"
+                  "description": "Accepted",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "401": {
                   "content": {
@@ -769,7 +1728,45 @@
                         }
                      }
                   },
-                  "description": "Unauthorized"
+                  "description": "Unauthorized",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "403": {
                   "content": {
@@ -799,7 +1796,45 @@
                         }
                      }
                   },
-                  "description": "Forbidden"
+                  "description": "Forbidden",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "404": {
                   "content": {
@@ -829,7 +1864,45 @@
                         }
                      }
                   },
-                  "description": "Not Found"
+                  "description": "Not Found",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "429": {
                   "content": {
@@ -859,7 +1932,45 @@
                         }
                      }
                   },
-                  "description": "Too Many Requests"
+                  "description": "Too Many Requests",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                }
             },
             "summary": "Upload a blob chunk to the repository.",
@@ -872,7 +1983,45 @@
             "operationId": "oci-blob-upload-complete",
             "responses": {
                "204": {
-                  "description": "No Content"
+                  "description": "No Content",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "400": {
                   "content": {
@@ -902,7 +2051,45 @@
                         }
                      }
                   },
-                  "description": "Accepted"
+                  "description": "Accepted",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "401": {
                   "content": {
@@ -932,7 +2119,45 @@
                         }
                      }
                   },
-                  "description": "Unauthorized"
+                  "description": "Unauthorized",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "403": {
                   "content": {
@@ -962,7 +2187,45 @@
                         }
                      }
                   },
-                  "description": "Forbidden"
+                  "description": "Forbidden",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "404": {
                   "content": {
@@ -992,7 +2255,45 @@
                         }
                      }
                   },
-                  "description": "Not Found"
+                  "description": "Not Found",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "429": {
                   "content": {
@@ -1022,7 +2323,45 @@
                         }
                      }
                   },
-                  "description": "Too Many Requests"
+                  "description": "Too Many Requests",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                }
             },
             "summary": "Notify registry that the chunked blob upload is complete.",
@@ -1037,7 +2376,45 @@
             "operationId": "oci-blob-delete",
             "responses": {
                "202": {
-                  "description": "Accepted"
+                  "description": "Accepted",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "401": {
                   "content": {
@@ -1067,7 +2444,45 @@
                         }
                      }
                   },
-                  "description": "Unauthorized"
+                  "description": "Unauthorized",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "403": {
                   "content": {
@@ -1097,7 +2512,45 @@
                         }
                      }
                   },
-                  "description": "Forbidden"
+                  "description": "Forbidden",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "404": {
                   "content": {
@@ -1127,7 +2580,45 @@
                         }
                      }
                   },
-                  "description": "Not Found"
+                  "description": "Not Found",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "429": {
                   "content": {
@@ -1157,7 +2648,45 @@
                         }
                      }
                   },
-                  "description": "Too Many Requests"
+                  "description": "Too Many Requests",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                }
             },
             "summary": "Delete a blob by digest.",
@@ -1170,7 +2699,45 @@
             "operationId": "oci-blob-download",
             "responses": {
                "200": {
-                  "description": "OK"
+                  "description": "OK",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "401": {
                   "content": {
@@ -1200,7 +2767,45 @@
                         }
                      }
                   },
-                  "description": "Unauthorized"
+                  "description": "Unauthorized",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "403": {
                   "content": {
@@ -1230,7 +2835,45 @@
                         }
                      }
                   },
-                  "description": "Forbidden"
+                  "description": "Forbidden",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "404": {
                   "content": {
@@ -1260,7 +2903,45 @@
                         }
                      }
                   },
-                  "description": "Not Found"
+                  "description": "Not Found",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "429": {
                   "content": {
@@ -1290,7 +2971,45 @@
                         }
                      }
                   },
-                  "description": "Too Many Requests"
+                  "description": "Too Many Requests",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                }
             },
             "summary": "Download a blob by digest.",
@@ -1303,7 +3022,45 @@
             "operationId": "oci-blob-exists",
             "responses": {
                "200": {
-                  "description": "OK"
+                  "description": "OK",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "401": {
                   "content": {
@@ -1333,7 +3090,45 @@
                         }
                      }
                   },
-                  "description": "Unauthorized"
+                  "description": "Unauthorized",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "403": {
                   "content": {
@@ -1363,7 +3158,45 @@
                         }
                      }
                   },
-                  "description": "Forbidden"
+                  "description": "Forbidden",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "404": {
                   "content": {
@@ -1393,7 +3226,45 @@
                         }
                      }
                   },
-                  "description": "Not Found"
+                  "description": "Not Found",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "429": {
                   "content": {
@@ -1423,7 +3294,45 @@
                         }
                      }
                   },
-                  "description": "Too Many Requests"
+                  "description": "Too Many Requests",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                }
             },
             "summary": "Check for the existence of a manifest by name and reference.",
@@ -1482,7 +3391,45 @@
             "operationId": "oci-manifest-delete",
             "responses": {
                "200": {
-                  "description": "OK"
+                  "description": "OK",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "401": {
                   "content": {
@@ -1512,7 +3459,45 @@
                         }
                      }
                   },
-                  "description": "Unauthorized"
+                  "description": "Unauthorized",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "403": {
                   "content": {
@@ -1542,7 +3527,45 @@
                         }
                      }
                   },
-                  "description": "Forbidden"
+                  "description": "Forbidden",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "404": {
                   "content": {
@@ -1572,7 +3595,45 @@
                         }
                      }
                   },
-                  "description": "Not Found"
+                  "description": "Not Found",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "429": {
                   "content": {
@@ -1602,7 +3663,45 @@
                         }
                      }
                   },
-                  "description": "Too Many Requests"
+                  "description": "Too Many Requests",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                }
             },
             "summary": "Delete a manifest from the repository.",
@@ -1615,7 +3714,45 @@
             "operationId": "oci-manifest-get",
             "responses": {
                "200": {
-                  "description": "OK"
+                  "description": "OK",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "401": {
                   "content": {
@@ -1645,7 +3782,45 @@
                         }
                      }
                   },
-                  "description": "Unauthorized"
+                  "description": "Unauthorized",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "403": {
                   "content": {
@@ -1675,7 +3850,45 @@
                         }
                      }
                   },
-                  "description": "Forbidden"
+                  "description": "Forbidden",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "404": {
                   "content": {
@@ -1705,7 +3918,45 @@
                         }
                      }
                   },
-                  "description": "Not Found"
+                  "description": "Not Found",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "429": {
                   "content": {
@@ -1735,7 +3986,45 @@
                         }
                      }
                   },
-                  "description": "Too Many Requests"
+                  "description": "Too Many Requests",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                }
             },
             "summary": "Get a manifest by name and reference.",
@@ -1748,7 +4037,45 @@
             "operationId": "oci-manifest-exists",
             "responses": {
                "200": {
-                  "description": "OK"
+                  "description": "OK",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "401": {
                   "content": {
@@ -1778,7 +4105,45 @@
                         }
                      }
                   },
-                  "description": "Unauthorized"
+                  "description": "Unauthorized",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "403": {
                   "content": {
@@ -1808,7 +4173,45 @@
                         }
                      }
                   },
-                  "description": "Forbidden"
+                  "description": "Forbidden",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "404": {
                   "content": {
@@ -1838,7 +4241,45 @@
                         }
                      }
                   },
-                  "description": "Not Found"
+                  "description": "Not Found",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "429": {
                   "content": {
@@ -1868,7 +4309,45 @@
                         }
                      }
                   },
-                  "description": "Too Many Requests"
+                  "description": "Too Many Requests",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                }
             },
             "summary": "Check for the existence of a manifest by name and reference.",
@@ -1925,7 +4404,45 @@
             "operationId": "oci-manifest-create",
             "responses": {
                "200": {
-                  "description": "OK"
+                  "description": "OK",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "401": {
                   "content": {
@@ -1955,7 +4472,45 @@
                         }
                      }
                   },
-                  "description": "Unauthorized"
+                  "description": "Unauthorized",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "403": {
                   "content": {
@@ -1985,7 +4540,45 @@
                         }
                      }
                   },
-                  "description": "Forbidden"
+                  "description": "Forbidden",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "429": {
                   "content": {
@@ -2015,7 +4608,45 @@
                         }
                      }
                   },
-                  "description": "Too Many Requests"
+                  "description": "Too Many Requests",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                }
             },
             "summary": "Add a manifest to a repository.",
@@ -2030,7 +4661,45 @@
             "operationId": "oci-tags-list",
             "responses": {
                "200": {
-                  "description": "OK"
+                  "description": "OK",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "401": {
                   "content": {
@@ -2060,7 +4729,45 @@
                         }
                      }
                   },
-                  "description": "Unauthorized"
+                  "description": "Unauthorized",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "403": {
                   "content": {
@@ -2090,7 +4797,45 @@
                         }
                      }
                   },
-                  "description": "Forbidden"
+                  "description": "Forbidden",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                },
                "429": {
                   "content": {
@@ -2120,7 +4865,45 @@
                         }
                      }
                   },
-                  "description": "Too Many Requests"
+                  "description": "Too Many Requests",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
                }
             },
             "summary": "Get all tags in a repository.",

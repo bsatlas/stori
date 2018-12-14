@@ -1,8 +1,8 @@
 {
   // Initialize new Header object.
   new(
-    name=error 'Name not defined.',
-    schema=error 'Schema not defined.',
+    name=error 'Name not defined for Header object.',
+    schema=error 'Schema not defined for Header object.',
     description=null,
     required=true,
     deprecated=false,

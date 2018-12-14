@@ -10,6 +10,7 @@
   operation: import 'operation.libsonnet',
   parameter: import 'parameter.libsonnet',
   mediaType: import 'media-type.libsonnet',
+  header: import 'header.libsonnet',
 
   // Initalize new OpenAPI spec.
   new(
