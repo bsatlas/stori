@@ -293,8 +293,8 @@
             "deprecated": false,
             "operationId": "oci-blob-upload-init",
             "responses": {
-               "200": {
-                  "description": "OK"
+               "202": {
+                  "description": "Accepted"
                },
                "401": {
                   "content": {
@@ -398,8 +398,8 @@
             "deprecated": false,
             "operationId": "oci-blob-upload-cancel",
             "responses": {
-               "200": {
-                  "description": "OK"
+               "204": {
+                  "description": "No Content"
                },
                "400": {
                   "content": {
@@ -561,8 +561,8 @@
             "deprecated": false,
             "operationId": "oci-blob-upload-status",
             "responses": {
-               "200": {
-                  "description": "OK"
+               "204": {
+                  "description": "No Content"
                },
                "401": {
                   "content": {
@@ -708,8 +708,8 @@
             "deprecated": false,
             "operationId": "oci-blob-upload-chunk",
             "responses": {
-               "200": {
-                  "description": "OK"
+               "204": {
+                  "description": "No Content"
                },
                "400": {
                   "content": {
@@ -871,8 +871,8 @@
             "deprecated": false,
             "operationId": "oci-blob-upload-complete",
             "responses": {
-               "200": {
-                  "description": "OK"
+               "204": {
+                  "description": "No Content"
                },
                "400": {
                   "content": {
@@ -1036,8 +1036,8 @@
             "deprecated": false,
             "operationId": "oci-blob-delete",
             "responses": {
-               "200": {
-                  "description": "OK"
+               "202": {
+                  "description": "Accepted"
                },
                "401": {
                   "content": {
