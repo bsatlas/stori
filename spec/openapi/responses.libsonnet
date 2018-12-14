@@ -131,6 +131,7 @@ local oci = {
 
   local manifestGet =
     common.ok
+    .addHeader(h.docker.contentDigest)
   ,
 
   local manifestExists =
@@ -145,8 +146,9 @@ local oci = {
     common.ok
   ,
 
-  local manifestDownload =
+  local blobDownload =
     common.ok
+    .addHeader(h.docker.contentDigest)
   ,
 
   local blobExists =
@@ -185,7 +187,7 @@ local oci = {
   manifestExists: manifestExists,
   manifestCreate: manifestCreate,
   manifestDelete: manifestDelete,
-  blobDownload: manifestDownload,
+  blobDownload: blobDownload,
   blobExists: blobExists,
   blobDelete: blobDelete,
   blobUploadInit: blobUploadInit,

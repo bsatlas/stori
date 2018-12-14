@@ -2728,6 +2728,15 @@
                         },
                         "style": "simple"
                      },
+                     "Docker-Content-Digest": {
+                        "deprecated": false,
+                        "description": "Includes the digest of the target entity returned in the response. Clients can use this header to verify the integrity of downloaded content",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
                      "X-Content-Type-Options": {
                         "deprecated": false,
                         "description": "Content type options.",
@@ -3737,6 +3746,15 @@
                      "Date": {
                         "deprecated": false,
                         "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Docker-Content-Digest": {
+                        "deprecated": false,
+                        "description": "Includes the digest of the target entity returned in the response. Clients can use this header to verify the integrity of downloaded content",
                         "required": true,
                         "schema": {
                            "type": "string"
