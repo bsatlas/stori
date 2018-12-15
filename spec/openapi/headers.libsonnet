@@ -60,6 +60,13 @@ local common = {
       schema=string,
     ),
 
+  local link =
+    header(
+      name='Link',
+      description="RFC5988 compliant rel='next' with URL to next result set, if available",
+      schema=string,
+    ),
+
   wwwAuth:: wwwAuth,
   contentLength:: contentLength,
   contentType:: contentType,
@@ -68,6 +75,7 @@ local common = {
   date:: date,
   location: location,
   range:: range,
+  link:: link,
 };
 
 local docker = {

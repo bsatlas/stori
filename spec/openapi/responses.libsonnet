@@ -130,6 +130,7 @@ local oci = {
   local verify =
     common.ok
     .addHeader(h.docker.version)
+    .addHeader(h.common.link)
   ,
 
   local catalogList =
@@ -143,6 +144,8 @@ local oci = {
   local manifestGet =
     common.ok
     .addHeader(h.docker.contentDigest)
+    .addContent(mt.oci.v1.imageManifest)
+    .addContent(mt.oci.v1.index)
   ,
 
   local manifestExists =
@@ -178,21 +181,20 @@ local oci = {
   ,
 
   local blobMount =
-    common.accepted
+    common.created
     .addHeader(h.common.location)
-    .addHeader(h.common.range)
     .addHeader(h.docker.uploadUUID)
   ,
 
   local blobUploadStatus =
     common.noContent
-    .addHeader(h.common.location)
     .addHeader(h.common.range)
     .addHeader(h.docker.uploadUUID)
   ,
 
   local blobUploadChunk =
-    common.accepted
+    common.noContent
+    .addHeader(h.common.location)
     .addHeader(h.common.range)
     .addHeader(h.docker.uploadUUID)
   ,
@@ -200,6 +202,7 @@ local oci = {
   local blobUploadComplete =
     common.accepted
     .addHeader(h.docker.contentDigest)
+    .addHeader(h.common.location)
   ,
 
   local blobUploadCancel =
