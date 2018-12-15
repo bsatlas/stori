@@ -40,6 +40,15 @@ local err = {
     .addHeader(h.common.contentTypeOptions)
   ,
 
+  local rangeNotSatisfiable =
+    resp.new('416', 'Not Found', content)
+    .addHeader(h.common.contentLength)
+    .addHeader(h.common.date)
+    .addHeader(h.common.contentType)
+    .addHeader(h.common.contentTypeOptions)
+    .addHeader(h.docker.uploadUUID)
+  ,
+
   local tooManyRequests =
     resp.new('429', 'Too Many Requests', content)
     .addHeader(h.common.contentLength)
@@ -54,6 +63,7 @@ local err = {
   notFound: notFound,
   tooManyRequests: tooManyRequests,
   badRequest: badRequest,
+  rangeNotSatisfiable: rangeNotSatisfiable,
 };
 
 local common = {
@@ -161,18 +171,34 @@ local oci = {
 
   local blobUploadInit =
     common.accepted
+    .addHeader(h.common.location)
+    .addHeader(h.common.range)
+    .addHeader(h.docker.uploadUUID)
+  ,
+
+  local blobMount =
+    common.accepted
+    .addHeader(h.common.location)
+    .addHeader(h.common.range)
+    .addHeader(h.docker.uploadUUID)
   ,
 
   local blobUploadStatus =
     common.noContent
+    .addHeader(h.common.location)
+    .addHeader(h.common.range)
+    .addHeader(h.docker.uploadUUID)
   ,
 
   local blobUploadChunk =
-    common.noContent
+    common.accepted
+    .addHeader(h.common.range)
+    .addHeader(h.docker.uploadUUID)
   ,
 
   local blobUploadComplete =
-    common.noContent
+    common.accepted
+    .addHeader(h.docker.contentDigest)
   ,
 
   local blobUploadCancel =
@@ -191,6 +217,7 @@ local oci = {
   blobExists: blobExists,
   blobDelete: blobDelete,
   blobUploadInit: blobUploadInit,
+  blobMount: blobMount,
   blobUploadStatus: blobUploadStatus,
   blobUploadChunk: blobUploadChunk,
   blobUploadComplete: blobUploadComplete,

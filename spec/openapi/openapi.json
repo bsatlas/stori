@@ -674,6 +674,33 @@
                         },
                         "style": "simple"
                      },
+                     "Docker-Upload-UUID": {
+                        "deprecated": false,
+                        "description": "A unique identifier used to correlate local state with remote state. Clients use this to implement resumable uploads.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Location": {
+                        "deprecated": false,
+                        "description": "Indicates the URL to redirect to.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Range": {
+                        "deprecated": false,
+                        "description": "A byte range used to coordinate chunked uploads to the server.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
                      "X-Content-Type-Options": {
                         "deprecated": false,
                         "description": "Content type options.",
@@ -1322,6 +1349,33 @@
                         },
                         "style": "simple"
                      },
+                     "Docker-Upload-UUID": {
+                        "deprecated": false,
+                        "description": "A unique identifier used to correlate local state with remote state. Clients use this to implement resumable uploads.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Location": {
+                        "deprecated": false,
+                        "description": "Indicates the URL to redirect to.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Range": {
+                        "deprecated": false,
+                        "description": "A byte range used to coordinate chunked uploads to the server.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
                      "X-Content-Type-Options": {
                         "deprecated": false,
                         "description": "Content type options.",
@@ -1591,8 +1645,8 @@
             "deprecated": false,
             "operationId": "oci-blob-upload-chunk",
             "responses": {
-               "204": {
-                  "description": "No Content",
+               "202": {
+                  "description": "Accepted",
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
@@ -1615,6 +1669,24 @@
                      "Date": {
                         "deprecated": false,
                         "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Docker-Upload-UUID": {
+                        "deprecated": false,
+                        "description": "A unique identifier used to correlate local state with remote state. Clients use this to implement resumable uploads.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Range": {
+                        "deprecated": false,
+                        "description": "A byte range used to coordinate chunked uploads to the server.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -1904,6 +1976,83 @@
                      }
                   }
                },
+               "416": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Not Found",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned .",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Docker-Upload-UUID": {
+                        "deprecated": false,
+                        "description": "A unique identifier used to correlate local state with remote state. Clients use this to implement resumable uploads.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
+               },
                "429": {
                   "content": {
                      "application/json": {
@@ -1982,8 +2131,8 @@
             "deprecated": false,
             "operationId": "oci-blob-upload-complete",
             "responses": {
-               "204": {
-                  "description": "No Content",
+               "202": {
+                  "description": "Accepted",
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
@@ -2006,6 +2155,15 @@
                      "Date": {
                         "deprecated": false,
                         "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Docker-Content-Digest": {
+                        "deprecated": false,
+                        "description": "Includes the digest of the target entity returned in the response. Clients can use this header to verify the integrity of downloaded content",
                         "required": true,
                         "schema": {
                            "type": "string"

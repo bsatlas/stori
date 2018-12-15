@@ -143,6 +143,7 @@ local oci = {
       summary='Initiate a blob upload.',
     )
     .addResponse(resp.oci.blobUploadInit)
+    .addResponse(resp.oci.blobMount)
     .addResponse(resp.err.unauthorized)
     .addResponse(resp.err.forbidden)
     .addResponse(resp.err.tooManyRequests)
@@ -172,6 +173,7 @@ local oci = {
     .addResponse(resp.err.forbidden)
     .addResponse(resp.err.notFound)
     .addResponse(resp.err.tooManyRequests)
+    .addResponse(resp.err.rangeNotSatisfiable)
   ,
 
   local blobUploadComplete =

@@ -46,12 +46,28 @@ local common = {
       description='The date and time the message was originated.',
     ),
 
+  local location =
+    header(
+      name='Location',
+      description='Indicates the URL to redirect to.',
+      schema=string,
+    ),
+
+  local range =
+    header(
+      name='Range',
+      description='A byte range used to coordinate chunked uploads to the server.',
+      schema=string,
+    ),
+
   wwwAuth:: wwwAuth,
   contentLength:: contentLength,
   contentType:: contentType,
   contentTypeOptions:: contentTypeOptions,
   contentRange:: contentRange,
   date:: date,
+  location: location,
+  range:: range,
 };
 
 local docker = {
@@ -76,6 +92,7 @@ local docker = {
       description='A unique identifier used to correlate local state with remote state. Clients use this to implement resumable uploads.',
       schema=string,
     ),
+
 
   version: version,
   contentDigest: contentDigest,
