@@ -2,6 +2,8 @@ local oapi = import 'openapi-jsonnet/v3.0.0/openapi.libsonnet';
 local resp = import 'responses.libsonnet';
 local op = oapi.operation;
 local params = import 'parameters.libsonnet';
+local mt = import 'media-types.libsonnet';
+local req = import 'request-bodies.libsonnet';
 
 // OCI Operations.
 local oci = {
@@ -91,6 +93,9 @@ local oci = {
     )
     .addParameter(params.contentLength)
     .addParameter(params.host)
+
+    .addRequestBody(req.oci.v1.manifestCreate)
+
     .addResponse(resp.oci.manifestCreate)
     .addResponse(resp.err.unauthorized)
     .addResponse(resp.err.forbidden)

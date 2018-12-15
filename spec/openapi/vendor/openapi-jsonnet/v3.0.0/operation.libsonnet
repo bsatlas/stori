@@ -28,6 +28,10 @@
       responses+: response,
     },
 
+    addRequestBody(requestBody):: self {
+      requestBody+: requestBody,
+    },
+
     addTag(tag):: self {
       tags+: [tag],
     },
