@@ -18,6 +18,7 @@ local err = {
 
   local unauthorized =
     resp.new('401', 'Unauthorized', content)
+    .addHeader(h.common.wwwAuth)
     .addHeader(h.common.contentLength)
     .addHeader(h.common.date)
     .addHeader(h.common.contentType)

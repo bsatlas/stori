@@ -159,6 +159,15 @@
                         },
                         "style": "simple"
                      },
+                     "WWW-Authenticate": {
+                        "deprecated": false,
+                        "description": "Defines the authentication method that should be used to gain access to a resource.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
                      "X-Content-Type-Options": {
                         "deprecated": false,
                         "description": "Content type options.",
@@ -509,6 +518,15 @@
                      "Date": {
                         "deprecated": false,
                         "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "WWW-Authenticate": {
+                        "deprecated": false,
+                        "description": "Defines the authentication method that should be used to gain access to a resource.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -931,6 +949,15 @@
                         },
                         "style": "simple"
                      },
+                     "WWW-Authenticate": {
+                        "deprecated": false,
+                        "description": "Defines the authentication method that should be used to gain access to a resource.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
                      "X-Content-Type-Options": {
                         "deprecated": false,
                         "description": "Content type options.",
@@ -1280,6 +1307,15 @@
                      "Date": {
                         "deprecated": false,
                         "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "WWW-Authenticate": {
+                        "deprecated": false,
+                        "description": "Defines the authentication method that should be used to gain access to a resource.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -1660,6 +1696,15 @@
                      "Date": {
                         "deprecated": false,
                         "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "WWW-Authenticate": {
+                        "deprecated": false,
+                        "description": "Defines the authentication method that should be used to gain access to a resource.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -2075,6 +2120,15 @@
                      "Date": {
                         "deprecated": false,
                         "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "WWW-Authenticate": {
+                        "deprecated": false,
+                        "description": "Defines the authentication method that should be used to gain access to a resource.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -2602,6 +2656,15 @@
                         },
                         "style": "simple"
                      },
+                     "WWW-Authenticate": {
+                        "deprecated": false,
+                        "description": "Defines the authentication method that should be used to gain access to a resource.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
                      "X-Content-Type-Options": {
                         "deprecated": false,
                         "description": "Content type options.",
@@ -2951,6 +3014,15 @@
                      "Date": {
                         "deprecated": false,
                         "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "WWW-Authenticate": {
+                        "deprecated": false,
+                        "description": "Defines the authentication method that should be used to gain access to a resource.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -3333,6 +3405,15 @@
                         },
                         "style": "simple"
                      },
+                     "WWW-Authenticate": {
+                        "deprecated": false,
+                        "description": "Defines the authentication method that should be used to gain access to a resource.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
                      "X-Content-Type-Options": {
                         "deprecated": false,
                         "description": "Content type options.",
@@ -3680,6 +3761,15 @@
                      "Date": {
                         "deprecated": false,
                         "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "WWW-Authenticate": {
+                        "deprecated": false,
+                        "description": "Defines the authentication method that should be used to gain access to a resource.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -4085,6 +4175,15 @@
                         },
                         "style": "simple"
                      },
+                     "WWW-Authenticate": {
+                        "deprecated": false,
+                        "description": "Defines the authentication method that should be used to gain access to a resource.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
                      "X-Content-Type-Options": {
                         "deprecated": false,
                         "description": "Content type options.",
@@ -4447,6 +4546,15 @@
                         },
                         "style": "simple"
                      },
+                     "WWW-Authenticate": {
+                        "deprecated": false,
+                        "description": "Defines the authentication method that should be used to gain access to a resource.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
                      "X-Content-Type-Options": {
                         "deprecated": false,
                         "description": "Content type options.",
@@ -4794,6 +4902,15 @@
                      "Date": {
                         "deprecated": false,
                         "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "WWW-Authenticate": {
+                        "deprecated": false,
+                        "description": "Defines the authentication method that should be used to gain access to a resource.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -5197,6 +5314,15 @@
                         },
                         "style": "simple"
                      },
+                     "WWW-Authenticate": {
+                        "deprecated": false,
+                        "description": "Defines the authentication method that should be used to gain access to a resource.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
                      "X-Content-Type-Options": {
                         "deprecated": false,
                         "description": "Content type options.",
@@ -5478,6 +5604,15 @@
                      "Date": {
                         "deprecated": false,
                         "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "WWW-Authenticate": {
+                        "deprecated": false,
+                        "description": "Defines the authentication method that should be used to gain access to a resource.",
                         "required": true,
                         "schema": {
                            "type": "string"
