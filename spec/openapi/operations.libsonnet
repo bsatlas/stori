@@ -15,6 +15,7 @@ local oci = {
       summary='Check that the endpoint implements distribution API.',
       description='This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.',
     )
+    .addParameter(params.host)
     .addResponse(resp.oci.verify)
     .addResponse(resp.err.unauthorized)
     .addResponse(resp.err.forbidden)
@@ -104,6 +105,7 @@ local oci = {
       summary='Download a blob by digest.',
       tags=tags,
     )
+    .addParameter(params.range)
     .addResponse(resp.oci.blobDownload)
     .addResponse(resp.err.unauthorized)
     .addResponse(resp.err.forbidden)

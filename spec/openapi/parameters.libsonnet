@@ -1,6 +1,7 @@
 local oapi = import 'openapi-jsonnet/v3.0.0/openapi.libsonnet';
 local param = oapi.parameter;
 local schemas = import 'schemas/schemas.libsonnet';
+local headers = import 'headers.libsonnet';
 
 
 local namespace = param.new(
@@ -78,6 +79,22 @@ local last = param.new(
   schema=schemas.common.string,
 );
 
+local host = param.new(
+  name='Host',
+  paramIn='header',
+  style='simple',
+  description='Standard HTTP Host header.',
+  schema=schemas.common.string,
+);
+
+local range = param.new(
+  name='Range',
+  paramIn='header',
+  style='simple',
+  description='HTTP Range header specifying a blob chunk.',
+  schema=schemas.common.string,
+);
+
 {
   namespace: namespace,
   repository: repository,
@@ -89,4 +106,6 @@ local last = param.new(
   uuid: uuid,
   n: n,
   last: last,
+  host: host,
+  range: range,
 }

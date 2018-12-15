@@ -21,6 +21,22 @@
             "deprecated": false,
             "description": "This minimal endpoint is used to verify that the registry implements the OCI Distribution Specification.",
             "operationId": "oci-verify",
+            "parameters": [
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
+                  "description": "Standard HTTP Host header.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Host",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               }
+            ],
             "responses": {
                "200": {
                   "description": "OK",
@@ -2945,6 +2961,22 @@
          "get": {
             "deprecated": false,
             "operationId": "oci-blob-download",
+            "parameters": [
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
+                  "description": "HTTP Range header specifying a blob chunk.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Range",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               }
+            ],
             "responses": {
                "200": {
                   "description": "OK",
