@@ -997,7 +997,7 @@
                         }
                      }
                   },
-                  "description": "Accepted",
+                  "description": "Bad Request",
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
@@ -1732,7 +1732,7 @@
                         }
                      }
                   },
-                  "description": "Accepted",
+                  "description": "Bad Request",
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
@@ -2209,7 +2209,7 @@
                         }
                      }
                   },
-                  "description": "Accepted",
+                  "description": "Bad Request",
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,

@@ -9,7 +9,7 @@ local err = {
   local content = mt.err,
 
   local badRequest =
-    resp.new('400', 'Accepted', content)
+    resp.new('400', 'Bad Request', content)
     .addHeader(h.common.contentLength)
     .addHeader(h.common.date)
     .addHeader(h.common.contentType)
