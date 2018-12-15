@@ -55,6 +55,8 @@ local items = {
       pathItem.new()
       .addParameter(params.namespace)
       .addParameter(params.repository)
+      .addParameter(params.mount)
+      .addParameter(params.mountFrom)
       .addOperation('POST', ops.oci.blobUploadInit),
 
     local uploadId =

@@ -31,6 +31,22 @@ local digest = param.new(
   schema=schemas.common.string,
 );
 
+local mount = param.new(
+  name='mount',
+  paramIn='query',
+  style='form',
+  description='The digest of a blob in the source repository.',
+  schema=schemas.common.string,
+);
+
+local mountFrom = param.new(
+  name='from',
+  paramIn='query',
+  style='form',
+  description='The source repository the referenced blob.',
+  schema=schemas.common.string,
+);
+
 local uuid = param.new(
   name='uuid',
   paramIn='path',
@@ -43,5 +59,7 @@ local uuid = param.new(
   repository: repository,
   reference: reference,
   digest: digest,
+  mount: mount,
+  mountFrom: mountFrom,
   uuid: uuid,
 }

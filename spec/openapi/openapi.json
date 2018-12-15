@@ -638,6 +638,34 @@
                   "type": "string"
                },
                "style": "simple"
+            },
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "The digest of a blob in the source repository.",
+               "explode": false,
+               "in": "query",
+               "name": "mount",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "form"
+            },
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "The source repository the referenced blob.",
+               "explode": false,
+               "in": "query",
+               "name": "from",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "form"
             }
          ],
          "post": {
@@ -917,7 +945,7 @@
                   }
                }
             },
-            "summary": "Initiate a blob upload.",
+            "summary": "Initiate a blob upload or mount a blob from another respository.",
             "tags": [
                "OCI"
             ]

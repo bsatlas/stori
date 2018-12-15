@@ -140,7 +140,7 @@ local oci = {
     op.new(
       operationId='oci-blob-upload-init',
       tags=tags,
-      summary='Initiate a blob upload.',
+      summary='Initiate a blob upload or mount a blob from another respository.',
     )
     .addResponse(resp.oci.blobUploadInit)
     .addResponse(resp.oci.blobMount)
