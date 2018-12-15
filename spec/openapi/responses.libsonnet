@@ -135,10 +135,12 @@ local oci = {
 
   local catalogList =
     common.ok
+    .addContent(mt.oci.v1.catalog)
   ,
 
   local tagsList =
     common.ok
+    .addContent(mt.oci.v1.tagsList)
   ,
 
   local manifestGet =
@@ -163,6 +165,7 @@ local oci = {
   local blobDownload =
     common.ok
     .addHeader(h.docker.contentDigest)
+    .addContent(mt.common.octetStream)
   ,
 
   local blobExists =

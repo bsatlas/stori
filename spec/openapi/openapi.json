@@ -436,6 +436,22 @@
             ],
             "responses": {
                "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of repositories hosted on the registry.",
+                           "properties": {
+                              "repositories": {
+                                 "items": {
+                                    "type": "string"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
                   "description": "OK",
                   "headers": {
                      "Content-Length": {
@@ -3376,6 +3392,14 @@
             ],
             "responses": {
                "200": {
+                  "content": {
+                     "application/octet-stream": {
+                        "schema": {
+                           "format": "binary",
+                           "type": "string"
+                        }
+                     }
+                  },
                   "description": "OK",
                   "headers": {
                      "Content-Length": {
@@ -5831,6 +5855,25 @@
             ],
             "responses": {
                "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of all tags in a repository.",
+                           "properties": {
+                              "name": {
+                                 "type": "string"
+                              },
+                              "tags": {
+                                 "items": {
+                                    "type": "string"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "type": "object"
+                        }
+                     }
+                  },
                   "description": "OK",
                   "headers": {
                      "Content-Length": {

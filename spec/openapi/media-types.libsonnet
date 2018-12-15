@@ -8,6 +8,15 @@ local err = {
   [json]: mt.new(schemas.oci.err),
 };
 
+local common = {
+
+  octetStream: {
+    'application/octet-stream':
+      mt.new(schemas.common.binary),
+  },
+
+};
+
 local oci = {
   v1:: {
 
@@ -21,20 +30,49 @@ local oci = {
         mt.new(schemas.oci.imageIndex('openapi')),
     },
 
-    config:: 'application/vnd.oci.config.v1+json',
+    config:: {
+      'application/vnd.oci.config.v1+json':
+        mt.new(schemas.oci.config('openapi')),
+    },
+
     descriptor:: 'application/vnd.oci.descriptor.v1+json',
     layout:: 'application/vnd.oci.layout.header.v1+json',
-    layerTar:: 'application/vnd.oci.layer.v1.tar',
-    layerTarGz:: 'application/vnd.oci.layer.v1.tar+gzip',
-    layerNoDistTar:: 'application/vnd.oci.layer.nondistributable.v1.tar',
-    layerNoDistTarGz:: 'application/vnd.oci.layer.nondistributable.v1.tar+gzip',
+
+    layerTar:: {
+      'application/vnd.oci.layer.v1.tar':
+        mt.new(schemas.common.binary),
+    },
+
+    layerTarGz:: {
+      'application/vnd.oci.layer.v1.tar+gzip':
+        mt.new(schemas.common.binary),
+    },
+
+    layerNoDistTar:: {
+      'application/vnd.oci.layer.nondistributable.v1.tar':
+        mt.new(schemas.common.binary),
+    },
+
+    layerNoDistTarGz:: {
+      'application/vnd.oci.layer.nondistributable.v1.tar+gzip':
+        mt.new(schemas.common.binary),
+    },
+
+    catalog:: {
+      [json]: mt.new(schemas.oci.catalog),
+    },
+
+    tagsList:: {
+      [json]: mt.new(schemas.oci.tagList('openapi')),
+    },
   },
 
-  json:: 'application/json',
-  octetStream: 'application/octet-stream',
+
 };
+
 
 {
   err: err,
+  common: common,
   oci: oci,
 }
