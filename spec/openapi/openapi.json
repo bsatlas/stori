@@ -26,6 +26,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "The byte length of the data returned.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Content-Length",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "Standard HTTP Host header.",
                   "explode": false,
                   "in": "header",
@@ -43,7 +57,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -120,7 +134,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -188,7 +202,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -256,7 +270,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -324,7 +338,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -377,6 +391,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "The byte length of the data returned.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Content-Length",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "Standard HTTP Host header.",
                   "explode": false,
                   "in": "header",
@@ -394,7 +422,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -462,7 +490,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -530,7 +558,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -598,7 +626,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -738,6 +766,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "The byte length of the data returned.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Content-Length",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "Standard HTTP Host header.",
                   "explode": false,
                   "in": "header",
@@ -769,7 +811,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -864,7 +906,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -932,7 +974,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -1000,7 +1042,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -1052,6 +1094,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "The byte length of the data returned.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Content-Length",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "Standard HTTP Host header.",
                   "explode": false,
                   "in": "header",
@@ -1069,7 +1125,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -1137,7 +1193,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -1205,7 +1261,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -1273,7 +1329,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -1341,7 +1397,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -1409,7 +1465,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -1459,6 +1515,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "The byte length of the data returned.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Content-Length",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "Standard HTTP Host header.",
                   "explode": false,
                   "in": "header",
@@ -1476,7 +1546,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -1571,7 +1641,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -1639,7 +1709,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -1707,7 +1777,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -1801,6 +1871,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "The byte length of the data returned.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Content-Length",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "Standard HTTP Host header.",
                   "explode": false,
                   "in": "header",
@@ -1818,7 +1902,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -1904,7 +1988,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -1972,7 +2056,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -2040,7 +2124,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -2108,7 +2192,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -2176,7 +2260,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -2253,7 +2337,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -2303,6 +2387,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "The byte length of the data returned.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Content-Length",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "Standard HTTP Host header.",
                   "explode": false,
                   "in": "header",
@@ -2334,7 +2432,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -2411,7 +2509,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -2479,7 +2577,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -2547,7 +2645,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -2615,7 +2713,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -2683,7 +2781,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -2735,6 +2833,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "The byte length of the data returned.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Content-Length",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "Standard HTTP Host header.",
                   "explode": false,
                   "in": "header",
@@ -2752,7 +2864,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -2820,7 +2932,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -2888,7 +3000,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -2956,7 +3068,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -3024,7 +3136,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -3074,6 +3186,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "The byte length of the data returned.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Content-Length",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "Standard HTTP Host header.",
                   "explode": false,
                   "in": "header",
@@ -3105,7 +3231,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -3182,7 +3308,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -3250,7 +3376,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -3318,7 +3444,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -3386,7 +3512,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -3436,6 +3562,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "The byte length of the data returned.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Content-Length",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "Standard HTTP Host header.",
                   "explode": false,
                   "in": "header",
@@ -3453,7 +3593,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -3521,7 +3661,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -3589,7 +3729,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -3657,7 +3797,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -3725,7 +3865,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -3821,6 +3961,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "The byte length of the data returned.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Content-Length",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "Standard HTTP Host header.",
                   "explode": false,
                   "in": "header",
@@ -3838,7 +3992,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -3906,7 +4060,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -3974,7 +4128,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -4042,7 +4196,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -4110,7 +4264,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -4160,6 +4314,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "The byte length of the data returned.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Content-Length",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "Standard HTTP Host header.",
                   "explode": false,
                   "in": "header",
@@ -4177,7 +4345,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -4254,7 +4422,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -4322,7 +4490,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -4390,7 +4558,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -4458,7 +4626,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -4508,6 +4676,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "The byte length of the data returned.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Content-Length",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "Standard HTTP Host header.",
                   "explode": false,
                   "in": "header",
@@ -4525,7 +4707,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -4593,7 +4775,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -4661,7 +4843,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -4729,7 +4911,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -4797,7 +4979,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -4891,6 +5073,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "The byte length of the data returned.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Content-Length",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "Standard HTTP Host header.",
                   "explode": false,
                   "in": "header",
@@ -4908,7 +5104,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -4976,7 +5172,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -5044,7 +5240,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -5112,7 +5308,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -5164,6 +5360,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "The byte length of the data returned.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Content-Length",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "Standard HTTP Host header.",
                   "explode": false,
                   "in": "header",
@@ -5181,7 +5391,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -5249,7 +5459,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -5317,7 +5527,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -5385,7 +5595,7 @@
                   "headers": {
                      "Content-Length": {
                         "deprecated": false,
-                        "description": "The byte length of the data returned .",
+                        "description": "The byte length of the data returned.",
                         "required": true,
                         "schema": {
                            "type": "string"

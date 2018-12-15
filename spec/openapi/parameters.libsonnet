@@ -95,6 +95,14 @@ local range = param.new(
   schema=schemas.common.string,
 );
 
+local contentLength = param.new(
+  name='Content-Length',
+  paramIn='header',
+  style='simple',
+  description='The byte length of the data returned.',
+  schema=schemas.common.string,
+);
+
 {
   namespace: namespace,
   repository: repository,
@@ -108,4 +116,5 @@ local range = param.new(
   last: last,
   host: host,
   range: range,
+  contentLength: contentLength,
 }

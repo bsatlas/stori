@@ -15,7 +15,7 @@ local common = {
     header(
       name='Content-Length',
       schema=string,
-      description='The byte length of the data returned .',
+      description='The byte length of the data returned.',
     ),
 
   local contentType =
