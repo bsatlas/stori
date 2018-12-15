@@ -372,6 +372,22 @@
             "deprecated": false,
             "description": "List a set of available repositories in the local registry cluster. Does not provide any indication of what may be available upstream. Applications can only determine if a repository is available but not if it is not available.",
             "operationId": "oci-catalog-list",
+            "parameters": [
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
+                  "description": "Standard HTTP Host header.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Host",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               }
+            ],
             "responses": {
                "200": {
                   "description": "OK",
@@ -722,6 +738,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "Standard HTTP Host header.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Host",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "A content addressable identifier.",
                   "explode": false,
                   "in": "query",
@@ -1017,6 +1047,22 @@
          "delete": {
             "deprecated": false,
             "operationId": "oci-blob-upload-cancel",
+            "parameters": [
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
+                  "description": "Standard HTTP Host header.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Host",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               }
+            ],
             "responses": {
                "204": {
                   "description": "No Content",
@@ -1408,6 +1454,22 @@
          "get": {
             "deprecated": false,
             "operationId": "oci-blob-upload-status",
+            "parameters": [
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
+                  "description": "Standard HTTP Host header.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Host",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               }
+            ],
             "responses": {
                "204": {
                   "description": "No Content",
@@ -1734,6 +1796,22 @@
          "patch": {
             "deprecated": false,
             "operationId": "oci-blob-upload-chunk",
+            "parameters": [
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
+                  "description": "Standard HTTP Host header.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Host",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               }
+            ],
             "responses": {
                "202": {
                   "description": "Accepted",
@@ -2225,6 +2303,20 @@
                   "allowEmptyValue": false,
                   "allowReserved": false,
                   "deprecated": false,
+                  "description": "Standard HTTP Host header.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Host",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
                   "description": "A content addressable identifier.",
                   "explode": false,
                   "in": "query",
@@ -2638,6 +2730,22 @@
          "delete": {
             "deprecated": false,
             "operationId": "oci-blob-delete",
+            "parameters": [
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
+                  "description": "Standard HTTP Host header.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Host",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               }
+            ],
             "responses": {
                "202": {
                   "description": "Accepted",
@@ -2962,6 +3070,20 @@
             "deprecated": false,
             "operationId": "oci-blob-download",
             "parameters": [
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
+                  "description": "Standard HTTP Host header.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Host",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               },
                {
                   "allowEmptyValue": false,
                   "allowReserved": false,
@@ -3309,6 +3431,22 @@
          "head": {
             "deprecated": false,
             "operationId": "oci-blob-exists",
+            "parameters": [
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
+                  "description": "Standard HTTP Host header.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Host",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               }
+            ],
             "responses": {
                "200": {
                   "description": "OK",
@@ -3678,6 +3816,22 @@
          "delete": {
             "deprecated": false,
             "operationId": "oci-manifest-delete",
+            "parameters": [
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
+                  "description": "Standard HTTP Host header.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Host",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               }
+            ],
             "responses": {
                "200": {
                   "description": "OK",
@@ -4001,6 +4155,22 @@
          "get": {
             "deprecated": false,
             "operationId": "oci-manifest-get",
+            "parameters": [
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
+                  "description": "Standard HTTP Host header.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Host",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               }
+            ],
             "responses": {
                "200": {
                   "description": "OK",
@@ -4333,6 +4503,22 @@
          "head": {
             "deprecated": false,
             "operationId": "oci-manifest-exists",
+            "parameters": [
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
+                  "description": "Standard HTTP Host header.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Host",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               }
+            ],
             "responses": {
                "200": {
                   "description": "OK",
@@ -4700,6 +4886,22 @@
          "put": {
             "deprecated": false,
             "operationId": "oci-manifest-create",
+            "parameters": [
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
+                  "description": "Standard HTTP Host header.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Host",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               }
+            ],
             "responses": {
                "200": {
                   "description": "OK",
@@ -4957,6 +5159,22 @@
          "get": {
             "deprecated": false,
             "operationId": "oci-tags-list",
+            "parameters": [
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
+                  "description": "Standard HTTP Host header.",
+                  "explode": false,
+                  "in": "header",
+                  "name": "Host",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "simple"
+               }
+            ],
             "responses": {
                "200": {
                   "description": "OK",
