@@ -31,6 +31,14 @@ local digest = param.new(
   schema=schemas.common.string,
 );
 
+local digestQuery = param.new(
+  name='digest',
+  paramIn='query',
+  style='form',
+  description='A content addressable identifier.',
+  schema=schemas.common.string,
+);
+
 local mount = param.new(
   name='mount',
   paramIn='query',
@@ -54,12 +62,31 @@ local uuid = param.new(
   schema=schemas.common.string,
 );
 
+local n = param.new(
+  name='n',
+  paramIn='query',
+  style='form',
+  description='',
+  schema=schemas.common.string,
+);
+
+local last = param.new(
+  name='last',
+  paramIn='query',
+  style='form',
+  description='',
+  schema=schemas.common.string,
+);
+
 {
   namespace: namespace,
   repository: repository,
   reference: reference,
   digest: digest,
+  digestQuery: digestQuery,
   mount: mount,
   mountFrom: mountFrom,
   uuid: uuid,
+  n: n,
+  last: last,
 }

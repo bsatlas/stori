@@ -607,7 +607,37 @@
             "tags": [
                "OCI"
             ]
-         }
+         },
+         "parameters": [
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "",
+               "explode": false,
+               "in": "query",
+               "name": "n",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "form"
+            },
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "",
+               "explode": false,
+               "in": "query",
+               "name": "last",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "form"
+            }
+         ]
       },
       "/v2/{namespace}/{repository}/blobs/uploads": {
          "parameters": [
@@ -671,6 +701,22 @@
          "post": {
             "deprecated": false,
             "operationId": "oci-blob-upload-init",
+            "parameters": [
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
+                  "description": "A content addressable identifier.",
+                  "explode": false,
+                  "in": "query",
+                  "name": "digest",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "form"
+               }
+            ],
             "responses": {
                "202": {
                   "description": "Accepted",
@@ -2158,6 +2204,22 @@
          "put": {
             "deprecated": false,
             "operationId": "oci-blob-upload-complete",
+            "parameters": [
+               {
+                  "allowEmptyValue": false,
+                  "allowReserved": false,
+                  "deprecated": false,
+                  "description": "A content addressable identifier.",
+                  "explode": false,
+                  "in": "query",
+                  "name": "digest",
+                  "required": true,
+                  "schema": {
+                     "type": "string"
+                  },
+                  "style": "form"
+               }
+            ],
             "responses": {
                "202": {
                   "description": "Accepted",
@@ -5143,6 +5205,34 @@
                   "type": "string"
                },
                "style": "simple"
+            },
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "",
+               "explode": false,
+               "in": "query",
+               "name": "n",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "form"
+            },
+            {
+               "allowEmptyValue": false,
+               "allowReserved": false,
+               "deprecated": false,
+               "description": "",
+               "explode": false,
+               "in": "query",
+               "name": "last",
+               "required": true,
+               "schema": {
+                  "type": "string"
+               },
+               "style": "form"
             }
          ]
       }

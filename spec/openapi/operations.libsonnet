@@ -1,6 +1,7 @@
 local oapi = import 'openapi-jsonnet/v3.0.0/openapi.libsonnet';
 local resp = import 'responses.libsonnet';
 local op = oapi.operation;
+local params = import 'parameters.libsonnet';
 
 // OCI Operations.
 local oci = {
@@ -142,6 +143,7 @@ local oci = {
       tags=tags,
       summary='Initiate a blob upload or mount a blob from another respository.',
     )
+    .addParameter(params.digestQuery)
     .addResponse(resp.oci.blobUploadInit)
     .addResponse(resp.oci.blobMount)
     .addResponse(resp.err.unauthorized)
@@ -182,6 +184,7 @@ local oci = {
       tags=tags,
       summary='Notify registry that the chunked blob upload is complete.',
     )
+    .addParameter(params.digestQuery)
     .addResponse(resp.oci.blobUploadComplete)
     .addResponse(resp.err.badRequest)
     .addResponse(resp.err.unauthorized)

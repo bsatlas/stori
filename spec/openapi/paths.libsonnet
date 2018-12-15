@@ -24,12 +24,16 @@ local items = {
 
     local catalog =
       pathItem.new()
+      .addParameter(params.n)
+      .addParameter(params.last)
       .addOperation('GET', ops.oci.catalogList),
 
     local tags =
       pathItem.new()
       .addParameter(params.namespace)
       .addParameter(params.repository)
+      .addParameter(params.n)
+      .addParameter(params.last)
       .addOperation('GET', ops.oci.tagsList),
 
     local manifest =
