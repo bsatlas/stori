@@ -4543,6 +4543,49 @@
                "200": {
                   "content": {
                      "application/vnd.oci.image.manifest.v1+json": {
+                        "example": {
+                           "annotations": {
+                              "org.opencontainers.image.authors": "Pepper Potts <pepper.potts@starkindustries.com>",
+                              "org.opencontainers.image.created": "2018-12-16 20:11:14.351488997-06:00",
+                              "org.opencontainers.image.description": "App is an application that does things.",
+                              "org.opencontainers.image.documentation": "https://app-site.com/docs",
+                              "org.opencontainers.image.licenses": "Apache License 2.0",
+                              "org.opencontainers.image.ref.name": "App",
+                              "org.opencontainers.image.source": "https://app-site.com/code/app.git",
+                              "org.opencontainers.image.title": "App Thing Doer",
+                              "org.opencontainers.image.url": "https://app-site.com",
+                              "org.opencontainers.image.vendor": "App Corporation",
+                              "org.opencontainers.image.version": "v1.4.5"
+                           },
+                           "config": {
+                              "digest": "sha256:28f27f8eec1e498f6cdbdb0df9f75a44da95c8ab99852a3d77ce80b9b3347c6b",
+                              "mediaType": "application/vnd.oci.image.config.v1+json",
+                              "size": 542
+                           },
+                           "layers": [
+                              {
+                                 "digest": "sha256:e3161859d1779d8330428ed745008710a1ecfb9f494c2e1b062be4cc0ba9ee2a",
+                                 "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                                 "size": 64265
+                              },
+                              {
+                                 "digest": "sha256:1303f6fada513d589891cbc286fd3219fe06156f2951f1d3cee8663a4070fc53",
+                                 "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                                 "size": 255262
+                              },
+                              {
+                                 "digest": "sha256:c1a9aedd4f3a489d779c0711b13251fddc4dacdf79bf0042beebe64a72d9fb92",
+                                 "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                                 "size": 658924
+                              },
+                              {
+                                 "digest": "sha256:27e61142701b0cce5b00017691edd5645d7dea724db4c02390973beec51503c0",
+                                 "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                                 "size": 5342245
+                              }
+                           ],
+                           "schemaVersion": 2
+                        },
                         "schema": {
                            "description": "OCI Image Manifest Specification",
                            "properties": {
@@ -5560,6 +5603,49 @@
             "requestBody": {
                "content": {
                   "application/vnd.oci.image.manifest.v1+json": {
+                     "example": {
+                        "annotations": {
+                           "org.opencontainers.image.authors": "Pepper Potts <pepper.potts@starkindustries.com>",
+                           "org.opencontainers.image.created": "2018-12-16 20:11:14.351488997-06:00",
+                           "org.opencontainers.image.description": "App is an application that does things.",
+                           "org.opencontainers.image.documentation": "https://app-site.com/docs",
+                           "org.opencontainers.image.licenses": "Apache License 2.0",
+                           "org.opencontainers.image.ref.name": "App",
+                           "org.opencontainers.image.source": "https://app-site.com/code/app.git",
+                           "org.opencontainers.image.title": "App Thing Doer",
+                           "org.opencontainers.image.url": "https://app-site.com",
+                           "org.opencontainers.image.vendor": "App Corporation",
+                           "org.opencontainers.image.version": "v1.4.5"
+                        },
+                        "config": {
+                           "digest": "sha256:28f27f8eec1e498f6cdbdb0df9f75a44da95c8ab99852a3d77ce80b9b3347c6b",
+                           "mediaType": "application/vnd.oci.image.config.v1+json",
+                           "size": 542
+                        },
+                        "layers": [
+                           {
+                              "digest": "sha256:e3161859d1779d8330428ed745008710a1ecfb9f494c2e1b062be4cc0ba9ee2a",
+                              "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                              "size": 64265
+                           },
+                           {
+                              "digest": "sha256:1303f6fada513d589891cbc286fd3219fe06156f2951f1d3cee8663a4070fc53",
+                              "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                              "size": 255262
+                           },
+                           {
+                              "digest": "sha256:c1a9aedd4f3a489d779c0711b13251fddc4dacdf79bf0042beebe64a72d9fb92",
+                              "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                              "size": 658924
+                           },
+                           {
+                              "digest": "sha256:27e61142701b0cce5b00017691edd5645d7dea724db4c02390973beec51503c0",
+                              "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                              "size": 5342245
+                           }
+                        ],
+                        "schemaVersion": 2
+                     },
                      "schema": {
                         "description": "OCI Image Manifest Specification",
                         "properties": {

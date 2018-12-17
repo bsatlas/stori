@@ -9,6 +9,16 @@
                 }
             },
             "version": "master"
+        },
+        {
+            "name": "oci-jsonnet",
+            "source": {
+                "git": {
+                    "remote": "https://github.com/atlaskerr/oci-jsonnet",
+                    "subdir": ""
+                }
+            },
+            "version": "master"
         }
     ]
 }

@@ -6,7 +6,7 @@
     schema: schema,
 
     addExample(example):: self {
-      examples+: example,
+      example+: example,
     },
 
     addEncoding(encoding):: self {

@@ -12,6 +12,7 @@
   mediaType: import 'media-type.libsonnet',
   header: import 'header.libsonnet',
   requestBody: import 'request-body.libsonnet',
+  example: import 'example.libsonnet',
 
   // Initalize new OpenAPI spec.
   new(

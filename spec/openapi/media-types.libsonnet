@@ -1,5 +1,8 @@
 local oapi = import 'openapi-jsonnet/v3.0.0/openapi.libsonnet';
 local mt = oapi.mediaType;
+local ex = oapi.example;
+local liboci = import 'oci-jsonnet/image/v1.0.1/spec.libsonnet';
+local ociExamples = liboci.examples;
 local schemas = import 'schemas/schemas.libsonnet';
 
 local json = 'application/json';
@@ -22,7 +25,8 @@ local oci = {
 
     imageManifest:: {
       'application/vnd.oci.image.manifest.v1+json':
-        mt.new(schemas.oci.imageManifest('openapi')),
+        mt.new(schemas.oci.imageManifest('openapi'))
+        .addExample(ociExamples.manifest),
     },
 
     index:: {

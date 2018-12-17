@@ -8,7 +8,17 @@
                     "subdir": ""
                 }
             },
-            "version": "c4eeae6da2862b0c2e957bcb9582329a1446af29"
+            "version": "fd78489d8eec4d3d0beafe47f077bac0747497ab"
+        },
+        {
+            "name": "oci-jsonnet",
+            "source": {
+                "git": {
+                    "remote": "https://github.com/atlaskerr/oci-jsonnet",
+                    "subdir": ""
+                }
+            },
+            "version": "9b4011ced79ffb857a2c6235e4c713af2f6e447d"
         }
     ]
 }
