@@ -1,12 +1,18 @@
-.PHONY: schemas spec generate-openapi validate-openapi build
+.PHONY: schemas spec generate-openapi validate-openapi build test
 
 SPEC_DIR = spec
 OPENAPI_DIR = $(SPEC_DIR)/openapi
 SCHEMA_DIR = $(SPEC_DIR)/json-schemas
 OPENAPI_FILE = $(OPENAPI_DIR)/openapi.json
 
+test:
+	go test -cover ./...
+
 build:
 	go build .
+
+clean:
+	rm ./stori
 
 # Generate json-schemas.
 schemas:
