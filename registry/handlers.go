@@ -2,6 +2,6 @@ package registry
 
 import "net/http"
 
-var NotImplemented = func(w http.ResponseWriter, r *http.Request) {
+var notImplemented = func(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusNotImplemented)
 }

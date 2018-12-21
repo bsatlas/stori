@@ -1,7 +1,6 @@
 package registry
 
 import (
-	"github.com/julienschmidt/httprouter"
 	"net/http"
 )
 
@@ -17,7 +16,7 @@ func NewRegistry() Registry {
 	r := Registry{
 		server: &http.Server{
 			Addr:    defaultAddr,
-			Handler: httprouter.New(),
+			Handler: router(),
 		},
 	}
 
