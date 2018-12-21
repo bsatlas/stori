@@ -41,6 +41,7 @@ var ociRoutes = []route{
 	ociManifestExists,
 	ociManifestCreate,
 	ociManifestDelete,
+	ociBlobDownload,
 }
 
 var ociVerify = newRoute(
@@ -83,5 +84,11 @@ var ociManifestCreate = newRoute(
 var ociManifestDelete = newRoute(
 	"DELETE",
 	"/v2/:namespace/:repository/manifests/:reference",
+	notImplemented,
+)
+
+var ociBlobDownload = newRoute(
+	"GET",
+	"/v2/:namespace/:repository/blobs/:digest",
 	notImplemented,
 )
