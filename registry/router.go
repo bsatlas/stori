@@ -45,6 +45,10 @@ var ociRoutes = []route{
 	ociBlobExists,
 	ociBlobDelete,
 	ociBlobUploadInit,
+	ociBlobUploadStatus,
+	ociBlobUploadChunk,
+	ociBlobUploadComplete,
+	ociBlobUploadCancel,
 }
 
 var ociVerify = newRoute(
@@ -108,8 +112,35 @@ var ociBlobDelete = newRoute(
 	notImplemented,
 )
 
+// Handler should manually check if digest parameter is set to `uploads`.
 var ociBlobUploadInit = newRoute(
 	"POST",
-	"/v2/:namespace/:repository/blobs/uploads",
+	"/v2/:namespace/:repository/blobs/:digest",
+	notImplemented,
+)
+
+// Handler should manually check if digest parameter is set to `uploads`.
+var ociBlobUploadStatus = newRoute(
+	"GET",
+	"/v2/:namespace/:repository/blobs/:digest/:uuid",
+	notImplemented,
+)
+
+// Handler should manually check if digest parameter is set to `uploads`.
+var ociBlobUploadChunk = newRoute(
+	"PATCH",
+	"/v2/:namespace/:repository/blobs/:digest/:uuid",
+	notImplemented,
+)
+
+var ociBlobUploadComplete = newRoute(
+	"PUT",
+	"/v2/:namespace/:repository/blobs/:digest/:uuid",
+	notImplemented,
+)
+
+var ociBlobUploadCancel = newRoute(
+	"DELETE",
+	"/v2/:namespace/:repository/blobs/:digest/:uuid",
 	notImplemented,
 )
