@@ -36,8 +36,23 @@ func router() *httprouter.Router {
 var ociRoutes = []route{
 	ociVerify,
 	ociCatalogList,
+	ociTagsList,
 }
 
-var ociVerify = newRoute("GET", "/v2", notImplemented)
+var ociVerify = newRoute(
+	"GET",
+	"/v2",
+	notImplemented,
+)
 
-var ociCatalogList = newRoute("GET", "/v2/_catalog", notImplemented)
+var ociCatalogList = newRoute(
+	"GET",
+	"/v2/_catalog",
+	notImplemented,
+)
+
+var ociTagsList = newRoute(
+	"GET",
+	"/v2/tags/list",
+	notImplemented,
+)

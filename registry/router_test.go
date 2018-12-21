@@ -30,6 +30,13 @@ func TestOCIRoutes(t *testing.T) {
 			code:   http.StatusNotImplemented,
 			err:    "",
 		},
+		{
+			name:   "oci-tags-list",
+			method: "GET",
+			path:   "/v2/tags/list",
+			code:   http.StatusNotImplemented,
+			err:    "",
+		},
 	}
 
 	for _, tc := range tt {
