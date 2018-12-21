@@ -23,6 +23,13 @@ func TestOCIRoutes(t *testing.T) {
 			code:   http.StatusNotImplemented,
 			err:    "",
 		},
+		{
+			name:   "oci-catalog-list",
+			method: "GET",
+			path:   "/v2/_catalog",
+			code:   http.StatusNotImplemented,
+			err:    "",
+		},
 	}
 
 	for _, tc := range tt {

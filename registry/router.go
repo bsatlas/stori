@@ -12,6 +12,15 @@ type route struct {
 	op     http.HandlerFunc
 }
 
+func newRoute(m, p string, op http.HandlerFunc) route {
+	rt := route{
+		method: m,
+		path:   p,
+		op:     op,
+	}
+	return rt
+}
+
 func addRoutes(r *httprouter.Router, routes []route) {
 	for _, rt := range routes {
 		r.HandlerFunc(rt.method, rt.path, rt.op)
@@ -25,9 +34,10 @@ func router() *httprouter.Router {
 }
 
 var ociRoutes = []route{
-	{
-		method: "GET",
-		path:   "/v2",
-		op:     notImplemented,
-	},
+	ociVerify,
+	ociCatalogList,
 }
+
+var ociVerify = newRoute("GET", "/v2", notImplemented)
+
+var ociCatalogList = newRoute("GET", "/v2/_catalog", notImplemented)
