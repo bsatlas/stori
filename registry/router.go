@@ -37,6 +37,7 @@ var ociRoutes = []route{
 	ociVerify,
 	ociCatalogList,
 	ociTagsList,
+	ociManifestGet,
 }
 
 var ociVerify = newRoute(
@@ -45,14 +46,21 @@ var ociVerify = newRoute(
 	notImplemented,
 )
 
+// Handler should manually check if namespace parameter is set to `_catalog`.
 var ociCatalogList = newRoute(
 	"GET",
-	"/v2/_catalog",
+	"/v2/:namespace",
 	notImplemented,
 )
 
 var ociTagsList = newRoute(
 	"GET",
-	"/v2/tags/list",
+	"/v2/:namespace/:repository/tags/list",
+	notImplemented,
+)
+
+var ociManifestGet = newRoute(
+	"GET",
+	"/v2/:namespace/:repository/manifests/:reference",
 	notImplemented,
 )

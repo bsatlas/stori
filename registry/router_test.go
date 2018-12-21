@@ -33,7 +33,14 @@ func TestOCIRoutes(t *testing.T) {
 		{
 			name:   "oci-tags-list",
 			method: "GET",
-			path:   "/v2/tags/list",
+			path:   "/v2/testns/testrepo/tags/list",
+			code:   http.StatusNotImplemented,
+			err:    "",
+		},
+		{
+			name:   "oci-manifest-get",
+			method: "GET",
+			path:   "/v2/testns/testrepo/manifests/sha:5891b5b522d5df086d0ff0b110fbd9d21bb4fc7163af34d08286a2e846f6be03",
 			code:   http.StatusNotImplemented,
 			err:    "",
 		},
