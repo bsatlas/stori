@@ -38,6 +38,7 @@ var ociRoutes = []route{
 	ociCatalogList,
 	ociTagsList,
 	ociManifestGet,
+	ociManifestExists,
 }
 
 var ociVerify = newRoute(
@@ -61,6 +62,12 @@ var ociTagsList = newRoute(
 
 var ociManifestGet = newRoute(
 	"GET",
+	"/v2/:namespace/:repository/manifests/:reference",
+	notImplemented,
+)
+
+var ociManifestExists = newRoute(
+	"HEAD",
 	"/v2/:namespace/:repository/manifests/:reference",
 	notImplemented,
 )
