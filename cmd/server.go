@@ -15,7 +15,7 @@
 package cmd
 
 import (
-	"github.com/atlaskerr/stori/registry"
+	//	"github.com/atlaskerr/stori/registry"
 
 	"github.com/spf13/cobra"
 )
@@ -24,8 +24,8 @@ var serverCmd = &cobra.Command{
 	Use:   "server",
 	Short: "Start Stori registry.",
 	Run: func(cmd *cobra.Command, args []string) {
-		srv := registry.NewRegistry()
-		srv.Start()
+		//		srv := registry.NewRegistry()
+		//		srv.Start()
 	},
 }
 
