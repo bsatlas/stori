@@ -71,3 +71,9 @@ var ociManifestExists = newRoute(
 	"/v2/:namespace/:repository/manifests/:reference",
 	notImplemented,
 )
+
+var ociManifestCreate = newRoute(
+	"PUT",
+	"/v2/:namespace/:repository/manifests/:reference",
+	notImplemented,
+)

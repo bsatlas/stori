@@ -51,6 +51,13 @@ func TestOCIRoutes(t *testing.T) {
 			code:   http.StatusNotImplemented,
 			err:    "",
 		},
+		{
+			name:   "oci-manifest-create",
+			method: "PUT",
+			path:   "/v2/testns/testrepo/manifests/sha:5891b5b522d5df086d0ff0b110fbd9d21bb4fc7163af34d08286a2e846f6be03",
+			code:   http.StatusNotImplemented,
+			err:    "",
+		},
 	}
 
 	for _, tc := range tt {
