@@ -44,6 +44,7 @@ var ociRoutes = []route{
 	ociBlobDownload,
 	ociBlobExists,
 	ociBlobDelete,
+	ociBlobUploadInit,
 }
 
 var ociVerify = newRoute(
@@ -104,5 +105,11 @@ var ociBlobExists = newRoute(
 var ociBlobDelete = newRoute(
 	"DELETE",
 	"/v2/:namespace/:repository/blobs/:digest",
+	notImplemented,
+)
+
+var ociBlobUploadInit = newRoute(
+	"POST",
+	"/v2/:namespace/:repository/blobs/uploads",
 	notImplemented,
 )

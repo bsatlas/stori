@@ -86,6 +86,13 @@ func TestOCIRoutes(t *testing.T) {
 			code:   http.StatusNotImplemented,
 			err:    "",
 		},
+		{
+			name:   "oci-blob-upload-init",
+			method: "DELETE",
+			path:   "/v2/testns/testrepo/blobs/uploads",
+			code:   http.StatusNotImplemented,
+			err:    "",
+		},
 	}
 
 	for _, tc := range tt {
