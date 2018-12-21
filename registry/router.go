@@ -43,6 +43,7 @@ var ociRoutes = []route{
 	ociManifestDelete,
 	ociBlobDownload,
 	ociBlobExists,
+	ociBlobDelete,
 }
 
 var ociVerify = newRoute(
@@ -96,6 +97,12 @@ var ociBlobDownload = newRoute(
 
 var ociBlobExists = newRoute(
 	"HEAD",
+	"/v2/:namespace/:repository/blobs/:digest",
+	notImplemented,
+)
+
+var ociBlobDelete = newRoute(
+	"DELETE",
 	"/v2/:namespace/:repository/blobs/:digest",
 	notImplemented,
 )
