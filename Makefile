@@ -1,9 +1,12 @@
 .PHONY: schemas spec generate-openapi validate-openapi build test
 
 SPEC_DIR = spec
-OPENAPI_DIR = $(SPEC_DIR)/openapi
-SCHEMA_DIR = $(SPEC_DIR)/json-schemas
-OPENAPI_FILE = $(OPENAPI_DIR)/openapi.json
+OPENAPI_DIR = openapi
+DOCS_DIR = Documentation
+SCRIPTS_DIR = scripts
+OPENAPI_FILE = $(DOCS_DIR)/openapi.json
+JSONSCHEMA_DIR = $(DOCS_DIR)/json-schemas
+JSONNET_DIR = libsonnet
 
 test:
 	go test -cover ./...
@@ -16,14 +19,14 @@ clean:
 
 # Generate json-schemas.
 schemas:
-	jsonnet -m $(SCHEMA_DIR) $(OPENAPI_DIR)/schemas/gen-jsonschemas.jsonnet
+	jsonnet -m $(JSONSCHEMA_DIR) $(SCRIPTS_DIR)/gen-jsonschemas.jsonnet
 
 # Generate and validate OpenAPI specification file.
 spec: generate-openapi validate-openapi
 
 # Generate OpenAPI Specification.
 generate-openapi:
-	jsonnet -J $(OPENAPI_DIR)/vendor -m $(OPENAPI_DIR) $(OPENAPI_DIR)/openapi.jsonnet
+	jsonnet -J $(JSONNET_DIR)/vendor -m $(DOCS_DIR) $(SCRIPTS_DIR)/gen-openapi.jsonnet
 
 # Validate generated OpenAPI specification file.
 validate-openapi:

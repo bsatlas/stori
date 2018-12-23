@@ -1,5 +1,5 @@
 local mediaTypes = import 'media-types.libsonnet';
-local schemas = import 'schemas/schemas.libsonnet';
+local schemas = import '../schemas/schemas.libsonnet';
 
 local response(
   description,

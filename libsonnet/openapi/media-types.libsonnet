@@ -3,7 +3,7 @@ local mt = oapi.mediaType;
 local ex = oapi.example;
 local liboci = import 'oci-jsonnet/image/v1.0.1/spec.libsonnet';
 local ociExamples = liboci.examples;
-local schemas = import 'schemas/schemas.libsonnet';
+local schemas = import '../schemas/schemas.libsonnet';
 
 local json = 'application/json';
 

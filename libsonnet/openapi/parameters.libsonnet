@@ -1,6 +1,6 @@
 local oapi = import 'openapi-jsonnet/v3.0.0/openapi.libsonnet';
 local param = oapi.parameter;
-local schemas = import 'schemas/schemas.libsonnet';
+local schemas = import '../schemas/schemas.libsonnet';
 local headers = import 'headers.libsonnet';
 
 

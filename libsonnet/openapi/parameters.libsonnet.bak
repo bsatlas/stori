@@ -1,4 +1,4 @@
-local schemas = import 'schemas/schemas.libsonnet';
+local schemas = import '../schemas/schemas.libsonnet';
 local string = schemas.common.string;
 
 {
