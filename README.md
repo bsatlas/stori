@@ -4,6 +4,8 @@
 
 Stori is an [OCI-compliant][distribution-spec] image registry that aims to be the successor to the Docker registry.
 
+### Status: In Development
+
 ## Table of Contents
 - [Features](#features)
 - [Philosophy](#philosophy)
