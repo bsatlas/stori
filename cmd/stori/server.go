@@ -12,25 +12,50 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package cmd
+package main
 
 import (
-	"github.com/atlaskerr/stori/cmd/server"
+	"net/http"
+
+	"github.com/atlaskerr/stori/cmd/stori/server"
+	"github.com/atlaskerr/stori/registry"
 
 	"github.com/spf13/cobra"
+	"go.uber.org/zap"
 )
 
 var serverCmd = &cobra.Command{
 	Use:   "server",
 	Short: "Start the Stori registry server.",
 	Run: func(cmd *cobra.Command, args []string) {
-		//		configFile := cmd.Flag("config").Value.String()
+		configFile := cmd.Flag("config").Value.String()
 		logLevel := cmd.Flag("log-level").Value.String()
 		devMode, _ := cmd.Flags().GetBool("dev")
 
+		// Set the logger first.
 		logger, _ := server.NewLogger(logLevel, devMode)
-		logger.Info("Logger construction succeeded.")
 
+		// Load the config file.
+		logger.Debug("Loading config file...")
+		_, err := server.LoadConfigFile(configFile)
+		if err != nil {
+			logger.Error("Failed to read file.",
+				zap.String("file", configFile),
+				zap.Error(err),
+			)
+		}
+		logger.Debug("Configuration file loaded successfully.")
+
+		registryConfig := &registry.Config{}
+
+		// Initialize the Registry
+		registry := registry.New(registryConfig)
+
+		handler := storihttp.Handler(&registry.HandlerProperties{
+			Registry: registry,
+		})
+
+		server := &http.Server{}
 	},
 }
 
