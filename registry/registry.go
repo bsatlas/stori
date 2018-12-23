@@ -11,14 +11,19 @@ type Registry struct {
 	server *http.Server
 }
 
+// Config is used to parameterize a registry.
+type Config struct {
+	addr string
+}
+
 // NewRegistry initializes a Registry with sane defaults.
-func NewRegistry() Registry {
-	r := Registry{
+func (c *Config) NewRegistry() (*Registry, error) {
+	r := &Registry{
 		server: &http.Server{
 			Addr:    defaultAddr,
 			Handler: router(),
 		},
 	}
 
-	return r
+	return r, nil
 }
