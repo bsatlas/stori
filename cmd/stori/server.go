@@ -19,7 +19,7 @@ import (
 
 	"github.com/atlaskerr/stori/cmd/stori/server"
 	storihttp "github.com/atlaskerr/stori/http"
-	"github.com/atlaskerr/stori/registry"
+	"github.com/atlaskerr/stori/stori"
 
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
@@ -35,10 +35,11 @@ var serverCmd = &cobra.Command{
 
 		// Set the logger first.
 		logger, _ := server.NewLogger(logLevel, devMode)
+		defer logger.Sync()
 
 		// Load the config file.
 		logger.Debug("Loading config file...")
-		_, err := server.LoadConfigFile(configFile)
+		conf, err := server.LoadConfigFile(configFile)
 		if err != nil {
 			logger.Error("Failed to read file.",
 				zap.String("file", configFile),
@@ -47,16 +48,24 @@ var serverCmd = &cobra.Command{
 		}
 		logger.Debug("Configuration file loaded successfully.")
 
-		registryConfig := &registry.Config{}
+		registryConfig := &stori.RegistryConfig{}
 
 		// Initialize the Registry
-		registry := registry.New(registryConfig)
+		registry, _ := stori.NewRegistry(registryConfig)
 
-		handler := storihttp.Handler(&registry.HandlerProperties{
+		handler := storihttp.OCIHandler(&stori.HandlerProperties{
 			Registry: registry,
 		})
 
-		server := &http.Server{}
+		server := &http.Server{
+			Addr:    conf.Server.Address,
+			Handler: handler,
+		}
+		go server.ListenAndServe()
+		logger.Info(
+			"Server started sucessfully.",
+			zap.String("address", conf.Server.Address),
+		)
 	},
 }
 

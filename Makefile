@@ -12,7 +12,7 @@ test:
 	go test -cover ./...
 
 build:
-	go build .
+	go build -o bin/stori github.com/atlaskerr/stori/cmd/stori
 
 clean:
 	rm ./stori

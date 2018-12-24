@@ -9,10 +9,10 @@ type Registry struct {
 }
 
 // Config is used to parameterize a registry.
-type Config struct {
+type RegistryConfig struct {
 }
 
 // New takes a Config and returns a fully initialized Registry.
-func New(Config) (*Registry, error) {
+func NewRegistry(*RegistryConfig) (*Registry, error) {
 	return &Registry{}, nil
 }
