@@ -18,6 +18,7 @@ import (
 	"net/http"
 
 	"github.com/atlaskerr/stori/cmd/stori/server"
+	storihttp "github.com/atlaskerr/stori/http"
 	"github.com/atlaskerr/stori/registry"
 
 	"github.com/spf13/cobra"
