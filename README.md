@@ -1,4 +1,5 @@
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/2374/badge)](https://bestpractices.coreinfrastructure.org/projects/2374)
+[![Go Report Card](https://goreportcard.com/badge/github.com/atlaskerr/stori)](https://goreportcard.com/report/github.com/atlaskerr/stori)
 
 # Stori Registry
 
