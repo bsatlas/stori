@@ -15,7 +15,11 @@
 package main
 
 import (
+	"context"
 	"net/http"
+	"os"
+	"os/signal"
+	"syscall"
 
 	"github.com/atlaskerr/stori/cmd/stori/server"
 	storihttp "github.com/atlaskerr/stori/http"
@@ -66,6 +70,20 @@ var serverCmd = &cobra.Command{
 			"Server started sucessfully.",
 			zap.String("address", conf.Server.Address),
 		)
+		sigs := make(chan os.Signal, 1)
+		signal.Notify(sigs, syscall.SIGINT)
+
+		for {
+			select {
+			case sig := <-sigs:
+				if sig == syscall.SIGINT {
+					logger.Info("SIGINT received: Initiating graceful shutdown.")
+					server.Shutdown(context.Background())
+					logger.Info("Shudown complete.")
+					os.Exit(0)
+				}
+			}
+		}
 	},
 }
 
