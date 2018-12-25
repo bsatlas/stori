@@ -70,9 +70,10 @@ var serverCmd = &cobra.Command{
 			"Server started sucessfully.",
 			zap.String("address", conf.Server.Address),
 		)
+
+		// Wait for a signal to stop the server.
 		sigs := make(chan os.Signal, 1)
 		signal.Notify(sigs, syscall.SIGINT)
-
 		for {
 			select {
 			case sig := <-sigs:
