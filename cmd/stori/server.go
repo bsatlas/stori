@@ -32,60 +32,62 @@ import (
 var serverCmd = &cobra.Command{
 	Use:   "server",
 	Short: "Start the Stori registry server.",
-	Run: func(cmd *cobra.Command, args []string) {
-		configFile := cmd.Flag("config").Value.String()
-		logLevel := cmd.Flag("log-level").Value.String()
-		devMode, _ := cmd.Flags().GetBool("dev")
+	Run:   startServer,
+}
 
-		// Set the logger first.
-		logger, _ := server.NewLogger(logLevel, devMode)
-		defer logger.Sync()
+func startServer(cmd *cobra.Command, args []string) {
+	configFile := cmd.Flag("config").Value.String()
+	logLevel := cmd.Flag("log-level").Value.String()
+	devMode, _ := cmd.Flags().GetBool("dev")
 
-		// Load the config file.
-		logger.Debug("Loading config file...")
-		conf, err := server.LoadConfigFile(configFile)
-		if err != nil {
-			logger.Error("Failed to read file.",
-				zap.String("file", configFile),
-				zap.Error(err),
-			)
-		}
-		logger.Debug("Configuration file loaded successfully.")
+	// Set the logger first.
+	logger, _ := server.NewLogger(logLevel, devMode)
+	defer logger.Sync()
 
-		registryConfig := &stori.RegistryConfig{}
-
-		// Initialize the Registry
-		registry, _ := stori.NewRegistry(registryConfig)
-
-		handler := storihttp.Handler(&stori.HandlerProperties{
-			Registry: registry,
-		})
-
-		server := &http.Server{
-			Addr:    conf.Server.Address,
-			Handler: handler,
-		}
-		go server.ListenAndServe()
-		logger.Info(
-			"Server started sucessfully.",
-			zap.String("address", conf.Server.Address),
+	// Load the config file.
+	logger.Debug("Loading config file...")
+	conf, err := server.LoadConfigFile(configFile)
+	if err != nil {
+		logger.Error("Failed to read file.",
+			zap.String("file", configFile),
+			zap.Error(err),
 		)
+	}
+	logger.Debug("Configuration file loaded successfully.")
 
-		// Wait for a signal to stop the server.
-		sigs := make(chan os.Signal, 1)
-		signal.Notify(sigs, syscall.SIGINT)
-		for {
-			select {
-			case sig := <-sigs:
-				if sig == syscall.SIGINT {
-					logger.Info("SIGINT received: Initiating graceful shutdown.")
-					server.Shutdown(context.Background())
-					logger.Info("Shudown complete.")
-					os.Exit(0)
-				}
+	registryConfig := &stori.RegistryConfig{}
+
+	// Initialize the Registry
+	registry, _ := stori.NewRegistry(registryConfig)
+
+	handler := storihttp.Handler(&stori.HandlerProperties{
+		Registry: registry,
+	})
+
+	server := &http.Server{
+		Addr:    conf.Server.Address,
+		Handler: handler,
+	}
+	go server.ListenAndServe()
+	logger.Info(
+		"Server started sucessfully.",
+		zap.String("address", conf.Server.Address),
+	)
+
+	// Wait for a signal to stop the server.
+	sigs := make(chan os.Signal, 1)
+	signal.Notify(sigs, syscall.SIGINT)
+	for {
+		select {
+		case sig := <-sigs:
+			if sig == syscall.SIGINT {
+				logger.Info("SIGINT received: Initiating graceful shutdown.")
+				server.Shutdown(context.Background())
+				logger.Info("Shudown complete.")
+				os.Exit(0)
 			}
 		}
-	},
+	}
 }
 
 func init() {
