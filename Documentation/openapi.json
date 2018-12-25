@@ -73,7 +73,7 @@
                         },
                         "style": "simple"
                      },
-                     "Docker-Distribution-API-Version": {
+                     "Docker-Distribution-Api-Version": {
                         "deprecated": false,
                         "description": "Used by clients to determine if the registry implements the distribution specification.",
                         "required": true,

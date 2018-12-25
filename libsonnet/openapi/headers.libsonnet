@@ -82,7 +82,7 @@ local docker = {
 
   local version =
     header(
-      name='Docker-Distribution-API-Version',
+      name='Docker-Distribution-Api-Version',
       schema=string,
       description='Used by clients to determine if the registry implements the distribution specification.',
     ),
