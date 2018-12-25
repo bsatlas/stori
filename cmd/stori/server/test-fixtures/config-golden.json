@@ -2,8 +2,9 @@
   "server": {
     "address": "0.0.0.0:7845",
     "tls": {
-      "certFile": "/etc/ssl/stori/server.pem",
-      "keyFile": "/etc/ssl/stori/server-key.pem"
+      "enabled": true,
+      "certFile": "./server.pem",
+      "keyFile": "./server-key.pem"
     }
   }
 }
