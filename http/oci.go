@@ -9,7 +9,7 @@ import (
 const (
 	// VersionHeaderName defines the header used by clients to verify if the
 	// registry implements the OCI Distribution spec.
-	VersionHeaderName = "Docker-Distribution-API-Version"
+	VersionHeaderName = "Docker-Distribution-Api-Version"
 )
 
 func handleOCIVerify(reg *stori.Registry) http.Handler {
