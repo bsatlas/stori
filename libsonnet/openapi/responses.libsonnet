@@ -128,14 +128,16 @@ local common = {
 local oci = {
 
   local verify =
-    common.ok
+    resp.new('200', 'OK')
+    .addHeader(h.common.contentLength)
+    .addHeader(h.common.date)
     .addHeader(h.docker.version)
-    .addHeader(h.common.link)
   ,
 
   local catalogList =
     common.ok
     .addContent(mt.oci.v1.catalog)
+    .addHeader(h.common.link)
   ,
 
   local tagsList =

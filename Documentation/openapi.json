@@ -64,15 +64,6 @@
                         },
                         "style": "simple"
                      },
-                     "Content-Type": {
-                        "deprecated": false,
-                        "description": "The MIME type of the data.",
-                        "required": true,
-                        "schema": {
-                           "type": "string"
-                        },
-                        "style": "simple"
-                     },
                      "Date": {
                         "deprecated": false,
                         "description": "The date and time the message was originated.",
@@ -85,24 +76,6 @@
                      "Docker-Distribution-API-Version": {
                         "deprecated": false,
                         "description": "Used by clients to determine if the registry implements the distribution specification.",
-                        "required": true,
-                        "schema": {
-                           "type": "string"
-                        },
-                        "style": "simple"
-                     },
-                     "Link": {
-                        "deprecated": false,
-                        "description": "RFC5988 compliant rel='next' with URL to next result set, if available",
-                        "required": true,
-                        "schema": {
-                           "type": "string"
-                        },
-                        "style": "simple"
-                     },
-                     "X-Content-Type-Options": {
-                        "deprecated": false,
-                        "description": "Content type options.",
                         "required": true,
                         "schema": {
                            "type": "string"
@@ -475,6 +448,15 @@
                      "Date": {
                         "deprecated": false,
                         "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Link": {
+                        "deprecated": false,
+                        "description": "RFC5988 compliant rel='next' with URL to next result set, if available",
                         "required": true,
                         "schema": {
                            "type": "string"
