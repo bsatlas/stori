@@ -6,7 +6,28 @@ import (
 	"github.com/atlaskerr/stori/stori"
 
 	"github.com/julienschmidt/httprouter"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
+
+// Handler returns an http.Handler for the Stori API.
+func Handler(props *stori.HandlerProperties) http.Handler {
+	h := http.NewServeMux()
+
+	// Metrics handler
+	h.Handle("/metrics", MetricsHandler())
+
+	// OCI handler
+	h.Handle("/v2", OCIHandler(props))
+
+	return h
+}
+
+// MetricsHandler returns an http.Handler for a Prometheus metrics endpoint.
+func MetricsHandler() http.Handler {
+	h := httprouter.New()
+	h.Handler("GET", "/metrics", promhttp.Handler())
+	return h
+}
 
 // OCIHandler returns an http.Handler for the API. This can be used on its own
 // to mount an OCI-compliant image registry within another web server.

@@ -57,7 +57,7 @@ var serverCmd = &cobra.Command{
 		// Initialize the Registry
 		registry, _ := stori.NewRegistry(registryConfig)
 
-		handler := storihttp.OCIHandler(&stori.HandlerProperties{
+		handler := storihttp.Handler(&stori.HandlerProperties{
 			Registry: registry,
 		})
 
