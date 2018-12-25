@@ -6,9 +6,17 @@ import (
 	"github.com/atlaskerr/stori/stori"
 )
 
+const (
+	// VersionHeaderName defines the header used by clients to verify if the
+	// registry implements the OCI Distribution spec.
+	VersionHeaderName = "Docker-Distribution-API-Version"
+)
+
 func handleOCIVerify(reg *stori.Registry) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusNotImplemented)
+		h := w.Header()
+		h.Add(VersionHeaderName, "registry/2.0")
+		w.WriteHeader(http.StatusOK)
 	})
 }
 
