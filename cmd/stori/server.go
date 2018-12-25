@@ -16,6 +16,8 @@ package main
 
 import (
 	"context"
+	"crypto/tls"
+	"net"
 	"net/http"
 	"os"
 	"os/signal"
@@ -68,7 +70,35 @@ func startServer(cmd *cobra.Command, args []string) {
 		Addr:    conf.Server.Address,
 		Handler: handler,
 	}
-	go server.ListenAndServe()
+
+	listener := func() net.Listener {
+		if conf.Server.TLS.Enabled {
+			cert, err := tls.LoadX509KeyPair(
+				conf.Server.TLS.CertFile,
+				conf.Server.TLS.KeyFile,
+			)
+			if err != nil {
+				logger.Error("Unable to load server certificates.", zap.Error(err))
+			}
+
+			tlsConfig := &tls.Config{
+				Certificates: []tls.Certificate{cert},
+			}
+			l, err := tls.Listen("tcp", conf.Server.Address, tlsConfig)
+			return l
+		}
+		l, err := net.Listen("tcp", conf.Server.Address)
+		if err != nil {
+			logger.Error(
+				"Failed to start listener",
+				zap.String("address", conf.Server.Address),
+				zap.Error(err),
+			)
+		}
+		return l
+	}()
+
+	go server.Serve(listener)
 	logger.Info(
 		"Server started sucessfully.",
 		zap.String("address", conf.Server.Address),

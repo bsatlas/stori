@@ -32,6 +32,7 @@ type Server struct {
 
 // TLS defines parameters for TLS connections to the registry.
 type TLS struct {
+	Enabled  bool   `json:"enabled"`
 	CertFile string `json:"certFile"`
 	KeyFile  string `json:"keyFile"`
 }
