@@ -23,8 +23,16 @@ func (be *BackendPlugin) Server(broker *plugin.MuxBroker) (interface{}, error) {
 
 // Client returns client used to interact with the backend server.
 func (be *BackendPlugin) Client(
-	*plugin.MuxBroker, *rpc.Client) (interface{}, error) {
-	return new(interface{}), nil
+	broker *plugin.MuxBroker,
+	c *rpc.Client,
+) (interface{}, error) {
+	return &Backend{Broker: broker, Client: c}, nil
+}
+
+// Backend is an implementation of stori.Backend that communicates over RPC.
+type Backend struct {
+	Broker *plugin.MuxBroker
+	Client *rpc.Client
 }
 
 // BackendServer is a net/rpc compatible structure for serving a backend.
