@@ -21,7 +21,8 @@ import (
 
 // Config defines the parameters for the registry.
 type Config struct {
-	Server Server `json:"server"`
+	Server   Server   `json:"server"`
+	Registry Registry `json:"registry"`
 }
 
 // Server defines server-specific parameters for the registry.
@@ -35,6 +36,26 @@ type TLS struct {
 	Enabled  bool   `json:"enabled"`
 	CertFile string `json:"certFile"`
 	KeyFile  string `json:"keyFile"`
+}
+
+// Registry defines registry-specific parameters.
+type Registry struct {
+
+	// Backend contains configuration for stori's persistence layer. Since
+	Backend   map[string]interface{} `json:"backend"`
+	BlobStore map[string]interface{} `json:"blobStore"`
+}
+
+type Backend struct {
+	// Name is the name of the backend. If stori does not support the defined
+	// backend, it will look in its PATH for a binary plugin named
+	// `stori-{name}-backend`.
+	Name string `json:"name"`
+
+	// Config contains the backend's config parameters. Since different backends
+	// require different configuration parameters, we can't parse the object yet
+	// since we don't know the schema.
+	Config interface{} `json:"config"`
 }
 
 // LoadConfigFile loads the configuration from the given file.
