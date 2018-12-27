@@ -61,24 +61,26 @@ func startServer(cmd *cobra.Command, args []string) {
 		Logger: logger,
 	}
 
-	// Initialize the Registry
+	// Initialize the Registry.
 	registry, _ := stori.NewRegistry(registryConfig)
 
+	// Setup http server.
 	handler := storihttp.Handler(&stori.HandlerProperties{
 		Registry: registry,
 	})
 
+	addr := conf.Server.Address
 	server := &http.Server{
-		Addr:    conf.Server.Address,
+		Addr:    addr,
 		Handler: handler,
 	}
 
+	// Setup listener.
+	certFile := conf.Server.TLS.CertFile
+	keyFile := conf.Server.TLS.KeyFile
 	listener := func() net.Listener {
 		if conf.Server.TLS.Enabled {
-			cert, err := tls.LoadX509KeyPair(
-				conf.Server.TLS.CertFile,
-				conf.Server.TLS.KeyFile,
-			)
+			cert, err := tls.LoadX509KeyPair(certFile, keyFile)
 			if err != nil {
 				logger.Error("Unable to load server certificates.", zap.Error(err))
 			}
@@ -100,6 +102,7 @@ func startServer(cmd *cobra.Command, args []string) {
 		return l
 	}()
 
+	// Start server.
 	go server.Serve(listener)
 	logger.Info(
 		"Server started sucessfully.",
