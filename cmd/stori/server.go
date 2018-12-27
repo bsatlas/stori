@@ -57,7 +57,9 @@ func startServer(cmd *cobra.Command, args []string) {
 	}
 	logger.Debug("Configuration file loaded successfully.")
 
-	registryConfig := &stori.RegistryConfig{}
+	registryConfig := &stori.RegistryConfig{
+		Logger: logger,
+	}
 
 	// Initialize the Registry
 	registry, _ := stori.NewRegistry(registryConfig)
