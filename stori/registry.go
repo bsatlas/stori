@@ -8,6 +8,8 @@ var defaultAddr = "0.0.0.0:7548"
 
 // Registry defines parameters for running a container image registry.
 type Registry struct {
+	backend *Backend
+	blobstore *BlobStore
 	logger *zap.Logger
 }
 
