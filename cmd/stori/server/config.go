@@ -46,6 +46,7 @@ type Registry struct {
 	BlobStore map[string]interface{} `json:"blobStore"`
 }
 
+// Backend defines parameters for stori's persistence layer.
 type Backend struct {
 	// Name is the name of the backend. If stori does not support the defined
 	// backend, it will look in its PATH for a binary plugin named
