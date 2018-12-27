@@ -13,7 +13,7 @@ type BackendPlugin struct {
 	Backend func() stori.Backend
 }
 
-// Server returns a backend that can be communicates via RPC.
+// Server returns a backend that can communicates via RPC.
 func (be *BackendPlugin) Server(broker *plugin.MuxBroker) (interface{}, error) {
 	return &BackendServer{
 		Broker:  broker,
