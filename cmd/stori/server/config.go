@@ -40,10 +40,8 @@ type TLS struct {
 
 // Registry defines registry-specific parameters.
 type Registry struct {
-
-	// Backend contains configuration for stori's persistence layer. Since
-	Backend   map[string]interface{} `json:"backend"`
-	BlobStore map[string]interface{} `json:"blobStore"`
+	Backend   `json:"backend"`
+	BlobStore `json:"blobStore"`
 }
 
 // Backend defines parameters for stori's persistence layer.
@@ -56,6 +54,19 @@ type Backend struct {
 	// Config contains the backend's config parameters. Since different backends
 	// require different configuration parameters, we can't parse the object yet
 	// since we don't know the schema.
+	Config interface{} `json:"config"`
+}
+
+// BlobStore defines parameters for stori's blob storage engine.
+type BlobStore struct {
+	// Name is the name of the backend. If stori does not support the defined
+	// backend, it will look in its PATH for a binary plugin named
+	// `stori-{name}-blobstore`.
+	Name string `json:"name"`
+
+	// Config contains the blobstore's config parameters. Since different
+	// blobstores require different configuration parameters, we can't parse the
+	// object yet since we don't know the schema.
 	Config interface{} `json:"config"`
 }
 
