@@ -54,7 +54,7 @@ type Backend struct {
 	// Config contains the backend's config parameters. Since different backends
 	// require different configuration parameters, we can't parse the object yet
 	// since we don't know the schema.
-	Config interface{} `json:"config"`
+	Config map[string]interface{} `json:"config"`
 }
 
 // BlobStore defines parameters for stori's blob storage engine.
@@ -67,7 +67,7 @@ type BlobStore struct {
 	// Config contains the blobstore's config parameters. Since different
 	// blobstores require different configuration parameters, we can't parse the
 	// object yet since we don't know the schema.
-	Config interface{} `json:"config"`
+	Config map[string]interface{} `json:"config"`
 }
 
 // LoadConfigFile loads the configuration from the given file.
