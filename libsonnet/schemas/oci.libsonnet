@@ -87,13 +87,15 @@ local errors(output='jsonschemaV7') = {
   },
 };
 
+// Media Type Schema
+local mediaType = {
+  type: 'string',
+  description: d.mediaType,
+  pattern: '^[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}/[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}$',
+};
+
 // Content Descriptor Schema
 local contentDescriptor(output=JSV7) = {
-  local mediaType = {
-    type: 'string',
-    description: d.mediaType,
-    pattern: '^[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}/[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}$',
-  },
 
   local size = {
     type: 'integer',
@@ -124,6 +126,89 @@ local contentDescriptor(output=JSV7) = {
     digest: digest,
     urls: urls,
   },
+};
+
+// Image Index Schema
+local imageIndex(output=JSV7) = {
+  local schemaVersion = {
+    type: 'integer',
+    description: d.schemaVersion,
+    minimum: 2,
+    maximum: 2,
+  },
+
+  local arch = {
+    type: 'string',
+    description: d.arch,
+  },
+  local os = {
+    type: 'string',
+    description: d.os,
+  },
+  local osVersion = {
+    type: 'string',
+    description: d.osVersion,
+  },
+  local osFeatures = {
+    type: 'string',
+    description: d.osFeatures,
+  },
+  local variant = {
+    type: 'string',
+    description: d.variant,
+  },
+  local features = {
+    type: 'string',
+    description: d.features,
+  },
+
+  local platform = {
+    type: 'object',
+    properties: {
+      architecture: arch,
+      os: os,
+      'os.version': osVersion,
+      'os.features': osFeatures,
+      variant: variant,
+      features: features,
+    },
+    required: [
+      'architecture',
+      'os',
+    ],
+  },
+
+  local manifests = {
+    type: 'array',
+    items: contentDescriptor() {
+      properties+: {
+        platform: platform,
+      },
+    },
+  },
+
+  local annotations(output=JSV7) = {
+    type: 'object',
+    [if output == JSV7 then 'patternProperties' else 'x-patternProperties']: {
+      '.{1,}': {
+        type: 'object',
+      },
+  },
+
+  [if output == JSV7 then '$id']: 'http://opencontainers.org/image/index',
+  [if output == JSV7 then '$schema']: JSV3Schema,
+  type: 'object',
+  properties: {
+    schemaVersion: schemaVersion,
+    mediaType: mediaType,
+    manifests: manifests,
+    annotations: annotations(output),
+  },
+  required: [
+    'schemaVersion',
+    'manifests',
+  ],
+
 };
 
 // Descriptions for schema objects. Separated out to make code more readable.
@@ -172,6 +257,7 @@ local d = {
 {
   catalog:: catalog,
   errors:: errors,
+  tags:: tags,
 }
 
 //{
