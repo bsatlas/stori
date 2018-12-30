@@ -12,40 +12,48 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local common = import 'common.libsonnet';
+local d = {
+  server: 'Server configuration data.',
+  address: 'The IP/hostname and port to listen on.',
+  tls: 'TLS configuration data.',
+  certFile: 'Path to x509 certificate.',
+  keyFile: 'Path to private key file,',
+};
 
-local server = {
+local JSV7 = 'jsonschemaV7';
+local JSV7Schema = 'http://json-schema.org/draft-07/schema#';
+
+// Stori server config file schema
+local serverConfig() = {
+
+  local address = {
+    type: 'string',
+    description: d.address,
+  },
 
   local tls = {
+
+    local certFile = { type: 'string', description: d.certFile },
+    local keyFile = { type: 'string', description: d.keyFile },
+
     type: 'object',
-    description: 'TLS configuration options.',
+    description: d.tls,
     properties: {
-      certFile: common.string {
-        description: "Path to registry's x509 certificate.",
-      },
-      keyFile: common.string {
-        description: "Path to registry's private key.",
-      },
+      certFile: certFile,
+      keyFile: keyFile,
     },
   },
 
+  '$id': 'http://storimages.org/schema/server-config',
+  '$schema': JSV7Schema,
   type: 'object',
-  description: 'Server-specific configuration.',
+  description: d.server,
   properties: {
-    address: common.string {
-      description: 'The IP/hostname and port to listen on.',
-    },
+    address: address,
     tls: tls,
   },
 };
 
 {
-  registryConfig(output='jsonschema'):: {
-    [if output != 'openapi' then '$schema']: common.jsonSchemaV4,
-    type: 'object',
-    description: "Stori registry's server configuration file format.",
-    properties: {
-      server: server,
-    },
-  },
+  serverConfig: serverConfig,
 }
