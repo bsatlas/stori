@@ -7,11 +7,11 @@ local v4 = {
 };
 
 {
-  'oci/config-schema.json': v4 + oci.config('jsonschema'),
-  'oci/image-manifest-schema.json': v4 + oci.imageManifest('jsonschema'),
-  'oci/image-index-schema.json': v4 + oci.imageIndex('jsonschema'),
-  'oci/error-schema.json': v4 + oci.err,
-  'oci/catalog-schema.json': v4 + oci.catalog,
-  'oci/tag-list-schema.json': v4 + oci.tagList('jsonschema'),
+  'oci/config-schema.json': oci.imageConfig(),
+  'oci/image-manifest-schema.json': oci.imageManifest(),
+  'oci/image-index-schema.json': oci.imageIndex(),
+  'oci/error-schema.json': oci.errors(),
+  'oci/catalog-schema.json': oci.catalog(),
+  'oci/tag-list-schema.json': oci.tagsList(),
   'stori/registry-config-schema.json': stori.registryConfig(),
 }
