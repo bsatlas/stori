@@ -68,6 +68,45 @@ local errors(output='jsonschemaV7') = {
   },
 };
 
+// Content Descriptor Schema
+local contentDescriptor(output=JSV7) = {
+  local mediaType = {
+    type: 'string',
+    description: d.mediaType,
+    pattern: '^[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}/[A-Za-z0-9][A-Za-z0-9!#$&-^_.+]{0,126}$',
+  },
+
+  local size = {
+    type: 'integer',
+    minimum: -9223372036854776000,
+    maximum: 9223372036854776000,
+  },
+
+  local digest = {
+    type: 'string',
+    description: d.digest,
+    pattern: '^[a-z0-9]+(?:[+._-][a-z0-9]+)*:[a-zA-Z0-9=_-]+$',
+  },
+
+  local urls = {
+    type: 'array',
+    description: d.urls,
+    items: {
+      type: 'string',
+      format: 'uri',
+    },
+  },
+
+  title: 'OCI Content Descriptor',
+  type: 'object',
+  properties: {
+    mediaType: mediaType,
+    size: size,
+    digest: digest,
+    urls: urls,
+  },
+};
+
 // Descriptions for schema objects. Separated out to make code more readable.
 local d = {
   user: 'The username or UID which is a platform-specific structure that allows specific control over which user the process run as. This acts as a default value to use when the value is not specified when creating a container. For Linux based systems, all of the following are valid: `user`, `uid`, `user:group`, `uid:gid`, `uid:group`, `user:gid`. If `group`/`gid` is not specified, the default group and supplementary groups of the given `user`/`uid` in `/etc/passwd` from the container are applied.',
