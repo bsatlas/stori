@@ -128,14 +128,26 @@ local contentDescriptor(output=JSV7) = {
   },
 };
 
+// Schema Version Schema
+local schemaVersion = {
+  type: 'integer',
+  description: d.schemaVersion,
+  minimum: 2,
+  maximum: 2,
+};
+
+// Annotations Schema
+local annotations(output=JSV7) = {
+  type: 'object',
+  [if output == JSV7 then 'patternProperties' else 'x-patternProperties']: {
+    '.{1,}': {
+      type: 'object',
+    },
+  },
+};
+
 // Image Index Schema
 local imageIndex(output=JSV7) = {
-  local schemaVersion = {
-    type: 'integer',
-    description: d.schemaVersion,
-    minimum: 2,
-    maximum: 2,
-  },
 
   local arch = {
     type: 'string',
@@ -187,17 +199,9 @@ local imageIndex(output=JSV7) = {
     },
   },
 
-  local annotations(output=JSV7) = {
-    type: 'object',
-    [if output == JSV7 then 'patternProperties' else 'x-patternProperties']: {
-      '.{1,}': {
-        type: 'object',
-      },
-  },
 
   [if output == JSV7 then '$id']: 'http://opencontainers.org/image/index',
   [if output == JSV7 then '$schema']: JSV3Schema,
-  type: 'object',
   properties: {
     schemaVersion: schemaVersion,
     mediaType: mediaType,
@@ -208,7 +212,30 @@ local imageIndex(output=JSV7) = {
     'schemaVersion',
     'manifests',
   ],
+};
 
+// Image Manifest Schema
+local imageManifest(output=JSV7) = {
+  local layers = {
+    type: 'array',
+    items: contentDescriptor(),
+  },
+
+  [if output == JSV7 then '$id']: 'http://opencontainers.org/image/manifest',
+  [if output == JSV7 then '$schema']: JSV3Schema,
+  title: 'OCI Image Manifest',
+  type: 'object',
+  properties: {
+    schemaVersion: schemaVersion,
+    config: contentDescriptor(),
+    layers: layers,
+    annotations: annotations(output),
+  },
+  required: [
+    'schemaVersion',
+    'config',
+    'layers',
+  ],
 };
 
 // Descriptions for schema objects. Separated out to make code more readable.
