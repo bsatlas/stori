@@ -1,5 +1,6 @@
 {
-   "$schema": "http://json-schema.org/draft-04/schema#",
+   "$id": "http://opencontainers.org/schema/error",
+   "$schema": "http://json-schema.org/draft-07/schema#",
    "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
    "properties": {
       "errors": {
@@ -20,5 +21,6 @@
          "type": "array"
       }
    },
+   "title": "OCI Error Response",
    "type": "object"
 }

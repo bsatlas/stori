@@ -1,9 +1,9 @@
 {
-   "$schema": "http://json-schema.org/draft-04/schema#",
-   "description": "OCI Image Manifest Specification",
+   "$id": "http://opencontainers.org/image/manifest",
+   "$schema": "http://json-schema.org/draft-07/schema#",
    "properties": {
       "annotations": {
-         "description": "This OPTIONAL property contains arbitrary metadata for the image manifest and MUST use the annotation rules.",
+         "description": "This property contains arbitrary metadata. Property MUST use the annotation rules.",
          "patternProperties": {
             ".{1,}": {
                "type": "string"
@@ -15,7 +15,7 @@
          "description": "A descriptor for referencing a blob.",
          "properties": {
             "annotations": {
-               "description": "This OPTIONAL property contains arbitrary metadata for the descriptor and MUST use the annotation rules.",
+               "description": "This property contains arbitrary metadata. Property MUST use the annotation rules.",
                "patternProperties": {
                   ".{1,}": {
                      "type": "string"
@@ -53,6 +53,7 @@
             "mediaType",
             "digest"
          ],
+         "title": "OCI Content Descriptor",
          "type": "object"
       },
       "layers": {
@@ -61,7 +62,7 @@
             "description": "A descriptor for referencing a blob.",
             "properties": {
                "annotations": {
-                  "description": "This OPTIONAL property contains arbitrary metadata for the descriptor and MUST use the annotation rules.",
+                  "description": "This property contains arbitrary metadata. Property MUST use the annotation rules.",
                   "patternProperties": {
                      ".{1,}": {
                         "type": "string"
@@ -99,6 +100,7 @@
                "mediaType",
                "digest"
             ],
+            "title": "OCI Content Descriptor",
             "type": "object"
          },
          "type": "array"
@@ -115,5 +117,6 @@
       "config",
       "layers"
    ],
+   "title": "OCI Image Manifest",
    "type": "object"
 }

@@ -1,9 +1,9 @@
 {
-   "$schema": "http://json-schema.org/draft-04/schema#",
-   "description": "OCI Image Index Specification",
+   "$id": "http://opencontainers.org/image/index",
+   "$schema": "http://json-schema.org/draft-07/schema#",
    "properties": {
       "annotations": {
-         "description": "This OPTIONAL property contains arbitrary metadata for the descriptor and MUST use the annotation rules.",
+         "description": "This property contains arbitrary metadata. Property MUST use the annotation rules.",
          "patternProperties": {
             ".{1,}": {
                "type": "string"
@@ -17,7 +17,7 @@
             "description": "A descriptor for referencing a blob.",
             "properties": {
                "annotations": {
-                  "description": "This OPTIONAL property contains arbitrary metadata for the descriptor and MUST use the annotation rules.",
+                  "description": "This property contains arbitrary metadata. Property MUST use the annotation rules.",
                   "patternProperties": {
                      ".{1,}": {
                         "type": "string"
@@ -49,7 +49,7 @@
                         "type": "array"
                      },
                      "os": {
-                        "description": "This REQUIRED property specifies the operating system. Image indexes SHOULD use, and implementations SHOULD understand, values listed in the Go Language document for `GOOS`.",
+                        "description": "The name of the operating system which the image is built to run on. Configurations SHOULD use, and implementations SHOULD understand, values listed in the Go Language document for `GOOS`.",
                         "type": "string"
                      },
                      "os.features": {
@@ -72,6 +72,7 @@
                      "architecture",
                      "os"
                   ],
+                  "title": "OCI Image Index",
                   "type": "object"
                },
                "size": {
@@ -94,6 +95,7 @@
                "mediaType",
                "digest"
             ],
+            "title": "OCI Content Descriptor",
             "type": "object"
          },
          "type": "array"
