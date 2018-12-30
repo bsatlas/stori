@@ -1,5 +1,5 @@
-local oci = import '../libsonnet/schemas/oci.libsonnet';
-local stori = import '../libsonnet/schemas/stori.libsonnet';
+local oci = import '../jsonnet/schemas/oci.libsonnet';
+local stori = import '../jsonnet/schemas/stori.libsonnet';
 
 {
   'oci/config.json': oci.imageConfig(),

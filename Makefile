@@ -6,7 +6,7 @@ DOCS_DIR = Documentation
 SCRIPTS_DIR = scripts
 OPENAPI_FILE = $(DOCS_DIR)/openapi.json
 SCHEMA_DIR = schema
-JSONNET_DIR = libsonnet
+JSONNET_DIR = jsonnet
 
 test:
 	go test -cover ./...
