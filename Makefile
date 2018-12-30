@@ -5,7 +5,7 @@ OPENAPI_DIR = openapi
 DOCS_DIR = Documentation
 SCRIPTS_DIR = scripts
 OPENAPI_FILE = $(DOCS_DIR)/openapi.json
-JSONSCHEMA_DIR = $(DOCS_DIR)/json-schemas
+SCHEMA_DIR = schema
 JSONNET_DIR = libsonnet
 
 test:
@@ -19,7 +19,7 @@ clean:
 
 # Generate json-schemas.
 schemas:
-	jsonnet -m $(JSONSCHEMA_DIR) $(SCRIPTS_DIR)/gen-jsonschemas.jsonnet
+	jsonnet -m $(SCHEMA_DIR) $(SCRIPTS_DIR)/gen-jsonschemas.jsonnet
 
 # Generate and validate OpenAPI specification file.
 spec: generate-openapi validate-openapi

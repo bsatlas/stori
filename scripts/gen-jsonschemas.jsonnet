@@ -1,10 +1,5 @@
-local common = import '../libsonnet/schemas/common.libsonnet';
 local oci = import '../libsonnet/schemas/oci.libsonnet';
 local stori = import '../libsonnet/schemas/stori.libsonnet';
-
-local v4 = {
-  '$schema': common.jsonSchemaV4,
-};
 
 {
   'oci/config.json': oci.imageConfig(),
