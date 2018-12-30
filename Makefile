@@ -20,6 +20,7 @@ clean:
 # Generate json-schemas.
 schemas:
 	jsonnet -m $(SCHEMA_DIR) $(SCRIPTS_DIR)/gen-jsonschemas.jsonnet
+	go generate $(SCHEMA_DIR)/gen.go
 
 # Generate and validate OpenAPI specification file.
 spec: generate-openapi validate-openapi
