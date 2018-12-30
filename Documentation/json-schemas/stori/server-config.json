@@ -1,0 +1,26 @@
+{
+   "$id": "http://storimages.org/schema/server-config",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "description": "Server configuration data.",
+   "properties": {
+      "address": {
+         "description": "The IP/hostname and port to listen on.",
+         "type": "string"
+      },
+      "tls": {
+         "description": "TLS configuration data.",
+         "properties": {
+            "certFile": {
+               "description": "Path to x509 certificate.",
+               "type": "string"
+            },
+            "keyFile": {
+               "description": "Path to private key file,",
+               "type": "string"
+            }
+         },
+         "type": "object"
+      }
+   },
+   "type": "object"
+}
