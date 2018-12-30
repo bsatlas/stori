@@ -36,6 +36,25 @@ local catalog(output='jsonschemaV7') = {
   },
 };
 
+// Tags List Schema
+local tagsList(output=JSV7) = {
+  local name = { type: 'string' },
+  local tags = {
+    type: 'array',
+    items: { type: 'string' },
+  },
+
+  [if output == JSV7 then '$id']: 'http://opencontainers.org/schema/tags/list',
+  [if output == JSV7 then '$schema']: JSV3Schema,
+  title: 'OCI Tags List',
+  type: 'object',
+  description: d.tagsList,
+  properties: {
+    name: name,
+    tags: tags,
+  },
+};
+
 // Error Schema
 local errors(output='jsonschemaV7') = {
 
