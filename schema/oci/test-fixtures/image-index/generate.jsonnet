@@ -69,6 +69,43 @@ local schemaVersionTooHigh = {
   ],
 };
 
+// FAIL: Schema version missing.
+local schemaVersionMissing = {
+  manifests: [
+    {
+      digest: 'sha256:e3161859d1779d8330428ed745008710a1ecfb9f494c2e1b062be4cc0ba9ee2a',
+      mediaType: 'application/vnd.oci.image.manifest.v1+json',
+      size: 642,
+    },
+  ],
+};
+
+// FAIL: Manifest is not an array.
+local manifestNotArray = {
+  schemaVersion: 2,
+  manifests: {
+    digest: 'sha256:e3161859d1779d8330428ed745008710a1ecfb9f494c2e1b062be4cc0ba9ee2a',
+    mediaType: 'application/vnd.oci.image.manifest.v1+json',
+    size: 642,
+  },
+};
+
+// FAIL: Platform OS and Architecture combination invalid.
+local platformCombinationInvalid = {
+  schemaVersion: 2,
+  manifests: [
+    {
+      digest: 'sha256:e3161859d1779d8330428ed745008710a1ecfb9f494c2e1b062be4cc0ba9ee2a',
+      mediaType: 'application/vnd.oci.image.manifest.v1+json',
+      size: 642,
+      platform: {
+        architecture: 'amd64',
+        os: 'android',
+      },
+    },
+  ],
+};
+
 
 {
   'golden.json': golden,
@@ -76,4 +113,7 @@ local schemaVersionTooHigh = {
   'custom-manifest-media-type.json': customManifestMediaType,
   'schema-version-too-low.json': schemaVersionTooLow,
   'schema-version-too-high.json': schemaVersionTooHigh,
+  'schema-version-missing.json': schemaVersionMissing,
+  'manifest-not-array.json': manifestNotArray,
+  'platform-combination-invalid.json': platformCombinationInvalid,
 }
