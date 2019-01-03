@@ -276,11 +276,11 @@ efCS8iJ++AiNxVPMGVk7Jh7vHuA+HwaeUBNHxXLD5dB59R4AAP//RJkb88MCAAA=
 `,
 	},
 
-	"/oci/image-index.json": {
-		name:    "image-index.json",
-		local:   "oci/image-index.json",
+	"/oci/image-index.schema.json": {
+		name:    "image-index.schema.json",
+		local:   "oci/image-index.schema.json",
 		size:    5500,
-		modtime: 1546460240,
+		modtime: 1546494771,
 		compressed: `
 H4sIAAAAAAAC/9xYfW/bthP+P5/ifm7xw7bYipO0SRN0HYwkaw2kdZaXDmuR1rR4kq6RSI2k4rhFvvtA
 6sUvlR2lazZg/9kk70g+fO65O31ZA4DWY+KtfWhFxqT7GxsyReFLYRgJVNqTKtyghIW4QYLjTaudm2g/
@@ -393,7 +393,7 @@ var _escDirs = map[string][]os.FileInfo{
 		_escData["/oci/catalog.json"],
 		_escData["/oci/config.json"],
 		_escData["/oci/error.json"],
-		_escData["/oci/image-index.json"],
+		_escData["/oci/image-index.schema.json"],
 		_escData["/oci/image-manifest.json"],
 		_escData["/oci/tag-list.json"],
 	},
