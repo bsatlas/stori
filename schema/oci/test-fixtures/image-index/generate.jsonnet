@@ -106,6 +106,36 @@ local platformCombinationInvalid = {
   ],
 };
 
+// FAIL: Platform OS invalid.
+local platformOSInvalid = {
+  schemaVersion: 2,
+  manifests: [
+    {
+      digest: 'sha256:e3161859d1779d8330428ed745008710a1ecfb9f494c2e1b062be4cc0ba9ee2a',
+      mediaType: 'application/vnd.oci.image.manifest.v1+json',
+      size: 642,
+      platform: {
+        os: 'invalid',
+      },
+    },
+  ],
+};
+
+// FAIL: Platform Architecture invalid.
+local platformArchInvalid = {
+  schemaVersion: 2,
+  manifests: [
+    {
+      digest: 'sha256:e3161859d1779d8330428ed745008710a1ecfb9f494c2e1b062be4cc0ba9ee2a',
+      mediaType: 'application/vnd.oci.image.manifest.v1+json',
+      size: 642,
+      platform: {
+        architecture: 'invalid',
+      },
+    },
+  ],
+};
+
 
 {
   'golden.json': golden,
@@ -116,4 +146,6 @@ local platformCombinationInvalid = {
   'schema-version-missing.json': schemaVersionMissing,
   'manifest-not-array.json': manifestNotArray,
   'platform-combination-invalid.json': platformCombinationInvalid,
+  'platform-os-invalid.json': platformOSInvalid,
+  'platform-arch-invalid.json': platformArchInvalid,
 }
