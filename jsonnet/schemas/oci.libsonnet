@@ -260,6 +260,158 @@ local imageIndex(output=JSV7) = {
     items: { type: 'string' },
   },
 
+  local androidCombinations = {
+    properties: {
+      os: { enum: ['android'] },
+      architecture: { enum: ['arm'] },
+    },
+  },
+
+  local darwinCombinations = {
+    properties: {
+      os: { enum: ['darwin'] },
+      architecture: {
+        enum: [
+          '386',
+          'amd64',
+          'arm',
+          'arm64',
+        ],
+      },
+    },
+  },
+
+  local dragonflyCombinations = {
+    properties: {
+      os: {
+        enum: ['dragonfly'],
+      },
+      architecture: {
+        enum: [
+          'amd64',
+        ],
+      },
+    },
+  },
+
+  local freebsdCombinations = {
+    properties: {
+      os: {
+        enum: ['freebsd'],
+      },
+      architecture: {
+        enum: [
+          '386',
+          'amd64',
+          'arm',
+        ],
+      },
+    },
+  },
+
+  local linuxCombinations = {
+    properties: {
+      os: {
+        enum: ['linux'],
+      },
+      architecture: {
+        enum: [
+          '386',
+          'amd64',
+          'arm',
+          'arm64',
+          'ppc64',
+          'ppc64le',
+          'mips64',
+          'mips64le',
+          's390x',
+        ],
+      },
+    },
+  },
+
+  local netbsdCombinations = {
+    properties: {
+      os: {
+        enum: ['netbsd'],
+      },
+      architecture: {
+        enum: [
+          '386',
+          'amd64',
+          'arm',
+        ],
+      },
+    },
+  },
+
+  local openbsdCombinations = {
+    properties: {
+      os: {
+        enum: ['openbsd'],
+      },
+      architecture: {
+        enum: [
+          '386',
+          'amd64',
+          'arm',
+        ],
+      },
+    },
+  },
+
+  local plan9Combinations = {
+    properties: {
+      os: {
+        enum: ['plan9'],
+      },
+      architecture: {
+        enum: [
+          '386',
+          'amd64',
+        ],
+      },
+    },
+  },
+
+  local solarisCombinations = {
+    properties: {
+      os: {
+        enum: ['solaris'],
+      },
+      architecture: {
+        enum: [
+          'amd64',
+        ],
+      },
+    },
+  },
+
+  local windowsCombinations = {
+    properties: {
+      os: {
+        enum: ['windows'],
+      },
+      architecture: {
+        enum: [
+          '386',
+          'amd64',
+        ],
+      },
+    },
+  },
+
+  local osArchCombinations = [
+    androidCombinations,
+    darwinCombinations,
+    dragonflyCombinations,
+    freebsdCombinations,
+    linuxCombinations,
+    plan9Combinations,
+    solarisCombinations,
+    windowsCombinations,
+  ],
+
   local platform = {
     title: 'OCI Image Index',
     type: 'object',
@@ -275,6 +427,7 @@ local imageIndex(output=JSV7) = {
       'architecture',
       'os',
     ],
+    oneOf: osArchCombinations,
   },
 
   local manifests = {
