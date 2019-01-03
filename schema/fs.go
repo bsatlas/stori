@@ -209,11 +209,11 @@ func FSMustString(useLocal bool, name string) string {
 
 var _escData = map[string]*_escFile{
 
-	"/oci/catalog.json": {
-		name:    "catalog.json",
-		local:   "oci/catalog.json",
+	"/oci/catalog.schema.json": {
+		name:    "catalog.schema.json",
+		local:   "oci/catalog.schema.json",
 		size:    401,
-		modtime: 1546204770,
+		modtime: 1546544737,
 		compressed: `
 H4sIAAAAAAAC/2SQMW7DMAxFd52CUDsmcbcCXjMVKNClF1BlxmLgiALJxSh890K20hrN+vjfF8VvBwD+
 mQbfg09mpe86LpgjZwuUUfTEMnYaE95CF4OFiUd/2KyN7syrcj5udNUGCRc7vrw2/6mJA2oUKkacq/yZ
@@ -222,11 +222,25 @@ E8qj/xsuB/eYCiJhvocW9xvzRjatiY/zG5y368E7qbV17wX8dcVo3i3uJwAA///CisY2kQEAAA==
 `,
 	},
 
-	"/oci/config.json": {
-		name:    "config.json",
-		local:   "oci/config.json",
+	"/oci/errors.schema.json": {
+		name:    "errors.schema.json",
+		local:   "oci/errors.schema.json",
+		size:    707,
+		modtime: 1546544737,
+		compressed: `
+H4sIAAAAAAAC/6yRzU7DMBCE732KleHYNtyQekUcOCEhXsDE22arxGt2N5Ui1HdHTkyJws8BcZ2Zb0b2
+vq0AwF1TcDtwjVnaVRUnjDVH8xRRdMtyqLRusPMVirC49cRM2ow7KsfNpI5QEL+3zc1toa8KGFBroWTE
+McPPDSkk4YRiA5RdBQ8tqQHvYRxV6FDVH1BB0HqJGGAv3IE1CIpyQoHQIxiDj0Dx5FsKIPjao9q2LJcV
+QnU7GF+e1al/pmSRDLuF9mPDp11zwO+M7NmQsufUhOLBLSPn9Ze2gOap/b++8oN/LVz9Un+B+eWItc3g
+efCS8iJ++AiNxVPMGVk7Jh7vHuA+HwaeUBNHxXLD5dB59R4AAP//RJkb88MCAAA=
+`,
+	},
+
+	"/oci/image-config.schema.json": {
+		name:    "image-config.schema.json",
+		local:   "oci/image-config.schema.json",
 		size:    7271,
-		modtime: 1546204770,
+		modtime: 1546544737,
 		compressed: `
 H4sIAAAAAAAC/9xZS2/cyBG+61cUJgFyyFiTwEiCCMhBkL3aQeS1oYdzWARmkywOe9XsZqqLkomF/ntQ
 3U1qKHGkkePsGquLZvpZ/dVXz/n5AAAWv9fl4ggWNXN7tFq5Fm3hLCttkfyho81KN2qDq0ZZXaHnxTLu
@@ -262,25 +276,11 @@ jPJgvHXuvumvbtu+6qG5Hoz3LVizCVe9P1nDOlhU9Dvp972Hktwd/DcAAP///hoCxGccAAA=
 `,
 	},
 
-	"/oci/error.json": {
-		name:    "error.json",
-		local:   "oci/error.json",
-		size:    707,
-		modtime: 1546204770,
-		compressed: `
-H4sIAAAAAAAC/6yRzU7DMBCE732KleHYNtyQekUcOCEhXsDE22arxGt2N5Ui1HdHTkyJws8BcZ2Zb0b2
-vq0AwF1TcDtwjVnaVRUnjDVH8xRRdMtyqLRusPMVirC49cRM2ow7KsfNpI5QEL+3zc1toa8KGFBroWTE
-McPPDSkk4YRiA5RdBQ8tqQHvYRxV6FDVH1BB0HqJGGAv3IE1CIpyQoHQIxiDj0Dx5FsKIPjao9q2LJcV
-QnU7GF+e1al/pmSRDLuF9mPDp11zwO+M7NmQsufUhOLBLSPn9Ze2gOap/b++8oN/LVz9Un+B+eWItc3g
-efCS8iJ++AiNxVPMGVk7Jh7vHuA+HwaeUBNHxXLD5dB59R4AAP//RJkb88MCAAA=
-`,
-	},
-
 	"/oci/image-index.schema.json": {
 		name:    "image-index.schema.json",
 		local:   "oci/image-index.schema.json",
 		size:    5500,
-		modtime: 1546494771,
+		modtime: 1546544737,
 		compressed: `
 H4sIAAAAAAAC/9xYfW/bthP+P5/ifm7xw7bYipO0SRN0HYwkaw2kdZaXDmuR1rR4kq6RSI2k4rhFvvtA
 6sUvlR2lazZg/9kk70g+fO65O31ZA4DWY+KtfWhFxqT7GxsyReFLYRgJVNqTKtyghIW4QYLjTaudm2g/
@@ -309,11 +309,11 @@ ztu1vwIAAP//5qs/e3wVAAA=
 `,
 	},
 
-	"/oci/image-manifest.json": {
-		name:    "image-manifest.json",
-		local:   "oci/image-manifest.json",
+	"/oci/image-manifest.schema.json": {
+		name:    "image-manifest.schema.json",
+		local:   "oci/image-manifest.schema.json",
 		size:    5233,
-		modtime: 1546204770,
+		modtime: 1546544737,
 		compressed: `
 H4sIAAAAAAAC/+yY33PTRhDH3/krtobpQONfmELAQ+lkCJ1mBgqFpA9kDDlLK2nJ6U7creIIJv9753SS
 HTuyrUDbvPTNOt3e7e3ud+9jfb0FAJ07FHbG0EmYs/FgoDNUgVYsSKGxfW3iAaUixkEqFEVoudP1VjZI
@@ -339,11 +339,11 @@ g1TECK+WPxGuFsTFrb8DAAD//ziD9NVxFAAA
 `,
 	},
 
-	"/oci/tag-list.json": {
-		name:    "tag-list.json",
-		local:   "oci/tag-list.json",
+	"/oci/tag-list.schema.json": {
+		name:    "tag-list.schema.json",
+		local:   "oci/tag-list.schema.json",
 		size:    432,
-		modtime: 1546204770,
+		modtime: 1546544737,
 		compressed: `
 H4sIAAAAAAAC/3SQwWrrQAxF9/4KMe8tk0x3BW+7KhS6yQ+otmIr2KNB0saU/HsZe5KaQJc+vudeNN8N
 AIT/3IcWwuie2xglU+okOXIitZPoEK0bacboOFic2DwcNm/jO/dqko4bXcVe8eLHl9fa8K+KPVmnnJ0l
@@ -352,11 +352,11 @@ Ffk8skFWyaS+QN02QChbIBfAaYIyDpwAQSmLsYsup9pXXSYLLaw3FZpwpt13Qb7kgoK5chpC/XM73JUy
 `,
 	},
 
-	"/stori/server-config.json": {
-		name:    "server-config.json",
-		local:   "stori/server-config.json",
+	"/stori/server-config.schema.json": {
+		name:    "server-config.schema.json",
+		local:   "stori/server-config.schema.json",
 		size:    729,
-		modtime: 1546204770,
+		modtime: 1546544639,
 		compressed: `
 H4sIAAAAAAAC/5SRwU4CQQyG7/sUzegRWC7GyAOYmHggwReoM93dwjIz6VQiMby7GXYkKKuGa/t/f/8/
 /agAwNyyMwswnWpc1HXSILzFltIsSFsn29EW60SyI5na4BtuzWTght0Zu07BT4fpEXaCjU7n98XlpoCO
@@ -390,15 +390,15 @@ var _escDirs = map[string][]os.FileInfo{
 	".": {},
 
 	"oci": {
-		_escData["/oci/catalog.json"],
-		_escData["/oci/config.json"],
-		_escData["/oci/error.json"],
+		_escData["/oci/catalog.schema.json"],
+		_escData["/oci/errors.schema.json"],
+		_escData["/oci/image-config.schema.json"],
 		_escData["/oci/image-index.schema.json"],
-		_escData["/oci/image-manifest.json"],
-		_escData["/oci/tag-list.json"],
+		_escData["/oci/image-manifest.schema.json"],
+		_escData["/oci/tag-list.schema.json"],
 	},
 
 	"stori": {
-		_escData["/stori/server-config.json"],
+		_escData["/stori/server-config.schema.json"],
 	},
 }
