@@ -1,14 +1,16 @@
 package schema
 
 import (
-	"github.com/atlaskerr/stori/schema"
+	"fmt"
+	"io"
+	"io/ioutil"
 
 	"github.com/xeipuuv/gojsonschema"
 )
 
 // Validator validates json against a jsonschema.
-var Validator struct {
-	schema gojsonschema.JSONLoader
+type Validator struct {
+	Schema gojsonschema.JSONLoader
 }
 
 // Validate validates JSON against the `application/vnd.oci.image.index.v1+json`
@@ -20,7 +22,7 @@ func (v *Validator) Validate(r io.Reader) error {
 	}
 
 	loader := gojsonschema.NewBytesLoader(data)
-	res, err := gojsonschema.Validate(v.schema, loader)
+	res, err := gojsonschema.Validate(v.Schema, loader)
 	if err != nil {
 		return fmt.Errorf("unable to validate data: %v", err)
 	}
