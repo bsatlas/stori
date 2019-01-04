@@ -15,7 +15,7 @@ build:
 	go build -o bin/stori github.com/atlaskerr/stori/cmd/stori
 
 clean:
-	rm ./stori
+	rm -r ./bin
 
 # Generate json-schemas.
 schemas:
