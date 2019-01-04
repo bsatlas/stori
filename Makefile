@@ -21,7 +21,7 @@ clean:
 schemas:
 	jsonnet -m $(SCHEMA_DIR) $(SCRIPTS_DIR)/gen-jsonschemas.jsonnet
 	go generate $(SCHEMA_DIR)/gen.go
-	rm $(SCHEMA_DIR)/oci/*.schema.json
+	rm $(SCHEMA_DIR)/**/*.schema.json
 
 test-fixtures:
 	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/image-index $(SCHEMA_DIR)/oci/test-fixtures/image-index/generate.jsonnet
