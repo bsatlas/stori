@@ -18,6 +18,7 @@ type serverConfigTestParams struct {
 func TestServerConfigValidation(t *testing.T) {
 	tt := []serverConfigTestParams{
 		{"golden.json", true},
+		{"tls-disabled.json", true},
 		{"tls-enabled-no-cert-file.json", false},
 		{"tls-enabled-no-key-file.json", false},
 	}
