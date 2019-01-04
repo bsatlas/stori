@@ -1,0 +1,7 @@
+{
+   "address": "0.0.0.0:1234",
+   "tls": {
+      "enabled": true,
+      "keyFile": "/etc/ssl/stori/key.pem"
+   }
+}

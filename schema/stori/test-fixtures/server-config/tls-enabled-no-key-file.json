@@ -1,0 +1,7 @@
+{
+   "address": "0.0.0.0:1234",
+   "tls": {
+      "certFile": "/etc/ssl/stori/cert.pem",
+      "enabled": true
+   }
+}
