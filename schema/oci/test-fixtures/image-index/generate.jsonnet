@@ -116,6 +116,7 @@ local platformOSInvalid = {
       size: 642,
       platform: {
         os: 'invalid',
+        architecture: 'amd64',
       },
     },
   ],
@@ -130,6 +131,7 @@ local platformArchInvalid = {
       mediaType: 'application/vnd.oci.image.manifest.v1+json',
       size: 642,
       platform: {
+        os: 'linux',
         architecture: 'invalid',
       },
     },
@@ -137,7 +139,49 @@ local platformArchInvalid = {
 };
 
 
-{
+local genOSCombos(os) = {
+  ['platform-' + os + '-' + arch + '.json']: {
+    schemaVersion: 2,
+    manifests: [
+      {
+        digest: 'sha256:e3161859d1779d8330428ed745008710a1ecfb9f494c2e1b062be4cc0ba9ee2a',
+        mediaType: 'application/vnd.oci.image.manifest.v1+json',
+        size: 642,
+        platform: {
+          os: os,
+          architecture: arch,
+        },
+      },
+    ],
+  }
+  for arch in [
+    '386',
+    'amd64',
+    'arm',
+    'arm64',
+    'ppc64',
+    'ppc64le',
+    'mips64',
+    'mips64le',
+    's390x',
+  ]
+};
+
+local platformCombos =
+  genOSCombos('android')
+  + genOSCombos('darwin')
+  + genOSCombos('dragonfly')
+  + genOSCombos('freebsd')
+  + genOSCombos('linux')
+  + genOSCombos('netbsd')
+  + genOSCombos('openbsd')
+  + genOSCombos('plan9')
+  + genOSCombos('solaris')
+  + genOSCombos('windows')
+;
+
+
+platformCombos {
   'golden.json': golden,
   'golden-minimal.json': goldenMinimal,
   'custom-manifest-media-type.json': customManifestMediaType,
