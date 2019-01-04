@@ -163,7 +163,7 @@ local contentDescriptor(output=JSV7) = {
   local digestSHA256 = {
     properties: {
       digest: {
-        pattern: '^sha256:[A-Fa-f0-9]{64}',
+        pattern: '^sha256:[A-Fa-f0-9]{64}$',
       },
     },
   },
@@ -171,7 +171,7 @@ local contentDescriptor(output=JSV7) = {
   local digestSHA512 = {
     properties: {
       digest: {
-        pattern: '^sha512:[A-Fa-f0-9]{128}',
+        pattern: '^sha512:[A-Fa-f0-9]{128}$',
       },
     },
   },
