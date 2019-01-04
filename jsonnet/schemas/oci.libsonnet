@@ -481,10 +481,11 @@ local imageIndex(output=JSV7) = {
 };
 
 // Image Manifest Schema
-local imageManifest(output='jsonschemaV7') = {
+local imageManifest(output=JSV7) = {
   local layers = {
     description: d.layers,
     type: 'array',
+    minItems: 1,
     items: contentDescriptor(),
   },
 
