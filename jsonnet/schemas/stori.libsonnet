@@ -16,6 +16,7 @@ local d = {
   server: 'Server configuration data.',
   address: 'The IP/hostname and port to listen on.',
   tls: 'TLS configuration data.',
+  tlsEnabled: 'Enable TLS.',
   certFile: 'Path to x509 certificate.',
   keyFile: 'Path to private key file,',
 };
@@ -33,15 +34,20 @@ local serverConfig() = {
 
   local tls = {
 
+    local enabled = { type: 'boolean', description: d.tlsEnabled },
     local certFile = { type: 'string', description: d.certFile },
     local keyFile = { type: 'string', description: d.keyFile },
 
     type: 'object',
     description: d.tls,
     properties: {
+      enabled: enabled,
       certFile: certFile,
       keyFile: keyFile,
     },
+    'if': { properties: { enabled: { const: true } } },
+    'then': { required: ['certFile', 'keyFile'] },
+
   },
 
   '$id': 'http://storimages.org/schema/server-config',
@@ -52,6 +58,7 @@ local serverConfig() = {
     address: address,
     tls: tls,
   },
+  required: ['address'],
 };
 
 {
