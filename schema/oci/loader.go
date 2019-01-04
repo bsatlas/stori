@@ -48,3 +48,10 @@ var ErrorsLoader = func() gojsonschema.JSONLoader {
 	path := "file:///oci/errors.schema.json"
 	return gojsonschema.NewReferenceLoaderFileSystem(path, schemaFS)
 }()
+
+// contentDescriptorLoader provides a JSONLoader that can be used to validate a
+// content descriptor.
+var contentDescriptorLoader = func() gojsonschema.JSONLoader {
+	path := "file:///oci/content-descriptor.schema.json"
+	return gojsonschema.NewReferenceLoaderFileSystem(path, schemaFS)
+}()
