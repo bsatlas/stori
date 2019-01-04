@@ -407,6 +407,8 @@ local imageIndex(output=JSV7) = {
     dragonflyCombinations,
     freebsdCombinations,
     linuxCombinations,
+    netbsdCombinations,
+    openbsdCombinations,
     plan9Combinations,
     solarisCombinations,
     windowsCombinations,
@@ -427,7 +429,7 @@ local imageIndex(output=JSV7) = {
       'architecture',
       'os',
     ],
-    oneOf: osArchCombinations,
+    anyOf: osArchCombinations,
   },
 
   local manifests = {
