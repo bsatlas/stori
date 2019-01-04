@@ -14,6 +14,14 @@
 
 package oci
 
+import (
+	"net/http"
+
+	"github.com/atlaskerr/stori/stori"
+
+	"github.com/julienschmidt/httprouter"
+)
+
 // Handler returns an http.Handler for the API. This can be used on its own
 // to mount an OCI-compliant image registry within another web server.
 func Handler(props *stori.HandlerProperties) http.Handler {
@@ -25,105 +33,105 @@ func Handler(props *stori.HandlerProperties) http.Handler {
 	h.Handler(
 		"GET",
 		"/v2",
-		httpoci.handleOCIVerify(reg),
+		handleOCIVerify(reg),
 	)
 
 	// Catalog
 	h.Handler(
 		"GET",
 		"/v2/:namespace",
-		httpoci.handleOCICatalogList(reg),
+		handleOCICatalogList(reg),
 	)
 
 	// Tags list
 	h.Handler(
 		"GET",
 		"/v2/:namespace/:repository/tags/list",
-		httpoci.handleOCITagsList(reg),
+		handleOCITagsList(reg),
 	)
 
 	// Manifest get
 	h.Handler(
 		"GET",
 		"/v2/:namespace/:repository/manifests/:reference",
-		httpoci.handleOCIManifestGet(reg),
+		handleOCIManifestGet(reg),
 	)
 
 	// Manifest exists
 	h.Handler(
 		"HEAD",
 		"/v2/:namespace/:repository/manifests/:reference",
-		httpoci.handleOCIManifestExists(reg),
+		handleOCIManifestExists(reg),
 	)
 
 	// Manifest put
 	h.Handler(
 		"PUT",
 		"/v2/:namespace/:repository/manifests/:reference",
-		httpoci.handleOCIManifestPut(reg),
+		handleOCIManifestPut(reg),
 	)
 
 	// Manifest delete
 	h.Handler(
 		"DELETE",
 		"/v2/:namespace/:repository/manifests/:reference",
-		httpoci.handleOCIManifestDelete(reg),
+		handleOCIManifestDelete(reg),
 	)
 
 	// Blob get
 	h.Handler(
 		"GET",
 		"/v2/:namespace/:repository/blobs/:digest",
-		httpoci.handleOCIBlobGet(reg),
+		handleOCIBlobGet(reg),
 	)
 
 	// Blob exists
 	h.Handler(
 		"HEAD",
 		"/v2/:namespace/:repository/blobs/:digest",
-		httpoci.handleOCIBlobExists(reg),
+		handleOCIBlobExists(reg),
 	)
 
 	// Blob delete
 	h.Handler(
 		"DELETE",
 		"/v2/:namespace/:repository/blobs/:digest",
-		httpoci.handleOCIBlobDelete(reg),
+		handleOCIBlobDelete(reg),
 	)
 
 	// Blob upload init
 	h.Handler(
 		"POST",
 		"/v2/:namespace/:repository/blobs/:digest",
-		httpoci.handleOCIBlobUploadInit(reg),
+		handleOCIBlobUploadInit(reg),
 	)
 
 	// Blob upload status
 	h.Handler(
 		"GET",
 		"/v2/:namespace/:repository/blobs/:digest/:uuid",
-		httpoci.handleOCIBlobUploadStatus(reg),
+		handleOCIBlobUploadStatus(reg),
 	)
 
 	// Blob upload chunk
 	h.Handler(
 		"PATCH",
 		"/v2/:namespace/:repository/blobs/:digest/:uuid",
-		httpoci.handleOCIBlobUploadChunk(reg),
+		handleOCIBlobUploadChunk(reg),
 	)
 
 	// Blob upload complete
 	h.Handler(
 		"PUT",
 		"/v2/:namespace/:repository/blobs/:digest/:uuid",
-		httpoci.handleOCIBlobUploadComplete(reg),
+		handleOCIBlobUploadComplete(reg),
 	)
 
 	// Blob upload cancel
 	h.Handler(
 		"DELETE",
 		"/v2/:namespace/:repository/blobs/:digest/:uuid",
-		httpoci.handleOCIBlobUploadCancel(reg),
+		handleOCIBlobUploadCancel(reg),
 	)
 	return h
 }
