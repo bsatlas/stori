@@ -7,6 +7,15 @@ local golden = {
   },
 };
 
+local tlsDisabled = {
+  address: '0.0.0.0:1234',
+  tls: {
+    enabled: false,
+    certFile: '/etc/ssl/stori/cert.pem',
+    keyFile: '/etc/ssl/stori/key.pem',
+  },
+};
+
 local tlsEnabledNoCertFile = {
   address: '0.0.0.0:1234',
   tls: {
@@ -25,6 +34,7 @@ local tlsEnabledNoKeyFile = {
 
 {
   'golden.json': golden,
+  'tls-disabled.json': tlsDisabled,
   'tls-enabled-no-cert-file.json': tlsEnabledNoCertFile,
   'tls-enabled-no-key-file.json': tlsEnabledNoKeyFile,
 }
