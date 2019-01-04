@@ -3,13 +3,13 @@ local golden = {
   schemaVersion: 2,
   config: {
     mediaType: 'application/vnd.oci.image.config.v1+json',
-    digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+    digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
     size: 452,
   },
   layers: [
     {
       mediaType: 'application/vnd.oci.image.layer.v1.tar+gzip',
-      digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+      digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
       size: 78343,
     },
   ],
@@ -24,13 +24,13 @@ local goldenMinimal = {
   schemaVersion: 2,
   config: {
     mediaType: 'application/vnd.oci.image.config.v1+json',
-    digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+    digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
     size: 452,
   },
   layers: [
     {
       mediaType: 'application/vnd.oci.image.layer.v1.tar+gzip',
-      digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+      digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
       size: 78343,
     },
   ],
@@ -41,13 +41,13 @@ local schemaVersionTooLow = {
   schemaVersion: 1,
   config: {
     mediaType: 'application/vnd.oci.image.config.v1+json',
-    digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+    digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
     size: 452,
   },
   layers: [
     {
       mediaType: 'application/vnd.oci.image.layer.v1.tar+gzip',
-      digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+      digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
       size: 78343,
     },
   ],
@@ -58,13 +58,13 @@ local schemaVersionTooHigh = {
   schemaVersion: 3,
   config: {
     mediaType: 'application/vnd.oci.image.config.v1+json',
-    digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+    digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
     size: 452,
   },
   layers: [
     {
       mediaType: 'application/vnd.oci.image.layer.v1.tar+gzip',
-      digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+      digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
       size: 78343,
     },
   ],
@@ -74,13 +74,13 @@ local schemaVersionTooHigh = {
 local schemaVersionMissing = {
   config: {
     mediaType: 'application/vnd.oci.image.config.v1+json',
-    digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+    digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
     size: 452,
   },
   layers: [
     {
       mediaType: 'application/vnd.oci.image.layer.v1.tar+gzip',
-      digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+      digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
       size: 78343,
     },
   ],
@@ -91,13 +91,13 @@ local configMediaTypeInvalid = {
   schemaVersion: 2,
   config: {
     mediaType: 'invalid',
-    digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+    digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
     size: 452,
   },
   layers: [
     {
       mediaType: 'application/vnd.oci.image.layer.v1.tar+gzip',
-      digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+      digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
       size: 78343,
     },
   ],
@@ -108,13 +108,13 @@ local layerMediaTypeInvalid = {
   schemaVersion: 2,
   config: {
     mediaType: 'application/vnd.oci.image.config.v1+json',
-    digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+    digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
     size: 452,
   },
   layers: [
     {
       mediaType: 'invalid',
-      digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+      digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
       size: 78343,
     },
   ],
@@ -125,13 +125,13 @@ local configSizeNotNumber = {
   schemaVersion: 2,
   config: {
     mediaType: 'application/vnd.oci.image.config.v1+json',
-    digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+    digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
     size: '452',
   },
   layers: [
     {
       mediaType: 'application/vnd.oci.image.layer.v1.tar+gzip',
-      digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+      digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
       size: 78343,
     },
   ],
@@ -142,13 +142,13 @@ local layerSizeNotNumber = {
   schemaVersion: 2,
   config: {
     mediaType: 'application/vnd.oci.image.config.v1+json',
-    digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+    digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
     size: 452,
   },
   layers: [
     {
       mediaType: 'application/vnd.oci.image.layer.v1.tar+gzip',
-      digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+      digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
       size: '78343',
     },
   ],
@@ -159,7 +159,7 @@ local layersEmptyArray = {
   schemaVersion: 2,
   config: {
     mediaType: 'application/vnd.oci.image.config.v1+json',
-    digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+    digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
     size: 452,
   },
   layers: [],
@@ -170,13 +170,13 @@ local configDigestInvalid = {
   schemaVersion: 2,
   config: {
     mediaType: 'application/vnd.oci.image.config.v1+json',
-    digest: 'sha:6laskjff4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+    digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
     size: 452,
   },
   layers: [
     {
       mediaType: 'application/vnd.oci.image.layer.v1.tar+gzip',
-      digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+      digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
       size: 78343,
     },
   ],
@@ -187,13 +187,13 @@ local layerDigestInvalid = {
   schemaVersion: 2,
   config: {
     mediaType: 'application/vnd.oci.image.config.v1+json',
-    digest: 'sha:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+    digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
     size: 452,
   },
   layers: [
     {
       mediaType: 'application/vnd.oci.image.layer.v1.tar+gzip',
-      digest: 'sha:6f4e;lasjf69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
+      digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
       size: 78343,
     },
   ],
