@@ -30,6 +30,7 @@ test-fixtures:
 	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/image-config $(SCHEMA_DIR)/oci/test-fixtures/image-config/generate.jsonnet
 	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/tag-list $(SCHEMA_DIR)/oci/test-fixtures/tag-list/generate.jsonnet
 	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/catalog $(SCHEMA_DIR)/oci/test-fixtures/catalog/generate.jsonnet
+	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/stori/test-fixtures/server-config $(SCHEMA_DIR)/stori/test-fixtures/server-config/generate.jsonnet
 
 # Generate and validate OpenAPI specification file.
 spec: generate-openapi validate-openapi
