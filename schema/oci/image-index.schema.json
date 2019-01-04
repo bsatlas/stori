@@ -36,7 +36,7 @@
                   "type": "string"
                },
                "platform": {
-                  "oneOf": [
+                  "anyOf": [
                      {
                         "properties": {
                            "architecture": {
@@ -116,6 +116,38 @@
                            "os": {
                               "enum": [
                                  "linux"
+                              ]
+                           }
+                        }
+                     },
+                     {
+                        "properties": {
+                           "architecture": {
+                              "enum": [
+                                 "386",
+                                 "amd64",
+                                 "arm"
+                              ]
+                           },
+                           "os": {
+                              "enum": [
+                                 "netbsd"
+                              ]
+                           }
+                        }
+                     },
+                     {
+                        "properties": {
+                           "architecture": {
+                              "enum": [
+                                 "386",
+                                 "amd64",
+                                 "arm"
+                              ]
+                           },
+                           "os": {
+                              "enum": [
+                                 "openbsd"
                               ]
                            }
                         }
