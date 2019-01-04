@@ -11,21 +11,22 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
+//
 package stori
 
-import (
-	"net/http"
-	"net/http/httptest"
-	"testing"
-)
-
-func TestNotImplementedHandler(t *testing.T) {
-	w := httptest.NewRecorder()
-	r := httptest.NewRequest("GET", "/v2", nil)
-	notImplemented(w, r)
-
-	if w.Code != http.StatusNotImplemented {
-		t.Error("Incorrect status code")
-	}
-}
+//
+//import (
+//	"net/http"
+//	"net/http/httptest"
+//	"testing"
+//)
+//
+//func TestNotImplementedHandler(t *testing.T) {
+//	w := httptest.NewRecorder()
+//	r := httptest.NewRequest("GET", "/v2", nil)
+//	notImplemented(w, r)
+//
+//	if w.Code != http.StatusNotImplemented {
+//		t.Error("Incorrect status code")
+//	}
+//}
