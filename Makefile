@@ -21,12 +21,13 @@ clean:
 schemas:
 	jsonnet -m $(SCHEMA_DIR) $(SCRIPTS_DIR)/gen-jsonschemas.jsonnet
 	go generate $(SCHEMA_DIR)/gen.go
+	rm $(SCHEMA_DIR)/oci/*.schema.json
 
 test-fixtures:
 	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/image-index $(SCHEMA_DIR)/oci/test-fixtures/image-index/generate.jsonnet
 	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/image-manifest $(SCHEMA_DIR)/oci/test-fixtures/image-manifest/generate.jsonnet
 	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/content-descriptor $(SCHEMA_DIR)/oci/test-fixtures/content-descriptor/generate.jsonnet
-	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/config $(SCHEMA_DIR)/oci/test-fixtures/config/generate.jsonnet
+	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/image-config $(SCHEMA_DIR)/oci/test-fixtures/image-config/generate.jsonnet
 	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/tag-list $(SCHEMA_DIR)/oci/test-fixtures/tag-list/generate.jsonnet
 	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/catalog $(SCHEMA_DIR)/oci/test-fixtures/catalog/generate.jsonnet
 
