@@ -18,6 +18,8 @@ type imageConfigTestParams struct {
 func TestImageConfigValidation(t *testing.T) {
 	tt := []imageConfigTestParams{
 		{"golden.json", true},
+		{"golden-minimal.json", true},
+		{"config-env-invalid.json", true},
 	}
 
 	v := ImageConfigLoader
