@@ -138,7 +138,20 @@ local platformArchInvalid = {
   ],
 };
 
+// FAIL: Digest invalid.
+local digestInvalid = {
+  schemaVersion: 2,
+  manifests: [
+    {
+      digest: 'sha256:easlkagalskjfalsjfaljasjagijdsogijgakjj3161859d1779d8330428ed745008710a1ecfb9f494c2e1b062be4cc0ba9ee2a',
+      mediaType: 'application/vnd.oci.image.manifest.v1+json',
+      size: 642,
+    },
+  ],
+};
 
+
+// Generate all possible architecture combinations for a given OS.
 local genOSCombos(os) = {
   ['platform-' + os + '-' + arch + '.json']: {
     schemaVersion: 2,
@@ -192,4 +205,5 @@ platformCombos {
   'platform-combination-invalid.json': platformCombinationInvalid,
   'platform-os-invalid.json': platformOSInvalid,
   'platform-arch-invalid.json': platformArchInvalid,
+  'digest-invalid.json': digestInvalid,
 }
