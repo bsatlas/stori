@@ -213,7 +213,7 @@ var _escData = map[string]*_escFile{
 		name:    "catalog.schema.json",
 		local:   "oci/catalog.schema.json",
 		size:    401,
-		modtime: 1546544737,
+		modtime: 1546582016,
 		compressed: `
 H4sIAAAAAAAC/2SQMW7DMAxFd52CUDsmcbcCXjMVKNClF1BlxmLgiALJxSh890K20hrN+vjfF8VvBwD+
 mQbfg09mpe86LpgjZwuUUfTEMnYaE95CF4OFiUd/2KyN7syrcj5udNUGCRc7vrw2/6mJA2oUKkacq/yZ
@@ -226,7 +226,7 @@ E8qj/xsuB/eYCiJhvocW9xvzRjatiY/zG5y368E7qbV17wX8dcVo3i3uJwAA///CisY2kQEAAA==
 		name:    "content-descriptor.schema.json",
 		local:   "oci/content-descriptor.schema.json",
 		size:    2013,
-		modtime: 1546576254,
+		modtime: 1546582016,
 		compressed: `
 H4sIAAAAAAAC/7RV227bRhB991dMGaNoa1GS5fhGpCmEOEUNpHXq2C8xFGfFHZKTkrvs7CiyIujfiyUp
 62LGcR/yRHJ3zsycMxfOdwAg2CUdRBBkImXU69kSTWyNKDLIrms57VGhUuxpdDFTKZaDTo1zcYaFWsN+
@@ -248,7 +248,7 @@ ZsH6yq7NAsZ/J8So1/50dc+2DN/2+lnb/EKSV4EuXp3Dq4b12fbPeHutLXb+CwAA//9pfVCF3QcAAA==
 		name:    "errors.schema.json",
 		local:   "oci/errors.schema.json",
 		size:    707,
-		modtime: 1546544737,
+		modtime: 1546582016,
 		compressed: `
 H4sIAAAAAAAC/6yRzU7DMBCE732KleHYNtyQekUcOCEhXsDE22arxGt2N5Ui1HdHTkyJws8BcZ2Zb0b2
 vq0AwF1TcDtwjVnaVRUnjDVH8xRRdMtyqLRusPMVirC49cRM2ow7KsfNpI5QEL+3zc1toa8KGFBroWTE
@@ -262,7 +262,7 @@ efCS8iJ++AiNxVPMGVk7Jh7vHuA+HwaeUBNHxXLD5dB59R4AAP//RJkb88MCAAA=
 		name:    "image-config.schema.json",
 		local:   "oci/image-config.schema.json",
 		size:    7271,
-		modtime: 1546544737,
+		modtime: 1546582016,
 		compressed: `
 H4sIAAAAAAAC/9xZS2/cyBG+61cUJgFyyFiTwEiCCMhBkL3aQeS1oYdzWARmkywOe9XsZqqLkomF/ntQ
 3U1qKHGkkePsGquLZvpZ/dVXz/n5AAAWv9fl4ggWNXN7tFq5Fm3hLCttkfyho81KN2qDq0ZZXaHnxTLu
@@ -302,7 +302,7 @@ jPJgvHXuvumvbtu+6qG5Hoz3LVizCVe9P1nDOlhU9Dvp972Hktwd/DcAAP///hoCxGccAAA=
 		name:    "image-index.schema.json",
 		local:   "oci/image-index.schema.json",
 		size:    12528,
-		modtime: 1546576254,
+		modtime: 1546582016,
 		compressed: `
 H4sIAAAAAAAC/+xaf3PbNhL9359iT83c3F0kWpYdxdb0eqOx09YzSeWz49y0GTWCyCWJmgR4AGhZyei7
 3wAk9SskBcV2c271nw0uFsDu2wdAeJ/2AKDxjHqNHjRCpZLe/j5PkLmcKUIZCulwEezTmAS4T5mHd41m
@@ -340,32 +340,32 @@ pHd0ZFLf+cbEvZkQocknToiiYxpRNc22eh55KFZuhWfcvUGhyRKz3T4jMSrBpxh5GT1q5nJDwoLVI94S
 	"/oci/image-manifest.schema.json": {
 		name:    "image-manifest.schema.json",
 		local:   "oci/image-manifest.schema.json",
-		size:    6345,
-		modtime: 1546576254,
+		size:    6369,
+		modtime: 1546582016,
 		compressed: `
-H4sIAAAAAAAC/+yZb3PTuBPHn/dV7C90fgPXOE0D/UOG46ZDYa4zcOWgvQd0AlXsdbxUlowkNzWdvPcb
-Wc4fp3bitnfw5J41slZa7e539bF7swEArU0KWn1oRcYk/e1tmaDwpTCMBCrdkWq0TTEb4XbMBIWoTavt
-rLQfYcwWLL9qKTw3mpsFioXG6+5vu7FHhWGiZILKEOpWH3IP7CgTQhpmSIrFYfskQO0rSuwju9lpRBqK
-NTIoPNXA1JCMYiqDGA0LmGEdeD+d9e7s4ymkGsFECPOdQKUcdcf5VeyWMGNQifdVThZTOjc77cmtYfvE
-ZAlaH7VRJEat0vPJ/NdkccOpjRx+Rd9MbWZTWr4UIY2WYtIwZdPQSVU6431TN0tVdhK2+nBeOt/taCT1
-MZymlka2oKqfLmTDevpZR6y3u9c/P/TeMC/ses8HN3vPJputCtPJxsqBxfj/IM93d3olz3d6B/dzff5r
-0K4XySHMUw+hVKAwRIXCJzECBkMuh0tlv6Lea6X5MwTaWKbrxNpAsnUZadcKvyziyukrSmc5kjYYvsoS
-I0eKJRH54EfoX+o0BrcIyDCPmNu2DSTyn0Vw4OIF4yOpyETxy/4L2yMCDF5e1Iczr9Zz5n23Nbr1+Lf+
-+VbnizeYjTz5pW//PvQ+db3nv37xBlubrfbduuBSMGIMiJ06g7XxWOf4ofep8HT+5/8ebf7f+/ylszW4
-6bZ3enuT7WbTHnowTd+xsVo+vP7z7PjD66O5bHSCPoWEOk+oXSzP7jAzqNvTtCs2zvWFwnSgLDu8Jm00
-aAkmYgYY+JxQGBgT5xCxK6sywOsEfYNBvn7eJvKKcyvCEEOp0C7po9YkRh04dvtyFCMTzbxAowivMJhZ
-BhI1CGkgZsaP3AmK8wSFcbu01cffT87eHsEfJ6cwRDAq1QaDKtnH7JriNG714Xmv9/Tpfq/7dO9g99n+
-/u5B96BiOoliutdo/jTBJAyOUK3OcKp4o354CJycVM8+vNUQKhnDOKIiMNMQxCyzZw/kWHDJgurjk8G4
-ttOFUsXM9pVWqui2cYNmt6KxMaVY1gxoFH5LSWFwixCcJmobQHWbrLnvDBmeO3by6hheFTE8qsaddYTF
-WYZqDXW+Zn4ENvzTHpsHxN1bQwS2cN9aKZae53KzNkOmEfLdgBkgEeA1dDvwMR1q/JbaEzhXnJmJUEAo
-OZdju6k2zL8EqQJU8Jg62HGV5CzOuwMwcvqDo3js/nzi7QyeOIdCEoxDSBx1pu1BOMtkatxec6Eq1CnP
-q5UlCc8sL+SSd44ZmfeNODEZBKTQN1Jlbn05tvAZUdKGWAbYBiYCkCbKD2sUDVODetozSJAhxpdXAqYQ
-UjFrFmVGqa7+h7Hww3G4noir0LIRXTYBzAfQcRXTNOOcH3qcxsjc+DylgcFyv3kYQa+PxDqO/kkofRea
-bgDUzZi6LmUrb60quK6+tVZW20+j7H8atO93o68k7kbQ/aO5+37nrAPw/xj8YQx+dwy/B4mvhfHqnNch
-+b9K5evAvBmbN/wWsTJSFZC+7ttXPa3XAPsqZq/E9oqr9g7wvrL/V35HLQVhDvmO3P5CpV0BrPvCvLYd
-5OvBlVuwA29y5ZKejoAMFzTn53dw282YvjRc9C4sUKPQqbIvB/7lmCmr4DhhhobEyWQwJqtybqm/WDmH
-6CPpX2LxqnHFeIquE5CGkJAHrsdY+fsREyMsg/Rcvr3S8EyjvarALukwLysX36oiWgr48ufs5ZevjVmZ
-lKvj2LI7vCv/62G5ICYbfwcAAP//GAbFL8kYAAA=
+H4sIAAAAAAAC/+yZW3PTuBfA3/spzj90/gPbOE0DvZBh2elQmO0MbFlo94FOoIp9HB8qS0aSm5pOvvuO
+LOfi1E7cdhde9i2WdaRz10/OzQYAtDYpaPWhFRmT9Le3ZYLCl8IwEqh0R6rRNsVshNsxExSiNq22k9J+
+hDFbkPyqpfDcaC4WKBYar7u/7cYeFYKJkgkqQ6hbfcg1sKNMCGmYISkWh+2bALWvKLGv7GanEWko1sig
+0FQDU0MyiqkMYjQsYIZ14P101ruzj6eQagQTIcx3ApVy1B2nV7FbwoxBJd5XKVlM6dzstCe3hu0bkyVo
+ddRGkRi1Su8n86fJ4oZTGTn8ir6ZysymtHwpQhot+aRhyKauk6pk431DNwtVdhK2+nBesu+2N5J6H05D
+SyObUNVvF6JhNf2sI9bb3eufH3pvmBd2veeDm71nk81WhehkY+XAov9/kOa7O72S5ju9g/upPn8atOuL
+5BDmoYdQKlAYokLhkxgBgyGXw6W0X5HvtaX5Mwq0cZmuK9YGJVsXkXZt4ZeLuHL6itRZ9qR1hq+yxMiR
+YklEPvgR+pc6jcEtAjLMPea2bQOJ/LFwDly8YHwkFZkoftl/YXtEgMHLi3p35tl6zrzvNke3Hv/WP9/q
+fPEGs5Env/Tt70PvU9d7/usXb7C12WrfrQsuOSPGgNipE1jrj3WKH3qfCk3nP//3aPP/3ucvna3BTbe9
+09ubbDeb9lDDNH3HxtXy4fWfZ8cfXh/Ny0Yn6FNIqPOA2sXy6A4zg7o9Dbti47y+UJgOlMsOr0kbDVqC
+iZgBBj4nFAbGxDlE7MpWGeB1gr7BIF8/bxN5xrkVYYihVGiX9FFrEqMOHLt9OYqRiWZaoFGEVxjMJAOJ
+GoQ0EDPjR86Cwp6gEG6Xtvr4+8nZ2yP44+QUhghGpdpgUFX2MbumOI1bfXje6z19ut/rPt072H22v797
+0D2omE6imO41mj8NMAmDI1SrI5wq3qgfHgInV6pnH95qCJWMYRxR4ZipC2KWWdsDORZcsqDafDIY13a6
+UKqY2b7SShXdFm7Q7FY0NqYUy5oBjcJvKSkMbhGCq4naBlDdJmvOO0OG54qdvDqGV4UPj6pxZx1hcZah
+WkOdr5kfgXX/tMfmDnHn1hCBLZy3thRL7/NyszJDphHy3YAZIBHgNXQ78DEdavyWWgucKk7MRCgglJzL
+sd1UG+ZfglQBKnhMHey4THIS590BGDl94Cgeu59PvJ3BE6dQSIJxCImjzrQ1hLNMpsbtNS9UhTrlebay
+JOGZ5YW85J1iRuZ9I05MBgEp9I1UmVtfji18RpS0IZYBtoGJAKSJcmONomFqUE97BgkyxPjySsAUQipm
+zaLMKNXZ/zAWfjgO1xNxFVo2ossmgPkAOq5immac80PNaYzMje0pDQyW+83DCHq9J9Zx9E9C6bvQdAOg
+bsbUdSFbeWpVwXX1qbUy234aZf/ToH2/E30lcTeC7h/N3fezsw7A/2PwhzH43TH8HiS+FsarY16H5P8q
+la8D82Zs3vBbxEpPVUD6um9f9bReA+yrmL0S2yuO2jvA+8r+X7p2xCSOiyjsVNF/yTlz+HdE9xcq7RJj
+3ZfntW0iXw+u3IIdeJNXNOnpCMhwoRb9/GxuuxnTy8RF78KCNgqdKntp8C/HTNnKjhNmaEicTAZjstXP
+7W2gWDmH6yPpX2JxBbliPEXXIUhDSMgD13tsW/AjJkZYBux5WfeWPFs1XFOfebo5/1Yl15LDlz9zL1/K
+NmbpU86aY8v08K78l8Ryokw2/g4AAP//gVlZF+EYAAA=
 `,
 	},
 
@@ -373,7 +373,7 @@ lKvj2LI7vCv/62G5ICYbfwcAAP//GAbFL8kYAAA=
 		name:    "tag-list.schema.json",
 		local:   "oci/tag-list.schema.json",
 		size:    432,
-		modtime: 1546544737,
+		modtime: 1546582016,
 		compressed: `
 H4sIAAAAAAAC/3SQwWrrQAxF9/4KMe8tk0x3BW+7KhS6yQ+otmIr2KNB0saU/HsZe5KaQJc+vudeNN8N
 AIT/3IcWwuie2xglU+okOXIitZPoEK0bacboOFic2DwcNm/jO/dqko4bXcVe8eLHl9fa8K+KPVmnnJ0l
