@@ -165,39 +165,6 @@ local layersEmptyArray = {
   layers: [],
 };
 
-// FAIL: Config digest invalid.
-local configDigestInvalid = {
-  schemaVersion: 2,
-  config: {
-    mediaType: 'application/vnd.oci.image.config.v1+json',
-    digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
-    size: 452,
-  },
-  layers: [
-    {
-      mediaType: 'application/vnd.oci.image.layer.v1.tar+gzip',
-      digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
-      size: 78343,
-    },
-  ],
-};
-
-// FAIL: Layers digest invalid.
-local layerDigestInvalid = {
-  schemaVersion: 2,
-  config: {
-    mediaType: 'application/vnd.oci.image.config.v1+json',
-    digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
-    size: 452,
-  },
-  layers: [
-    {
-      mediaType: 'application/vnd.oci.image.layer.v1.tar+gzip',
-      digest: 'sha256:6f4e69a5ff18d92e7315e3ee31c62165ebf25bfa05cad05c0d09d8f412dae401',
-      size: 78343,
-    },
-  ],
-};
 
 {
   'golden.json': golden,
@@ -210,6 +177,4 @@ local layerDigestInvalid = {
   'config-size-not-number.json': configSizeNotNumber,
   'layer-size-not-number.json': layerSizeNotNumber,
   'layers-empty-array.json': layersEmptyArray,
-  'config-digest-invalid.json': configDigestInvalid,
-  'layer-digest-invalid.json': layerDigestInvalid,
 }
