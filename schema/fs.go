@@ -385,14 +385,16 @@ Ffk8skFWyaS+QN02QChbIBfAaYIyDpwAQSmLsYsup9pXXSYLLaw3FZpwpt13Qb7kgoK5chpC/XM73JUy
 	"/stori/server-config.schema.json": {
 		name:    "server-config.schema.json",
 		local:   "stori/server-config.schema.json",
-		size:    729,
+		size:    1157,
 		modtime: 1546544639,
 		compressed: `
-H4sIAAAAAAAC/5SRwU4CQQyG7/sUzegRWC7GyAOYmHggwReoM93dwjIz6VQiMby7GXYkKKuGa/t/f/8/
-/agAwNyyMwswnWpc1HXSILzFltIsSFsn29EW60SyI5na4BtuzWTght0Zu07BT4fpEXaCjU7n98XlpoCO
-khWOysFneHX0hsH7TTDPwaHirOijhEiiTMks4Jg5T9E5oXQ+GvF+6QielnUXknrcEqB3EIMoaICek5KH
-4Mud4qD7SBlNKuxbUzaHL4nR/r+bz6vfyxRktFLZWRJ95J4uNiO3lqhd7vJ+N3+ADHLDFpW+Xfuz2I96
-Rbuh/bURovAOlWBDe2i4p8m1EarRNCcmvK7J6ukf1Ul3oThUnwEAAP//T/d9VtkCAAA=
+H4sIAAAAAAAC/5RTTc/aMAy+91dY2Y4vlMs0rfdNmsQBCW4Th9C4baAknWPQ0NT/PqUNHfQLcYwfPx+2
+lb8RAIjPWokERMFcJXHs2JI+yxzd0lIeu7TAs4wd0hVpkVqT6Vx8tLwWe+AenTWLttqQFcmMF6uvQeVT
+ICp0KemKtTWevG20odW+kPR1UJLlMvRXZCsk1uhEAk1mX5VKEbrH0oj2rkD4uYkL69jIM4I0CipLDGyh
+1I7RgDXBJyjwrUJPdUza5CIg9b1FcPnKc72dHiZQdPasMTnmfxiNPJSoxjAPp9Y4FgkwXbCP19HEq37M
+NOMvUiT+oUscTdabfyO58Pv982X1DTxRZzqVjE8bmF32MNyLBfQjfG9aYbfezpkerC1RmnnXE97eHbwi
+fZWMcMIbZLrEj3cHnzgQF2iGpyH8fdHU7OXXwKa72zDBfbAnYD9lHeLawxFT7j5F1PWNxei+qH/v27a+
+UB39CwAA//+m2/XmhQQAAA==
 `,
 	},
 
