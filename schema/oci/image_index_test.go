@@ -87,7 +87,6 @@ func TestImageIndexValidation(t *testing.T) {
 		{"schema-version-missing.json", false},
 		{"schema-version-too-high.json", false},
 		{"schema-version-too-low.json", false},
-		{"digest-invalid.json", false},
 	}
 	tt = append(tt, platformComboTestTable...)
 

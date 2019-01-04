@@ -205,5 +205,4 @@ platformCombos {
   'platform-combination-invalid.json': platformCombinationInvalid,
   'platform-os-invalid.json': platformOSInvalid,
   'platform-arch-invalid.json': platformArchInvalid,
-  'digest-invalid.json': digestInvalid,
 }
