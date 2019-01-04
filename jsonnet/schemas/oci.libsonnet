@@ -160,6 +160,22 @@ local contentDescriptor(output=JSV7) = {
     maximum: 9223372036854776000,
   },
 
+  local digestSHA256 = {
+    properties: {
+      digest: {
+        pattern: '^sha256:[A-Fa-f0-9]{64}',
+      },
+    },
+  },
+
+  local digestSHA512 = {
+    properties: {
+      digest: {
+        pattern: '^sha512:[A-Fa-f0-9]{128}',
+      },
+    },
+  },
+
   local digest = {
     type: 'string',
     description: d.digest,
@@ -175,6 +191,8 @@ local contentDescriptor(output=JSV7) = {
     },
   },
 
+  [if output == JSV7 then '$id']: 'http://opencontainers.org/image/descriptor',
+  [if output == JSV7 then '$schema']: JSV7Schema,
   title: 'OCI Content Descriptor',
   description: d.contentDescriptor,
   type: 'object',
@@ -189,6 +207,10 @@ local contentDescriptor(output=JSV7) = {
     'size',
     'mediaType',
     'digest',
+  ],
+  anyOf: [
+    digestSHA256,
+    digestSHA512,
   ],
 };
 
@@ -666,6 +688,7 @@ local imageConfig(output=JSV7) = {
   imageConfig:: imageConfig,
   imageManifest:: imageManifest,
   imageIndex:: imageIndex,
+  contentDescriptor:: contentDescriptor,
   catalog:: catalog,
   errors:: errors,
   tagsList:: tagsList,
