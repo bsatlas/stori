@@ -87,6 +87,7 @@ func TestImageIndexValidation(t *testing.T) {
 		{"schema-version-missing.json", false},
 		{"schema-version-too-high.json", false},
 		{"schema-version-too-low.json", false},
+		{"digest-invalid.json", false},
 	}
 	tt = append(tt, platformComboTestTable...)
 
@@ -115,7 +116,7 @@ func TestImageIndexValidation(t *testing.T) {
 			if !res.Valid() && tc.valid {
 				t.Errorf("expected valid schema, got invalid: %v", res.Errors())
 			} else if res.Valid() && !tc.valid {
-				t.Fail()
+				t.Errorf("expected invalid schema, got valid")
 			}
 
 		}
