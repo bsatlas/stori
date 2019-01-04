@@ -14,6 +14,24 @@
       "manifests": {
          "description": "This REQUIRED property contains a list of manifests for specific platforms. While this property MUST be present, the size of the array MAY be zero",
          "items": {
+            "$id": "http://opencontainers.org/image/descriptor",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "anyOf": [
+               {
+                  "properties": {
+                     "digest": {
+                        "pattern": "^sha256:[A-Fa-f0-9]{64}"
+                     }
+                  }
+               },
+               {
+                  "properties": {
+                     "digest": {
+                        "pattern": "^sha512:[A-Fa-f0-9]{128}"
+                     }
+                  }
+               }
+            ],
             "description": "A descriptor for referencing a blob.",
             "properties": {
                "annotations": {
