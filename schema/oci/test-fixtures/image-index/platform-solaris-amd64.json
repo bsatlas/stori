@@ -5,7 +5,7 @@
          "mediaType": "application/vnd.oci.image.manifest.v1+json",
          "platform": {
             "architecture": "amd64",
-            "os": "invalid"
+            "os": "solaris"
          },
          "size": 642
       }
