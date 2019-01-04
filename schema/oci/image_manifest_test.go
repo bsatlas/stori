@@ -18,6 +18,15 @@ type imageManifestTestParams struct {
 func TestImageManifestValidation(t *testing.T) {
 	tt := []imageManifestTestParams{
 		{"golden.json", true},
+		{"golden-minimal.json", true},
+		{"schema-version-too-low.json", false},
+		{"schema-version-too-high.json", false},
+		{"schema-version-missing.json", false},
+		{"config-media-type-invalid.json", false},
+		{"layer-media-type-invalid.json", false},
+		{"config-size-not-number.json", false},
+		{"layer-size-not-number.json", false},
+		{"layers-empty-array.json", false},
 	}
 
 	v := ImageManifestLoader
