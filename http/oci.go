@@ -26,10 +26,12 @@ const (
 	VersionHeaderName = "Docker-Distribution-Api-Version"
 )
 
+const VersionHeaderValue = "registry/2.0"
+
 func handleVerify(reg *stori.Registry) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		h := w.Header()
-		h.Add(VersionHeaderName, "registry/2.0")
+		h.Add(VersionHeaderName, VersionHeaderValue)
 		w.WriteHeader(http.StatusOK)
 	})
 }

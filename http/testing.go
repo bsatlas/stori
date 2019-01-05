@@ -25,10 +25,8 @@ import (
 
 // TestServer returns a stori registry server.
 func TestServer(tb testing.TB, reg *stori.Registry) (net.Listener, string) {
-	ln, err := net.Listen("tcp", "127.0.0.1:0")
-	if err != nil {
-		tb.Fatalf("failed to start listener: %v", err)
-	}
+	ln, _ := net.Listen("tcp", "127.0.0.1:0")
+
 	addr := ln.Addr().String()
 
 	props := &stori.HandlerProperties{
