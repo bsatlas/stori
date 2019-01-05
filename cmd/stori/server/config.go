@@ -70,6 +70,13 @@ type BlobStore struct {
 	Config map[string]interface{} `json:"config"`
 }
 
+// DevConfig provides a dev config.
+var DevConfig = &Config{
+	Server: Server{
+		Address: "127.0.0.1:8385",
+	},
+}
+
 // LoadConfigFile loads the configuration from the given file.
 func LoadConfigFile(path string) (*Config, error) {
 	data, err := ioutil.ReadFile(path)

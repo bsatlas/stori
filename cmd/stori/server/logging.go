@@ -7,9 +7,9 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
-// NewLogger initializes a new logger. When dev is set to true, structured
+// Logger initializes a new logger. When dev is set to true, structured
 // logging is disabled and all logs will be output to the console.
-func NewLogger(lvl string, dev bool) (l *zap.Logger, err error) {
+func Logger(lvl string, dev bool) *zap.Logger {
 	var ll zapcore.Level
 
 	switch lvl {
@@ -64,9 +64,9 @@ func NewLogger(lvl string, dev bool) (l *zap.Logger, err error) {
 		ErrorOutputPaths: []string{os.Stderr.Name()},
 	}
 
-	l, err = logConfig.Build()
+	l, err := logConfig.Build()
 	if err != nil {
 		panic(err)
 	}
-	return
+	return l
 }

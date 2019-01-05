@@ -17,6 +17,7 @@ package main
 import (
 	"context"
 	"crypto/tls"
+	"fmt"
 	"net"
 	"net/http"
 	"os"
@@ -38,76 +39,83 @@ var serverCmd = &cobra.Command{
 }
 
 func startServer(cmd *cobra.Command, args []string) {
-	configFile := cmd.Flag("config").Value.String()
-	logLevel := cmd.Flag("log-level").Value.String()
 	devMode, _ := cmd.Flags().GetBool("dev")
 
-	// Set the logger first.
-	logger, _ := server.NewLogger(logLevel, devMode)
-	defer logger.Sync()
+	// initialize the logger
+	logger := func() *zap.Logger {
+		if devMode {
+			return server.Logger("debug", true)
+		}
+		logLevel := cmd.Flag("log-level").Value.String()
+		return server.Logger(logLevel, false)
+	}()
 
-	// Load the config file.
-	logger.Debug("Loading config file...")
-	conf, err := server.LoadConfigFile(configFile)
-	if err != nil {
-		logger.Error("Failed to read file.",
-			zap.String("file", configFile),
-			zap.Error(err),
-		)
-	}
-	logger.Debug("Configuration file loaded successfully.")
+	// initialize server config
+	c := func() *server.Config {
+		if devMode {
+			return server.DevConfig
+		}
+		configPath := cmd.Flag("config").Value.String()
+		srvConf, err := server.LoadConfigFile(configPath)
+		if err != nil {
+			fmt.Printf("unable to load config file: %v", err)
+		}
+		return srvConf
+	}()
 
-	registryConfig := &stori.RegistryConfig{
-		Logger: logger,
-	}
+	// registry configuration
+	registryConf := func() *stori.RegistryConfig {
+		if devMode {
+			return &stori.RegistryConfig{
+				Logger: logger,
+			}
+		}
+		return &stori.RegistryConfig{
+			Logger: logger,
+		}
+	}()
 
-	// Initialize the Registry.
-	registry, _ := stori.NewRegistry(registryConfig)
-
-	// Setup http server.
+	// initialize the registry and handlers
+	registry, _ := stori.NewRegistry(registryConf)
 	handler := storihttp.Handler(&stori.HandlerProperties{
 		Registry: registry,
 	})
 
-	addr := conf.Server.Address
-	server := &http.Server{
-		Addr:    addr,
+	// start listener
+	addr := c.Server.Address
+	tlsEnabled := c.Server.TLS.Enabled
+	ln := func() net.Listener {
+		if devMode || !tlsEnabled {
+			listener, err := net.Listen("tcp", addr)
+			if err != nil {
+				fmt.Printf("unable to start listener address %v: %v\n", addr, err)
+			}
+			return listener
+		}
+		certFile := c.Server.TLS.CertFile
+		keyFile := c.Server.TLS.KeyFile
+		cert, err := tls.LoadX509KeyPair(certFile, keyFile)
+		if err != nil {
+			fmt.Printf("unable to load server certificates: %v\n", err)
+		}
+		tlsConfig := &tls.Config{
+			Certificates: []tls.Certificate{cert},
+		}
+		listener, err := tls.Listen("tcp", addr, tlsConfig)
+		if err != nil {
+			fmt.Printf("unable to start listener address %v: %v\n", addr, err)
+		}
+		return listener
+	}()
+
+	// initialize HTTP server
+	srv := http.Server{
 		Handler: handler,
 	}
 
-	// Setup listener.
-	certFile := conf.Server.TLS.CertFile
-	keyFile := conf.Server.TLS.KeyFile
-	listener := func() net.Listener {
-		if conf.Server.TLS.Enabled {
-			cert, err := tls.LoadX509KeyPair(certFile, keyFile)
-			if err != nil {
-				logger.Error("Unable to load server certificates.", zap.Error(err))
-			}
-
-			tlsConfig := &tls.Config{
-				Certificates: []tls.Certificate{cert},
-			}
-			l, err := tls.Listen("tcp", conf.Server.Address, tlsConfig)
-			return l
-		}
-		l, err := net.Listen("tcp", conf.Server.Address)
-		if err != nil {
-			logger.Error(
-				"Failed to start listener",
-				zap.String("address", conf.Server.Address),
-				zap.Error(err),
-			)
-		}
-		return l
-	}()
-
-	// Start server.
-	go server.Serve(listener)
-	logger.Info(
-		"Server started sucessfully.",
-		zap.String("address", conf.Server.Address),
-	)
+	// start server
+	go srv.Serve(ln)
+	fmt.Printf("server started sucessfully on: %v", addr)
 
 	// Wait for a signal to stop the server.
 	sigs := make(chan os.Signal, 1)
@@ -117,7 +125,7 @@ func startServer(cmd *cobra.Command, args []string) {
 		case sig := <-sigs:
 			if sig == syscall.SIGINT {
 				logger.Info("SIGINT received: Initiating graceful shutdown.")
-				server.Shutdown(context.Background())
+				srv.Shutdown(context.Background())
 				logger.Info("Shudown complete.")
 				os.Exit(0)
 			}
