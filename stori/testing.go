@@ -59,6 +59,7 @@ func TestRegistry(t *testing.T) *Registry {
 	return reg
 }
 
+// testRegistryConfig returns a RegistryConfig used for testing.
 func testRegistryConfig(t *testing.T, logger *zap.Logger) *RegistryConfig {
 	conf := &RegistryConfig{
 		Logger: logger,

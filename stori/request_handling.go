@@ -14,6 +14,6 @@
 
 package stori
 
-type HandlerProperties struct {
-	Registry *Registry
-}
+// HandlerProperties is the point of integration between the registry HTTP
+// handlers that serve it.
+type HandlerProperties struct{ Registry *Registry }

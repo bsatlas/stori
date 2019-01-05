@@ -11,5 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-//
+
+// Package stori provides the core functionality of the stori registry and aims
+// to be as small as possible.
 package stori
