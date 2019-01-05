@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package oci
+package http
 
 import (
 	"net/http"
@@ -26,7 +26,7 @@ const (
 	VersionHeaderName = "Docker-Distribution-Api-Version"
 )
 
-func handleOCIVerify(reg *stori.Registry) http.Handler {
+func handleVerify(reg *stori.Registry) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		h := w.Header()
 		h.Add(VersionHeaderName, "registry/2.0")
