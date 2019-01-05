@@ -11,6 +11,9 @@ JSONNET_DIR = jsonnet
 test:
 	go test -cover ./...
 
+coverage:
+	go test -coverprofile=coverage.out ./...
+
 build:
 	go build -o bin/stori github.com/atlaskerr/stori/cmd/stori
 
