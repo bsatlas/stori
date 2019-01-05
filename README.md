@@ -28,6 +28,30 @@ When running Harbor on a small VM like an AWS `t3.micro`, an EBS volume needs to
 
 The Stori project attempts to let registry administrators "have their cake and eat it too" when it comes to having an easily deployable and maintainable enterprise-level image registry with a small footprint.
 
+## Installation
+
+### From Source
+
+```bash
+GOPATH=$HOME
+go get -d github.com/atlaskerr/stori
+cd GOPATH/github.com/atlaskerr/stori
+make install
+```
+
+Your `stori` binary will be in `$HOME/bin`.
+
+## Quickstart
+
+The `stori` binary comes with a development server for testing and exploratory purposes.
+The development server should not be used for any production workloads.
+```bash
+stori server --dev
+```
+
+
+
+
 [distribution-spec]: https://github.com/opencontainers/distribution-spec
 [harbor]: https://github.com/goharbor/harbor
 [docker-distribution]: https://github.com/docker/distribution
