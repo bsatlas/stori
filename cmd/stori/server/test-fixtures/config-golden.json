@@ -2,7 +2,7 @@
   "server": {
     "address": "0.0.0.0:7845",
     "tls": {
-      "enabled": true,
+      "enabled": false,
       "certFile": "./server.pem",
       "keyFile": "./server-key.pem"
     }
