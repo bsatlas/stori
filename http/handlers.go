@@ -54,15 +54,15 @@ func OCIHandler(props *stori.HandlerProperties) http.Handler {
 	h.Handler(
 		"GET",
 		"/v2",
-		handleVerify(reg),
+		handleOCIVerify(reg),
 	)
 
 	// Catalog
-	h.Handler(
-		"GET",
-		"/v2/:namespace",
-		handleOCICatalogList(reg),
-	)
+	//h.Handler(
+	//	"GET",
+	//	"/v2/:namespace",
+	//	handleOCICatalogList(reg),
+	//)
 
 	// Tags list
 	h.Handler(

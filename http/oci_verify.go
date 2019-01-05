@@ -16,35 +16,14 @@ package http
 
 import (
 	"net/http"
-	"testing"
 
 	"github.com/atlaskerr/stori/stori"
 )
 
-func TestVerifyHandler(t *testing.T) {
-	reg := stori.TestRegistry(t)
-
-	ln, addr := TestServer(t, reg)
-	defer ln.Close()
-
-	endpoint := addr + "/v2"
-	resp, err := http.Get(endpoint)
-	if err != nil {
-		t.Fatalf("request failed: %v", err)
-	}
-
-	expectedCode := http.StatusOK
-	if resp.StatusCode != expectedCode {
-		t.Errorf("expected status code %v, got %v", expectedCode, resp.Status)
-	}
-
-	value, ok := resp.Header[VersionHeaderName]
-	if !ok {
-		t.Errorf("required header '%v' not found", VersionHeaderName)
-	}
-
-	if value[0] != VersionHeaderValue {
-		t.Errorf("invalid header value for '%v': expected '%v', got '%v'", VersionHeaderName, VersionHeaderValue, value[0])
-	}
-
+func handleOCIVerify(reg *stori.Registry) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		h := w.Header()
+		h.Add(DockerDistributionHeaderName, DockerDistributionHeaderValue)
+		w.WriteHeader(http.StatusOK)
+	})
 }

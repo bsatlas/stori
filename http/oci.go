@@ -21,26 +21,20 @@ import (
 )
 
 const (
-	// VersionHeaderName defines the header used by clients to verify if the
+	// DockerDistributionHeaderName defines the header used by clients to verify if the
 	// registry implements the OCI Distribution spec.
-	VersionHeaderName = "Docker-Distribution-Api-Version"
+	DockerDistributionHeaderName = "Docker-Distribution-Api-Version"
+
+	// DockerDistributionHeaderValue defines the value of
+	// DockerDistributionHeaderName
+	DockerDistributionHeaderValue = "registry/2.0"
 )
 
-const VersionHeaderValue = "registry/2.0"
-
-func handleVerify(reg *stori.Registry) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		h := w.Header()
-		h.Add(VersionHeaderName, VersionHeaderValue)
-		w.WriteHeader(http.StatusOK)
-	})
-}
-
-func handleOCICatalogList(reg *stori.Registry) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusNotImplemented)
-	})
-}
+//func handleOCICatalogList(reg *stori.Registry) http.Handler {
+//	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+//		w.WriteHeader(http.StatusNotImplemented)
+//	})
+//}
 
 func handleOCITagsList(reg *stori.Registry) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
