@@ -66,7 +66,8 @@ func init() {
 func startServer(cmd *cobra.Command, args []string) {
 	dev, _ := cmd.Flags().GetBool("dev")
 	if dev {
-		colorstring.Println("[light_yellow][bold]Starting Stori Registry in development mode")
+		colorstring.Printf("[light_yellow][bold]Starting Stori Registry in development mode. ")
+		colorstring.Printf("[light_yellow][bold]DO NOT USE IN PRODUCTION!\n")
 	}
 
 	logLevel := cmd.Flag("log-level").Value.String()
