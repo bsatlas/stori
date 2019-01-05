@@ -10,6 +10,8 @@ Stori is an [OCI-compliant][distribution-spec] image registry that aims to be th
 ## Table of Contents
 - [Features](#features)
 - [Philosophy](#philosophy)
+- [Building](#building)
+- [Quickstart](#quickstart)
 
 ## Features
 - __Enhanced API:__ Stori provides a rich API with first-class support for registry administration tasks.
@@ -46,9 +48,6 @@ The development server should not be used for any production workloads.
 ```bash
 stori server --dev
 ```
-
-
-
 
 [distribution-spec]: https://github.com/opencontainers/distribution-spec
 [harbor]: https://github.com/goharbor/harbor
