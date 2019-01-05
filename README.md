@@ -33,7 +33,7 @@ The Stori project attempts to let registry administrators "have their cake and e
 ```bash
 GOPATH=$HOME
 go get -d github.com/atlaskerr/stori
-cd GOPATH/github.com/atlaskerr/stori
+cd $GOPATH/github.com/atlaskerr/stori
 make build
 ```
 
