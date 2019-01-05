@@ -5,6 +5,7 @@ require (
 	github.com/hashicorp/go-plugin v0.0.0-20181212150838-f444068e8f5a
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/julienschmidt/httprouter v1.2.0
+	github.com/mitchellh/colorstring v0.0.0-20150917214807-8631ce90f286
 	github.com/pkg/errors v0.8.0 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/prometheus/client_golang v0.9.2

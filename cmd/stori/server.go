@@ -28,6 +28,7 @@ import (
 	storihttp "github.com/atlaskerr/stori/http"
 	"github.com/atlaskerr/stori/stori"
 
+	"github.com/mitchellh/colorstring"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 )
@@ -40,6 +41,9 @@ var serverCmd = &cobra.Command{
 
 func startServer(cmd *cobra.Command, args []string) {
 	devMode, _ := cmd.Flags().GetBool("dev")
+	if devMode {
+		colorstring.Println("[light_yellow][bold]Starting Stori Registry in development mode")
+	}
 
 	// initialize the logger
 	logger := func() *zap.Logger {
@@ -115,7 +119,7 @@ func startServer(cmd *cobra.Command, args []string) {
 
 	// start server
 	go srv.Serve(ln)
-	fmt.Printf("server started sucessfully on: %v", addr)
+	colorstring.Printf("[bold]Server listening on: %v\n", addr)
 
 	// Wait for a signal to stop the server.
 	sigs := make(chan os.Signal, 1)
@@ -124,9 +128,9 @@ func startServer(cmd *cobra.Command, args []string) {
 		select {
 		case sig := <-sigs:
 			if sig == syscall.SIGINT {
-				logger.Info("SIGINT received: Initiating graceful shutdown.")
+				colorstring.Printf("\n[light_yellow][bold]SIGINT received: Initiating graceful shutdown.\n")
 				srv.Shutdown(context.Background())
-				logger.Info("Shudown complete.")
+				colorstring.Println("[light_green][bold]Shudown complete.")
 				os.Exit(0)
 			}
 		}
