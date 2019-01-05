@@ -39,104 +39,6 @@ var serverCmd = &cobra.Command{
 	Run:   startServer,
 }
 
-func startServer(cmd *cobra.Command, args []string) {
-	devMode, _ := cmd.Flags().GetBool("dev")
-	if devMode {
-		colorstring.Println("[light_yellow][bold]Starting Stori Registry in development mode")
-	}
-
-	// initialize the logger
-	logger := func() *zap.Logger {
-		if devMode {
-			return server.Logger("debug", true)
-		}
-		logLevel := cmd.Flag("log-level").Value.String()
-		return server.Logger(logLevel, false)
-	}()
-
-	// initialize server config
-	c := func() *server.Config {
-		if devMode {
-			return server.DevConfig
-		}
-		configPath := cmd.Flag("config").Value.String()
-		srvConf, err := server.LoadConfigFile(configPath)
-		if err != nil {
-			fmt.Printf("unable to load config file: %v", err)
-		}
-		return srvConf
-	}()
-
-	// registry configuration
-	registryConf := func() *stori.RegistryConfig {
-		if devMode {
-			return &stori.RegistryConfig{
-				Logger: logger,
-			}
-		}
-		return &stori.RegistryConfig{
-			Logger: logger,
-		}
-	}()
-
-	// initialize the registry and handlers
-	registry, _ := stori.NewRegistry(registryConf)
-	handler := storihttp.Handler(&stori.HandlerProperties{
-		Registry: registry,
-	})
-
-	// start listener
-	addr := c.Server.Address
-	tlsEnabled := c.Server.TLS.Enabled
-	ln := func() net.Listener {
-		if devMode || !tlsEnabled {
-			listener, err := net.Listen("tcp", addr)
-			if err != nil {
-				fmt.Printf("unable to start listener address %v: %v\n", addr, err)
-			}
-			return listener
-		}
-		certFile := c.Server.TLS.CertFile
-		keyFile := c.Server.TLS.KeyFile
-		cert, err := tls.LoadX509KeyPair(certFile, keyFile)
-		if err != nil {
-			fmt.Printf("unable to load server certificates: %v\n", err)
-		}
-		tlsConfig := &tls.Config{
-			Certificates: []tls.Certificate{cert},
-		}
-		listener, err := tls.Listen("tcp", addr, tlsConfig)
-		if err != nil {
-			fmt.Printf("unable to start listener address %v: %v\n", addr, err)
-		}
-		return listener
-	}()
-
-	// initialize HTTP server
-	srv := http.Server{
-		Handler: handler,
-	}
-
-	// start server
-	go srv.Serve(ln)
-	colorstring.Printf("[bold]Server listening on: %v\n", addr)
-
-	// Wait for a signal to stop the server.
-	sigs := make(chan os.Signal, 1)
-	signal.Notify(sigs, syscall.SIGINT)
-	for {
-		select {
-		case sig := <-sigs:
-			if sig == syscall.SIGINT {
-				colorstring.Printf("\n[light_yellow][bold]SIGINT received: Initiating graceful shutdown.\n")
-				srv.Shutdown(context.Background())
-				colorstring.Println("[light_green][bold]Shudown complete.")
-				os.Exit(0)
-			}
-		}
-	}
-}
-
 func init() {
 	rootCmd.AddCommand(serverCmd)
 
@@ -159,4 +61,108 @@ func init() {
 		false,
 		"Start server in development mode.",
 	)
+}
+
+func startServer(cmd *cobra.Command, args []string) {
+	dev, _ := cmd.Flags().GetBool("dev")
+	if dev {
+		colorstring.Println("[light_yellow][bold]Starting Stori Registry in development mode")
+	}
+
+	logLevel := cmd.Flag("log-level").Value.String()
+	logger := initLogger(logLevel, dev)
+
+	path := cmd.Flag("config").Value.String()
+	c := initServerConfig(path, dev)
+
+	registryConf := initRegistryConfig(logger, dev)
+	registry, _ := stori.NewRegistry(registryConf)
+	handler := storihttp.Handler(&stori.HandlerProperties{
+		Registry: registry,
+	})
+
+	addr := c.Server.Address
+	tlsOpts := c.Server.TLS
+	ln := initListener(addr, tlsOpts, dev)
+
+	serve(ln, handler)
+}
+
+// initialize the logger
+func initLogger(logLevel string, dev bool) *zap.Logger {
+	if dev {
+		return server.Logger("debug", true)
+	}
+	return server.Logger(logLevel, false)
+}
+
+// initialize server config
+func initServerConfig(path string, dev bool) *server.Config {
+	if dev {
+		return server.DevConfig
+	}
+	conf, err := server.LoadConfigFile(path)
+	if err != nil {
+		colorstring.Printf("[light_red][bold]unable to load config file: %v\n", err)
+	}
+	return conf
+}
+
+// registry configuration
+func initRegistryConfig(logger *zap.Logger, dev bool) *stori.RegistryConfig {
+	if dev {
+		return &stori.RegistryConfig{
+			Logger: logger,
+		}
+	}
+	return &stori.RegistryConfig{
+		Logger: logger,
+	}
+}
+
+// start listener
+func initListener(addr string, tlsOpts server.TLS, dev bool) net.Listener {
+	if dev || !tlsOpts.Enabled {
+		ln, err := net.Listen("tcp", addr)
+		if err != nil {
+			fmt.Printf("unable to start listener address %v: %v\n", addr, err)
+		}
+		return ln
+	}
+	cert, err := tls.LoadX509KeyPair(tlsOpts.CertFile, tlsOpts.KeyFile)
+	if err != nil {
+		fmt.Printf("unable to load server certificates: %v\n", err)
+	}
+	tlsConfig := &tls.Config{
+		Certificates: []tls.Certificate{cert},
+	}
+	ln, err := tls.Listen("tcp", addr, tlsConfig)
+	if err != nil {
+		fmt.Printf("unable to start listener address %v: %v\n", addr, err)
+	}
+	return ln
+}
+
+// serve the registry
+func serve(ln net.Listener, handler http.Handler) {
+	srv := http.Server{
+		Handler: handler,
+	}
+	go srv.Serve(ln)
+	colorstring.Printf("[bold]Server listening on: %v\n", ln.Addr().String())
+
+	// Wait for a signal to stop the server.
+	sigs := make(chan os.Signal, 1)
+	signal.Notify(sigs, syscall.SIGINT)
+	for {
+		select {
+		case sig := <-sigs:
+			if sig == syscall.SIGINT {
+				colorstring.Printf("\n[light_yellow][bold]SIGINT received: Initiating graceful shutdown.\n")
+				srv.Shutdown(context.Background())
+				colorstring.Println("[light_green][bold]Shudown complete.")
+				os.Exit(0)
+			}
+		}
+	}
 }
