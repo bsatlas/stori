@@ -31,7 +31,7 @@ func Handler(props *stori.HandlerProperties) http.Handler {
 	h.Handle("/metrics", metricsHandler())
 
 	// OCI handler
-	h.Handle("/v2", OCIHandler(props))
+	h.Handle("/", OCIHandler(props))
 
 	return h
 }
