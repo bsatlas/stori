@@ -75,7 +75,6 @@ func startServer(cmd *cobra.Command, args []string) {
 
 	path := cmd.Flag("config").Value.String()
 	c := initServerConfig(path, dev)
-	fmt.Println(c.Address)
 
 	registryConf := initRegistryConfig(logger, dev)
 	registry, _ := stori.NewRegistry(registryConf)

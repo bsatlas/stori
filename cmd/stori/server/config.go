@@ -17,9 +17,12 @@ package server
 import (
 	"encoding/json"
 	"fmt"
-	storischema "github.com/atlaskerr/stori/schema/stori"
 	"io/ioutil"
+	"os"
 
+	storischema "github.com/atlaskerr/stori/schema/stori"
+
+	"github.com/mitchellh/colorstring"
 	"github.com/xeipuuv/gojsonschema"
 )
 
@@ -87,7 +90,14 @@ func LoadConfigFile(path string) (*Config, error) {
 	}
 
 	if !res.Valid() {
-		return nil, fmt.Errorf("config file invalid")
+		colorstring.Println("[light_red][bold]Invalid configuration file:")
+		for _, verr := range res.Errors() {
+			if verr.Type() == "condition_then" {
+				continue
+			}
+			fmt.Println(verr.String())
+		}
+		os.Exit(1)
 	}
 
 	return parseConfig(data)
