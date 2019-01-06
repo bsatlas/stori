@@ -16,17 +16,15 @@ package server
 
 import (
 	"encoding/json"
+	"fmt"
+	storischema "github.com/atlaskerr/stori/schema/stori"
 	"io/ioutil"
+
+	"github.com/xeipuuv/gojsonschema"
 )
 
 // Config defines the parameters for the registry.
 type Config struct {
-	Server   Server   `json:"server"`
-	Registry Registry `json:"registry"`
-}
-
-// Server defines server-specific parameters for the registry.
-type Server struct {
 	Address string `json:"address"`
 	TLS     TLS    `json:"tls,omitempty"`
 }
@@ -72,9 +70,7 @@ type BlobStore struct {
 
 // DevConfig provides a dev config.
 var DevConfig = &Config{
-	Server: Server{
-		Address: "127.0.0.1:8385",
-	},
+	Address: "127.0.0.1:8385",
 }
 
 // LoadConfigFile loads the configuration from the given file.
@@ -83,6 +79,17 @@ func LoadConfigFile(path string) (*Config, error) {
 	if err != nil {
 		return nil, err
 	}
+
+	loader := gojsonschema.NewBytesLoader(data)
+	res, err := gojsonschema.Validate(storischema.ServerConfigLoader, loader)
+	if err != nil {
+		return nil, fmt.Errorf("unable to validate schema: %v", err)
+	}
+
+	if !res.Valid() {
+		return nil, fmt.Errorf("config file invalid")
+	}
+
 	return parseConfig(data)
 }
 

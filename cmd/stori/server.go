@@ -75,6 +75,7 @@ func startServer(cmd *cobra.Command, args []string) {
 
 	path := cmd.Flag("config").Value.String()
 	c := initServerConfig(path, dev)
+	fmt.Println(c.Address)
 
 	registryConf := initRegistryConfig(logger, dev)
 	registry, _ := stori.NewRegistry(registryConf)
@@ -82,8 +83,8 @@ func startServer(cmd *cobra.Command, args []string) {
 		Registry: registry,
 	})
 
-	addr := c.Server.Address
-	tlsOpts := c.Server.TLS
+	addr := c.Address
+	tlsOpts := c.TLS
 	ln := initListener(addr, tlsOpts, dev)
 
 	serve(ln, handler)
@@ -104,7 +105,8 @@ func initServerConfig(path string, dev bool) *server.Config {
 	}
 	conf, err := server.LoadConfigFile(path)
 	if err != nil {
-		colorstring.Printf("[light_red][bold]unable to load config file: %v\n", err)
+		colorstring.Printf("[light_red][bold]%v\n", err)
+		os.Exit(1)
 	}
 	return conf
 }
