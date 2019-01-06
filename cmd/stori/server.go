@@ -134,6 +134,7 @@ func initListener(addr string, tlsOpts server.TLS, dev bool) net.Listener {
 	cert, err := tls.LoadX509KeyPair(tlsOpts.CertFile, tlsOpts.KeyFile)
 	if err != nil {
 		fmt.Printf("unable to load server certificates: %v\n", err)
+		os.Exit(1)
 	}
 	tlsConfig := &tls.Config{
 		Certificates: []tls.Certificate{cert},
