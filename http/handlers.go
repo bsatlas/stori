@@ -24,16 +24,29 @@ import (
 )
 
 // Handler returns an http.Handler for the Stori API.
-func Handler(props *stori.HandlerProperties) http.Handler {
+func Handler(props *stori.HandlerProperties, opts *HandlerOpts) http.Handler {
 	h := http.NewServeMux()
-
-	// Metrics handler
-	h.Handle("/metrics", metricsHandler())
 
 	// OCI handler
 	h.Handle("/", OCIHandler(props))
 
+	if opts.Metrics {
+		h.Handle("/metrics", metricsHandler())
+	}
+
 	return h
+}
+
+// HandlerOpts defines what supplemental endpoints and middleware to add to the
+// handler.
+type HandlerOpts struct {
+
+	// TLSAuth if enabled, uses the Common Name of the certificate provided by
+	// the client to authenticate the request.
+	TLSAuth bool
+
+	// Metrics if enable, configures the server to expose Prometheus metrics.
+	Metrics bool
 }
 
 // metricsHandler returns an http.Handler for a Prometheus metrics endpoint.

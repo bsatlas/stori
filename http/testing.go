@@ -35,7 +35,7 @@ func TestServer(tb testing.TB, reg *stori.Registry) (net.Listener, string) {
 
 	srv := &http.Server{
 		Addr:    addr,
-		Handler: Handler(props),
+		Handler: Handler(props, &HandlerOpts{}),
 	}
 	go srv.Serve(ln)
 
