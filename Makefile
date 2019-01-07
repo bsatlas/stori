@@ -8,6 +8,11 @@ OPENAPI_FILE = $(DOCS_DIR)/openapi.json
 SCHEMA_DIR = schema
 JSONNET_DIR = jsonnet
 
+COMMIT_NO := $(shell git rev-parse HEAD 2> /dev/null || true)
+COMMIT := $(if $(shell git status --porcelain --untracked-files=no),"${COMMIT_NO}-dirty","${COMMIT_NO}")
+
+VERSION = $(shell cat ./VERSION)
+
 test:
 	go test -cover ./...
 
@@ -15,7 +20,9 @@ coverage:
 	go test -coverprofile=coverage.out ./...
 
 build:
-	go build -o bin/stori github.com/atlaskerr/stori/cmd/stori
+	go build \
+		-ldflags "-X main.Version=${VERSION} -X main.Commit=${COMMIT}" \
+		-o bin/stori github.com/atlaskerr/stori/cmd/stori
 
 clean:
 	rm -r ./bin
