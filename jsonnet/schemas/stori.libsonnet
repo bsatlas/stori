@@ -19,6 +19,7 @@ local d = {
   tlsEnabled: 'Enable TLS.',
   certFile: 'Path to x509 certificate.',
   keyFile: 'Path to private key file,',
+  clientCAFile: 'If set, any request presenting a client certificate signed by one of the authorities in the client-ca-file is authenticated with an identity corresponding to the CommonName of the client certificate.',
 };
 
 local JSV7 = 'jsonschemaV7';
@@ -37,6 +38,7 @@ local serverConfig() = {
     local enabled = { type: 'boolean', description: d.tlsEnabled },
     local certFile = { type: 'string', description: d.certFile },
     local keyFile = { type: 'string', description: d.keyFile },
+    local clientCAFile = { type: 'string', description: d.clientCAFile },
 
     type: 'object',
     description: d.tls,
@@ -44,9 +46,11 @@ local serverConfig() = {
       enabled: enabled,
       certFile: certFile,
       keyFile: keyFile,
+      clientCAFile: clientCAFile,
     },
     'if': { properties: { enabled: { const: true } } },
     'then': { required: ['certFile', 'keyFile'] },
+    additionalProperties: false,
 
   },
 
@@ -59,6 +63,7 @@ local serverConfig() = {
     tls: tls,
   },
   required: ['address'],
+  additionalProperties: false,
 };
 
 {
