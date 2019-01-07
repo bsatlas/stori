@@ -4,6 +4,7 @@ local golden = {
     enabled: true,
     certFile: '/etc/ssl/stori/cert.pem',
     keyFile: '/etc/ssl/stori/key.pem',
+    clientCAFile: '/etc/ssl/stori/client-ca.pem',
   },
 };
 
