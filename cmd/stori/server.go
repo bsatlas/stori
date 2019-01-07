@@ -83,9 +83,8 @@ func startServer(cmd *cobra.Command, args []string) {
 
 	registryConf := initRegistryConfig(logger, dev)
 	registry, _ := stori.NewRegistry(registryConf)
-	handler := storihttp.Handler(&stori.HandlerProperties{
-		Registry: registry,
-	})
+
+	handler := initHandler(registry)
 
 	addr := c.Address
 	tlsOpts := c.TLS
@@ -149,6 +148,16 @@ func initListener(addr string, tlsOpts server.TLS, dev bool) net.Listener {
 		fmt.Printf("unable to start listener address %v: %v\n", addr, err)
 	}
 	return ln
+}
+
+func initHandler(reg *stori.Registry) http.Handler {
+	handlerProps := &stori.HandlerProperties{
+		Registry: reg,
+	}
+	handlerOpts := &storihttp.HandlerOpts{
+		Metrics: true,
+	}
+	return storihttp.Handler(handlerProps, handlerOpts)
 }
 
 // serve the registry
