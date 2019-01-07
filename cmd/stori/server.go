@@ -22,6 +22,7 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	"path"
 	"syscall"
 
 	"github.com/atlaskerr/stori/cmd/stori/server"
@@ -74,8 +75,11 @@ func startServer(cmd *cobra.Command, args []string) {
 	logLevel := cmd.Flag("log-level").Value.String()
 	logger := initLogger(logLevel, dev)
 
-	path := cmd.Flag("config").Value.String()
-	c := initServerConfig(path, dev)
+	confPath := cmd.Flag("config").Value.String()
+	c := initServerConfig(confPath, dev)
+
+	confDir := path.Dir(confPath)
+	_ = os.Chdir(confDir)
 
 	registryConf := initRegistryConfig(logger, dev)
 	registry, _ := stori.NewRegistry(registryConf)
