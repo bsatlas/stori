@@ -20,6 +20,12 @@ local d = {
   certFile: 'Path to x509 certificate.',
   keyFile: 'Path to private key file,',
   clientCAFile: 'If set, any request presenting a client certificate signed by one of the authorities in the client-ca-file is authenticated with an identity corresponding to the CommonName of the client certificate.',
+  storage: 'Configuration for different storage types.',
+  blobstore: '',
+  backend: '',
+  backendName: '',
+  hash: '',
+  pluginConfig: '',
 };
 
 local JSV7 = 'jsonschemaV7';
@@ -54,6 +60,46 @@ local serverConfig() = {
 
   },
 
+  local storage = {
+
+    local backend = {
+      type: 'object',
+      description: d.backend,
+      properties: {
+        name: { type: 'string' },
+        hash: { type: 'string' },
+        config: { type: 'object' },
+      },
+      additionalProperties: false,
+      required: [
+        'name',
+        'config',
+      ],
+    },
+
+    local blobstore = {
+      type: 'object',
+      description: d.blobstore,
+      properties: {
+        name: { type: 'string' },
+        hash: { type: 'string' },
+        config: { type: 'object' },
+      },
+      additionalProperties: false,
+      required: [
+        'name',
+        'config',
+      ],
+    },
+
+    type: 'object',
+    description: d.storage,
+    properties: {
+      backend: backend,
+      blobstore: blobstore,
+    },
+  },
+
   '$id': 'http://storimages.org/schema/server-config',
   '$schema': JSV7Schema,
   type: 'object',
@@ -61,6 +107,7 @@ local serverConfig() = {
   properties: {
     address: address,
     tls: tls,
+    storage: storage,
   },
   required: ['address'],
   additionalProperties: false,
