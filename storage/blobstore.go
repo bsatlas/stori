@@ -12,8 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package stori
+package storage
+
+import (
+	"github.com/xeipuuv/gojsonschema"
+)
 
 // BlobStore is an interface for Stori's content-addressable storage engine.
 type BlobStore interface {
+
+	// GetSchema retrieves a gojsonschema.JSONLoader from the blobstore server
+	// to validate the block in a config file referencing the blobstore.
+	GetSchema() gojsonschema.JSONLoader
+
+	// Setup passes an empty interface containing configuration data validated
+	// by the JSONLoader recieved from `GetSchema()`
+	Setup(interface{}) error
 }
