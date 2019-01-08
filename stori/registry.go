@@ -22,7 +22,7 @@ import (
 // Registry defines parameters for running a container image registry.
 type Registry struct {
 	backend   *storage.Backend
-	blobstore *BlobStore
+	blobstore *storage.BlobStore
 	logger    *zap.Logger
 }
 
