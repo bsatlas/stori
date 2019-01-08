@@ -40,24 +40,35 @@ var serverCmd = &cobra.Command{
 	Run:   startServer,
 }
 
+type serverCommand struct {
+	config   string
+	dev      bool
+	logLevel string
+}
+
+var sc serverCommand
+
 func init() {
 	rootCmd.AddCommand(serverCmd)
 
-	serverCmd.Flags().StringP(
+	serverCmd.Flags().StringVarP(
+		&sc.config,
 		"config",
 		"c",
 		"/etc/stori/config.json",
 		"Path to config file.",
 	)
 
-	serverCmd.Flags().StringP(
+	serverCmd.Flags().StringVarP(
+		&sc.logLevel,
 		"log-level",
 		"l",
 		"info",
 		"Set the server's log level.",
 	)
 
-	serverCmd.Flags().Bool(
+	serverCmd.Flags().BoolVar(
+		&sc.dev,
 		"dev",
 		false,
 		"Start server in development mode.",
@@ -65,35 +76,31 @@ func init() {
 }
 
 func startServer(cmd *cobra.Command, args []string) {
-	dev, _ := cmd.Flags().GetBool("dev")
-	if dev {
+	if sc.dev {
 		lineOne := "Starting Stori Registry in development mode."
 		lineTwo := "DO NOT USE IN PRODUCTION!"
 		colorstring.Printf("[light_yellow][bold]%s %s\n", lineOne, lineTwo)
 	}
 
-	logLevel := cmd.Flag("log-level").Value.String()
-	logger := initLogger(logLevel, dev)
+	logger := initLogger(sc.logLevel, sc.dev)
 
-	confPath := cmd.Flag("config").Value.String()
-	c := initServerConfig(confPath, dev)
+	c := initServerConfig(sc.config, sc.dev)
 
-	confDir := path.Dir(confPath)
+	confDir := path.Dir(sc.config)
 	_ = os.Chdir(confDir)
 
-	registryConf := initRegistryConfig(logger, dev)
+	registryConf := initRegistryConfig(logger, sc.dev)
 	registry, _ := stori.NewRegistry(registryConf)
 
 	handler := initHandler(registry)
 
 	addr := c.Address
 	tlsOpts := c.TLS
-	ln := initListener(addr, tlsOpts, dev)
+	ln := initListener(addr, tlsOpts, sc.dev)
 
 	serve(ln, handler)
 }
 
-// initialize the logger
 func initLogger(logLevel string, dev bool) *zap.Logger {
 	if dev {
 		return server.Logger("debug", true)
@@ -101,7 +108,6 @@ func initLogger(logLevel string, dev bool) *zap.Logger {
 	return server.Logger(logLevel, false)
 }
 
-// initialize server config
 func initServerConfig(path string, dev bool) *server.Config {
 	if dev {
 		return server.DevConfig
@@ -114,7 +120,6 @@ func initServerConfig(path string, dev bool) *server.Config {
 	return conf
 }
 
-// registry configuration
 func initRegistryConfig(logger *zap.Logger, dev bool) *stori.RegistryConfig {
 	if dev {
 		return &stori.RegistryConfig{
@@ -126,7 +131,6 @@ func initRegistryConfig(logger *zap.Logger, dev bool) *stori.RegistryConfig {
 	}
 }
 
-// start listener
 func initListener(addr string, tlsOpts server.TLS, dev bool) net.Listener {
 	if dev || !tlsOpts.Enabled {
 		ln, err := net.Listen("tcp", addr)
@@ -160,7 +164,6 @@ func initHandler(reg *stori.Registry) http.Handler {
 	return storihttp.Handler(handlerProps, handlerOpts)
 }
 
-// serve the registry
 func serve(ln net.Listener, handler http.Handler) {
 	srv := http.Server{
 		Handler: handler,
