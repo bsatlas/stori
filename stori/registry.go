@@ -15,12 +15,13 @@
 package stori
 
 import (
+	"github.com/atlaskerr/stori/backend"
 	"go.uber.org/zap"
 )
 
 // Registry defines parameters for running a container image registry.
 type Registry struct {
-	backend   *Backend
+	backend   *backend.Backend
 	blobstore *BlobStore
 	logger    *zap.Logger
 }
