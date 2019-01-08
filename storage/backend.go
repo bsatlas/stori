@@ -12,8 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package backend
+package storage
+
+import (
+	"github.com/xeipuuv/gojsonschema"
+)
 
 // Backend is an interface for Stori's persistence layer.
 type Backend interface {
+
+	// GetSchema retrieves a gojsonschema.JSONLoader from the backend server to
+	// validate the block in a config file referencing the backend.
+	GetSchema() gojsonschema.JSONLoader
+
+	// Setup passes an empty interface containing configuration data validated
+	// by the JSONLoader recieved from `GetSchema()`
+	Setup(interface{}) error
 }
