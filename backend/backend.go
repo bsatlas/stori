@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package stori
+package backend
 
 // Backend is an interface for Stori's persistence layer.
 type Backend interface {
