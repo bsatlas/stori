@@ -14,9 +14,25 @@
 
 package stori
 
-// NamespaceInfo defines operations for stori namespaces. A namespace is a logical
-// grouping of repositories and a fundamental building block for policy
-// enforcement.
+// Namespace defines methods backends must implement for working with registry
+// namespaces.
+type Namespace interface {
+
+	// CreateNamespace creates a new namespace in the registry.
+	CreateNamespace(string) (*NamespaceInfo, error)
+
+	// LookupNamespaceByName performs a lookup on the registry for a namespace
+	// with a name matching the string provided.
+	LookupNamespaceByName(string) (*NamespaceInfo, error)
+
+	// LookupNamespaceByID performs a lookup on the registry for a namespace
+	// with an ID matching the string provided.
+	LookupNamespaceByID(string) (*NamespaceInfo, error)
+}
+
+// NamespaceInfo defines operations for stori namespaces. A namespace is
+// a logical grouping of repositories and a fundamental building block for
+// policy enforcement.
 type NamespaceInfo struct {
 
 	// Name is a name that uniquely identifies a namespace among all namespaces.
@@ -30,33 +46,4 @@ type NamespaceInfo struct {
 	// Repositories is a list of repositories that reside logically within
 	// a namespace.
 	Repositories []Repository
-}
-
-// NamespaceCreate creates a new namespace in the registry.
-func (reg *Registry) NamespaceCreate(name string) (*NamespaceInfo, error) {
-	info, err := reg.backend.NamespaceCreate(name)
-	if err != nil {
-		panic(err)
-	}
-	return info, nil
-}
-
-// NamespaceLookupByName performs a lookup on the registry for a namespace
-// with a name matching the string provided.
-func (reg *Registry) NamespaceLookupByName(name string) (*NamespaceInfo, error) {
-	info, err := reg.backend.NamespaceLookupByName(name)
-	if err != nil {
-		panic(err)
-	}
-	return info, nil
-}
-
-// NamespaceLookupByID performs a lookup on the registry for a namespace with an
-// ID matching the string provided.
-func (reg *Registry) NamespaceLookupByID(id string) (*NamespaceInfo, error) {
-	info, err := reg.backend.NamespaceLookupByID(id)
-	if err != nil {
-		panic(err)
-	}
-	return info, nil
 }

@@ -26,11 +26,3 @@ type Backend interface {
 	// initialization.
 	Setup(interface{}) error
 }
-
-// Namespace defines methods backends must implement for working with registry
-// namespaces.
-type Namespace interface {
-	NamespaceCreate(string) (*NamespaceInfo, error)
-	NamespaceLookupByName(string) (*NamespaceInfo, error)
-	NamespaceLookupByID(string) (*NamespaceInfo, error)
-}
