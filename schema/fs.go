@@ -402,6 +402,17 @@ Q/IvAAD//3Z2a2YNCwAA
 `,
 	},
 
+	"/stori/storage/backend/inmem.schema.json": {
+		name:    "inmem.schema.json",
+		local:   "stori/storage/backend/inmem.schema.json",
+		size:    111,
+		modtime: 1546544639,
+		compressed: `
+H4sIAAAAAAAC/xzMMQ7CMAwF0D2n+MoMHICVk6TpLxiwHblmqBB3R+36hvctAOrMtYeMFLd6Rb25LXL/
+RNsBo0VTJmPF4oF8EGJnpXpsmFp/0WaIjjeVlk3cLvV0tLkN7p9PT/as5Vf+AQAA//+QhFRQbwAAAA==
+`,
+	},
+
 	"/": {
 		name:  "/",
 		local: `.`,
@@ -417,6 +428,18 @@ Q/IvAAD//3Z2a2YNCwAA
 	"/stori": {
 		name:  "stori",
 		local: `stori`,
+		isDir: true,
+	},
+
+	"/stori/storage": {
+		name:  "storage",
+		local: `stori/storage`,
+		isDir: true,
+	},
+
+	"/stori/storage/backend": {
+		name:  "backend",
+		local: `stori/storage/backend`,
 		isDir: true,
 	},
 }
@@ -437,5 +460,11 @@ var _escDirs = map[string][]os.FileInfo{
 
 	"stori": {
 		_escData["/stori/server-config.schema.json"],
+	},
+
+	"stori/storage": {},
+
+	"stori/storage/backend": {
+		_escData["/stori/storage/backend/inmem.schema.json"],
 	},
 }

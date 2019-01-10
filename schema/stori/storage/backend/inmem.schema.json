@@ -1,0 +1,4 @@
+{
+   "description": "Configuration parameters for the in-memory backend implementaion.",
+   "type": "object"
+}

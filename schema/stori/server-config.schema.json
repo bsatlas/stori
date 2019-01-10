@@ -1,0 +1,98 @@
+{
+   "$id": "http://storimages.org/schema/server-config",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": false,
+   "description": "Server configuration data.",
+   "properties": {
+      "address": {
+         "description": "The IP/hostname and port to listen on.",
+         "type": "string"
+      },
+      "storage": {
+         "description": "Configuration for different storage types.",
+         "properties": {
+            "backend": {
+               "additionalProperties": false,
+               "description": "",
+               "properties": {
+                  "config": {
+                     "type": "object"
+                  },
+                  "hash": {
+                     "type": "string"
+                  },
+                  "name": {
+                     "type": "string"
+                  }
+               },
+               "required": [
+                  "name",
+                  "config"
+               ],
+               "type": "object"
+            },
+            "blobstore": {
+               "additionalProperties": false,
+               "description": "",
+               "properties": {
+                  "config": {
+                     "type": "object"
+                  },
+                  "hash": {
+                     "type": "string"
+                  },
+                  "name": {
+                     "type": "string"
+                  }
+               },
+               "required": [
+                  "name",
+                  "config"
+               ],
+               "type": "object"
+            }
+         },
+         "type": "object"
+      },
+      "tls": {
+         "additionalProperties": false,
+         "description": "TLS configuration data.",
+         "if": {
+            "properties": {
+               "enabled": {
+                  "const": true
+               }
+            }
+         },
+         "properties": {
+            "certFile": {
+               "description": "Path to x509 certificate.",
+               "type": "string"
+            },
+            "clientCAFile": {
+               "description": "If set, any request presenting a client certificate signed by one of the authorities in the client-ca-file is authenticated with an identity corresponding to the CommonName of the client certificate.",
+               "type": "string"
+            },
+            "enabled": {
+               "description": "Enable TLS.",
+               "type": "boolean"
+            },
+            "keyFile": {
+               "description": "Path to private key file,",
+               "type": "string"
+            }
+         },
+         "then": {
+            "required": [
+               "certFile",
+               "keyFile"
+            ]
+         },
+         "type": "object"
+      }
+   },
+   "required": [
+      "address"
+   ],
+   "type": "object"
+}
