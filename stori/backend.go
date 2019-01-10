@@ -12,20 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package storage
+package stori
 
-import (
-	"github.com/xeipuuv/gojsonschema"
-)
+// Backend is an interface for Stori's persistence layer.
+type Backend interface {
+	Namespace
 
-// BlobStore is an interface for Stori's content-addressable storage engine.
-type BlobStore interface {
+	// GetSchema retrieves a valid jsonschema in bytes from the backend. Used to
+	// validate the config files.
+	GetJSONSchema() []byte
 
-	// GetSchema retrieves a gojsonschema.JSONLoader from the blobstore server
-	// to validate the block in a config file referencing the blobstore.
-	GetSchema() gojsonschema.JSONLoader
-
-	// Setup passes an empty interface containing configuration data validated
-	// by the JSONLoader recieved from `GetSchema()`
+	// Setup passes validated configuration data to the backend for
+	// initialization.
 	Setup(interface{}) error
+}
+
+// Namespace defines methods backends must implement for working with registry
+// namespaces.
+type Namespace interface {
+	NamespaceCreate(string) (*NamespaceInfo, error)
+	NamespaceLookupByName(string) (*NamespaceInfo, error)
+	NamespaceLookupByID(string) (*NamespaceInfo, error)
 }
