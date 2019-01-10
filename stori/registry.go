@@ -15,15 +15,14 @@
 package stori
 
 import (
-	"github.com/atlaskerr/stori/storage"
 	"go.uber.org/zap"
 )
 
 // Registry defines parameters for running a container image registry.
 type Registry struct {
-	backend   *storage.Backend
-	blobstore *storage.BlobStore
-	logger    *zap.Logger
+	backend   Backend
+	blobstore BlobStore
+	logger    zap.Logger
 }
 
 // RegistryConfig is used to parameterize a registry.
@@ -34,6 +33,6 @@ type RegistryConfig struct {
 // NewRegistry takes a RegistryConfig and returns a fully initialized Registry.
 func NewRegistry(reg *RegistryConfig) (*Registry, error) {
 	return &Registry{
-		logger: reg.Logger,
+		logger: *reg.Logger,
 	}, nil
 }
