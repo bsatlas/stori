@@ -3,14 +3,14 @@ package plugin
 import (
 	"net/rpc"
 
-	"github.com/atlaskerr/stori/storage"
+	"github.com/atlaskerr/stori/stori"
 
 	"github.com/hashicorp/go-plugin"
 )
 
 // BackendPlugin implements plugin.Plugin.
 type BackendPlugin struct {
-	Backend func() storage.Backend
+	Backend func() stori.Backend
 }
 
 // Server returns a backend that can communicates via RPC.
@@ -38,5 +38,5 @@ type Backend struct {
 // BackendServer is a net/rpc compatible structure for serving a backend.
 type BackendServer struct {
 	Broker  *plugin.MuxBroker
-	Backend storage.Backend
+	Backend stori.Backend
 }

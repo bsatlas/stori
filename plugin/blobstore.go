@@ -17,14 +17,14 @@ package plugin
 import (
 	"net/rpc"
 
-	"github.com/atlaskerr/stori/storage"
+	"github.com/atlaskerr/stori/stori"
 
 	"github.com/hashicorp/go-plugin"
 )
 
 // BlobStorePlugin implements plugin.Plugin.
 type BlobStorePlugin struct {
-	BlobStore func() storage.BlobStore
+	BlobStore func() stori.BlobStore
 }
 
 // Server returns a blobstore that can communicates via RPC.
@@ -49,5 +49,5 @@ type BlobStore struct {
 // BlobStoreServer is a net/rpc compatible structure for serving a blobstore
 type BlobStoreServer struct {
 	Broker    *plugin.MuxBroker
-	BlobStore storage.BlobStore
+	BlobStore stori.BlobStore
 }
