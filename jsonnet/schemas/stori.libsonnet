@@ -115,4 +115,5 @@ local serverConfig() = {
 
 {
   serverConfig: serverConfig,
+  storage:: import 'storage/storage.libsonnet',
 }
