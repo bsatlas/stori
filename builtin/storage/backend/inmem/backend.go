@@ -18,11 +18,14 @@ import (
 	"encoding/json"
 
 	"github.com/atlaskerr/stori/schema/stori/storage/backend"
+
+	"github.com/hashicorp/go-memdb"
 )
 
 // Backend implements stori.Backend.
 type Backend struct {
 	schema []byte
+	db     *memdb.MemDB
 }
 
 // New returns an new in-memory backend.
@@ -50,5 +53,33 @@ func (b *Backend) GetSchema() []byte {
 // Setup passes validated configuration data to the backend for
 // initialization.
 func (b *Backend) Setup(interface{}) error {
+	var nsIdx map[string]*memdb.IndexSchema
+
+	nsIdx["namespace_id"] = &memdb.IndexSchema{
+		Name:         "namespace_id",
+		AllowMissing: false,
+		Unique:       true,
+	}
+
+	namespace := &memdb.TableSchema{
+		Name:    "namespace",
+		Indexes: nsIdx,
+	}
+
+	var tables map[string]*memdb.TableSchema
+	tables["namespace"] = namespace
+
+	dbschema := &memdb.DBSchema{
+		Tables: map[string]*memdb.TableSchema{},
+	}
+
+	memdb, err := memdb.NewMemDB(dbschema)
+	if err != nil {
+		panic(err)
+	}
+	b.db = memdb
 	return nil
 }
+
+//func (b *Backend) CreateNamespace(string) (*stori.NamespaceInfo, error) {
+//}
