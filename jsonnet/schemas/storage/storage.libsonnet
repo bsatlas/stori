@@ -1,3 +1,0 @@
-{
-  backend:: import 'backend.libsonnet',
-}
