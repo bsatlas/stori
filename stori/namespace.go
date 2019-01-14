@@ -30,6 +30,19 @@ type Namespace interface {
 	LookupNamespaceByID(string) (*NamespaceInfo, error)
 }
 
+// NamespacePhase represents the status of a namespace.
+type NamespacePhase string
+
+const (
+	// NamespaceActive when set, notifies clients that the namespace is able to
+	// have content allocated to it.
+	NamespaceActive NamespacePhase = "Active"
+
+	// NamespaceTerminating when set, notifies clients that the namespace is not
+	// available to have conent allocated to it.
+	NamespaceTerminating NamespacePhase = "Terminating"
+)
+
 // NamespaceInfo defines operations for stori namespaces. A namespace is
 // a logical grouping of repositories and a fundamental building block for
 // policy enforcement.
@@ -38,12 +51,6 @@ type NamespaceInfo struct {
 	// Name is a name that uniquely identifies a namespace among all namespaces.
 	Name string
 
-	// NID is a unique value for a particular namespace that will change if the
-	// namespace is removed from the system and another namespace is added with
-	// the same name.
-	ID int32
-
-	// Repositories is a list of repositories that reside logically within
-	// a namespace.
-	Repositories []Repository
+	// Status defines what phase the namespace is in.
+	Status NamespacePhase
 }
