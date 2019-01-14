@@ -19,6 +19,20 @@ local params = import 'parameters.libsonnet';
 local mt = import 'media-types.libsonnet';
 local req = import 'request-bodies.libsonnet';
 
+// Stori Operations.
+local stori = {
+
+  local namespaceCreate =
+    op.new(
+      operationId='namespace-create',
+      tags=['Namespaces'],
+      summary='Create a namespace.',
+    )
+    .addResponse(resp.err.unauthorized),
+
+  namespaceCreate:: namespaceCreate,
+};
+
 // OCI Operations.
 local oci = {
 
@@ -276,5 +290,6 @@ local oci = {
 
 
 {
-  oci: oci,
+  oci:: oci,
+  stori:: stori,
 }

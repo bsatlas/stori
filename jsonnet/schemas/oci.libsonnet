@@ -457,7 +457,7 @@ local imageIndex(output=JSV7) = {
   local manifests = {
     description: d.manifests,
     type: 'array',
-    items: contentDescriptor() {
+    items: contentDescriptor(output) {
       properties+: {
         platform: platform,
       },
@@ -486,7 +486,7 @@ local imageManifest(output=JSV7) = {
     description: d.layers,
     type: 'array',
     minItems: 1,
-    items: contentDescriptor(),
+    items: contentDescriptor(output),
   },
 
   [if output == JSV7 then '$id']: 'http://opencontainers.org/image/manifest',
@@ -495,7 +495,7 @@ local imageManifest(output=JSV7) = {
   type: 'object',
   properties: {
     schemaVersion: schemaVersion,
-    config: contentDescriptor(),
+    config: contentDescriptor(output),
     layers: layers,
     annotations: annotations(output),
   },

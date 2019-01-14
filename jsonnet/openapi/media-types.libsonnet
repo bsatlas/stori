@@ -22,7 +22,7 @@ local schemas = import '../schemas/schemas.libsonnet';
 local json = 'application/json';
 
 local err = {
-  [json]: mt.new(schemas.oci.err),
+  [json]: mt.new(schemas.oci.errors('openapi')),
 };
 
 local common = {
@@ -77,11 +77,11 @@ local oci = {
     },
 
     catalog:: {
-      [json]: mt.new(schemas.oci.catalog),
+      [json]: mt.new(schemas.oci.catalog('openapi')),
     },
 
     tagsList:: {
-      [json]: mt.new(schemas.oci.tagList('openapi')),
+      [json]: mt.new(schemas.oci.tagsList('openapi')),
     },
   },
 
