@@ -16,16 +16,18 @@ package inmem
 
 import (
 	"encoding/json"
+	"fmt"
 
 	"github.com/atlaskerr/stori/schema/stori/storage/backend"
+	"github.com/atlaskerr/stori/stori"
 
-	"github.com/hashicorp/go-memdb"
+	"github.com/tidwall/buntdb"
 )
 
 // Backend implements stori.Backend.
 type Backend struct {
 	schema []byte
-	db     *memdb.MemDB
+	db     *buntdb.DB
 }
 
 // New returns an new in-memory backend.
@@ -41,6 +43,13 @@ func New() (*Backend, error) {
 
 	b.schema = rawJSON
 
+	// initialize the database
+	memDB, err := buntdb.Open(":memory:")
+	if err != nil {
+		return nil, err
+	}
+	b.db = memDB
+
 	return b, nil
 }
 
@@ -53,33 +62,27 @@ func (b *Backend) GetSchema() []byte {
 // Setup passes validated configuration data to the backend for
 // initialization.
 func (b *Backend) Setup(interface{}) error {
-	var nsIdx map[string]*memdb.IndexSchema
-
-	nsIdx["namespace_id"] = &memdb.IndexSchema{
-		Name:         "namespace_id",
-		AllowMissing: false,
-		Unique:       true,
-	}
-
-	namespace := &memdb.TableSchema{
-		Name:    "namespace",
-		Indexes: nsIdx,
-	}
-
-	var tables map[string]*memdb.TableSchema
-	tables["namespace"] = namespace
-
-	dbschema := &memdb.DBSchema{
-		Tables: map[string]*memdb.TableSchema{},
-	}
-
-	memdb, err := memdb.NewMemDB(dbschema)
-	if err != nil {
-		panic(err)
-	}
-	b.db = memdb
+	b.db.CreateIndex("namespaces", "namespace:*")
 	return nil
 }
 
-//func (b *Backend) CreateNamespace(string) (*stori.NamespaceInfo, error) {
-//}
+// CreateNamespace creates a new namespace in the registry.
+func (b *Backend) CreateNamespace(name string) (*stori.NamespaceInfo, error) {
+	phaseValue := stori.NamespaceActive
+	key := fmt.Sprintf("namespace:%s:", name)
+
+	fn := func(tx *buntdb.Tx) error {
+		tx.Set(key+"status", string(phaseValue), nil)
+		return nil
+
+	}
+
+	b.db.Update(fn)
+
+	info := &stori.NamespaceInfo{
+		Name:   name,
+		Status: phaseValue,
+	}
+
+	return info, nil
+}
