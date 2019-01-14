@@ -16,6 +16,96 @@
    },
    "openapi": "3.0.0",
    "paths": {
+      "/images/namespaces": {
+         "put": {
+            "deprecated": false,
+            "operationId": "namespace-create",
+            "responses": {
+               "401": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "description": "This property contains a list of errors messages returned from the server due to an invalid request.",
+                           "properties": {
+                              "errors": {
+                                 "items": {
+                                    "properties": {
+                                       "code": {
+                                          "type": "string"
+                                       },
+                                       "detail": {
+                                          "type": "string"
+                                       },
+                                       "message": {
+                                          "type": "string"
+                                       }
+                                    },
+                                    "type": "object"
+                                 },
+                                 "type": "array"
+                              }
+                           },
+                           "title": "OCI Error Response",
+                           "type": "object"
+                        }
+                     }
+                  },
+                  "description": "Unauthorized",
+                  "headers": {
+                     "Content-Length": {
+                        "deprecated": false,
+                        "description": "The byte length of the data returned.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Content-Type": {
+                        "deprecated": false,
+                        "description": "The MIME type of the data.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "Date": {
+                        "deprecated": false,
+                        "description": "The date and time the message was originated.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "WWW-Authenticate": {
+                        "deprecated": false,
+                        "description": "Defines the authentication method that should be used to gain access to a resource.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     },
+                     "X-Content-Type-Options": {
+                        "deprecated": false,
+                        "description": "Content type options.",
+                        "required": true,
+                        "schema": {
+                           "type": "string"
+                        },
+                        "style": "simple"
+                     }
+                  }
+               }
+            },
+            "summary": "Create a namespace.",
+            "tags": [
+               "Namespaces"
+            ]
+         }
+      },
       "/v2": {
          "get": {
             "deprecated": false,
@@ -108,6 +198,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -185,6 +276,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -253,6 +345,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -321,6 +414,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -421,6 +515,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Catalog List",
                            "type": "object"
                         }
                      }
@@ -498,6 +593,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -575,6 +671,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -643,6 +740,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -982,6 +1080,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -1059,6 +1158,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -1127,6 +1227,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -1278,6 +1379,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -1346,6 +1448,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -1423,6 +1526,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -1491,6 +1595,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -1559,6 +1664,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -1726,6 +1832,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -1803,6 +1910,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -1871,6 +1979,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -2091,6 +2200,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -2159,6 +2269,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -2236,6 +2347,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -2304,6 +2416,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -2372,6 +2485,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -2449,6 +2563,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -2630,6 +2745,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -2698,6 +2814,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -2775,6 +2892,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -2843,6 +2961,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -2911,6 +3030,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -3062,6 +3182,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -3139,6 +3260,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -3207,6 +3329,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -3275,6 +3398,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -3455,6 +3579,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -3532,6 +3657,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -3600,6 +3726,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -3668,6 +3795,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -3817,6 +3945,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -3894,6 +4023,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -3962,6 +4092,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -4030,6 +4161,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -4225,6 +4357,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -4302,6 +4435,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -4370,6 +4504,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -4438,6 +4573,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -4569,10 +4705,9 @@
                            "schemaVersion": 2
                         },
                         "schema": {
-                           "description": "OCI Image Manifest Specification",
                            "properties": {
                               "annotations": {
-                                 "description": "This OPTIONAL property contains arbitrary metadata for the image manifest and MUST use the annotation rules.",
+                                 "description": "This property contains arbitrary metadata. Property MUST use the annotation rules.",
                                  "type": "object",
                                  "x-patternProperties": {
                                     ".{1,}": {
@@ -4581,10 +4716,26 @@
                                  }
                               },
                               "config": {
+                                 "anyOf": [
+                                    {
+                                       "properties": {
+                                          "digest": {
+                                             "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+                                          }
+                                       }
+                                    },
+                                    {
+                                       "properties": {
+                                          "digest": {
+                                             "pattern": "^sha512:[A-Fa-f0-9]{128}$"
+                                          }
+                                       }
+                                    }
+                                 ],
                                  "description": "A descriptor for referencing a blob.",
                                  "properties": {
                                     "annotations": {
-                                       "description": "This OPTIONAL property contains arbitrary metadata for the descriptor and MUST use the annotation rules.",
+                                       "description": "This property contains arbitrary metadata. Property MUST use the annotation rules.",
                                        "type": "object",
                                        "x-patternProperties": {
                                           ".{1,}": {
@@ -4622,15 +4773,32 @@
                                     "mediaType",
                                     "digest"
                                  ],
+                                 "title": "OCI Content Descriptor",
                                  "type": "object"
                               },
                               "layers": {
                                  "description": "Each item in the array MUST be a descriptor. The array MUST have the base layer at index 0. Subsequent layers MUST then follow in stack order (i.e. from layers[0] to layers[len(layers)-1]). The final filesystem layout MUST match the result of applying the layers to an empty directory. The ownership, mode, and other attributes of the initial empty directory are unspecified.",
                                  "items": {
+                                    "anyOf": [
+                                       {
+                                          "properties": {
+                                             "digest": {
+                                                "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+                                             }
+                                          }
+                                       },
+                                       {
+                                          "properties": {
+                                             "digest": {
+                                                "pattern": "^sha512:[A-Fa-f0-9]{128}$"
+                                             }
+                                          }
+                                       }
+                                    ],
                                     "description": "A descriptor for referencing a blob.",
                                     "properties": {
                                        "annotations": {
-                                          "description": "This OPTIONAL property contains arbitrary metadata for the descriptor and MUST use the annotation rules.",
+                                          "description": "This property contains arbitrary metadata. Property MUST use the annotation rules.",
                                           "type": "object",
                                           "x-patternProperties": {
                                              ".{1,}": {
@@ -4668,8 +4836,10 @@
                                        "mediaType",
                                        "digest"
                                     ],
+                                    "title": "OCI Content Descriptor",
                                     "type": "object"
                                  },
+                                 "minItems": 1,
                                  "type": "array"
                               },
                               "schemaVersion": {
@@ -4684,15 +4854,15 @@
                               "config",
                               "layers"
                            ],
+                           "title": "OCI Image Manifest",
                            "type": "object"
                         }
                      },
                      "application/vnd.oci.index.v1+json": {
                         "schema": {
-                           "description": "OCI Image Index Specification",
                            "properties": {
                               "annotations": {
-                                 "description": "This OPTIONAL property contains arbitrary metadata for the descriptor and MUST use the annotation rules.",
+                                 "description": "This property contains arbitrary metadata. Property MUST use the annotation rules.",
                                  "type": "object",
                                  "x-patternProperties": {
                                     ".{1,}": {
@@ -4703,10 +4873,26 @@
                               "manifests": {
                                  "description": "This REQUIRED property contains a list of manifests for specific platforms. While this property MUST be present, the size of the array MAY be zero",
                                  "items": {
+                                    "anyOf": [
+                                       {
+                                          "properties": {
+                                             "digest": {
+                                                "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+                                             }
+                                          }
+                                       },
+                                       {
+                                          "properties": {
+                                             "digest": {
+                                                "pattern": "^sha512:[A-Fa-f0-9]{128}$"
+                                             }
+                                          }
+                                       }
+                                    ],
                                     "description": "A descriptor for referencing a blob.",
                                     "properties": {
                                        "annotations": {
-                                          "description": "This OPTIONAL property contains arbitrary metadata for the descriptor and MUST use the annotation rules.",
+                                          "description": "This property contains arbitrary metadata. Property MUST use the annotation rules.",
                                           "type": "object",
                                           "x-patternProperties": {
                                              ".{1,}": {
@@ -4725,9 +4911,181 @@
                                           "type": "string"
                                        },
                                        "platform": {
+                                          "anyOf": [
+                                             {
+                                                "properties": {
+                                                   "architecture": {
+                                                      "enum": [
+                                                         "arm"
+                                                      ]
+                                                   },
+                                                   "os": {
+                                                      "enum": [
+                                                         "android"
+                                                      ]
+                                                   }
+                                                }
+                                             },
+                                             {
+                                                "properties": {
+                                                   "architecture": {
+                                                      "enum": [
+                                                         "386",
+                                                         "amd64",
+                                                         "arm",
+                                                         "arm64"
+                                                      ]
+                                                   },
+                                                   "os": {
+                                                      "enum": [
+                                                         "darwin"
+                                                      ]
+                                                   }
+                                                }
+                                             },
+                                             {
+                                                "properties": {
+                                                   "architecture": {
+                                                      "enum": [
+                                                         "amd64"
+                                                      ]
+                                                   },
+                                                   "os": {
+                                                      "enum": [
+                                                         "dragonfly"
+                                                      ]
+                                                   }
+                                                }
+                                             },
+                                             {
+                                                "properties": {
+                                                   "architecture": {
+                                                      "enum": [
+                                                         "386",
+                                                         "amd64",
+                                                         "arm"
+                                                      ]
+                                                   },
+                                                   "os": {
+                                                      "enum": [
+                                                         "freebsd"
+                                                      ]
+                                                   }
+                                                }
+                                             },
+                                             {
+                                                "properties": {
+                                                   "architecture": {
+                                                      "enum": [
+                                                         "386",
+                                                         "amd64",
+                                                         "arm",
+                                                         "arm64",
+                                                         "ppc64",
+                                                         "ppc64le",
+                                                         "mips64",
+                                                         "mips64le",
+                                                         "s390x"
+                                                      ]
+                                                   },
+                                                   "os": {
+                                                      "enum": [
+                                                         "linux"
+                                                      ]
+                                                   }
+                                                }
+                                             },
+                                             {
+                                                "properties": {
+                                                   "architecture": {
+                                                      "enum": [
+                                                         "386",
+                                                         "amd64",
+                                                         "arm"
+                                                      ]
+                                                   },
+                                                   "os": {
+                                                      "enum": [
+                                                         "netbsd"
+                                                      ]
+                                                   }
+                                                }
+                                             },
+                                             {
+                                                "properties": {
+                                                   "architecture": {
+                                                      "enum": [
+                                                         "386",
+                                                         "amd64",
+                                                         "arm"
+                                                      ]
+                                                   },
+                                                   "os": {
+                                                      "enum": [
+                                                         "openbsd"
+                                                      ]
+                                                   }
+                                                }
+                                             },
+                                             {
+                                                "properties": {
+                                                   "architecture": {
+                                                      "enum": [
+                                                         "386",
+                                                         "amd64"
+                                                      ]
+                                                   },
+                                                   "os": {
+                                                      "enum": [
+                                                         "plan9"
+                                                      ]
+                                                   }
+                                                }
+                                             },
+                                             {
+                                                "properties": {
+                                                   "architecture": {
+                                                      "enum": [
+                                                         "amd64"
+                                                      ]
+                                                   },
+                                                   "os": {
+                                                      "enum": [
+                                                         "solaris"
+                                                      ]
+                                                   }
+                                                }
+                                             },
+                                             {
+                                                "properties": {
+                                                   "architecture": {
+                                                      "enum": [
+                                                         "386",
+                                                         "amd64"
+                                                      ]
+                                                   },
+                                                   "os": {
+                                                      "enum": [
+                                                         "windows"
+                                                      ]
+                                                   }
+                                                }
+                                             }
+                                          ],
                                           "properties": {
                                              "architecture": {
                                                 "description": "This REQUIRED property specifies the CPU architecture. Image indexes SHOULD use, and implementations SHOULD understand, values listed in the Go Language document for `GOARCH`",
+                                                "enum": [
+                                                   "386",
+                                                   "amd64",
+                                                   "arm",
+                                                   "arm64",
+                                                   "ppc64",
+                                                   "ppc64le",
+                                                   "mips64",
+                                                   "mips64le",
+                                                   "s390x"
+                                                ],
                                                 "type": "string"
                                              },
                                              "features": {
@@ -4738,7 +5096,19 @@
                                                 "type": "array"
                                              },
                                              "os": {
-                                                "description": "This REQUIRED property specifies the operating system. Image indexes SHOULD use, and implementations SHOULD understand, values listed in the Go Language document for `GOOS`.",
+                                                "description": "The name of the operating system which the image is built to run on. Configurations SHOULD use, and implementations SHOULD understand, values listed in the Go Language document for `GOOS`.",
+                                                "enum": [
+                                                   "android",
+                                                   "darwin",
+                                                   "dragonfly",
+                                                   "freebsd",
+                                                   "linux",
+                                                   "netbsd",
+                                                   "openbsd",
+                                                   "plan9",
+                                                   "solaris",
+                                                   "windows"
+                                                ],
                                                 "type": "string"
                                              },
                                              "os.features": {
@@ -4761,6 +5131,7 @@
                                              "architecture",
                                              "os"
                                           ],
+                                          "title": "OCI Image Index",
                                           "type": "object"
                                        },
                                        "size": {
@@ -4783,6 +5154,7 @@
                                        "mediaType",
                                        "digest"
                                     ],
+                                    "title": "OCI Content Descriptor",
                                     "type": "object"
                                  },
                                  "type": "array"
@@ -4880,6 +5252,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -4957,6 +5330,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -5025,6 +5399,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -5093,6 +5468,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -5242,6 +5618,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -5319,6 +5696,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -5387,6 +5765,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -5455,6 +5834,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -5629,10 +6009,9 @@
                         "schemaVersion": 2
                      },
                      "schema": {
-                        "description": "OCI Image Manifest Specification",
                         "properties": {
                            "annotations": {
-                              "description": "This OPTIONAL property contains arbitrary metadata for the image manifest and MUST use the annotation rules.",
+                              "description": "This property contains arbitrary metadata. Property MUST use the annotation rules.",
                               "type": "object",
                               "x-patternProperties": {
                                  ".{1,}": {
@@ -5641,10 +6020,26 @@
                               }
                            },
                            "config": {
+                              "anyOf": [
+                                 {
+                                    "properties": {
+                                       "digest": {
+                                          "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+                                       }
+                                    }
+                                 },
+                                 {
+                                    "properties": {
+                                       "digest": {
+                                          "pattern": "^sha512:[A-Fa-f0-9]{128}$"
+                                       }
+                                    }
+                                 }
+                              ],
                               "description": "A descriptor for referencing a blob.",
                               "properties": {
                                  "annotations": {
-                                    "description": "This OPTIONAL property contains arbitrary metadata for the descriptor and MUST use the annotation rules.",
+                                    "description": "This property contains arbitrary metadata. Property MUST use the annotation rules.",
                                     "type": "object",
                                     "x-patternProperties": {
                                        ".{1,}": {
@@ -5682,15 +6077,32 @@
                                  "mediaType",
                                  "digest"
                               ],
+                              "title": "OCI Content Descriptor",
                               "type": "object"
                            },
                            "layers": {
                               "description": "Each item in the array MUST be a descriptor. The array MUST have the base layer at index 0. Subsequent layers MUST then follow in stack order (i.e. from layers[0] to layers[len(layers)-1]). The final filesystem layout MUST match the result of applying the layers to an empty directory. The ownership, mode, and other attributes of the initial empty directory are unspecified.",
                               "items": {
+                                 "anyOf": [
+                                    {
+                                       "properties": {
+                                          "digest": {
+                                             "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+                                          }
+                                       }
+                                    },
+                                    {
+                                       "properties": {
+                                          "digest": {
+                                             "pattern": "^sha512:[A-Fa-f0-9]{128}$"
+                                          }
+                                       }
+                                    }
+                                 ],
                                  "description": "A descriptor for referencing a blob.",
                                  "properties": {
                                     "annotations": {
-                                       "description": "This OPTIONAL property contains arbitrary metadata for the descriptor and MUST use the annotation rules.",
+                                       "description": "This property contains arbitrary metadata. Property MUST use the annotation rules.",
                                        "type": "object",
                                        "x-patternProperties": {
                                           ".{1,}": {
@@ -5728,8 +6140,10 @@
                                     "mediaType",
                                     "digest"
                                  ],
+                                 "title": "OCI Content Descriptor",
                                  "type": "object"
                               },
+                              "minItems": 1,
                               "type": "array"
                            },
                            "schemaVersion": {
@@ -5744,6 +6158,7 @@
                            "config",
                            "layers"
                         ],
+                        "title": "OCI Image Manifest",
                         "type": "object"
                      }
                   }
@@ -5816,6 +6231,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -5893,6 +6309,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -5961,6 +6378,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -6063,6 +6481,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Tags List",
                            "type": "object"
                         }
                      }
@@ -6131,6 +6550,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -6208,6 +6628,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
@@ -6276,6 +6697,7 @@
                                  "type": "array"
                               }
                            },
+                           "title": "OCI Error Response",
                            "type": "object"
                         }
                      }
