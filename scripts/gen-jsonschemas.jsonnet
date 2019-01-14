@@ -16,5 +16,5 @@ local stori = schema.stori;
   'stori/server-config.schema.json': stori.serverConfig(),
 
   // Builtin backends
-  //  'stori/storage/backend/inmem.schema.json': stori.storage.backend.inmem(),
+  'stori/storage/backend/inmem.schema.json': stori.storage.backend.inmem(),
 }
