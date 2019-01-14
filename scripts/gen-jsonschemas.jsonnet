@@ -1,4 +1,4 @@
-local schema = import '../jsonnet/schemas/schemas.libsonnet';
+local schema = import '../schema/schema.libsonnet';
 local oci = schema.oci;
 local stori = schema.stori;
 
@@ -16,5 +16,5 @@ local stori = schema.stori;
   'stori/server-config.schema.json': stori.serverConfig(),
 
   // Builtin backends
-  'stori/storage/backend/inmem.schema.json': stori.storage.backend.inmem(),
+  //  'stori/storage/backend/inmem.schema.json': stori.storage.backend.inmem(),
 }
