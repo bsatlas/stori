@@ -15,6 +15,7 @@ VERSION = $(shell cat ./VERSION)
 
 test: test-fixtures schemas embed-files
 	go test -cover ./...
+	make clean
 
 coverage:
 	go test -coverprofile=coverage.out ./...
