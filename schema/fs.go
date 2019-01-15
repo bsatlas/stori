@@ -425,24 +425,6 @@ RNsBo0VTJmPF4oF8EGJnpXpsmFp/0WaIjjeVlk3cLvV0tLkN7p9PT/as5Vf+AQAA//+QhFRQbwAAAA==
 		isDir: true,
 	},
 
-	"/storage": {
-		name:  "storage",
-		local: `storage`,
-		isDir: true,
-	},
-
-	"/storage/backend": {
-		name:  "backend",
-		local: `storage/backend`,
-		isDir: true,
-	},
-
-	"/storage/blobstore": {
-		name:  "blobstore",
-		local: `storage/blobstore`,
-		isDir: true,
-	},
-
 	"/stori": {
 		name:  "stori",
 		local: `stori`,
@@ -475,12 +457,6 @@ var _escDirs = map[string][]os.FileInfo{
 		_escData["/oci/image-manifest.schema.json"],
 		_escData["/oci/tag-list.schema.json"],
 	},
-
-	"storage": {},
-
-	"storage/backend": {},
-
-	"storage/blobstore": {},
 
 	"stori": {
 		_escData["/stori/server-config.schema.json"],
