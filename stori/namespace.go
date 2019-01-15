@@ -19,7 +19,7 @@ package stori
 type Namespace interface {
 
 	// CreateNamespace creates a new namespace in the registry.
-	CreateNamespace(string) (*NamespaceInfo, error)
+	CreateNamespace(conf NamespaceConfig) (*NamespaceInfo, error)
 
 	// LookupNamespaceByName performs a lookup on the registry for a namespace
 	// with a name matching the string provided.
@@ -28,6 +28,26 @@ type Namespace interface {
 	// LookupNamespaceByID performs a lookup on the registry for a namespace
 	// with an ID matching the string provided.
 	LookupNamespaceByID(string) (*NamespaceInfo, error)
+}
+
+// NamespaceConfig defines the parameters available for creating a namespace.
+type NamespaceConfig struct {
+
+	// Name is the name of the namespace. Must be unique across all namespaces
+	// hosted on the registry.
+	Name string
+
+	// BlobStorageLimit is the maximum size (in bytes) that the cumulative size
+	// of blobs within a namespace can grow to. Mounted blobs are not counted
+	// towards the limit.
+	BlobStorageLimit uint64
+
+	// RepositoryLimit is the maximum allowable amount of repositories that can
+	// be contained within a namespace.
+	RepositoryLimit uint64
+
+	// Labels defines optional client-supplied metadata for a namespace.
+	Labels map[string]string
 }
 
 // NamespacePhase represents the status of a namespace.
