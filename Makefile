@@ -1,4 +1,4 @@
-.PHONY: schemas spec generate-openapi validate-openapi build test
+.PHONY: schemas spec generate-openapi validate-openapi build test test-fixtures embed-files
 
 SPEC_DIR = spec
 OPENAPI_DIR = openapi
@@ -13,7 +13,7 @@ COMMIT := $(if $(shell git status --porcelain --untracked-files=no),"${COMMIT_NO
 
 VERSION = $(shell cat ./VERSION)
 
-test:
+test: test-fixtures schemas embed-files
 	go test -cover ./...
 
 coverage:
@@ -32,8 +32,6 @@ clean:
 # Generate json-schemas.
 schemas:
 	find schema -path **/test-fixtures -prune -o -name generate.jsonnet -execdir jsonnet -J jsonnet -m . {} \;
-#	jsonnet -m $(SCHEMA_DIR) $(SCRIPTS_DIR)/gen-jsonschemas.jsonnet
-	go generate $(SCHEMA_DIR)/gen.go
 
 embed-files:
 	find schema -name gen.go -execdir go generate {} \;
