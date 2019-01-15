@@ -20,7 +20,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	storischema "github.com/atlaskerr/stori/schema/stori"
+	"github.com/atlaskerr/stori/schema"
 
 	"github.com/mitchellh/colorstring"
 	"github.com/xeipuuv/gojsonschema"
@@ -84,7 +84,7 @@ func LoadConfigFile(path string) (*Config, error) {
 	}
 
 	loader := gojsonschema.NewBytesLoader(data)
-	res, err := gojsonschema.Validate(storischema.ServerConfigLoader, loader)
+	res, err := gojsonschema.Validate(schema.ServerConfigLoader(), loader)
 	if err != nil {
 		return nil, fmt.Errorf("unable to validate schema: %v", err)
 	}
