@@ -15,16 +15,16 @@
 package backend
 
 import (
-	"github.com/atlaskerr/stori/schema"
+	storischema "github.com/atlaskerr/stori/schema/stori"
 
 	"github.com/xeipuuv/gojsonschema"
 )
 
-var schemaFS = schema.FS(false)
+var schemaFS = storischema.FS(false)
 
 // InmemConfigLoaderFunc provides a JSONLoader that can be used to validate
 // a configuration for an in-memory backend.
 var InmemConfigLoaderFunc = func() gojsonschema.JSONLoader {
-	path := "file:///stori/storage/backend/inmem.schema.json"
+	path := "file:///storage/backend/inmem.schema.json"
 	return gojsonschema.NewReferenceLoaderFileSystem(path, schemaFS)
 }
