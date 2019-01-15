@@ -50,17 +50,17 @@ type NamespaceConfig struct {
 	Labels map[string]string
 }
 
-// NamespacePhase represents the status of a namespace.
-type NamespacePhase string
+// NamespaceStatus represents the current availability of a namespace.
+type NamespaceStatus string
 
 const (
 	// NamespaceActive when set, notifies clients that the namespace is able to
 	// have content allocated to it.
-	NamespaceActive NamespacePhase = "Active"
+	NamespaceActive NamespaceStatus = "Active"
 
 	// NamespaceTerminating when set, notifies clients that the namespace is not
 	// available to have conent allocated to it.
-	NamespaceTerminating NamespacePhase = "Terminating"
+	NamespaceTerminating NamespaceStatus = "Terminating"
 )
 
 // NamespaceInfo defines operations for stori namespaces. A namespace is
@@ -72,5 +72,5 @@ type NamespaceInfo struct {
 	Name string
 
 	// Status defines what phase the namespace is in.
-	Status NamespacePhase
+	Status NamespaceStatus
 }
