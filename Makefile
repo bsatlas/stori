@@ -27,7 +27,7 @@ clean:
 
 # Generate json-schemas.
 schemas:
-	find schema -path **/test-fixtures -prune -o -name generate.jsonnet -execdir jsonnet -J jsonnet -m . {} \;
+	scripts/generate-jsonschemas.sh
 
 embed-files:
 	find schema -name gen.go -execdir go generate {} \;
