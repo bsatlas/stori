@@ -1,4 +1,4 @@
-package stori
+package schema
 
 import (
 	"github.com/xeipuuv/gojsonschema"
@@ -11,4 +11,4 @@ var schemaFS = FS(false)
 var ServerConfigLoader = func() gojsonschema.JSONLoader {
 	path := "file:///server-config.schema.json"
 	return gojsonschema.NewReferenceLoaderFileSystem(path, schemaFS)
-}()
+}
