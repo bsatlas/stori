@@ -37,7 +37,10 @@ embed-files:
 	find schema -name gen.go -execdir go generate {} \;
 
 test-fixtures:
-	find . -path '**/test-fixtures/**' -name generate.jsonnet -execdir jsonnet -J jsonnet -m . {} \;
+	find . -path ./jsonnet -prune -o \
+	-path '**/test-fixtures/**' \
+		-name generate.jsonnet \
+		-execdir jsonnet -J jsonnet -m . {} \;
 
 # Generate and validate OpenAPI specification file.
 spec: generate-openapi validate-openapi
