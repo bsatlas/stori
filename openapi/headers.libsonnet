@@ -14,7 +14,7 @@
 
 local oapi = import 'openapi-jsonnet/v3.0.0/openapi.libsonnet';
 local header = oapi.header.new;
-local schemas = import '../schema/schema.libsonnet';
+
 local string = { type: 'string' };
 
 local common = {
