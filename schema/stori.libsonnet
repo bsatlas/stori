@@ -26,10 +26,27 @@ local d = {
   backendName: '',
   hash: '',
   pluginConfig: '',
+  namespaceCreate: 'Schema for creating a stori namespace.',
 };
 
 local JSV7 = 'jsonschemaV7';
 local JSV7Schema = 'http://json-schema.org/draft-07/schema#';
+
+local namespaceCreate(output=JSV7) = {
+  local name = { type: 'string' },
+  local maxSize = { type: 'string' },
+
+  [if output == JSV7 then '$id']: 'http://storimages.org/schema/namespace-create',
+  [if output == JSV7 then '$schema']: JSV7Schema,
+  type: 'object',
+  description: d.namespaceCreate,
+  properties: {
+    name: name,
+    maxSize: maxSize,
+  },
+  required: ['name'],
+  additionalProperties: false,
+};
 
 // Stori server config file schema
 local serverConfig() = {
@@ -115,5 +132,6 @@ local serverConfig() = {
 
 {
   serverConfig: serverConfig,
+  namespaceCreate: namespaceCreate,
   storage:: import 'storage/storage.libsonnet',
 }
