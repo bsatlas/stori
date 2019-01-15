@@ -18,7 +18,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/atlaskerr/stori/schema/stori/storage/backend"
+	"github.com/atlaskerr/stori/schema/storage/backend"
 	"github.com/atlaskerr/stori/stori"
 
 	"github.com/tidwall/buntdb"
