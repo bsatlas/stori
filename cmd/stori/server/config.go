@@ -84,7 +84,7 @@ func LoadConfigFile(path string) (*Config, error) {
 	}
 
 	loader := gojsonschema.NewBytesLoader(data)
-	res, err := gojsonschema.Validate(schema.ServerConfigLoader(), loader)
+	res, err := gojsonschema.Validate(schema.ServerConfigLoader, loader)
 	if err != nil {
 		return nil, fmt.Errorf("unable to validate schema: %v", err)
 	}
