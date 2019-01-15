@@ -1,11 +1,6 @@
 .PHONY: schemas spec generate-openapi validate-openapi build test test-fixtures embed-files
 
-SPEC_DIR = spec
 OPENAPI_DIR = openapi
-DOCS_DIR = Documentation
-SCRIPTS_DIR = scripts
-OPENAPI_FILE = $(OPENAPI_DIR)/openapi.json
-SCHEMA_DIR = schema
 JSONNET_DIR = jsonnet
 
 COMMIT_NO := $(shell git rev-parse HEAD 2> /dev/null || true)
@@ -13,41 +8,46 @@ COMMIT := $(if $(shell git status --porcelain --untracked-files=no),"${COMMIT_NO
 
 VERSION = $(shell cat ./VERSION)
 
+.PHONY: test
 test: clean test-fixtures schemas embed-files
 	go test -cover ./...
 
+.PHONY: coverage
 coverage:
 	go test -coverprofile=coverage.out ./...
 
+.PHONY: build
 build:
-	scripts/build.sh ${VERSION} ${COMMIT}
+	scripts/build-stori.sh ${VERSION} ${COMMIT}
 
+.PHONY: clean
 clean:
 	scripts/clean.sh
 
 # Generate json-schemas.
+.PHONY: schemas
 schemas:
 	scripts/generate-jsonschemas.sh
 
+.PHONY: embed-files
 embed-files:
 	find schema -name gen.go -execdir go generate {} \;
 
+.PHONY: test-fixtures
 test-fixtures:
-	find . -path ./jsonnet -prune -o \
-	-path '**/test-fixtures/**' \
-		-name generate.jsonnet \
-		-execdir jsonnet -J jsonnet -m . {} \;
+	scripts/generate-test-fixtures.sh
 
-# Generate and validate OpenAPI specification file.
-spec: generate-openapi validate-openapi
+.PHONY: openapi
+openapi: generate-openapi validate-openapi
 
-# Generate OpenAPI Specification.
+.PHONY: generate-openapi
 generate-openapi:
-	jsonnet -J jsonnet -m $(OPENAPI_DIR) $(OPENAPI_DIR)/openapi.jsonnet
+	scripts/generate-openapi.sh ${JSONNET_DIR} ${OPENAPI_DIR}
 
-# Validate generated OpenAPI specification file.
+.PHONY: validate-openapi
 validate-openapi:
-	swagger-cli validate $(OPENAPI_FILE)
+	scripts/validate-openapi.sh ${OPENAPI_DIR}
 
-update-jsonnet-libs:
-	jb update --jsonnetpkg-home=jsonnet
+.PHONY: update-jsonnet-libraries
+update-jsonnet-libraries:
+	scripts/update-jsonnet-libraries.sh ${JSONNET_DIR}
