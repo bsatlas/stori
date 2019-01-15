@@ -25,15 +25,18 @@ build:
 		-o bin/stori github.com/atlaskerr/stori/cmd/stori
 
 clean:
-	rm -r ./bin
+	rm -rf ./bin
+	find . -path '**/test-fixtures/**' -name '*.json' -exec rm -f {} \;
+	find schema -path 'jsonnetfile.*' -prune -o -name '*.schema.json' -exec rm -f {} \;
 
 # Generate json-schemas.
 schemas:
-	jsonnet -m $(SCHEMA_DIR) $(SCRIPTS_DIR)/gen-jsonschemas.jsonnet
+	find schema -path **/test-fixtures -prune -o -name generate.jsonnet -execdir jsonnet -J jsonnet -m . {} \;
+#	jsonnet -m $(SCHEMA_DIR) $(SCRIPTS_DIR)/gen-jsonschemas.jsonnet
 	go generate $(SCHEMA_DIR)/gen.go
 
 test-fixtures:
-	find . -name generate.jsonnet -execdir jsonnet -J jsonnet -m . {} \;
+	find . -path '**/test-fixtures/**' -name generate.jsonnet -execdir jsonnet -J jsonnet -m . {} \;
 
 # Generate and validate OpenAPI specification file.
 spec: generate-openapi validate-openapi
