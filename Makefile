@@ -20,9 +20,7 @@ coverage:
 	go test -coverprofile=coverage.out ./...
 
 build:
-	go build \
-		-ldflags "-X main.Version=${VERSION} -X main.Commit=${COMMIT}" \
-		-o bin/stori github.com/atlaskerr/stori/cmd/stori
+	scripts/build.sh ${VERSION} ${COMMIT}
 
 clean:
 	rm -rf ./bin
