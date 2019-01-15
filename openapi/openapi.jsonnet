@@ -35,4 +35,6 @@ local info = oapi.info.new(
   license=license,
 );
 
-oapi.new(info=info, paths=paths)
+{
+  'openapi.json': oapi.new(info=info, paths=paths),
+}
