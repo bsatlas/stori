@@ -23,7 +23,7 @@ func TestServerConfigValidation(t *testing.T) {
 		{"tls-enabled-no-key-file.json", false},
 	}
 
-	v := ServerConfigLoader()
+	v := ServerConfigLoader
 	for _, tc := range tt {
 		tf := func(t *testing.T) {
 			path := fmt.Sprintf("./test-fixtures/server-config/%v", tc.file)
