@@ -15,6 +15,5 @@
 local oci = import 'oci.libsonnet';
 
 {
-  oci:: import 'oci/oci.libsonnet',
   stori:: import 'stori/stori.libsonnet',
 }
