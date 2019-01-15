@@ -14,36 +14,38 @@
 
 local oapi = import 'openapi-jsonnet/v3.0.0/openapi.libsonnet';
 local param = oapi.parameter;
-local schemas = import '../schemas/schemas.libsonnet';
+local schemas = import '../schema/schema.libsonnet';
 local headers = import 'headers.libsonnet';
+
+local string = { type: 'string' };
 
 
 local namespace = param.new(
   name='namespace',
   paramIn='path',
   description='A logical grouping of repositories.',
-  schema=schemas.common.string,
+  schema=string,
 );
 
 local repository = param.new(
   name='repository',
   paramIn='path',
   description='A place to store an image.',
-  schema=schemas.common.string,
+  schema=string,
 );
 
 local reference = param.new(
   name='reference',
   paramIn='path',
   description='Can either be a tag name or digest',
-  schema=schemas.common.string,
+  schema=string,
 );
 
 local digest = param.new(
   name='digest',
   paramIn='path',
   description='A content addressable identifier.',
-  schema=schemas.common.string,
+  schema=string,
 );
 
 local digestQuery = param.new(
@@ -51,7 +53,7 @@ local digestQuery = param.new(
   paramIn='query',
   style='form',
   description='A content addressable identifier.',
-  schema=schemas.common.string,
+  schema=string,
 );
 
 local mount = param.new(
@@ -59,7 +61,7 @@ local mount = param.new(
   paramIn='query',
   style='form',
   description='The digest of a blob in the source repository.',
-  schema=schemas.common.string,
+  schema=string,
 );
 
 local mountFrom = param.new(
@@ -67,14 +69,14 @@ local mountFrom = param.new(
   paramIn='query',
   style='form',
   description='The source repository the referenced blob.',
-  schema=schemas.common.string,
+  schema=string,
 );
 
 local uuid = param.new(
   name='uuid',
   paramIn='path',
   description='A universally unique identifier.',
-  schema=schemas.common.string,
+  schema=string,
 );
 
 local n = param.new(
@@ -82,7 +84,7 @@ local n = param.new(
   paramIn='query',
   style='form',
   description='',
-  schema=schemas.common.string,
+  schema=string,
 );
 
 local last = param.new(
@@ -90,7 +92,7 @@ local last = param.new(
   paramIn='query',
   style='form',
   description='',
-  schema=schemas.common.string,
+  schema=string,
 );
 
 local host = param.new(
@@ -98,7 +100,7 @@ local host = param.new(
   paramIn='header',
   style='simple',
   description='Standard HTTP Host header.',
-  schema=schemas.common.string,
+  schema=string,
 );
 
 local range = param.new(
@@ -106,7 +108,7 @@ local range = param.new(
   paramIn='header',
   style='simple',
   description='HTTP Range header specifying a blob chunk.',
-  schema=schemas.common.string,
+  schema=string,
 );
 
 local contentLength = param.new(
@@ -114,7 +116,7 @@ local contentLength = param.new(
   paramIn='header',
   style='simple',
   description='The byte length of the data returned.',
-  schema=schemas.common.string,
+  schema=string,
 );
 
 {

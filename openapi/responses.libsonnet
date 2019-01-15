@@ -15,7 +15,7 @@
 local oapi = import 'openapi-jsonnet/v3.0.0/openapi.libsonnet';
 local resp = oapi.response;
 local mt = import 'media-types.libsonnet';
-local schemas = import '../schemas/schemas.libsonnet';
+local schemas = import '../schema/schema.libsonnet';
 local h = import 'headers.libsonnet';
 
 local err = {

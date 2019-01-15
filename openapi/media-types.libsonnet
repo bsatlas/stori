@@ -17,7 +17,7 @@ local mt = oapi.mediaType;
 local ex = oapi.example;
 local liboci = import 'oci-jsonnet/image/v1.0.1/spec.libsonnet';
 local ociExamples = liboci.examples;
-local schemas = import '../schemas/schemas.libsonnet';
+local schemas = import '../schema/schema.libsonnet';
 
 local json = 'application/json';
 
@@ -25,11 +25,13 @@ local err = {
   [json]: mt.new(schemas.oci.errors('openapi')),
 };
 
+
 local common = {
+  local binary = { type: 'string', format: 'binary' },
 
   octetStream: {
     'application/octet-stream':
-      mt.new(schemas.common.binary),
+      mt.new(binary),
   },
 
 };
