@@ -35,6 +35,9 @@ schemas:
 #	jsonnet -m $(SCHEMA_DIR) $(SCRIPTS_DIR)/gen-jsonschemas.jsonnet
 	go generate $(SCHEMA_DIR)/gen.go
 
+embed-files:
+	find schema -name gen.go -execdir go generate {} \;
+
 test-fixtures:
 	find . -path '**/test-fixtures/**' -name generate.jsonnet -execdir jsonnet -J jsonnet -m . {} \;
 
