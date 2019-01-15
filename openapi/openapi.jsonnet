@@ -12,8 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+local ociPaths = import 'oci-openapi-jsonnet/paths.libsonnet';
 local oapi = import 'openapi-jsonnet/v3.0.0/openapi.libsonnet';
-local paths = import 'paths.libsonnet';
+local storiPaths = import 'paths.libsonnet';
+local paths = storiPaths + ociPaths;
 
 local contact = oapi.contact.new(
   name='Atlas Kerr',
