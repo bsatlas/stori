@@ -51,3 +51,6 @@ generate-openapi:
 # Validate generated OpenAPI specification file.
 validate-openapi:
 	swagger-cli validate $(OPENAPI_FILE)
+
+update-jsonnet-libs:
+	jb update --jsonnetpkg-home=jsonnet
