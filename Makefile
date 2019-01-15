@@ -1,9 +1,5 @@
-.PHONY: schemas spec generate-openapi validate-openapi build test test-fixtures embed-files
-
 OPENAPI_DIR = openapi
 JSONNET_DIR = jsonnet
-
-
 
 .PHONY: test
 test: clean test-fixtures schemas embed-files
@@ -26,10 +22,12 @@ clean:
 schemas:
 	scripts/generate-jsonschemas.sh
 
+# Generate go code from generated json.
 .PHONY: embed-files
 embed-files:
 	find schema -name gen.go -execdir go generate {} \;
 
+# Generate json test-fixtures 
 .PHONY: test-fixtures
 test-fixtures:
 	scripts/generate-test-fixtures.sh
@@ -37,10 +35,12 @@ test-fixtures:
 .PHONY: openapi
 openapi: generate-openapi validate-openapi
 
+# Generate an openapi spec.
 .PHONY: generate-openapi
 generate-openapi:
 	scripts/generate-openapi.sh ${JSONNET_DIR} ${OPENAPI_DIR}
 
+# Validate a generated openapi spec.
 .PHONY: validate-openapi
 validate-openapi:
 	scripts/validate-openapi.sh ${OPENAPI_DIR}
