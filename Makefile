@@ -26,7 +26,7 @@ build:
 
 clean:
 	rm -rf ./bin
-	find . -path '**/test-fixtures/**' -name '*.json' -exec rm -f {} \;
+	find . -path ./jsonnet -prune -o -path '**/test-fixtures/**' -name '*.json' -exec rm -f {} \;
 	find schema -path 'jsonnetfile.*' -prune -o -name '*.schema.json' -exec rm -f {} \;
 
 # Generate json-schemas.
