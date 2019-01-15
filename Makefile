@@ -4,7 +4,7 @@ SPEC_DIR = spec
 OPENAPI_DIR = openapi
 DOCS_DIR = Documentation
 SCRIPTS_DIR = scripts
-OPENAPI_FILE = $(DOCS_DIR)/openapi.json
+OPENAPI_FILE = $(OPENAPI_DIR)/openapi.json
 SCHEMA_DIR = schema
 JSONNET_DIR = jsonnet
 
@@ -43,7 +43,7 @@ spec: generate-openapi validate-openapi
 
 # Generate OpenAPI Specification.
 generate-openapi:
-	jsonnet -J $(JSONNET_DIR)/vendor -m $(DOCS_DIR) $(SCRIPTS_DIR)/gen-openapi.jsonnet
+	jsonnet -J jsonnet -m $(OPENAPI_DIR) $(OPENAPI_DIR)/openapi.jsonnet
 
 # Validate generated OpenAPI specification file.
 validate-openapi:
