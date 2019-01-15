@@ -13,9 +13,8 @@ COMMIT := $(if $(shell git status --porcelain --untracked-files=no),"${COMMIT_NO
 
 VERSION = $(shell cat ./VERSION)
 
-test: test-fixtures schemas embed-files
+test: clean test-fixtures schemas embed-files
 	go test -cover ./...
-	make clean
 
 coverage:
 	go test -coverprofile=coverage.out ./...
