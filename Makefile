@@ -3,10 +3,7 @@
 OPENAPI_DIR = openapi
 JSONNET_DIR = jsonnet
 
-COMMIT_NO := $(shell git rev-parse HEAD 2> /dev/null || true)
-COMMIT := $(if $(shell git status --porcelain --untracked-files=no),"${COMMIT_NO}-dirty","${COMMIT_NO}")
 
-VERSION = $(shell cat ./VERSION)
 
 .PHONY: test
 test: clean test-fixtures schemas embed-files
@@ -18,7 +15,7 @@ coverage:
 
 .PHONY: build
 build:
-	scripts/build-stori.sh ${VERSION} ${COMMIT}
+	scripts/build-stori.sh
 
 .PHONY: clean
 clean:
