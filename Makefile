@@ -33,13 +33,7 @@ schemas:
 	go generate $(SCHEMA_DIR)/gen.go
 
 test-fixtures:
-	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/image-index $(SCHEMA_DIR)/oci/test-fixtures/image-index/generate.jsonnet
-	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/image-manifest $(SCHEMA_DIR)/oci/test-fixtures/image-manifest/generate.jsonnet
-	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/content-descriptor $(SCHEMA_DIR)/oci/test-fixtures/content-descriptor/generate.jsonnet
-	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/image-config $(SCHEMA_DIR)/oci/test-fixtures/image-config/generate.jsonnet
-	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/tag-list $(SCHEMA_DIR)/oci/test-fixtures/tag-list/generate.jsonnet
-	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/oci/test-fixtures/catalog $(SCHEMA_DIR)/oci/test-fixtures/catalog/generate.jsonnet
-	jsonnet -J $(JSONNET_DIR)/vendor -m $(SCHEMA_DIR)/stori/test-fixtures/server-config $(SCHEMA_DIR)/stori/test-fixtures/server-config/generate.jsonnet
+	find . -name generate.jsonnet -execdir jsonnet -J jsonnet -m . {} \;
 
 # Generate and validate OpenAPI specification file.
 spec: generate-openapi validate-openapi
