@@ -11,6 +11,26 @@
             "version": "fd78489d8eec4d3d0beafe47f077bac0747497ab"
         },
         {
+            "name": "oci-openapi-jsonnet",
+            "source": {
+                "git": {
+                    "remote": "https://github.com/atlaskerr/oci-openapi-jsonnet",
+                    "subdir": ""
+                }
+            },
+            "version": "bc2a05f24f31700ecc81e575f82465a5543a689c"
+        },
+        {
+            "name": "oci-schemas",
+            "source": {
+                "git": {
+                    "remote": "https://github.com/atlaskerr/oci-schemas",
+                    "subdir": ""
+                }
+            },
+            "version": "5643af98030a6198cc4673d969355f75baab9300"
+        },
+        {
             "name": "oci-jsonnet",
             "source": {
                 "git": {
