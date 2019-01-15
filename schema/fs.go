@@ -209,6 +209,19 @@ func FSMustString(useLocal bool, name string) string {
 
 var _escData = map[string]*_escFile{
 
+	"/namespace-create.schema.json": {
+		name:    "namespace-create.schema.json",
+		local:   "namespace-create.schema.json",
+		size:    399,
+		modtime: 1546544639,
+		compressed: `
+H4sIAAAAAAAC/4yQPW7DMAyFd5+CUDvGcbcCPkWBjEUHVqIdBrGkkizQH+TuhSQncLeMfnzfh2f9dgDg
+Hjm4EdzRLI/DoJaEF5xJ90nmQf2RFhwiLqQZPfVeCI3crqHtvMFPmmLf0soHwcn6p+dV9LCCGAIbp4jn
+F0mZxJjUjTDhWak1AqkXzqVU9IeKw5QE6gKOMyDUsXAbt1/teeusP1nSBb8O/EObqKT2nUvk1ITj7NbL
+ZXelivw+pLtxTujjk4XKu77+E5WPt9a5WtL7iby57tL9BQAA//8HxTfajwEAAA==
+`,
+	},
+
 	"/server-config.schema.json": {
 		name:    "server-config.schema.json",
 		local:   "server-config.schema.json",
@@ -262,6 +275,7 @@ RNsBo0VTJmPF4oF8EGJnpXpsmFp/0WaIjjeVlk3cLvV0tLkN7p9PT/as5Vf+AQAA//+QhFRQbwAAAA==
 var _escDirs = map[string][]os.FileInfo{
 
 	".": {
+		_escData["/namespace-create.schema.json"],
 		_escData["/server-config.schema.json"],
 	},
 
