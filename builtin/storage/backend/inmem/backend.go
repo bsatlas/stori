@@ -16,7 +16,7 @@ package inmem
 
 import (
 	"encoding/json"
-	"fmt"
+	"strings"
 
 	"github.com/atlaskerr/stori/schema/storage/backend"
 	"github.com/atlaskerr/stori/stori"
@@ -66,23 +66,41 @@ func (b *Backend) Setup(interface{}) error {
 	return nil
 }
 
+func set(tx *buntdb.Tx, key, value string) {
+	tx.Set(key, value, nil)
+}
+
 // CreateNamespace creates a new namespace in the registry.
-func (b *Backend) CreateNamespace(name string) (*stori.NamespaceInfo, error) {
-	phaseValue := stori.NamespaceActive
-	key := fmt.Sprintf("namespace:%s:", name)
+func (b *Backend) CreateNamespace(
+	conf stori.NamespaceConfig) error {
 
-	fn := func(tx *buntdb.Tx) error {
-		tx.Set(key+"status", string(phaseValue), nil)
+	var keySlice []string
+	keySlice[0] = "namespace"
+	keySlice[2] = conf.Name
+
+	var fields map[string]string
+	fields["blob-storage-limit"] = string(conf.BlobStorageLimit)
+	fields["repository-limit"] = string(conf.RepositoryLimit)
+	fields["status"] = string(stori.NamespaceActive)
+
+	for k, v := range conf.Labels {
+		keySlice := []string{"label", k}
+		labelKey := strings.Join(keySlice, ":")
+		fields[labelKey] = v
+	}
+
+	updateFunc := func(tx *buntdb.Tx) error {
+		for k, v := range fields {
+			s := make([]string, len(keySlice))
+			copy(s, keySlice)
+			s = append(s, k)
+			absoluteKey := strings.Join(s, ":")
+			set(tx, absoluteKey, v)
+		}
 		return nil
-
 	}
 
-	b.db.Update(fn)
+	b.db.Update(updateFunc)
 
-	info := &stori.NamespaceInfo{
-		Name:   name,
-		Status: phaseValue,
-	}
-
-	return info, nil
+	return nil
 }
