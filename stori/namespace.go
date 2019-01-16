@@ -43,22 +43,7 @@ type Namespace interface {
 // a logical grouping of repositories and a fundamental building block for
 // policy enforcement.
 type NamespaceInfo struct {
-
-	// Name is the name of the namespace. Must be unique across all namespaces
-	// hosted on the registry.
-	Name string
-
-	// BlobStorageLimit is the maximum size (in bytes) that the cumulative size
-	// of blobs within a namespace can grow to. Mounted blobs are not counted
-	// towards the limit.
-	BlobStorageLimit uint64
-
-	// RepositoryLimit is the maximum allowable amount of repositories that can
-	// be contained within a namespace.
-	RepositoryLimit uint64
-
-	// Labels defines optional client-supplied metadata for a namespace.
-	Labels map[string]string
+	NamespaceConfig
 
 	// Status defines what phase the namespace is in.
 	Status NamespaceStatus
