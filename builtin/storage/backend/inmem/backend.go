@@ -74,9 +74,7 @@ func set(tx *buntdb.Tx, key, value string) {
 func (b *Backend) CreateNamespace(
 	conf stori.NamespaceConfig) error {
 
-	var keySlice []string
-	keySlice[0] = "namespace"
-	keySlice[2] = conf.Name
+	keySlice := []string{"namespace", conf.Name}
 
 	var fields map[string]string
 	fields["blob-storage-limit"] = string(conf.BlobStorageLimit)
