@@ -14,6 +14,19 @@
 
 package stori
 
+// NamespaceStatus represents the current availability of a namespace.
+type NamespaceStatus string
+
+const (
+	// NamespaceActive when set, notifies clients that the namespace is able to
+	// have content allocated to it.
+	NamespaceActive NamespaceStatus = "Active"
+
+	// NamespaceTerminating when set, notifies clients that the namespace is not
+	// available to have conent allocated to it.
+	NamespaceTerminating NamespaceStatus = "Terminating"
+)
+
 // Namespace defines methods backends must implement for working with registry
 // namespaces.
 type Namespace interface {
@@ -21,13 +34,34 @@ type Namespace interface {
 	// CreateNamespace creates a new namespace in the registry.
 	CreateNamespace(conf NamespaceConfig) (*NamespaceInfo, error)
 
-	// LookupNamespaceByName performs a lookup on the registry for a namespace
+	// LookupNamespace performs a lookup on the registry for a namespace
 	// with a name matching the string provided.
-	LookupNamespaceByName(string) (*NamespaceInfo, error)
+	LookupNamespace(name string) (*NamespaceInfo, error)
+}
 
-	// LookupNamespaceByID performs a lookup on the registry for a namespace
-	// with an ID matching the string provided.
-	LookupNamespaceByID(string) (*NamespaceInfo, error)
+// NamespaceInfo defines operations for stori namespaces. A namespace is
+// a logical grouping of repositories and a fundamental building block for
+// policy enforcement.
+type NamespaceInfo struct {
+
+	// Name is the name of the namespace. Must be unique across all namespaces
+	// hosted on the registry.
+	Name string
+
+	// BlobStorageLimit is the maximum size (in bytes) that the cumulative size
+	// of blobs within a namespace can grow to. Mounted blobs are not counted
+	// towards the limit.
+	BlobStorageLimit uint64
+
+	// RepositoryLimit is the maximum allowable amount of repositories that can
+	// be contained within a namespace.
+	RepositoryLimit uint64
+
+	// Labels defines optional client-supplied metadata for a namespace.
+	Labels map[string]string
+
+	// Status defines what phase the namespace is in.
+	Status NamespaceStatus
 }
 
 // NamespaceConfig defines the parameters available for creating a namespace.
@@ -48,29 +82,4 @@ type NamespaceConfig struct {
 
 	// Labels defines optional client-supplied metadata for a namespace.
 	Labels map[string]string
-}
-
-// NamespaceStatus represents the current availability of a namespace.
-type NamespaceStatus string
-
-const (
-	// NamespaceActive when set, notifies clients that the namespace is able to
-	// have content allocated to it.
-	NamespaceActive NamespaceStatus = "Active"
-
-	// NamespaceTerminating when set, notifies clients that the namespace is not
-	// available to have conent allocated to it.
-	NamespaceTerminating NamespaceStatus = "Terminating"
-)
-
-// NamespaceInfo defines operations for stori namespaces. A namespace is
-// a logical grouping of repositories and a fundamental building block for
-// policy enforcement.
-type NamespaceInfo struct {
-
-	// Name is a name that uniquely identifies a namespace among all namespaces.
-	Name string
-
-	// Status defines what phase the namespace is in.
-	Status NamespaceStatus
 }
