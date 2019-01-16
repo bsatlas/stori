@@ -31,3 +31,12 @@ func TestGetSchema(t *testing.T) {
 		t.Fatal("no jsonschema returned")
 	}
 }
+
+func TestSetup(t *testing.T) {
+	b, _ := New()
+	var param interface{}
+	err := b.Setup(param)
+	if err != nil {
+		t.Fatal("non-nil value returned")
+	}
+}

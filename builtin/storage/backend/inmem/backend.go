@@ -59,10 +59,14 @@ func (b *Backend) GetSchema() []byte {
 	return b.schema
 }
 
+func (b *Backend) setupIndexes() {
+	b.db.CreateIndex("namespaces", "namespace:*")
+}
+
 // Setup passes validated configuration data to the backend for
 // initialization.
 func (b *Backend) Setup(interface{}) error {
-	b.db.CreateIndex("namespaces", "namespace:*")
+	b.setupIndexes()
 	return nil
 }
 
