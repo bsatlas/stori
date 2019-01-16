@@ -64,7 +64,9 @@ type NamespaceInfo struct {
 	Status NamespaceStatus
 }
 
-// NamespaceConfig defines the parameters available for creating a namespace.
+// NamespaceConfig is essentially NamespaceInfo without the NamespaceStatus
+// field. Only the registry can change the status of a namespace.
+// NamespaceConfig should only be used when initially creating a namespace.
 type NamespaceConfig struct {
 
 	// Name is the name of the namespace. Must be unique across all namespaces
