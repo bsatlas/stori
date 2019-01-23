@@ -3,6 +3,8 @@ package inmem
 import (
 	"encoding/json"
 	"testing"
+
+	"github.com/atlaskerr/stori/stori"
 )
 
 func TestNewBackend(t *testing.T) {
@@ -38,5 +40,40 @@ func TestSetup(t *testing.T) {
 	err := b.Setup(param)
 	if err != nil {
 		t.Fatal("non-nil value returned")
+	}
+}
+
+func TestCreateNamepace(t *testing.T) {
+	tt := []struct {
+		name   string
+		nsConf stori.NamespaceConfig
+	}{
+		{"ns1", stori.NamespaceConfig{
+			Name:             "ns1",
+			BlobStorageLimit: 346542,
+			RepositoryLimit:  10,
+			Labels: map[string]string{
+				"foo": "bar",
+				"boo": "far",
+				"baz": "fuz",
+				"faz": "buz",
+			},
+		}},
+	}
+
+	for _, tc := range tt {
+		tf := func(t *testing.T) {
+			backend, err := New()
+			if err != nil {
+				t.Fatal("could not initialize backend")
+			}
+			var i interface{}
+			if err := backend.Setup(i); err != nil {
+				t.Fatal("failed to setup backend")
+			}
+			backend.CreateNamespace(tc.nsConf)
+
+		}
+		t.Run(tc.name, tf)
 	}
 }
