@@ -80,7 +80,7 @@ func (b *Backend) CreateNamespace(
 
 	keySlice := []string{"namespace", conf.Name}
 
-	var fields map[string]string
+	fields := make(map[string]string)
 	fields["blob-storage-limit"] = string(conf.BlobStorageLimit)
 	fields["repository-limit"] = string(conf.RepositoryLimit)
 	fields["status"] = string(stori.NamespaceActive)
