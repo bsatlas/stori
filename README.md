@@ -3,7 +3,7 @@
 
 # Stori Registry
 
-Stori is an [OCI-compliant][distribution-spec] image registry that aims to be the successor to the Docker registry.
+Stori is an [OCI-compliant][distribution-spec] image registry.
 
 ### Status: In Development
 
